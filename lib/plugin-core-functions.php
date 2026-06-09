@@ -289,7 +289,7 @@ function shadhin_plugins_admin_bar_menu( $wp_admin_bar ) {
 
 
 function shadhin_plugins_theme_admin_menu_system_status() {
-	include_once SHADHIN_PLUGINS_ABS_PATH . 'inc/admin-tpl/mascot-system-status.php';
+	include_once SHADHIN_PLUGINS_ABS_PATH . 'inc/admin-tpl/mhshadhin-system-status.php';
 }
 
 function shadhin_plugins_tgmpa_get_plugins_need_update() {
