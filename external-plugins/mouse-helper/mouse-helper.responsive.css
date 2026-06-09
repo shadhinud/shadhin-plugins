@@ -1,0 +1,23 @@
+@media (max-width: 1279px) {
+  /* Mouse helper */
+  .tm_cursor_mouse_helper {
+    display: none;
+  }
+
+  /* Restore system cursor */
+  .tm_addons_hide_cursor,
+  .tm_addons_hide_cursor *,
+  [data-mouse-helper-hide-cursor="1"],
+  [data-mouse-helper-hide-cursor="1"] * {
+    cursor: unset !important;
+  }
+
+  [data-mouse-helper="highlight"] {
+    background-size: 130vw 130vh !important;
+    background-position: center !important;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+  }
+}
+

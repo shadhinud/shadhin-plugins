@@ -1,0 +1,189 @@
+
+@import "../../bootstrap-loader";
+/*
+  Begin CSS for avante-background-list
+*/
+.vertical-bg-img-list.skin-style2 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  background: #000;
+  .each-vertical-column {
+    min-height: 50vh;
+    position: relative;
+    z-index: 2;
+    border-right: 1px solid rgba(245,245,245,0.25);
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: inherit;
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      backdrop-filter: blur(0px);
+      @include transition(opacity .4s);
+      z-index: 0;
+    }
+    .vertical-column-wrapper {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
+      color: #fff;
+      .content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        .content-top {
+          @include transition(all .5s ease);
+        }
+        .content-bottom {
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transform: translateY(20%);
+          -ms-transform: translateY(20%);
+          transform: translateY(20%);
+          @include transition(all .5s ease);
+        }
+      }
+      .title {
+        @include transition(all .5s ease);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+      }
+      .sub-title,
+      .title {
+        color: #fff;
+      }
+      .sub-title {
+        margin-bottom: 0;
+      }
+    }
+    &:hover {
+      &:before {
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        opacity: 1;
+      }
+      .content {
+        .content-bottom {
+          opacity: 1;
+          visibility: visible;
+          -webkit-transform: translateY(0);
+          -ms-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+      .title {
+        -moz-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+      }
+    }
+    &.last-item {
+      border-right: 0;
+    }
+  }
+  .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+    img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+    }
+    &.hover {
+      opacity: 1;
+      visibility: visible;
+      -ms-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+  }
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+    z-index: 1;
+    background: rgba(0,0,0,0.3);
+  }
+  &.one-column {
+    .each-vertical-column {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  &.two-column {
+    .each-vertical-column {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  &.three-column {
+    .each-vertical-column {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.33%;
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+  }
+  &.four-column {
+    .each-vertical-column {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .vertical-bg-img-list {
+    overflow: auto;
+  }
+  .vertical-bg-img-list.three-column .each-vertical-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .vertical-bg-img-list.four-column .each-vertical-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .vertical-bg-img-list .each-vertical-column .vertical-column-wrapper {
+    padding: 20px;
+  }
+  .vertical-bg-img-list .bg-img {
+    width: 200% !important;
+  }
+  .vertical-bg-img-list .bg-img img {
+    height: 100% !important;
+  }
+}

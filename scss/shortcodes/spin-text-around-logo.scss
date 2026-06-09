@@ -1,0 +1,19 @@
+@import "../bootstrap-loader";
+
+.spin-text-around-logo {
+  position: relative;
+  display: inline-block;
+  .letter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1em;
+    font-size: 110px;
+    color: var(--theme-color-dark);
+    font-weight: 700;
+  }
+  img {
+    animation: fa-spin 30s infinite linear;
+  }
+}

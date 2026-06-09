@@ -1,0 +1,22 @@
+.tm-sc-projects {
+  .cat-list {
+    list-style: none;
+    margin: 0;
+    li {
+      display: inline;
+      color: #aaa;
+      margin-right: 7px;
+      font-size: 13px;
+      a {
+        color: #aaa;
+        text-transform: capitalize;
+        @include transition(all 0.3s ease-in-out);
+      }
+      &:last-child {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

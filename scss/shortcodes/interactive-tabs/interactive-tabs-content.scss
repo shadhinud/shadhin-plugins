@@ -1,0 +1,13 @@
+.tm-interactive-tabs-content {
+	position: relative;
+	.tab {
+		display: none;
+	}
+	.active-tab{
+		.content-box{
+			opacity: 1;
+			visibility: visible;
+			left: 0;
+		}
+	}
+}

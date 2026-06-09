@@ -1,0 +1,43 @@
+.tm-sc-info-banner-advanced.tm-layout-top-reveal {
+  position: relative;
+  overflow: hidden;
+  .info-banner-inner {
+    .info-banner-text-holder-wrapper {
+      .info-banner-text-holder {
+        .info-banner-text-holder-inner {
+          .text-paragraph {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.25s, transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+          .btn-view-details {
+            transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition-delay: .05s;
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    .info-banner-inner {
+      .info-banner-text-holder-wrapper {
+        .info-banner-text-holder {
+          .info-banner-text-holder-inner {
+            .text-paragraph {
+              opacity: 1;
+              transform: translateY(0px);
+              transition-duration: .25s, .35s;
+              transition-delay: .1s, .1s;
+            }
+            .btn-view-details {
+              transform: translateY(0) translateZ(0) !important;
+              transition-delay: 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

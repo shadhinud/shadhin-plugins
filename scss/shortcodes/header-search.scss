@@ -1,0 +1,220 @@
+@import "../bootstrap-loader";
+
+//1 - default search
+.tm-widget-search-form {
+  .search-form-default {
+    position: relative;
+    margin: 0px;
+    input[type="search"] {
+      position: relative;
+      padding-left: 1.5em;
+      padding-right: 4em;
+      border-radius: 50px;
+      background: var(--theme-color-white);
+      border: 1px solid var(--theme-color-silver);
+      color: var(--theme-color-dark);
+      font-size: 15px;
+      display: block;
+      width: 100%;
+      height: 55px;
+      @include transition(all 500ms ease);
+    }
+    input {
+      &:focus {
+        border-color: var(--theme-color-dark2);
+        box-shadow: none;
+      }
+    }
+    button {
+      position: absolute;
+      right: 0;
+      top: 0px;
+      border: none;
+      outline: none;
+      padding: 0;
+      height: 100%;
+      width: 55px;
+      line-height: 0;
+      display: block;
+      font-size: 20px;
+      color: #aaa;
+      background: none;
+      font-weight: normal;
+      @include transition(all 0.3s ease);
+      &:hover {
+        color: var(--theme-color-dark);
+      }
+    }
+  }
+}
+
+//2 - cat search
+.search-form-cat {
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #e7e7e7;
+  @include border-radius(57px);
+
+  .product-search-category {
+    .nice-select {
+      border: none;
+      background-color: #f5f5f5;
+      @include border-radius(50px 0 0 50px);
+      color: #1a2428;
+      min-width: auto;
+      padding-left: 20px;
+      font-size: 12px;
+      height: 55px;
+      box-shadow: none;
+      &:after {
+        border-bottom: 1px solid #111;
+        border-right: 1px solid #111;
+      }
+      span.current {
+        line-height: 39px;
+      }
+    }
+  }
+  .product-search-meta {
+    display: flex;
+    flex-grow: 1;
+    input {
+      background-color: var(--theme-color-white);
+      border: none;
+      border-radius: 0;
+      font-size: 12px;
+      color: var(--theme-color-silver);
+      height: 55px;
+      width: auto;
+      flex-grow: 1;
+      &:hover,
+      &:focus {
+        color: #888;
+      }
+    }
+    button {
+      font-size: 14px;
+      padding: 0 48px;
+      color: var(--theme-color1-text-color);
+      background-color: var(--theme-color1);
+      border-color: var(--theme-color1);
+      border: 0;
+      box-shadow: none;
+      @include border-radius(0 50px 50px 0);
+      @include transition(all 0.3s ease);
+      &:before {
+        @include border-radius(inherit);
+      }
+      &:hover,
+      &:focus {
+        color: var(--theme-color2-text-color);
+        background-color: var(--theme-color2);
+        border-color: var(--theme-color2);
+      }
+    }
+  }
+}
+
+//3 - search icon
+.tm-widget-search-form {
+  .icon-search-popup {
+    font-size: 22px;
+    color: #2f382f;
+    line-height: 1;
+
+    &:hover {
+      color: var(--theme-color1);
+    }
+    i {
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
+}
+
+.site-search-popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 99998;
+  background-color: rgba(0, 0, 0, 0.7);
+  @include transition(all ease-in-out 0.3s);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  .site-search-popup-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
+    background-color: var(--theme-color-white);
+    @include transform(translateY(-100%));
+    @include transition(all ease-in-out 0.3s);
+    @include media-breakpoint-up(lg) {
+      padding: 80px;
+    }
+
+    .site-search-popup-close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 20px;
+      line-height: 1;
+      width: 26px;
+      height: 26px;
+      @include media-breakpoint-up(lg) {
+        top: 20px;
+        right: 30px;
+      }
+
+      &:before,
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        margin-top: -1px;
+        width: 26px;
+        height: 2px;
+        background-color: #222;
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, width 0.2s ease-in-out;
+        right: 0;
+        @include transform(rotate(-45deg));
+      }
+
+      &:before {
+        @include transform(rotate(45deg));
+      }
+
+      &:hover {
+        &:before,
+        &:after {
+          @include transform(rotate(0));
+        }
+      }
+    }
+
+    input[type="search"] {
+      width: 600px;
+      @include media-breakpoint-down(md) {
+        max-width: 300px;
+      }
+    }
+  }
+
+  .search-popup-active & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .site-search-popup-wrap {
+      @include transform(translateY(0));
+    }
+  }
+}

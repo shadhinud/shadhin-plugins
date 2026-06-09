@@ -1,0 +1,1 @@
+<div class="slider-count"><?php echo $count;?></div>

@@ -1,0 +1,53 @@
+@import "../../bootstrap-loader";
+
+.countdown-timer-style3{
+  position: relative;
+  border: 1px solid var(--headings-color);
+  background-color: #fff;
+  @include media-breakpoint-down(md){
+      padding: 50px 0 40px;
+  }
+  .countdown-timer{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      @include media-breakpoint-down(md){
+          flex-direction: column;
+      }
+      .counter{
+          position: relative;
+          min-width: 250px;
+          padding: 60px 32px;
+          border-left: 1px solid var(--headings-color);
+          &:first-child {
+              border-left: 0;
+          }
+          @include media-breakpoint-down(lg){
+              min-width: 190px;
+          }
+          @include media-breakpoint-down(md){
+              min-width: auto;
+              padding: 20px 0;
+              border-left: 0;
+          }
+          .value{
+              position: relative;
+              color: var(--headings-color);
+              font-family: var(--heading-font-family);
+              font-size: 70px;
+              font-weight: 400;
+              line-height: 1em;
+              display: block;
+              text-align: center;
+          }
+          .label {
+              position: relative;
+              margin-bottom: 7px;
+              font-family: var(--heading-font-family);
+              font-weight: 400;
+              font-size: 18px;
+              color: var(--headings-color);
+          }
+      }
+  }
+}

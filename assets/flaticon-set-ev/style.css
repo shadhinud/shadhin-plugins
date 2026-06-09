@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "FlaticonSetEv";
+    src: url("fonts/flaticon-set-ev.woff2") format("woff2"),
+url("fonts/flaticon-set-ev.woff") format("woff"),
+url("fonts/flaticon-set-ev.eot") format("embedded-opentype"),
+url("fonts/flaticon-set-ev.ttf") format("truetype"),
+url("fonts/flaticon-set-ev.svg") format("svg")
+}
+
+i[class^="flaticon-set-"]:before, i[class*=" flaticon-set-"]:before {
+    font-family: FlaticonSetEv !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-set-charging-station:before {
+    content: "\f101";
+}
+.flaticon-set-electric-car:before {
+    content: "\f102";
+}
+.flaticon-set-charging-station-1:before {
+    content: "\f103";
+}
+.flaticon-set-charging-station-2:before {
+    content: "\f104";
+}
+.flaticon-set-plug:before {
+    content: "\f105";
+}
+.flaticon-set-ev-charging-plug:before {
+    content: "\f106";
+}
+.flaticon-set-charging-station-3:before {
+    content: "\f107";
+}
+.flaticon-set-charging-station-4:before {
+    content: "\f108";
+}
+.flaticon-set-mobile-app:before {
+    content: "\f109";
+}
+.flaticon-set-charging-station-5:before {
+    content: "\f10a";
+}
+.flaticon-set-electric-car-1:before {
+    content: "\f10b";
+}
+.flaticon-set-placeholder:before {
+    content: "\f10c";
+}
+.flaticon-set-home:before {
+    content: "\f10d";
+}
+.flaticon-set-plug-1:before {
+    content: "\f10e";
+}
+.flaticon-set-recharge:before {
+    content: "\f10f";
+}
+.flaticon-set-battery:before {
+    content: "\f110";
+}
+.flaticon-set-electric-car-2:before {
+    content: "\f111";
+}
+.flaticon-set-eco-energy:before {
+    content: "\f112";
+}
+.flaticon-set-charging-station-6:before {
+    content: "\f113";
+}
+.flaticon-set-stopwatch:before {
+    content: "\f114";
+}
+.flaticon-set-ev:before {
+    content: "\f115";
+}
+.flaticon-set-charging-station-7:before {
+    content: "\f116";
+}
+.flaticon-set-charging-station-8:before {
+    content: "\f117";
+}
+.flaticon-set-charging-station-9:before {
+    content: "\f118";
+}
+.flaticon-set-charging-station-10:before {
+    content: "\f119";
+}
+.flaticon-set-car:before {
+    content: "\f11a";
+}
+.flaticon-set-electric-car-3:before {
+    content: "\f11b";
+}
+.flaticon-set-energy:before {
+    content: "\f11c";
+}
+.flaticon-set-car-battery:before {
+    content: "\f11d";
+}
+.flaticon-set-engine:before {
+    content: "\f11e";
+}
+.flaticon-set-electrical-mechanic:before {
+    content: "\f11f";
+}
+.flaticon-set-electric-car-4:before {
+    content: "\f120";
+}
+.flaticon-set-part:before {
+    content: "\f121";
+}
+.flaticon-set-technician:before {
+    content: "\f122";
+}
+.flaticon-set-car-1:before {
+    content: "\f123";
+}
+.flaticon-set-charging-battery:before {
+    content: "\f124";
+}
+.flaticon-set-maintenance:before {
+    content: "\f125";
+}
+.flaticon-set-break:before {
+    content: "\f126";
+}
+.flaticon-set-electric-car-5:before {
+    content: "\f127";
+}
+.flaticon-set-electric-vehicle:before {
+    content: "\f128";
+}
+.flaticon-set-car-battery-1:before {
+    content: "\f129";
+}
+.flaticon-set-electric-vehicle-1:before {
+    content: "\f12a";
+}
+.flaticon-set-noise:before {
+    content: "\f12b";
+}
+.flaticon-set-car-engine:before {
+    content: "\f12c";
+}
+.flaticon-set-electric-car-6:before {
+    content: "\f12d";
+}
+.flaticon-set-charging:before {
+    content: "\f12e";
+}
+.flaticon-set-battery-1:before {
+    content: "\f12f";
+}
+.flaticon-set-electric-vehicle-2:before {
+    content: "\f130";
+}
+.flaticon-set-car-parts:before {
+    content: "\f131";
+}
+.flaticon-set-electric-car-7:before {
+    content: "\f132";
+}
+.flaticon-set-car-2:before {
+    content: "\f133";
+}
+.flaticon-set-parking:before {
+    content: "\f134";
+}
+.flaticon-set-charging-station-11:before {
+    content: "\f135";
+}
+.flaticon-set-charging-station-12:before {
+    content: "\f136";
+}
+.flaticon-set-charging-station-13:before {
+    content: "\f137";
+}
+.flaticon-set-electric-car-8:before {
+    content: "\f138";
+}
+.flaticon-set-location:before {
+    content: "\f139";
+}
+.flaticon-set-electric-station:before {
+    content: "\f13a";
+}
+.flaticon-set-charging-station-14:before {
+    content: "\f13b";
+}
+

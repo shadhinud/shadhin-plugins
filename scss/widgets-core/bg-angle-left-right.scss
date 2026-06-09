@@ -1,0 +1,22 @@
+@import "../bootstrap-loader";
+
+.tm-bg-angle-left-right {
+  &:after {
+    //border-left: 50px solid var(--theme-color1);
+    //border-top: 62px solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0;
+    z-index: 1;
+  }
+}
+.elementor-hide-under-1201 {
+  .tm-bg-angle-left-right {
+    @media (max-width: 1200px) {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

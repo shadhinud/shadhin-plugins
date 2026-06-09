@@ -1,0 +1,72 @@
+@import "../../bootstrap-loader";
+@import "project-skin-common";
+
+.projects-mouse-follow-floating-info {
+  .thumb {
+    position: relative;
+    img {
+      border-radius: 5px
+    }
+    .details {
+      position: absolute;
+      left: 30px;
+      bottom: 30px;;
+      @include transition(all .5s);
+      transform: translateY(20px);
+      opacity: 0;
+      z-index: 1;
+      display: none;
+      .title {
+        color: #fff;
+        padding-right: 60px;
+        line-height: 36px;
+        margin: 0;
+        position: relative
+      }
+    }
+    .btn-view-details {
+      position: absolute;
+      bottom: -15px;
+      right: 40px;
+      @include transition(all .5s);
+      opacity: 0;
+      z-index: 1;
+      a {
+        font-size: 14px;
+        padding: 8px 16px;
+        text-transform: capitalize;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      height: 0;
+      width: 100%;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      z-index: 0;
+      @include transition(all .5s);
+      border-radius: 5px
+    }
+  }
+  &:hover {
+    .thumb {
+      .details {
+        transform: translateY(0);
+        opacity: 1;
+        .title {
+        }
+      }
+      .btn-view-details {
+        right: 20px;
+        opacity: 1;
+      }
+      &:after {
+        opacity: 1;
+        height: 100%;
+        background: linear-gradient(0deg, #081B2C, transparent);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "../bootstrap-loader";
+
+
+.tm-widget-blog-list {
+  .entry-title {
+    a {
+      color: #bbb;
+      &:hover {
+        color: var(--theme-color1);
+      }
+    }
+  }
+  .entry-meta {
+    i {
+      display: none;
+    }
+  }
+}

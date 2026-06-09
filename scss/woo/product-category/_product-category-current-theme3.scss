@@ -1,0 +1,102 @@
+.tm-product-category-current-theme3 {
+  .content-wrapper {
+    .content-inner {
+      position: relative;
+      text-align: center;
+      .cat-image {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        box-shadow: 0 10px 40px rgba(0,0,0,.10);
+        transition: all 300ms ease;
+        &:before{
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -8px;
+          margin: 0 auto;
+          width: 30px;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 10px solid #ffffff;
+          content: "";
+          z-index: 9;
+          transition: all 100ms ease;
+        }
+        &:after{
+          position: absolute;
+          top: 20px;
+          right: 15px;
+          bottom: 20px;
+          left: 15px;
+          border: 1px solid #e1e6dc;
+          content: "";
+          z-index: 1;
+          transition: all 300ms ease;
+        }
+        img {
+          display: block;
+          width: 100%;
+          -webkit-transition: all 300ms ease;
+          -o-transition: all 300ms ease;
+          transition: all 300ms ease;
+        }
+        a {
+          .flat-icon {
+            font-size: 75px;
+            color: var(--theme-color1);
+          }
+        }
+      }
+      .cat-details{
+        text-align: center;
+        .cat-title{
+          font-size: 18px;
+          font-weight: 600;
+          font-family: var(--sans-serif);
+          margin-top: 25px;
+          a {
+            -webkit-transition: all 300ms ease;
+            -o-transition: all 300ms ease;
+            transition: all 300ms ease;
+            &:hover {
+              color: var(--headings-color);
+            }
+          }
+        }
+        .paragraph {
+          font-size: 15px;
+          color: #797f7d;
+          margin-bottom: 0px;
+        }
+        .count{
+          display: block;
+          font-size: 15px;
+        }
+      }
+      &:hover{
+        .cat-image {
+          img {
+            transform: rotateY(180deg);
+            -o-transition: rotateY(180deg);
+            -webkit-transition: rotateY(180deg);
+          }
+          &:after {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border: 2px solid var(--theme-color3);
+          }
+          &:before {
+            transition-delay: 300ms;
+            filter: drop-shadow(0 2px 0 var(--theme-color3));
+          }
+        }
+      }
+    }
+  }
+}

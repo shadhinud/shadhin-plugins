@@ -1,0 +1,38 @@
+.tm-sc-info-banner-advanced.tm-layout-image-switch {
+  .info-banner-inner {
+    &:after{
+      display: none;
+    }
+    .info-banner-text-holder-wrapper {
+      .info-banner-text-holder {
+        .info-banner-text-holder-inner {
+        }
+      }
+    }
+  }
+  &:hover {
+    .info-banner-inner {
+      .banner-floating-image-wrapper {
+        img {
+          @include scale(1);
+        }
+        .floating-img {
+          &.first-child {
+            opacity: 0;
+          }
+          &.last-child {
+            opacity: 1;
+          }
+        }
+      }
+      .info-banner-text-holder-wrapper {
+        .info-banner-text-holder {
+          .info-banner-text-holder-inner {
+          }
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,21 @@
+@import "../bootstrap-loader";
+.elementor-editor-active .elementor-widget-tm-ele-blank-box {
+  min-height: 30px;
+  background-color: #cb9494;
+}
+//animation objects
+.tm-ele-blank-box {
+  > .each-object {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: #eee;
+      z-index: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
