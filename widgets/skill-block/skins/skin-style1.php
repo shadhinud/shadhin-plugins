@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style1 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-skill-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-skill-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -52,7 +52,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box:before' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box:before' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -64,7 +64,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box:before' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box:before' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -82,7 +82,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box:hover:before' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box:hover:before' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -94,7 +94,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}  .tm-sc-skill .skill-block .inner-box:hover:before' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}  .mh-sc-skill .skill-block .inner-box:hover:before' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -115,7 +115,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 			[
 				'name' => 'current_skin_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-skill .skill-block .inner-box',
+				'selector' => '{{WRAPPER}} .mh-sc-skill .skill-block .inner-box',
 			]
 		);
 		$this->add_responsive_control(
@@ -125,7 +125,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -162,7 +162,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box .skill-count' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box .skill-count' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -172,7 +172,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box .skill-count' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box .skill-count' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -184,7 +184,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box .skill-count' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box .skill-count' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -202,7 +202,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box:hover .skill-count' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box:hover .skill-count' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -212,7 +212,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box:hover .skill-count' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box:hover .skill-count' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -224,7 +224,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box:hover .skill-count' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box:hover .skill-count' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -245,7 +245,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 			[
 				'name' => 'current_skin_counting_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-skill .skill-block .inner-box .skill-count',
+				'selector' => '{{WRAPPER}} .mh-sc-skill .skill-block .inner-box .skill-count',
 			]
 		);
 		$this->add_responsive_control(
@@ -255,7 +255,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-skill .skill-block .inner-box .skill-count' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-skill .skill-block .inner-box .skill-count' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -266,7 +266,7 @@ class Skin_Style1 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-skill-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/skill-block/skill-block-style1' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-skill-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/skill-block/skill-block-style1' . $direction_suffix . '.css' );
 		wp_register_script( 'skill-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/skill-block-style1.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'skill-block-style1' );
 

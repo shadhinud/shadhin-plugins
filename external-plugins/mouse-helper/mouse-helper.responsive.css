@@ -1,12 +1,12 @@
 @media (max-width: 1279px) {
   /* Mouse helper */
-  .tm_cursor_mouse_helper {
+  .mh_cursor_mouse_helper {
     display: none;
   }
 
   /* Restore system cursor */
-  .tm_addons_hide_cursor,
-  .tm_addons_hide_cursor *,
+  .mh_addons_hide_cursor,
+  .mh_addons_hide_cursor *,
   [data-mouse-helper-hide-cursor="1"],
   [data-mouse-helper-hide-cursor="1"] * {
     cursor: unset !important;

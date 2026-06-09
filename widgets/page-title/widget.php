@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Page_Title extends Widget_Base {
+class MH_Elementor_Page_Title extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
@@ -29,7 +29,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-page-title';
+		return 'mh-ele-page-title';
 	}
 
 	/**
@@ -55,7 +55,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -103,7 +103,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -597,7 +597,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 			[
 				'name' => 'breadcrumb_bullet_typography',
 				'label' => esc_html__( 'Bullet Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .breadcrumbs li .tm-breadcrumb-arrow-icon',
+				'selector' => '{{WRAPPER}} .breadcrumbs li .mh-breadcrumb-arrow-icon',
 			]
 		);
 		$this->add_control(
@@ -606,7 +606,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 				'label' => esc_html__( "Bullet Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .breadcrumbs li .tm-breadcrumb-arrow-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .breadcrumbs li .mh-breadcrumb-arrow-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -618,7 +618,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .breadcrumbs li .tm-breadcrumb-arrow-icon' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .breadcrumbs li .mh-breadcrumb-arrow-icon' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -645,7 +645,7 @@ class TM_Elementor_Page_Title extends Widget_Base {
 				$icon_html = "";
 				$custom_bullet_icon = $settings['custom_bullet_icon'];
 				if(isset($custom_bullet_icon['value']) && !empty($custom_bullet_icon['value'])) {
-					$icon_html = '<i class="tm-breadcrumb-arrow-icon '.$custom_bullet_icon['value'].'"></i>';
+					$icon_html = '<i class="mh-breadcrumb-arrow-icon '.$custom_bullet_icon['value'].'"></i>';
 				}
 				shadhin_display_breadcrumbs($icon_html);
 				break;

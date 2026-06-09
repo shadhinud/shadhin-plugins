@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Contact_List extends Widget_Base {
+class MH_Elementor_Contact_List extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         $direction_suffix = is_rtl() ? '.rtl' : '';
 
-        wp_register_style( 'tm-contact-list-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/contact-list' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-contact-list-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/contact-list' . $direction_suffix . '.css' );
     }
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-contact-list';
+		return 'mh-ele-contact-list';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-contact-list-style' ];
+		return [ 'mh-contact-list-style' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -142,7 +142,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'default' => 'flex',
 				'options' => shadhin_plugins_disply_type_list_elementor(),
 				'selectors' => [
-						'{{WRAPPER}} .tm-contact-list li' => 'display: {{UNIT}}',
+						'{{WRAPPER}} .mh-contact-list li' => 'display: {{UNIT}}',
 				],
 			]
 		);
@@ -154,7 +154,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'default' => 'flex',
 				'options' => shadhin_plugins_disply_type_list_elementor(),
 				'selectors' => [
-						'{{WRAPPER}} .tm-contact-list li > *' => 'display: {{UNIT}}',
+						'{{WRAPPER}} .mh-contact-list li > *' => 'display: {{UNIT}}',
 				],
 			]
 		);
@@ -256,7 +256,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'text_typography',
 				'label' => esc_html__( 'Text Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li > *',
+				'selector' => '{{WRAPPER}} .mh-contact-list li > *',
 			]
 		);
 		$this->add_control(
@@ -265,7 +265,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li > *' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-contact-list li > *' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -277,7 +277,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li > *' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-list li > *' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -288,7 +288,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .text > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li .text > *' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -316,7 +316,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Hide Icon?", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .icon' => 'display: none;',
+					'{{WRAPPER}} .mh-contact-list li .icon' => 'display: none;',
 				]
 			]
 		);
@@ -325,7 +325,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'icon_typography',
 				'label' => esc_html__( 'Icon Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li .icon, {{WRAPPER}} .tm-contact-list li .icon svg',
+				'selector' => '{{WRAPPER}} .mh-contact-list li .icon, {{WRAPPER}} .mh-contact-list li .icon svg',
 			]
 		);
 		$this->add_control(
@@ -334,7 +334,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( 'Icon Margin', 'shadhin-plugins' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li .icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -352,7 +352,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .icon' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};flex-basis: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li .icon' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};flex-basis: {{SIZE}}{{UNIT}};',
 				]
 			]
 		);
@@ -371,7 +371,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
                 'label'     => esc_html__( 'Background Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-contact-list li .icon' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-contact-list li .icon' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -383,7 +383,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-contact-list li .icon' => 'background-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-contact-list li .icon' => 'background-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -393,8 +393,8 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Icon Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .icon' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-contact-list li .icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .mh-contact-list li .icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-contact-list li .icon svg' => 'fill: {{VALUE}};',
 				]
 			]
 		);
@@ -406,8 +406,8 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .icon' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-contact-list li .icon svg' => 'fill: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-contact-list li .icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-contact-list li .icon svg' => 'fill: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -416,7 +416,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'icon_area_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li .icon',
+				'selector' => '{{WRAPPER}} .mh-contact-list li .icon',
 			]
 		);
 		$this->add_responsive_control(
@@ -426,7 +426,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-contact-list li .icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -446,7 +446,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
                 'label'     => esc_html__( 'Background Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-contact-list li:hover .icon' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-contact-list li:hover .icon' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -458,7 +458,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-contact-list li:hover .icon' => 'background-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-contact-list li:hover .icon' => 'background-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -468,8 +468,8 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Icon Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li:hover .icon' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-contact-list li:hover .icon svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .mh-contact-list li:hover .icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-contact-list li:hover .icon svg' => 'fill: {{VALUE}};',
 				]
 			]
 		);
@@ -481,8 +481,8 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li:hover .icon' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-contact-list li:hover .icon svg' => 'fill: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-contact-list li:hover .icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-contact-list li:hover .icon svg' => 'fill: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -492,7 +492,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
                 'label'     => esc_html__( 'Border Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-contact-list li:hover .icon' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-contact-list li:hover .icon' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -517,7 +517,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Hide Prefix?", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .prefix' => 'display: none;',
+					'{{WRAPPER}} .mh-contact-list li .prefix' => 'display: none;',
 				]
 			]
 		);
@@ -526,7 +526,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'prefix_typography',
 				'label' => esc_html__( 'Prefix Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li .prefix',
+				'selector' => '{{WRAPPER}} .mh-contact-list li .prefix',
 			]
 		);
 		$this->add_control(
@@ -535,7 +535,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Prefix Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .prefix' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-contact-list li .prefix' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -547,7 +547,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .prefix' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-list li .prefix' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -557,7 +557,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( 'Prefix Margin', 'shadhin-plugins' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li .prefix' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li .prefix' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -579,7 +579,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'link_typography',
 				'label' => esc_html__( 'Link Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li a',
+				'selector' => '{{WRAPPER}} .mh-contact-list li a',
 			]
 		);
 		$this->add_control(
@@ -588,7 +588,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Link Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li a' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-contact-list li a' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -598,7 +598,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'label' => esc_html__( "Link Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li a:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-contact-list li a:hover' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -610,7 +610,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li a' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-list li a' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -622,7 +622,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li a:hover' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-list li a:hover' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -656,7 +656,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -667,7 +667,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -676,7 +676,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'list_item_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li',
+				'selector' => '{{WRAPPER}} .mh-contact-list li',
 			]
 		);
 		$this->end_controls_section();
@@ -702,7 +702,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -713,7 +713,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-list li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-list li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -722,7 +722,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 			[
 				'name' => 'last_item_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-list li:last-child',
+				'selector' => '{{WRAPPER}} .mh-contact-list li:last-child',
 			]
 		);
 		$this->end_controls_section();
@@ -743,7 +743,7 @@ class TM_Elementor_Contact_List extends Widget_Base {
 		$html = '';
 		//classes
 		$classes = array();
-		$classes[] = 'tm-contact-list';
+		$classes[] = 'mh-contact-list';
 		$classes[] = $settings['custom_css_class'];
         if( $settings['design_style'] ) {
             $classes[] = 'contact-list-' . $settings['design_style'];

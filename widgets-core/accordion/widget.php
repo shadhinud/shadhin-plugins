@@ -13,11 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Accordion extends Widget_Base {
+class MH_Elementor_Accordion extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_register_style( 'tm-accordion-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/accordion' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-accordion-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/accordion' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -30,7 +30,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-accordion';
+		return 'mh-ele-accordion';
 	}
 
 	/**
@@ -56,7 +56,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -93,7 +93,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-accordion-style' ];
+		return [ 'mh-accordion-style' ];
 	}
 
 	/**
@@ -120,7 +120,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -237,9 +237,9 @@ class TM_Elementor_Accordion extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-header .title:not(.collapsed) .accordion-controls-icon' => 'transform: rotate({{SIZE}}deg);',
-					'{{WRAPPER}} .tm-accordion .card .card-header .title:not(.collapsed) .accordion-controls-icon' => '-ms-transform: rotate({{SIZE}}deg);',
-					'{{WRAPPER}} .tm-accordion .card .card-header .title:not(.collapsed) .accordion-controls-icon' => '-webkit-transform: rotate({{SIZE}}deg);',
+					'{{WRAPPER}} .mh-accordion .card .card-header .title:not(.collapsed) .accordion-controls-icon' => 'transform: rotate({{SIZE}}deg);',
+					'{{WRAPPER}} .mh-accordion .card .card-header .title:not(.collapsed) .accordion-controls-icon' => '-ms-transform: rotate({{SIZE}}deg);',
+					'{{WRAPPER}} .mh-accordion .card .card-header .title:not(.collapsed) .accordion-controls-icon' => '-webkit-transform: rotate({{SIZE}}deg);',
 				],
 			]
 		);
@@ -281,7 +281,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title',
 			]
 		);
 		$this->add_control(
@@ -298,7 +298,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -310,7 +310,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -328,7 +328,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -340,7 +340,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -351,7 +351,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -363,7 +363,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -373,7 +373,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Radius", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-accordion .card-header .title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -382,7 +382,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title',
 			]
 		);
 		$this->add_control(
@@ -398,7 +398,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title',
 			]
 		);
 		$this->add_responsive_control(
@@ -406,7 +406,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title.collapsed' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title.collapsed' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -417,7 +417,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title.collapsed' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title.collapsed' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -443,7 +443,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)' => 'color: {{VALUE}} !important;',
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)' => 'color: {{VALUE}} !important;',
 				]
 			]
 		);
@@ -455,7 +455,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)' => 'color: var(--theme-color{{VALUE}}) !important;',
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)' => 'color: var(--theme-color{{VALUE}}) !important;',
 				],
 			]
 		);
@@ -473,7 +473,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)' => 'background-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)' => 'background-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -485,7 +485,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)' => 'background-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)' => 'background-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -494,7 +494,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_boxshadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)',
 			]
 		);
 		$this->add_control(
@@ -510,7 +510,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -521,7 +521,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed)' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed)' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -557,7 +557,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_icon_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon',
 			]
 		);
 		$this->add_control(
@@ -574,7 +574,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -586,7 +586,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -604,7 +604,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -616,7 +616,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -627,7 +627,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -639,7 +639,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -649,7 +649,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Radius", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -658,7 +658,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_icon_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon',
 			]
 		);
 		$this->add_control(
@@ -674,7 +674,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_icon_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title .accordion-controls-icon',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title .accordion-controls-icon',
 			]
 		);
 		$this->add_responsive_control(
@@ -682,7 +682,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title.collapsed .accordion-controls-icon' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title.collapsed .accordion-controls-icon' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -693,7 +693,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title.collapsed .accordion-controls-icon' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title.collapsed .accordion-controls-icon' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -719,7 +719,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'color: {{VALUE}} !important;',
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'color: {{VALUE}} !important;',
 				]
 			]
 		);
@@ -731,7 +731,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'color: var(--theme-color{{VALUE}}) !important;',
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'color: var(--theme-color{{VALUE}}) !important;',
 				],
 			]
 		);
@@ -749,7 +749,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'background-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'background-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -761,7 +761,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'background-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'background-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -770,7 +770,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'title_icon_boxshadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon',
+				'selector' => '{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon',
 			]
 		);
 		$this->add_control(
@@ -786,7 +786,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -797,7 +797,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -808,7 +808,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -820,7 +820,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card-header .title:not(.collapsed) .accordion-controls-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -849,7 +849,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'content_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card .card-body',
+				'selector' => '{{WRAPPER}} .mh-accordion .card .card-body',
 			]
 		);
 		$this->add_control(
@@ -866,7 +866,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -878,7 +878,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -896,7 +896,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -908,7 +908,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -919,7 +919,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -929,7 +929,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Radius", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -938,7 +938,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'content_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card .card-body',
+				'selector' => '{{WRAPPER}} .mh-accordion .card .card-body',
 			]
 		);
 		$this->add_control(
@@ -954,7 +954,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'content_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card .card-body',
+				'selector' => '{{WRAPPER}} .mh-accordion .card .card-body',
 			]
 		);
 		$this->add_responsive_control(
@@ -962,7 +962,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -973,7 +973,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card .card-body' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card .card-body' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -1003,7 +1003,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card:not(:last-child)' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-accordion .card:not(:last-child)' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1021,7 +1021,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-accordion .card' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1033,7 +1033,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-accordion .card' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1043,7 +1043,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'name' => 'wrapper_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .tm-accordion .card',
+				'selector' => '{{WRAPPER}} .mh-accordion .card',
 				'separator' => 'before',
 			]
 		);
@@ -1053,7 +1053,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Radius", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-accordion .card' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 				'separator' => 'before',
 			]
@@ -1063,7 +1063,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card',
+				'selector' => '{{WRAPPER}} .mh-accordion .card',
 				'separator' => 'before',
 			]
 		);
@@ -1080,7 +1080,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'wrapper_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card',
+				'selector' => '{{WRAPPER}} .mh-accordion .card',
 			]
 		);
 		$this->add_responsive_control(
@@ -1088,7 +1088,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1099,7 +1099,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -1118,7 +1118,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'name' => 'wrapper_background_active',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .tm-accordion .card.active',
+				'selector' => '{{WRAPPER}} .mh-accordion .card.active',
 			]
 		);
 		$this->add_group_control(
@@ -1126,7 +1126,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'wrapper_boxshadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card.active',
+				'selector' => '{{WRAPPER}} .mh-accordion .card.active',
 				'separator' => 'before',
 			]
 		);
@@ -1143,7 +1143,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 			[
 				'name' => 'wrapper_border_active',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-accordion .card.active',
+				'selector' => '{{WRAPPER}} .mh-accordion .card.active',
 			]
 		);
 		$this->add_responsive_control(
@@ -1151,7 +1151,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card.active' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-accordion .card.active' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1162,7 +1162,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-accordion .card.active' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-accordion .card.active' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -1186,7 +1186,7 @@ class TM_Elementor_Accordion extends Widget_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-accordion';
+		$classes[] = 'mh-accordion';
 		if( $settings['icon_round_border'] === 'yes' ) {
 			$classes[] = 'icon-round-border';
 		}

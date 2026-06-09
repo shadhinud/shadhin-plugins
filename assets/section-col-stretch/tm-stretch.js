@@ -3,25 +3,25 @@
 /* ====================================== */
 /* Reset and rearrange Stretched Column
 /* ====================================== */
-var tm_rearrange_stretched_col = function( model_id ) {
+var mh_rearrange_stretched_col = function( model_id ) {
 	if( jQuery('body').hasClass('elementor-editor-active') ){
 		jQuery( '*[data-id="'+model_id+'"]' ).each(function(){
-			jQuery('.tm-stretched-div', this).remove();
+			jQuery('.mh-stretched-div', this).remove();
 			jQuery('.elementor-widget-wrap', this).removeAttr('style');
-			setTimeout(function(){ tm_stretched_col(); }, 50);
-		});	
+			setTimeout(function(){ mh_stretched_col(); }, 50);
+		});
 	}
 }
 
 /* ====================================== */
 /* Stretched Column
 /* ====================================== */
-var tm_stretched_col = function() {
+var mh_stretched_col = function() {
 	jQuery('.elementor-element.e-parent').each(function(){
-		if( jQuery(this).hasClass('tm-col-stretched-left') || jQuery(this).hasClass('tm-col-stretched-right') || jQuery(this).hasClass('tm-col-stretched-both') ){
-			jQuery(this).addClass('tm-col-stretched-yes').removeClass('tm-col-stretched-no');
+		if( jQuery(this).hasClass('mh-col-stretched-left') || jQuery(this).hasClass('mh-col-stretched-right') || jQuery(this).hasClass('mh-col-stretched-both') ){
+			jQuery(this).addClass('mh-col-stretched-yes').removeClass('mh-col-stretched-no');
 		} else {
-			jQuery(this).addClass('tm-col-stretched-no').removeClass('tm-col-stretched-yes');
+			jQuery(this).addClass('mh-col-stretched-no').removeClass('mh-col-stretched-yes');
 		}
 	});
 
@@ -31,8 +31,8 @@ var tm_stretched_col = function() {
 		var ThisColumn	= '';
 		jQuery( '.elementor-element.e-child', ThisSection ).each(function(){
 			ThisColumn	= jQuery(this);
-			jQuery( '.tm-stretched-div', ThisColumn ).remove();
-			ThisColumn.removeClass('tm-col-stretched-yes tm-col-stretched-left tm-col-stretched-right tm-col-stretched-content-yes');
+			jQuery( '.mh-stretched-div', ThisColumn ).remove();
+			ThisColumn.removeClass('mh-col-stretched-yes mh-col-stretched-left mh-col-stretched-right mh-col-stretched-content-yes');
 		});
 	});
 
@@ -47,7 +47,7 @@ var tm_stretched_col = function() {
 		});
 	});
 
-	jQuery('.elementor-element.e-parent.tm-col-stretched-yes').each(function(){
+	jQuery('.elementor-element.e-parent.mh-col-stretched-yes').each(function(){
 
 		var ThisSection		= jQuery(this);
 		var ThisColumn		= '';
@@ -55,10 +55,10 @@ var tm_stretched_col = function() {
 		var StretchedEle	= '';
 		var StretchedInnerEle = '';
 
-		if( ThisSection.hasClass('tm-col-stretched-left') || ThisSection.hasClass('tm-col-stretched-both') ){
+		if( ThisSection.hasClass('mh-col-stretched-left') || ThisSection.hasClass('mh-col-stretched-both') ){
 			ThisColumn = jQuery( '.elementor-element.e-child', ThisSection ).first();
 
-			if( jQuery('.tm-stretched-div', ThisColumn).length == 0 ){
+			if( jQuery('.mh-stretched-div', ThisColumn).length == 0 ){
 
 				if( ThisColumn.children('.e-con-inner').length > 0 ){
 					ColWrapper = ThisColumn.children('.e-con-inner');
@@ -68,33 +68,33 @@ var tm_stretched_col = function() {
 
 				//add parent class to this stretch div to get all css code
 				var data_id = ThisColumn.data('id');
-				ThisColumn.prepend( '<div class="tm-stretched-div elementor-element elementor-element-'+data_id+'"></div>' );
+				ThisColumn.prepend( '<div class="mh-stretched-div elementor-element elementor-element-'+data_id+'"></div>' );
 
 				// Stretched Element
-				StretchedEle = ThisColumn.children('.tm-stretched-div');
+				StretchedEle = ThisColumn.children('.mh-stretched-div');
 
 				// RTL
 				if( jQuery('body').hasClass('rtl') ){
-					StretchedEle.addClass( 'tm-stretched-right tm-stretched-for-rtl' );
-					ThisColumn.addClass('tm-col-stretched-yes tm-col-stretched-right tm-col-stretched-for-rtl');
+					StretchedEle.addClass( 'mh-stretched-right mh-stretched-for-rtl' );
+					ThisColumn.addClass('mh-col-stretched-yes mh-col-stretched-right mh-col-stretched-for-rtl');
 				} else {
-					StretchedEle.addClass( 'tm-stretched-left' );
-					ThisColumn.addClass('tm-col-stretched-yes tm-col-stretched-left');
+					StretchedEle.addClass( 'mh-stretched-left' );
+					ThisColumn.addClass('mh-col-stretched-yes mh-col-stretched-left');
 				}
 
 				// specially for Skew view only
-				if( ThisColumn.hasClass('tm-skew-yes') ){
-					StretchedEle.prepend( '<div class="tm-stretched-inner-div"></div>' );
-					StretchedInnerEle = StretchedEle.children('.tm-stretched-inner-div');
+				if( ThisColumn.hasClass('mh-skew-yes') ){
+					StretchedEle.prepend( '<div class="mh-stretched-inner-div"></div>' );
+					StretchedInnerEle = StretchedEle.children('.mh-stretched-inner-div');
 					StretchedInnerEle.css('position', 'absolute');
 					StretchedInnerEle.css('width', '100%');
 					StretchedInnerEle.css('height', '100%');
 				}
 
-				if( ThisSection.hasClass('tm-left-col-stretched-content-yes') ){
-					ThisColumn.addClass('tm-col-stretched-content-yes');
+				if( ThisSection.hasClass('mh-left-col-stretched-content-yes') ){
+					ThisColumn.addClass('mh-col-stretched-content-yes');
 				} else {
-					ThisColumn.removeClass('tm-col-stretched-content-yes');
+					ThisColumn.removeClass('mh-col-stretched-content-yes');
 				}
 
 				// background move to stretched div
@@ -102,7 +102,7 @@ var tm_stretched_col = function() {
 				var bgImage =  ThisColumn.css('background-image');
 				if( bgImage!='none' && bgImage!='' ){
 					// specially for Skew view only
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-image', bgImage );
 					} else {
 						StretchedEle.css('background-image', bgImage );
@@ -175,19 +175,19 @@ var tm_stretched_col = function() {
 					}
 
 					// specially for Skew view only
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-color', bgColor );
 					} else {
 						StretchedEle.css('background-color', bgColor );
 					}
-					
+
 					ThisColumn.css('background-color', 'transparent');
 				}
 
 				// Background Position
 				var bgPosition = ThisColumn.css('background-position');
 				if( bgPosition!='' ){
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-position', bgPosition );
 					} else {
 						StretchedEle.css('background-position', bgPosition );
@@ -197,7 +197,7 @@ var tm_stretched_col = function() {
 				// Background Repeat
 				var bgRepeat = ThisColumn.css('background-repeat');
 				if( bgRepeat!='' ){
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-repeat', bgRepeat );
 					} else {
 						StretchedEle.css('background-repeat', bgRepeat );
@@ -207,23 +207,23 @@ var tm_stretched_col = function() {
 				// Background Size
 				var bgSize = ThisColumn.css('background-size');
 				if( bgSize!='' ){
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-size', bgSize );
 					} else {
 						StretchedEle.css('background-size', bgSize );
 					}
 				}
 
-				tm_stretched_col_calc();
+				mh_stretched_col_calc();
 
 			}
 
 		}
 
-		if( ThisSection.hasClass('tm-col-stretched-right') || ThisSection.hasClass('tm-col-stretched-both') ){
+		if( ThisSection.hasClass('mh-col-stretched-right') || ThisSection.hasClass('mh-col-stretched-both') ){
 			ThisColumn = ThisSection.children('.e-con-inner').children('.elementor-element.e-child').last();
 
-			if( jQuery('.tm-stretched-div', ThisColumn).length==0 ){
+			if( jQuery('.mh-stretched-div', ThisColumn).length==0 ){
 
 				if( ThisColumn.children('.e-con-inner').length > 0 ){
 					ColWrapper = ThisColumn.children('.e-con-inner');
@@ -233,33 +233,33 @@ var tm_stretched_col = function() {
 
 				//add parent class to this stretch div to get all css code
 				var data_id = ThisColumn.data('id');
-				ThisColumn.prepend( '<div class="tm-stretched-div elementor-element elementor-element-'+data_id+'"></div>' );
+				ThisColumn.prepend( '<div class="mh-stretched-div elementor-element elementor-element-'+data_id+'"></div>' );
 
 				// Stretched Element
-				StretchedEle = ThisColumn.children('.tm-stretched-div');
+				StretchedEle = ThisColumn.children('.mh-stretched-div');
 
 				// RTL
 				if( jQuery('body').hasClass('rtl') ){
-					StretchedEle.addClass( 'tm-stretched-left tm-stretched-for-rtl' );
-					ThisColumn.addClass('tm-col-stretched-yes tm-col-stretched-left tm-col-stretched-for-rtl');
+					StretchedEle.addClass( 'mh-stretched-left mh-stretched-for-rtl' );
+					ThisColumn.addClass('mh-col-stretched-yes mh-col-stretched-left mh-col-stretched-for-rtl');
 				} else {
-					StretchedEle.addClass( 'tm-stretched-right' );
-					ThisColumn.addClass('tm-col-stretched-yes tm-col-stretched-right');
+					StretchedEle.addClass( 'mh-stretched-right' );
+					ThisColumn.addClass('mh-col-stretched-yes mh-col-stretched-right');
 				}
 
 				// specially for Skew view only
-				if( ThisColumn.hasClass('tm-skew-yes') ){
-					StretchedEle.prepend( '<div class="tm-stretched-inner-div"></div>' );
-					StretchedInnerEle = StretchedEle.children('.tm-stretched-inner-div');
+				if( ThisColumn.hasClass('mh-skew-yes') ){
+					StretchedEle.prepend( '<div class="mh-stretched-inner-div"></div>' );
+					StretchedInnerEle = StretchedEle.children('.mh-stretched-inner-div');
 					StretchedInnerEle.css('position', 'absolute');
 					StretchedInnerEle.css('width', '100%');
 					StretchedInnerEle.css('height', '100%');
 				}
 
-				if( ThisSection.hasClass('tm-right-col-stretched-content-yes') ){
-					ThisColumn.addClass('tm-col-stretched-content-yes');
+				if( ThisSection.hasClass('mh-right-col-stretched-content-yes') ){
+					ThisColumn.addClass('mh-col-stretched-content-yes');
 				} else {
-					ThisColumn.removeClass('tm-col-stretched-content-yes');
+					ThisColumn.removeClass('mh-col-stretched-content-yes');
 				}
 
 				// background move to stretched div
@@ -267,7 +267,7 @@ var tm_stretched_col = function() {
 				var bgImage = ThisColumn.css('background-image');
 				if( bgImage!='none' && bgImage!='' ){
 					// specially for Skew view only
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-image', bgImage );
 					} else {
 						StretchedEle.css('background-image', bgImage );
@@ -315,7 +315,7 @@ var tm_stretched_col = function() {
 							y = y.trim();
 							colors.push(y);
 						});
-						
+
 						bgColor = 'rgb(';
 						var loopx = 1;
 						var opacity = 'n'
@@ -338,7 +338,7 @@ var tm_stretched_col = function() {
 					}
 
 					// specially for Skew view only
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-color', bgColor );
 					} else {
 						StretchedEle.css('background-color', bgColor );
@@ -349,7 +349,7 @@ var tm_stretched_col = function() {
 				// Background Position
 				var bgPosition = ThisColumn.css('background-position');
 				if( bgPosition!='' ){
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-position', bgPosition );
 					} else {
 						StretchedEle.css('background-position', bgPosition );
@@ -359,7 +359,7 @@ var tm_stretched_col = function() {
 				// Background Repeat
 				var bgRepeat = ThisColumn.css('background-repeat');
 				if( bgRepeat!='' ){
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-repeat', bgRepeat );
 					} else {
 						StretchedEle.css('background-repeat', bgRepeat );
@@ -369,14 +369,14 @@ var tm_stretched_col = function() {
 				// Background Size
 				var bgSize = ThisColumn.css('background-size');
 				if( bgSize!='' ){
-					if( ThisColumn.hasClass('tm-skew-yes') ){
+					if( ThisColumn.hasClass('mh-skew-yes') ){
 						StretchedInnerEle.css('background-size', bgSize );
 					} else {
 						StretchedEle.css('background-size', bgSize );
 					}
 				}
 
-				tm_stretched_col_calc();
+				mh_stretched_col_calc();
 
 			}
 		}
@@ -385,10 +385,10 @@ var tm_stretched_col = function() {
 
 };
 
-var tm_stretched_col_calc = function() {
+var mh_stretched_col_calc = function() {
 
 	// padding left or right
-	if( jQuery('.elementor-element.e-parent > .e-con-inner .elementor-element.e-child.tm-col-stretched-yes').length>0 ){
+	if( jQuery('.elementor-element.e-parent > .e-con-inner .elementor-element.e-child.mh-col-stretched-yes').length>0 ){
 
 		// Returns width of browser viewport
 		var window_width = jQuery( window ).width();
@@ -396,9 +396,9 @@ var tm_stretched_col_calc = function() {
 		// Returns width of HTML document
 		var document_width = jQuery( document ).width();
 
-		jQuery('.elementor-element.e-parent > .e-con-inner .elementor-element.e-child.tm-col-stretched-yes').each(function(){
+		jQuery('.elementor-element.e-parent > .e-con-inner .elementor-element.e-child.mh-col-stretched-yes').each(function(){
 
-			if( jQuery(this).closest('.elementor-element.e-parent').hasClass('tm-col-stretched-both') && ( jQuery(this).hasClass('elementor-col-100') || jQuery(this).attr('data-col') == '100' ) ){
+			if( jQuery(this).closest('.elementor-element.e-parent').hasClass('mh-col-stretched-both') && ( jQuery(this).hasClass('elementor-col-100') || jQuery(this).attr('data-col') == '100' ) ){
 				// Do nothing
 			} else {
 				var this_ele    = jQuery(this);
@@ -406,12 +406,12 @@ var tm_stretched_col_calc = function() {
 				var extra_width = ((window_width - curr_width)/2);
 				var parent_width = '';
 
-				if( this_ele.hasClass('tm-skew-yes') ){
+				if( this_ele.hasClass('mh-skew-yes') ){
 					extra_width = extra_width + 100;
 				}
 
 				var position = 'left';
-				if( jQuery(this).hasClass('tm-col-stretched-right') ){
+				if( jQuery(this).hasClass('mh-col-stretched-right') ){
 					position = 'right';
 				}
 
@@ -425,8 +425,8 @@ var tm_stretched_col_calc = function() {
 					jQuery(this).children('.e-con-inner') .css('width','');
 				}
 
-				jQuery('.tm-stretched-div', jQuery(this)).css( 'margin-'+position,'-'+extra_width+'px' );
-				jQuery('.tm-stretched-div+.elementor-background-overlay', jQuery(this)).css( 'margin-'+position,'-'+extra_width+'px' ).css({
+				jQuery('.mh-stretched-div', jQuery(this)).css( 'margin-'+position,'-'+extra_width+'px' );
+				jQuery('.mh-stretched-div+.elementor-background-overlay', jQuery(this)).css( 'margin-'+position,'-'+extra_width+'px' ).css({
 					'width' : 'auto',
 					'left' : '0',
 					'right' : '0'
@@ -434,10 +434,10 @@ var tm_stretched_col_calc = function() {
 
 
 				// stretched column content too
-				if( jQuery(this).hasClass('tm-col-stretched-content-yes') ){
-					
-					jQuery('.tm-stretched-div', jQuery(this)).css( 'margin-'+position, "" );
-					var stretched_width = jQuery('.tm-stretched-div', jQuery(this) ).width() + extra_width;
+				if( jQuery(this).hasClass('mh-col-stretched-content-yes') ){
+
+					jQuery('.mh-stretched-div', jQuery(this)).css( 'margin-'+position, "" );
+					var stretched_width = jQuery('.mh-stretched-div', jQuery(this) ).width() + extra_width;
 					if( jQuery(this).children('.e-con-inner').length > 0 ){
 						jQuery(this).children('.e-con-inner').css( 'margin-'+position,'-'+extra_width+'px' );
 						jQuery(this).children('.e-con-inner').css( 'width', stretched_width+'px' );
@@ -467,53 +467,53 @@ var tm_stretched_col_calc = function() {
 /* ============================================== */
 /* BG Image yes class in each Section and Column
 /* ============================================== */
-var tm_bgimage_class = function() {
+var mh_bgimage_class = function() {
 	jQuery('.elementor-element.e-parent').each(function() {
 
 		if( jQuery(this).css('background-image')!='' && jQuery(this).css('background-image')!='none' ){
-			jQuery(this).addClass('tm-bgimage-yes' ).removeClass('tm-bgimage-no' );
+			jQuery(this).addClass('mh-bgimage-yes' ).removeClass('mh-bgimage-no' );
 		} else {
-			jQuery(this).addClass('tm-bgimage-no' ).removeClass('tm-bgimage-yes' );
+			jQuery(this).addClass('mh-bgimage-no' ).removeClass('mh-bgimage-yes' );
 		}
 	});
 	jQuery('.elementor-element.e-child').each(function() {
 
 		if( jQuery(this).children('.e-con-inner').length > 0 ){
 
-			if( jQuery(this).children('.e-con-inner').children('.tm-stretched-div').length > 0 ){
+			if( jQuery(this).children('.e-con-inner').children('.mh-stretched-div').length > 0 ){
 
-				if( jQuery(this).children('.e-con-inner').children('.tm-stretched-div').css('background-image') == 'none' || jQuery(this).children('.e-con-inner').children('.tm-stretched-div').css('background-image') == '' ){
-					jQuery(this).addClass('tm-bgimage-no' ).removeClass('tm-bgimage-yes' );
+				if( jQuery(this).children('.e-con-inner').children('.mh-stretched-div').css('background-image') == 'none' || jQuery(this).children('.e-con-inner').children('.mh-stretched-div').css('background-image') == '' ){
+					jQuery(this).addClass('mh-bgimage-no' ).removeClass('mh-bgimage-yes' );
 				} else {
-					jQuery(this).addClass('tm-bgimage-yes' ).removeClass('tm-bgimage-no' );
+					jQuery(this).addClass('mh-bgimage-yes' ).removeClass('mh-bgimage-no' );
 				}
 
 			} else {
 
 				if( jQuery(this).children('.e-con-inner').css('background-image') == 'none' || jQuery(this).children('.e-con-inner').css('background-image') == '' ){
-					jQuery(this).addClass('tm-bgimage-no' ).removeClass('tm-bgimage-yes' );
+					jQuery(this).addClass('mh-bgimage-no' ).removeClass('mh-bgimage-yes' );
 				} else {
-					jQuery(this).addClass('tm-bgimage-yes' ).removeClass('tm-bgimage-no' );
+					jQuery(this).addClass('mh-bgimage-yes' ).removeClass('mh-bgimage-no' );
 				}
 
 			}
 
 		} else {
 
-			if( jQuery(this).children('.elementor-widget-wrap').children('.tm-stretched-div').length > 0 ){
+			if( jQuery(this).children('.elementor-widget-wrap').children('.mh-stretched-div').length > 0 ){
 
-				if( jQuery(this).children('.elementor-widget-wrap').children('.tm-stretched-div').css('background-image') == 'none' || jQuery(this).children('.elementor-widget-wrap').children('.tm-stretched-div').css('background-image') == '' ){
-					jQuery(this).addClass('tm-bgimage-no' ).removeClass('tm-bgimage-yes' );
+				if( jQuery(this).children('.elementor-widget-wrap').children('.mh-stretched-div').css('background-image') == 'none' || jQuery(this).children('.elementor-widget-wrap').children('.mh-stretched-div').css('background-image') == '' ){
+					jQuery(this).addClass('mh-bgimage-no' ).removeClass('mh-bgimage-yes' );
 				} else {
-					jQuery(this).addClass('tm-bgimage-yes' ).removeClass('tm-bgimage-no' );
+					jQuery(this).addClass('mh-bgimage-yes' ).removeClass('mh-bgimage-no' );
 				}
 
 			} else {
 
 				if( jQuery(this).children('.elementor-widget-wrap').css('background-image') == 'none' || jQuery(this).children('.elementor-widget-wrap').css('background-image') == '' ){
-					jQuery(this).addClass('tm-bgimage-no' ).removeClass('tm-bgimage-yes' );
+					jQuery(this).addClass('mh-bgimage-no' ).removeClass('mh-bgimage-yes' );
 				} else {
-					jQuery(this).addClass('tm-bgimage-yes' ).removeClass('tm-bgimage-no' );
+					jQuery(this).addClass('mh-bgimage-yes' ).removeClass('mh-bgimage-no' );
 				}
 
 			}
@@ -525,18 +525,18 @@ var tm_bgimage_class = function() {
 /* ============================================== */
 /* BG Color yes class in each Section and Column
 /* ============================================== */
-var tm_bgcolor_class = function() {
+var mh_bgcolor_class = function() {
 	jQuery('.elementor-element.e-parent').each(function() {
 		if( jQuery(this).css('background-color')!='' && jQuery(this).css('background-color')!='transparent' ){
-			jQuery(this).addClass('tm-bgcolor-yes');
+			jQuery(this).addClass('mh-bgcolor-yes');
 		}
 	});
 	jQuery('.elementor-element.e-child').each(function() {
-		if( jQuery(this).children('.tm-stretched-div').length ){
-			if( jQuery(this).children('.tm-stretched-div').css('background-color')!='' && jQuery(this).children('.tm-stretched-div').css('background-color')!='transparent' ){
-				jQuery(this).addClass('tm-bgcolor-yes' ).removeClass('tm-bgcolor-no' );
+		if( jQuery(this).children('.mh-stretched-div').length ){
+			if( jQuery(this).children('.mh-stretched-div').css('background-color')!='' && jQuery(this).children('.mh-stretched-div').css('background-color')!='transparent' ){
+				jQuery(this).addClass('mh-bgcolor-yes' ).removeClass('mh-bgcolor-no' );
 			} else {
-				jQuery(this).addClass('tm-bgcolor-no' ).removeClass('tm-bgcolor-yes' );
+				jQuery(this).addClass('mh-bgcolor-no' ).removeClass('mh-bgcolor-yes' );
 			}
 		} else {
 
@@ -544,17 +544,17 @@ var tm_bgcolor_class = function() {
 			if( jQuery(this).children('.e-con-inner').length > 0 ){
 
 				if( jQuery(this).children('.e-con-inner').css('background-color') == 'transparent' || jQuery(this).children('.e-con-inner').css('background-color') == '' ){
-					jQuery(this).addClass('tm-bgcolor-no' ).removeClass('tm-bgcolor-yes' );
+					jQuery(this).addClass('mh-bgcolor-no' ).removeClass('mh-bgcolor-yes' );
 				} else {
-					jQuery(this).addClass('tm-bgcolor-yes' ).removeClass('tm-bgcolor-no' );
+					jQuery(this).addClass('mh-bgcolor-yes' ).removeClass('mh-bgcolor-no' );
 				}
 
 			} else {
 
 				if( jQuery(this).children('.elementor-widget-wrap').css('background-color') == 'transparent' || jQuery(this).children('.elementor-widget-wrap').css('background-color') == '' ){
-					jQuery(this).addClass('tm-bgcolor-no' ).removeClass('tm-bgcolor-yes' );
+					jQuery(this).addClass('mh-bgcolor-no' ).removeClass('mh-bgcolor-yes' );
 				} else {
-					jQuery(this).addClass('tm-bgcolor-yes' ).removeClass('tm-bgcolor-no' );
+					jQuery(this).addClass('mh-bgcolor-yes' ).removeClass('mh-bgcolor-no' );
 				}
 
 			}
@@ -568,17 +568,17 @@ var tm_bgcolor_class = function() {
 // On resize
 jQuery(window).resize(function(){
 	setTimeout(function() {
-		tm_stretched_col_calc();
+		mh_stretched_col_calc();
 	}, 100);
 });
 
 // on ready
 jQuery(document).ready(function(){
-	tm_stretched_col();
-	tm_stretched_col_calc();
-	tm_bgimage_class();
-	tm_bgcolor_class();
+	mh_stretched_col();
+	mh_stretched_col_calc();
+	mh_bgimage_class();
+	mh_bgcolor_class();
 	setTimeout(function() {
-		tm_stretched_col_calc();
+		mh_stretched_col_calc();
 	}, 100);
 });

@@ -64,8 +64,8 @@ final class Shadhin_plugins_Elementor {
 		define( 'SHADHIN_PLUGINS_ABS_PATH', plugin_dir_path( __FILE__ ) );
 		define( 'SHADHIN_PLUGINS_URI', plugin_dir_url( __FILE__ ) );
 		define( 'SHADHIN_PLUGINS_ASSETS_URI', SHADHIN_PLUGINS_URI. 'assets' );
-		if ( ! defined( 'TM_ELEMENTOR_WIDGET_BADGE' ) ) {
-			define( 'TM_ELEMENTOR_WIDGET_BADGE', '<span class="tm-elementor-widget-badge"></span>' );
+		if ( ! defined( 'MH_ELEMENTOR_WIDGET_BADGE' ) ) {
+			define( 'MH_ELEMENTOR_WIDGET_BADGE', '<span class="mh-elementor-widget-badge"></span>' );
 		}//Add prefix for all widgets
 
 		// Load translation

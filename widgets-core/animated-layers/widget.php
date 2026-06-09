@@ -13,13 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Animated_Layers extends Widget_Base {
+class MH_Elementor_Animated_Layers extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-animated-layer-advanced-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/animated-layer-advanced' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-animated-layer-advanced-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/animated-layer-advanced' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_Animated_Layers extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-animated-layers';
+		return 'mh-ele-animated-layers';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_Animated_Layers extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Animated_Layers extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-animated-layer-advanced-style' ];
+		return [ 'mh-animated-layer-advanced-style' ];
 	}
 
 	/**
@@ -110,7 +110,7 @@ class TM_Elementor_Animated_Layers extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -404,9 +404,9 @@ class TM_Elementor_Animated_Layers extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => [
 					'' =>  esc_html__( 'No Animation', 'shadhin-plugins' ),
-					'tm-item-appear-clip-path'  =>  esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
-					'tm-item-appear-clip-path-right'  =>  esc_html__( 'Clip Path Animation Right to Left', 'shadhin-plugins' ),
-					'tm-appear-block-holder'  =>  esc_html__( 'Block Clip Path Animation', 'shadhin-plugins' ),
+					'mh-item-appear-clip-path'  =>  esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
+					'mh-item-appear-clip-path-right'  =>  esc_html__( 'Clip Path Animation Right to Left', 'shadhin-plugins' ),
+					'mh-appear-block-holder'  =>  esc_html__( 'Block Clip Path Animation', 'shadhin-plugins' ),
 				],
 			]
 		);
@@ -1432,7 +1432,7 @@ class TM_Elementor_Animated_Layers extends Widget_Base {
 		$html = '';
 		//classes
 		$classes = array();
-		$classes[] = 'tm-sc-animated-layer-advanced';
+		$classes[] = 'mh-sc-animated-layer-advanced';
 		$classes[] = $settings['custom_css_class'];
 		if( $settings['parent_image_animation_effect'] ) {
 			$classes[] = $settings['parent_image_animation_effect'];

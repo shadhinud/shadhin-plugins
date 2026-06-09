@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Clients_logo extends Widget_Base {
+class MH_Elementor_Clients_logo extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-clients-logo-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/clients-logo' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-clients-logo-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/clients-logo' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-clients-logo';
+		return 'mh-ele-clients-logo';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-clients-logo-style' ];
+		return [ 'mh-clients-logo-style' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_items_section',
+			'mh_items_section',
 			[
 				'label' => esc_html__( 'Items', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -179,7 +179,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -254,7 +254,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'label' => esc_html__( 'Filter Logo to White', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb' => 'filter:brightness(0) invert(1);',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb' => 'filter:brightness(0) invert(1);',
 				],
 			]
 		);
@@ -264,7 +264,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'label' => esc_html__( 'Filter Logo to White (Hover)', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb:hover' => 'filter:brightness(0) invert(1);',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb:hover' => 'filter:brightness(0) invert(1);',
 				],
 			]
 		);
@@ -274,7 +274,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'label' => esc_html__( 'Filter Logo to Black', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb' => 'filter:brightness(0) invert(0);',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb' => 'filter:brightness(0) invert(0);',
 				],
 			]
 		);
@@ -284,7 +284,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'label' => esc_html__( 'Filter Logo to Black (Hover)', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb:hover' => 'filter:brightness(0) invert(0);',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb:hover' => 'filter:brightness(0) invert(0);',
 				],
 			]
 		);
@@ -316,7 +316,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_disply_flex_vertical_align_elementor(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'display:flex; align-items: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'display:flex; align-items: {{VALUE}};',
 				],
 			]
 		);
@@ -328,7 +328,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_disply_flex_horizontal_align_elementor(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'display:flex; justify-content: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'display:flex; justify-content: {{VALUE}};',
 				],
 			]
 		);
@@ -346,7 +346,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo' => 'column-gap: {{SIZE}}%;',
+					'{{WRAPPER}} .mh-sc-clients-logo' => 'column-gap: {{SIZE}}%;',
 				],
 			]
 		);
@@ -372,7 +372,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -399,7 +399,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo img' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo img' => 'width: {{SIZE}}{{UNIT}}; max-width: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -410,7 +410,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -422,7 +422,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -433,7 +433,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -451,7 +451,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 			[
 				'name' => 'each_logo_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-clients-logo .each-logo',
+				'selector' => '{{WRAPPER}} .mh-sc-clients-logo .each-logo',
 			]
 		);
 		$this->add_control(
@@ -467,7 +467,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 			[
 				'name' => 'each_logo_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-clients-logo .each-logo',
+				'selector' => '{{WRAPPER}} .mh-sc-clients-logo .each-logo',
 			]
 		);
 		$this->add_responsive_control(
@@ -477,7 +477,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -495,7 +495,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -507,7 +507,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -531,7 +531,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb' => 'opacity: {{SIZE}};'
 				]
 			]
 		);
@@ -549,7 +549,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 			[
 				'name' => 'each_logo_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-clients-logo .each-logo:hover',
+				'selector' => '{{WRAPPER}} .mh-sc-clients-logo .each-logo:hover',
 			]
 		);
 		$this->add_control(
@@ -565,7 +565,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 			[
 				'name' => 'each_logo_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-clients-logo .each-logo:hover',
+				'selector' => '{{WRAPPER}} .mh-sc-clients-logo .each-logo:hover',
 			]
 		);
 		$this->add_responsive_control(
@@ -575,7 +575,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo:hover' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo:hover' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -593,7 +593,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo:hover' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo:hover' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -605,7 +605,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo:hover' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo:hover' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -629,7 +629,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb:hover, {{WRAPPER}} .tm-sc-clients-logo .each-logo .thumb-hover:hover' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb:hover, {{WRAPPER}} .mh-sc-clients-logo .each-logo .thumb-hover:hover' => 'opacity: {{SIZE}};'
 				]
 			]
 		);
@@ -655,7 +655,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 			[
 				'name' => 'each_logo_border_first',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-clients-logo .each-logo:first-child',
+				'selector' => '{{WRAPPER}} .mh-sc-clients-logo .each-logo:first-child',
 			]
 		);
 		$this->add_responsive_control(
@@ -665,7 +665,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo:first-child' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo:first-child' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -691,7 +691,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 			[
 				'name' => 'each_logo_border_last',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-clients-logo .each-logo:last-child',
+				'selector' => '{{WRAPPER}} .mh-sc-clients-logo .each-logo:last-child',
 			]
 		);
 		$this->add_responsive_control(
@@ -701,7 +701,7 @@ class TM_Elementor_Clients_logo extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-clients-logo .each-logo:last-child' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-sc-clients-logo .each-logo:last-child' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);

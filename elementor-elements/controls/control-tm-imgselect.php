@@ -27,13 +27,13 @@ class DSVY_imgselect extends \Elementor\Base_Data_Control {
 	 * @return string Control type.
 	 */
 	public function get_type() {
-		return 'tm_imgselect';
+		return 'mh_imgselect';
     }
 
     public function enqueue() {
 		// Styles
-		wp_register_style( 'tm-elementor-base', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/tm-stretch-base.css' );
-		wp_enqueue_style( 'tm-elementor-base' );
+		wp_register_style( 'mh-elementor-base', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/mh-stretch-base.css' );
+		wp_enqueue_style( 'mh-elementor-base' );
 	}
 
 	/**
@@ -72,12 +72,12 @@ class DSVY_imgselect extends \Elementor\Base_Data_Control {
 			<# } #>
 			<div class="elementor-control-input-wrapper elementor-control-unit-5">
 
-                <div class="tm-imgselect-thumbs">
+                <div class="mh-imgselect-thumbs">
                     <#
                         var printImgOptions = function( options ) {
                             _.each( options, function( option_title, option_value ) { #>
 
-                                    <label class="tm-imgselect-thumb">
+                                    <label class="mh-imgselect-thumb">
                                         <input type="radio" id="<?php echo esc_attr($control_uid); ?>" name="<?php echo esc_attr($control_uid); ?>" data-setting="{{ data.name }}" value="{{{option_value}}}" data-value="{{{option_value}}}">
                                         <img src="{{ option_title }}" <# if ( data.thumb_width ) {#> style="width:{{{data.thumb_width}}}" <# } #> />
                                         <i class="fas fa-check"></i>

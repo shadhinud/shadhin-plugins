@@ -15,13 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 *
 * @since 1.0.0
 */
-class TM_Elementor_InfoBanner extends Widget_Base {
+class MH_Elementor_InfoBanner extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-info-banner-advanced-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/info-banner-advanced/info-banner-advanced' . $direction_suffix . '.css' );
-		wp_register_script( 'tm-info-banner-advanced-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/info-banner.js' );
+		wp_register_style( 'mh-info-banner-advanced-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/info-banner-advanced/info-banner-advanced' . $direction_suffix . '.css' );
+		wp_register_script( 'mh-info-banner-advanced-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/info-banner.js' );
 	}
 
 	/**
@@ -34,7 +34,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 	* @return string Widget name.
 	*/
 	public function get_name() {
-		return 'tm-ele-info-banner';
+		return 'mh-ele-info-banner';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 	* @return string Widget icon.
 	*/
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -93,11 +93,11 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 	* @return array Widget scripts dependencies.
 	*/
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'tm-info-banner-advanced-script' ];
+		return [ 'mascot-core-hellojs', 'mh-info-banner-advanced-script' ];
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-info-banner-advanced-style' ];
+		return [ 'mh-info-banner-advanced-style' ];
 	}
 
 	/**
@@ -111,7 +111,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 	*/
   	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -154,7 +154,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				],
 				'label_block' => false,
 				'selectors'   => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-banner-advanced' => 'text-align: {{VALUE}};'
 				],
 			]
 		);
@@ -174,7 +174,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'options' => shadhin_plugins_disply_flex_vertical_align_elementor(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'display:flex; align-items: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'display:flex; align-items: {{VALUE}};',
 				],
 			]
 		);
@@ -186,7 +186,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'options' => shadhin_plugins_disply_flex_horizontal_align_elementor(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'display:flex; justify-content: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'display:flex; justify-content: {{VALUE}};',
 				],
 			]
 		);
@@ -397,7 +397,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'name' => 'wrapper_background_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner .banner-background',
+				'selector' => '{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner .banner-background',
 			]
 		);
 		$this->add_responsive_control(
@@ -408,7 +408,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner .banner-background' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner .banner-background' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -427,7 +427,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'name' => 'wrapper_background_bg_color_hover',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner .banner-background',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner .banner-background',
 			]
 		);
 		$this->add_responsive_control(
@@ -438,7 +438,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner .banner-background' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner .banner-background' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -475,7 +475,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background_overlay',
-				'selector' => '{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay',
+				'selector' => '{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay',
 			]
 		);
 		$this->add_control(
@@ -493,7 +493,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -508,7 +508,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'background_overlay_hover',
-				'selector' => '{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay',
 			]
 		);
 		$this->add_control(
@@ -526,7 +526,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner >  .banner-background-overlay' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -591,7 +591,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner img' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner img' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -649,7 +649,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner .banner-floating-image-wrapper' =>
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner .banner-floating-image-wrapper' =>
 							'{{floating_banner_image_orientation_horizontal.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -692,7 +692,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner .banner-floating-image-wrapper' =>
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner .banner-floating-image-wrapper' =>
 							'{{floating_banner_image_orientation_vertical.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -1021,7 +1021,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'label' => esc_html__( 'Enable Background Zoom Effect', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'separator' => 'before',
-				'prefix_class'	=> 'tm-bg-img-zoom-animation-'
+				'prefix_class'	=> 'mh-bg-img-zoom-animation-'
 			]
 		);
 
@@ -1031,7 +1031,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'label' => esc_html__( 'Show Circle Animation', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'separator' => 'before',
-				'prefix_class'	=> 'tm-circle-animation-'
+				'prefix_class'	=> 'mh-circle-animation-'
 			]
 		);
 		$this->add_control(
@@ -1041,7 +1041,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}}.tm-circle-animation-yes .tm-sc-info-banner-advanced:after' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.mh-circle-animation-yes .mh-sc-info-banner-advanced:after' => 'background-color: {{VALUE}};',
 				],
 				'condition' => [
 					'animation_show_circle_animation' => array('yes')
@@ -1061,7 +1061,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}.tm-circle-animation-yes .tm-sc-info-banner-advanced:after' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}}.mh-circle-animation-yes .mh-sc-info-banner-advanced:after' => 'opacity: {{SIZE}};'
 				],
 				'condition' => [
 					'animation_show_circle_animation' => array('yes')
@@ -1075,7 +1075,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'label' => esc_html__( 'Show Inner Border Around Wrapper', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'separator' => 'before',
-				'prefix_class'	=> 'tm-inner-border-around-wrapper-'
+				'prefix_class'	=> 'mh-inner-border-around-wrapper-'
 			]
 		);
 		$this->add_group_control(
@@ -1083,7 +1083,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			[
 				'name' => 'inner_border_around_wrapper',
 				'label' => esc_html__( 'Inner Border Around Wrapper', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}.tm-inner-border-around-wrapper-yes .tm-sc-info-banner-advanced:before',
+				'selector' => '{{WRAPPER}}.mh-inner-border-around-wrapper-yes .mh-sc-info-banner-advanced:before',
 				'condition' => [
 					'show_inner_border_around_wrapper' => array('yes')
 				]
@@ -1096,7 +1096,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}}.tm-inner-border-around-wrapper-yes .tm-sc-info-banner-advanced:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}}.mh-inner-border-around-wrapper-yes .mh-sc-info-banner-advanced:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				],
 				'condition' => [
 					'show_inner_border_around_wrapper' => array('yes')
@@ -1360,7 +1360,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'height: {{SIZE}}{{UNIT}};',
 				]
 			]
 		);
@@ -1380,7 +1380,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1391,7 +1391,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1401,7 +1401,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'label' => esc_html__( "Minimum Height", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'min-height: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'min-height: {{VALUE}};'
 				]
 			]
 		);
@@ -1420,7 +1420,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1429,7 +1429,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			[
 				'name' => 'iconbox_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner',
+				'selector' => '{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner',
 			]
 		);
 		$this->add_group_control(
@@ -1437,7 +1437,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			[
 				'name' => 'border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner',
+				'selector' => '{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner',
 			]
 		);
 		$this->add_control(
@@ -1448,7 +1448,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-banner-advanced .info-banner-inner' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-banner-advanced .info-banner-inner' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1476,7 +1476,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1485,7 +1485,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			[
 				'name' => 'iconbox_wrapper_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner',
 			]
 		);
 		$this->add_group_control(
@@ -1493,7 +1493,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 			[
 				'name' => 'iconbox_wrapper_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner',
 			]
 		);
 		$this->add_control(
@@ -1504,7 +1504,7 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-banner-advanced .info-banner-inner' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-info-banner-advanced .info-banner-inner' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1528,8 +1528,8 @@ class TM_Elementor_InfoBanner extends Widget_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-'. $settings['layout'];
-		$classes[] = 'tm-'. $settings['hover_crystal_animation'];
+		$classes[] = 'mh-'. $settings['layout'];
+		$classes[] = 'mh-'. $settings['hover_crystal_animation'];
 		$settings['classes'] = $classes;
 
 		//link url

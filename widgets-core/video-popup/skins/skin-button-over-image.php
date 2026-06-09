@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Button_Over_Image extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-video-popup/tm_general/before_section_end', [ $this, 'register_layout_controls' ] );
-		add_action( 'elementor/element/tm-ele-video-popup/tm_general/after_section_end', [ $this, 'register_layout_controls_wrapper' ] );
-		add_action( 'elementor/element/tm-ele-video-popup/tm_general/after_section_end', [ $this, 'register_layout_controls_play_btn' ] );
+		add_action( 'elementor/element/mh-ele-video-popup/mh_general/before_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-video-popup/mh_general/after_section_end', [ $this, 'register_layout_controls_wrapper' ] );
+		add_action( 'elementor/element/mh-ele-video-popup/mh_general/after_section_end', [ $this, 'register_layout_controls_play_btn' ] );
 	}
 
 	public function get_id() {
@@ -50,7 +50,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 				'label' => esc_html__( "Overlay Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup.tm-sc-video-popup-button-over-image:before' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-video-popup.mh-sc-video-popup-button-over-image:before' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -141,7 +141,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-video-popup' => 'width: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -159,7 +159,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup .effect-wrapper' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-video-popup .effect-wrapper' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -170,7 +170,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-video-popup' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -434,7 +434,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 				'label' => esc_html__( "Icon Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .animated-css-play-button .play-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .animated-css-play-button .play-icon i' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -446,7 +446,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .animated-css-play-button .play-icon i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-video-popup:hover .animated-css-play-button .play-icon i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -463,7 +463,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 				'label' => esc_html__( "Icon Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .animated-css-play-button .bg-block' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .animated-css-play-button .bg-block' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -475,7 +475,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .animated-css-play-button .bg-block' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .animated-css-play-button .bg-block' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -492,7 +492,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .animated-css-play-button .bg-block' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .animated-css-play-button .bg-block' => 'opacity: {{SIZE}};',
 				]
 			]
 		);
@@ -507,7 +507,7 @@ class Skin_Button_Over_Image extends Elementor_Skin_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-sc-video-popup';
+		$classes[] = 'mh-sc-video-popup';
 
 		$settings['classes'] = $classes;
 

@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Paroller_Animation extends Widget_Base {
+class MH_Elementor_Paroller_Animation extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
 		wp_register_script( 'jquery-paroller', SHADHIN_PLUGINS_ASSETS_URI . '/js/plugins/jquery.paroller.min.js', array('jquery'), false, true );
-		wp_register_style( 'tm-paroller-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/paroller' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-paroller-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/paroller' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -33,7 +33,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-paroller-animation';
+		return 'mh-ele-paroller-animation';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -96,7 +96,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-paroller-style' ];
+		return [ 'mh-paroller-style' ];
 	}
 
 	/**
@@ -215,7 +215,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 					'paroller_bg_animation' => array('yes'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-paroller-object' => 'top: {{VALUE}};bottom:auto;'
+					'{{WRAPPER}} .mh-paroller-object' => 'top: {{VALUE}};bottom:auto;'
 				]
 			]
 		);
@@ -228,7 +228,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 					'paroller_bg_animation' => array('yes'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-paroller-object' => 'right: {{VALUE}};left:auto;'
+					'{{WRAPPER}} .mh-paroller-object' => 'right: {{VALUE}};left:auto;'
 				]
 			]
 		);
@@ -241,7 +241,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 					'paroller_bg_animation' => array('yes'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-paroller-object' => 'bottom: {{VALUE}};top:auto;'
+					'{{WRAPPER}} .mh-paroller-object' => 'bottom: {{VALUE}};top:auto;'
 				]
 			]
 		);
@@ -254,7 +254,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 					'paroller_bg_animation' => array('yes'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-paroller-object' => 'left: {{VALUE}};right:auto;'
+					'{{WRAPPER}} .mh-paroller-object' => 'left: {{VALUE}};right:auto;'
 				]
 			]
 		);
@@ -278,7 +278,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 					'paroller_bg_animation' => array('yes'),
 					'display_type' => array('layer-text', 'layer-both'),
 				],
-				'selector' => '{{WRAPPER}} .tm-paroller-text',
+				'selector' => '{{WRAPPER}} .mh-paroller-text',
 			]
 		);
 
@@ -322,7 +322,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 					'paroller_bg_animation' => array('yes'),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-paroller-object' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-paroller-object' => 'opacity: {{SIZE}};'
 				],
 			]
 		);
@@ -507,22 +507,22 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 
 				$paroller_factor = $settings['paroller_factor']['size'];
 
-				$output .= '<div class="tm-paroller-object '.esc_attr($settings['paroller_text_custom_css_class']).'"
+				$output .= '<div class="mh-paroller-object '.esc_attr($settings['paroller_text_custom_css_class']).'"
 							style="'.esc_attr($css_array).'"
 							data-paroller-type="'.$settings['paroller_type'].'"
 							data-paroller-factor="'.$paroller_factor.'"
 							data-paroller-direction="'.$settings['paroller_direction'].'"
 							data-paroller-transition="'.$settings['paroller_transition'].'">';
-				$output .= '<div class="tm-paroller-object-wrapper">';
+				$output .= '<div class="mh-paroller-object-wrapper">';
 
 				if( ! empty( $settings['paroller_text'] ) ) {
 
 					if( $settings['text_textillate_animation'] == 'yes' ) {
 						wp_enqueue_script( 'jquery-lettering' );
 						wp_enqueue_script( 'jquery-textillate' );
-						$output .= '<div class="tm-paroller-text tm-textillate-animation">';
+						$output .= '<div class="mh-paroller-text mh-textillate-animation">';
 					} else {
-						$output .= '<div class="tm-paroller-text">';
+						$output .= '<div class="mh-paroller-text">';
 					}
 					$output .= esc_html( $settings['paroller_text'] );
 					$output .= '</div>';
@@ -530,7 +530,7 @@ class TM_Elementor_Paroller_Animation extends Widget_Base {
 				if( ! empty( $settings['paroller_image'] ) ) {
 					$image = wp_get_attachment_image_src( $settings['paroller_image']['id'], 'large');
 					if( !empty($image[0]) ) {
-						$output .= '<div class="tm-paroller-image">';
+						$output .= '<div class="mh-paroller-image">';
 						$output .= '<img src="'.esc_url( $image[0] ).'" alt="'.esc_attr__( 'Image', 'shadhin-plugins' ).'">';
 						$output .= '</div>';
 					}

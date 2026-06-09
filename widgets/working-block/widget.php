@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_WorkingBlock extends Widget_Base {
+class MH_Elementor_WorkingBlock extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-working-block-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/working-block/working-block-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-working-block-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/working-block/working-block-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -34,7 +34,7 @@ class TM_Elementor_WorkingBlock extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-working-block';
+		return 'mh-ele-working-block';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_WorkingBlock extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -360,7 +360,7 @@ class TM_Elementor_WorkingBlock extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -1096,7 +1096,7 @@ class TM_Elementor_WorkingBlock extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-working-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/working-block/working-block-style1' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-working-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/working-block/working-block-style1' . $direction_suffix . '.css' );
 
 		if( $settings['animate_icon_on_hover'] ) {
 			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];

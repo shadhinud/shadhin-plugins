@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Blank_Box extends Widget_Base {
+class MH_Elementor_Blank_Box extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-blank-box-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/blank-box' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-blank-box-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/blank-box' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -31,7 +31,7 @@ class TM_Elementor_Blank_Box extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-blank-box';
+		return 'mh-ele-blank-box';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TM_Elementor_Blank_Box extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -94,7 +94,7 @@ class TM_Elementor_Blank_Box extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-blank-box-style' ];
+		return [ 'mh-blank-box-style' ];
 	}
 
 
@@ -109,7 +109,7 @@ class TM_Elementor_Blank_Box extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -480,7 +480,7 @@ class TM_Elementor_Blank_Box extends Widget_Base {
 		$html = '';
 		//classes
 		$classes = array();
-		$classes[] = 'tm-ele-blank-box';
+		$classes[] = 'mh-ele-blank-box';
 		$classes[] = $settings['custom_css_class'];
 		if ( $settings['visible_mobile'] != 'yes' ) {
 			$classes[] = 'd-none d-lg-block';

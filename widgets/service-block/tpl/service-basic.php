@@ -1,10 +1,10 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $service_items_array ) : ?>
-	<div class="tm-sc-service tm-service-basic">
+	<div class="mh-sc-service mh-service-basic">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="service-layout clearfix">
 
-		<?php if(isset($tm_gsap_pin) && !empty($tm_gsap_pin) && $tm_gsap_pin == 'yes' ) { $classes[] = 'gsap-pin-' . esc_attr($tm_gsap_pin); } ?>
+		<?php if(isset($mh_gsap_pin) && !empty($mh_gsap_pin) && $mh_gsap_pin == 'yes' ) { $classes[] = 'gsap-pin-' . esc_attr($mh_gsap_pin); } ?>
 
 		<div class="service-block-wrapper <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 			<!-- the loop -->
@@ -20,7 +20,7 @@
 					$animation_delay = $service_item['wow_animation_delay'] . 'ms';
 				}
 			?>
-			<div class="tm-service-basic-wrapper <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
+			<div class="mh-service-basic-wrapper <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
 				<?php shadhin_plugins_get_shortcode_template_part( 'service-item', $_skin, 'service-block/tpl', $settings, false ); ?>
 			</div>
 			<?php } ?>

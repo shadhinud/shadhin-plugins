@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-counter-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-counter-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -31,14 +31,14 @@ class Skin_Style2 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-counter-block-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/counter-block/counter-block-style2' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-counter-block-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/counter-block/counter-block-style2' . $direction_suffix . '.css' );
 
-		wp_enqueue_script( 'tm-counter-block-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/counter-block.js', array('jquery'), false, true );
+		wp_enqueue_script( 'mh-counter-block-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/counter-block.js', array('jquery'), false, true );
 
 		//classes
 		$classes = array();
 		if ( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'tm-animate-hover animate-icon-' . $settings['animate_icon_on_hover'];
+			$classes[] = 'mh-animate-hover animate-icon-' . $settings['animate_icon_on_hover'];
 		}
 		if ( $settings['everything_centered_in_responsive_tablet'] === 'yes' ) {
 			$classes[] = 'counter-centered-in-responsive-tablet';

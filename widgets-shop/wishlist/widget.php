@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Wishlist extends Widget_Base {
+class MH_Elementor_Wishlist extends Widget_Base {
     protected $nav_menu_index = 1;
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-        wp_register_style( 'tm-woo-wishlist', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/wishlist' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-woo-wishlist', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/wishlist' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -33,7 +33,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-woo-wishlist';
+		return 'mh-ele-woo-wishlist';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 		return [ 'mascot-core-hellojs' ];
 	}
 	public function get_style_depends() {
-		return [ 'tm-woo-wishlist' ];
+		return [ 'mh-woo-wishlist' ];
 	}
 
     protected function get_nav_menu_index() {
@@ -144,7 +144,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist i' => 'font-size: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist i' => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -156,7 +156,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist:not(:hover) i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist:not(:hover) i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -168,7 +168,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist:not(:hover) i' => 'color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist:not(:hover) i' => 'color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -180,7 +180,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover .header-wishlist i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist:hover .header-wishlist i' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -192,7 +192,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover .header-wishlist i' => 'color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist:hover .header-wishlist i' => 'color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -222,7 +222,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'separator' => 'before',
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist .count' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist .count' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -234,7 +234,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist .count' => 'color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist .count' => 'color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -245,7 +245,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover .header-wishlist .count' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist:hover .header-wishlist .count' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -257,7 +257,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover .header-wishlist .count' => 'color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist:hover .header-wishlist .count' => 'color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -269,7 +269,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'separator' => 'before',
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist .count' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist .count' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -281,7 +281,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist .header-wishlist .count' => 'background-color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist .header-wishlist .count' => 'background-color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -292,7 +292,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover .header-wishlist .count' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist:hover .header-wishlist .count' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -304,7 +304,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover .header-wishlist .count' => 'background-color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist:hover .header-wishlist .count' => 'background-color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -326,7 +326,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .mh-header-wishlist' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ]
             ]
         );
@@ -342,7 +342,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-header-wishlist' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -354,7 +354,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'separator' => 'before',
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -366,7 +366,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist' => 'background-color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist' => 'background-color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -378,7 +378,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'type'      => Controls_Manager::COLOR,
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-header-wishlist:hover' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -390,7 +390,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-header-wishlist:hover' => 'background-color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}} .mh-header-wishlist:hover' => 'background-color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
@@ -436,15 +436,15 @@ class TM_Elementor_Wishlist extends Widget_Base {
      */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $this->add_render_attribute('wrapper', 'class', 'tm-elementor-wishlist-wrapper');
+        $this->add_render_attribute('wrapper', 'class', 'mh-elementor-wishlist-wrapper');
         ?>
         <div <?php echo $this->get_render_attribute_string('wrapper'); ?>>
             <?php
             if (function_exists('woosw_init')) {
                 $key = \WPCleverWoosw::get_key();
                 ?>
-                <div class="tm-header-wishlist woosw-check">
-                    <a class="header-wishlist" data-toggle="button-side" data-target=".tm-wishlist-side" href="<?php echo esc_url(\WPCleverWoosw::get_url($key, true)); ?>">
+                <div class="mh-header-wishlist woosw-check">
+                    <a class="header-wishlist" data-toggle="button-side" data-target=".mh-wishlist-side" href="<?php echo esc_url(\WPCleverWoosw::get_url($key, true)); ?>">
                         <i class="lnr lnr-icon-heart"></i>
                         <span class="count"><?php echo esc_html(\WPCleverWoosw::get_count($key)); ?></span>
                     </a>

@@ -18,13 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class TM_Elementor_Projects extends Widget_Base {
+class MH_Elementor_Projects extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-projects-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/projects-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-projects-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/projects-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -38,7 +38,7 @@ class TM_Elementor_Projects extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-cpt-projects';
+		return 'mh-ele-cpt-projects';
 	}
 
 	/**
@@ -64,7 +64,7 @@ class TM_Elementor_Projects extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -162,7 +162,7 @@ class TM_Elementor_Projects extends Widget_Base {
 		$orderby_parameters_list = shadhin_plugins_orderby_parameters_list();
 
 		$this->start_controls_section(
-			'tm_general', [
+			'mh_general', [
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
@@ -230,14 +230,14 @@ class TM_Elementor_Projects extends Widget_Base {
 
 		//gsap pin spacer added
 		$this->start_controls_section(
-			'tm_gsap_pin_settings',
+			'mh_gsap_pin_settings',
 			[
 				'label' => esc_html__( 'GSAP Pin Spacer Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 		$this->add_control(
-			'tm_gsap_pin', [
+			'mh_gsap_pin', [
 				'label' => esc_html__( "Enable GSAP Pin Spacer", 'shadhin-plugins' ),
 				'description' => esc_html__( "In that case, please enable Display Type - Basic", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
@@ -344,7 +344,7 @@ class TM_Elementor_Projects extends Widget_Base {
                 'label'         => esc_html__( 'Overflow Visible?', 'shadhin-plugins' ),
                 'type'          => \Elementor\Controls_Manager::SELECT,
                 'default'       => 'no',
-                'prefix_class'  => 'tm-slider-overflow-visible-',
+                'prefix_class'  => 'mh-slider-overflow-visible-',
                 'options' => [
                     'yes'     => __( 'Yes', 'shadhin-plugins' ),
                     'no'  => __( 'No', 'shadhin-plugins' ),

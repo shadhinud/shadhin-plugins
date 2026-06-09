@@ -6,19 +6,19 @@
 
 
 // Add dynamic CSS to insert it to the footer
-if ( ! function_exists('tm_shadhin_addons_add_inline_css') ) {
-	function tm_shadhin_addons_add_inline_css($css) {
-		global $TM_MOUSEHELPER_STORAGE;
-		$TM_MOUSEHELPER_STORAGE['inline_css'] = ( ! empty($TM_MOUSEHELPER_STORAGE['inline_css']) ? $TM_MOUSEHELPER_STORAGE['inline_css'] : '' ) . $css;
+if ( ! function_exists('mh_shadhin_addons_add_inline_css') ) {
+	function mh_shadhin_addons_add_inline_css($css) {
+		global $MH_MOUSEHELPER_STORAGE;
+		$MH_MOUSEHELPER_STORAGE['inline_css'] = ( ! empty($MH_MOUSEHELPER_STORAGE['inline_css']) ? $MH_MOUSEHELPER_STORAGE['inline_css'] : '' ) . $css;
 	}
 }
 
 // Add variables to the frontend
-if ( !function_exists( 'tm_shadhin_addons_localize_scripts_front' ) ) {
-	add_action("wp_footer", 'tm_shadhin_addons_localize_scripts_front');
-	function tm_shadhin_addons_localize_scripts_front() {
+if ( !function_exists( 'mh_shadhin_addons_localize_scripts_front' ) ) {
+	add_action("wp_footer", 'mh_shadhin_addons_localize_scripts_front');
+	function mh_shadhin_addons_localize_scripts_front() {
 		//added after menuzord plugin because it causes error
-		wp_localize_script( 'menuzord', 'TM_MOUSEHELPER_STORAGE', apply_filters('tm_addons_filter_localize_script', array(
+		wp_localize_script( 'menuzord', 'MH_MOUSEHELPER_STORAGE', apply_filters('mh_addons_filter_localize_script', array(
 			// AJAX parameters
 			'ajax_url'	=> esc_url(admin_url('admin-ajax.php')),
 			'ajax_nonce'=> esc_attr(wp_create_nonce(admin_url('admin-ajax.php'))),
@@ -40,16 +40,16 @@ if ( !function_exists( 'tm_shadhin_addons_localize_scripts_front' ) ) {
 }
 
 // Enqueue frontend scripts and styles priority
-if ( ! defined( 'TM_ENQUEUE_SCRIPTS_PRIORITY' ) ) define( 'TM_ENQUEUE_SCRIPTS_PRIORITY', 11 );
+if ( ! defined( 'MH_ENQUEUE_SCRIPTS_PRIORITY' ) ) define( 'MH_ENQUEUE_SCRIPTS_PRIORITY', 11 );
 
 // Enqueue responsive styles priority
-if ( ! defined( 'TM_ENQUEUE_RESPONSIVE_PRIORITY' ) ) define( 'TM_ENQUEUE_RESPONSIVE_PRIORITY', 2000 );
+if ( ! defined( 'MH_ENQUEUE_RESPONSIVE_PRIORITY' ) ) define( 'MH_ENQUEUE_RESPONSIVE_PRIORITY', 2000 );
 
 // Load required styles and scripts for the frontend
-if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_load_scripts_front' ) ) {
-	add_action( 'wp_enqueue_scripts', 'tm_shadhin_cursor_mouse_helper_load_scripts_front', TM_ENQUEUE_SCRIPTS_PRIORITY);
-	add_action( 'tm_addons_action_pagebuilder_preview_scripts', 'tm_shadhin_cursor_mouse_helper_load_scripts_front', 10, 1 );
-	function tm_shadhin_cursor_mouse_helper_load_scripts_front( $force = false ) {
+if ( ! function_exists( 'mh_shadhin_cursor_mouse_helper_load_scripts_front' ) ) {
+	add_action( 'wp_enqueue_scripts', 'mh_shadhin_cursor_mouse_helper_load_scripts_front', MH_ENQUEUE_SCRIPTS_PRIORITY);
+	add_action( 'mh_addons_action_pagebuilder_preview_scripts', 'mh_shadhin_cursor_mouse_helper_load_scripts_front', 10, 1 );
+	function mh_shadhin_cursor_mouse_helper_load_scripts_front( $force = false ) {
 		static $loaded = false;
 		$preview_elm = shadhin_plugins_is_preview();
 		$need        = ! $loaded && ( ! $preview_elm ) && (
@@ -59,21 +59,21 @@ if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_load_scripts_front' ) ) 
 						);
 		if ( ! $loaded && $need ) {
 			$loaded = true;
-			wp_enqueue_style(  'tm_addons-mouse-helper', plugins_url( '/mouse-helper.css', __FILE__ ), array(), null );
-			wp_enqueue_script( 'tm_addons-mouse-helper', plugins_url( '/mouse-helper.js', __FILE__ ), array('jquery', 'menuzord'), null, true );
-			do_action( 'tm_addons_action_load_scripts_front', $force, 'mouse_helper' );
+			wp_enqueue_style(  'mh_addons-mouse-helper', plugins_url( '/mouse-helper.css', __FILE__ ), array(), null );
+			wp_enqueue_script( 'mh_addons-mouse-helper', plugins_url( '/mouse-helper.js', __FILE__ ), array('jquery', 'menuzord'), null, true );
+			do_action( 'mh_addons_action_load_scripts_front', $force, 'mouse_helper' );
 		}
 		if ( ! $loaded && $preview_elm ) {
-			do_action( 'tm_addons_action_load_scripts_front', false, 'mouse_helper', 2 );
+			do_action( 'mh_addons_action_load_scripts_front', false, 'mouse_helper', 2 );
 		}
 	}
 }
 
 // Enqueue responsive styles for frontend
-if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_load_scripts_front_responsive' ) ) {
-	add_action( 'wp_enqueue_scripts', 'tm_shadhin_cursor_mouse_helper_load_scripts_front_responsive', TM_ENQUEUE_RESPONSIVE_PRIORITY );
-	add_action( 'tm_addons_action_load_scripts_front_mouse_helper', 'tm_shadhin_cursor_mouse_helper_load_scripts_front_responsive', 10, 1 );
-	function tm_shadhin_cursor_mouse_helper_load_scripts_front_responsive( $force = false ) {
+if ( ! function_exists( 'mh_shadhin_cursor_mouse_helper_load_scripts_front_responsive' ) ) {
+	add_action( 'wp_enqueue_scripts', 'mh_shadhin_cursor_mouse_helper_load_scripts_front_responsive', MH_ENQUEUE_RESPONSIVE_PRIORITY );
+	add_action( 'mh_addons_action_load_scripts_front_mouse_helper', 'mh_shadhin_cursor_mouse_helper_load_scripts_front_responsive', 10, 1 );
+	function mh_shadhin_cursor_mouse_helper_load_scripts_front_responsive( $force = false ) {
 		static $loaded = false;
 		$preview_elm = shadhin_plugins_is_preview();
 		$need        = ! $loaded && ( ! $preview_elm ) && (
@@ -83,7 +83,7 @@ if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_load_scripts_front_respo
 						);
 		if ( ! $loaded && $need ) {
 			$loaded = true;
-			wp_enqueue_style( 'tm_addons-mouse-helper-responsive', plugins_url( '/mouse-helper.responsive.css', __FILE__ ));
+			wp_enqueue_style( 'mh_addons-mouse-helper-responsive', plugins_url( '/mouse-helper.responsive.css', __FILE__ ));
 		}
 	}
 }
@@ -91,9 +91,9 @@ if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_load_scripts_front_respo
 
 
 // Add mouse_helper to the list with JS vars
-if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_localize_script' ) ) {
-	add_action("tm_addons_filter_localize_script", 'tm_shadhin_cursor_mouse_helper_localize_script');
-	function tm_shadhin_cursor_mouse_helper_localize_script($vars) {
+if ( !function_exists( 'mh_shadhin_cursor_mouse_helper_localize_script' ) ) {
+	add_action("mh_addons_filter_localize_script", 'mh_shadhin_cursor_mouse_helper_localize_script');
+	function mh_shadhin_cursor_mouse_helper_localize_script($vars) {
 		$vars['mouse_helper']            = (int) shadhin_plugins_get_redux_option('mouse_helper');
 		$vars['mouse_helper_delay']      = max( 1, min( 20, (int) shadhin_plugins_get_redux_option('mouse_helper_delay') ) );
 		$vars['mouse_helper_centered']   = (int) shadhin_plugins_get_redux_option('mouse_helper_centered');
@@ -111,9 +111,9 @@ if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_localize_script' ) ) {
 
 
 // Add params to the Theme Addons Options.
-if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_add_redux_options' ) ) {
-	add_action('setup_theme', 'tm_shadhin_cursor_mouse_helper_add_redux_options');
-	function tm_shadhin_cursor_mouse_helper_add_redux_options() {
+if ( ! function_exists( 'mh_shadhin_cursor_mouse_helper_add_redux_options' ) ) {
+	add_action('setup_theme', 'mh_shadhin_cursor_mouse_helper_add_redux_options');
+	function mh_shadhin_cursor_mouse_helper_add_redux_options() {
 
 		if ( ! class_exists( 'Redux' ) ) {
 			return;
@@ -261,49 +261,49 @@ if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_add_redux_options' ) ) {
 
 
 // Add mouse helper to the page
-if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_add_to_html' ) ) {
-	add_action('wp_footer', 'tm_shadhin_cursor_mouse_helper_add_to_html');
-	function tm_shadhin_cursor_mouse_helper_add_to_html() {
+if ( !function_exists( 'mh_shadhin_cursor_mouse_helper_add_to_html' ) ) {
+	add_action('wp_footer', 'mh_shadhin_cursor_mouse_helper_add_to_html');
+	function mh_shadhin_cursor_mouse_helper_add_to_html() {
 		if ( (int) shadhin_plugins_get_redux_option( 'mouse_helper' ) > 0 ) {
 			// Add mouse helper layout
 			?><div class="<?php
-				echo esc_attr( apply_filters( 'tm_addons_filter_mouse_helper_classes',
-							'tm_cursor_mouse_helper'
+				echo esc_attr( apply_filters( 'mh_addons_filter_mouse_helper_classes',
+							'mh_cursor_mouse_helper'
 							. ( (int) shadhin_plugins_get_redux_option( 'mouse_helper_permanent' ) > 0
-									? ' tm_cursor_mouse_helper_permanent'
+									? ' mh_cursor_mouse_helper_permanent'
 									: ''
 									)
 							. ( (int) shadhin_plugins_get_redux_option( 'mouse_helper_centered' ) > 0
-									? ' tm_cursor_mouse_helper_centered'
+									? ' mh_cursor_mouse_helper_centered'
 									: ''
 									)
 						)
 					);
 				?>"
 				<?php
-				do_action( 'tm_addons_action_mouse_helper_attributes' );
+				do_action( 'mh_addons_action_mouse_helper_attributes' );
 			?>><?php
-				do_action( 'tm_addons_action_mouse_helper_layout' );
+				do_action( 'mh_addons_action_mouse_helper_layout' );
 			?></div><?php
 			// Load addon-specific scripts and styles
-			tm_shadhin_cursor_mouse_helper_load_scripts_front( true );
+			mh_shadhin_cursor_mouse_helper_load_scripts_front( true );
 		}
 	}
 }
 
 // Replace system cursor
-if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_replace_system_cursor' ) ) {
-	add_filter('body_class', 'tm_shadhin_cursor_mouse_helper_replace_system_cursor');
-	function tm_shadhin_cursor_mouse_helper_replace_system_cursor( $classes ) {
+if ( !function_exists( 'mh_shadhin_cursor_mouse_helper_replace_system_cursor' ) ) {
+	add_filter('body_class', 'mh_shadhin_cursor_mouse_helper_replace_system_cursor');
+	function mh_shadhin_cursor_mouse_helper_replace_system_cursor( $classes ) {
 		if ( (int) shadhin_plugins_get_redux_option( 'mouse_helper_replace_cursor' ) == 1 ) {
-			$classes[]  = 'tm_addons_custom_cursor';
+			$classes[]  = 'mh_addons_custom_cursor';
 			$cur_defa   = shadhin_plugins_get_redux_option( 'mouse_helper_replace_cursor_default', false, 'url' );
 			$cur_defa2  = shadhin_plugins_get_redux_option( 'mouse_helper_replace_cursor_default2', false, 'url' );
 			$cur_links  = shadhin_plugins_get_redux_option( 'mouse_helper_replace_cursor_links', false, 'url' );
 			$cur_links2 = shadhin_plugins_get_redux_option( 'mouse_helper_replace_cursor_links2', false, 'url' );
 			if ( ! empty( $cur_defa ) ) {
-				tm_addons_add_inline_css(
-					join( ',', apply_filters( 'tm_addons_filter_custom_cursor_default', array(
+				mh_addons_add_inline_css(
+					join( ',', apply_filters( 'mh_addons_filter_custom_cursor_default', array(
 						'body',
 						'body *'
 					) ) )
@@ -314,8 +314,8 @@ if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_replace_system_cursor' ) 
 					);
 			}
 			if ( ! empty( $cur_links ) ) {
-				tm_addons_add_inline_css(
-					join( ',', apply_filters( 'tm_addons_filter_custom_cursor_links', array(
+				mh_addons_add_inline_css(
+					join( ',', apply_filters( 'mh_addons_filter_custom_cursor_links', array(
 						'body a',
 						'body a *',
 						'body button',
@@ -331,7 +331,7 @@ if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_replace_system_cursor' ) 
 			}
 		} else if ( in_array( shadhin_plugins_get_redux_option( 'mouse_helper_replace_cursor' ), array( '2', 'hide' ) ) ) {
 			if ( ! shadhin_plugins_is_preview() ) {
-				$classes[]  = 'tm_addons_hide_cursor';
+				$classes[]  = 'mh_addons_hide_cursor';
 			}
 		}
 		return $classes;
@@ -346,12 +346,12 @@ if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_replace_system_cursor' ) 
 //========================================================================
 
 // Add 'mouse_helper_highlight' to the 'Heading' params
-if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_highlight_add_heading_param_in_elementor' ) ) {
-	add_action( 'elementor/element/before_section_end', 'tm_shadhin_cursor_mouse_helper_highlight_add_heading_param_in_elementor', 10, 3 );
-	function tm_shadhin_cursor_mouse_helper_highlight_add_heading_param_in_elementor( $element, $section_id, $args ) {
+if ( ! function_exists( 'mh_shadhin_cursor_mouse_helper_highlight_add_heading_param_in_elementor' ) ) {
+	add_action( 'elementor/element/before_section_end', 'mh_shadhin_cursor_mouse_helper_highlight_add_heading_param_in_elementor', 10, 3 );
+	function mh_shadhin_cursor_mouse_helper_highlight_add_heading_param_in_elementor( $element, $section_id, $args ) {
 		if ( ! is_object($element) ) return;
 		$el_name = $element->get_name();
-		if ( 'tm-ele-section-title' == $el_name && 'title_options' === $section_id && (int) shadhin_plugins_get_redux_option('mouse_helper') > 0 ) {
+		if ( 'mh-ele-section-title' == $el_name && 'title_options' === $section_id && (int) shadhin_plugins_get_redux_option('mouse_helper') > 0 ) {
 			$element->add_control( 'mouse_helper_highlight', array(
 									'type' => \Elementor\Controls_Manager::SWITCHER,
 									'label' => __("Highlight on mouse hover", 'shadhin-plugins'),
@@ -386,15 +386,15 @@ if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_highlight_add_heading_pa
 
 
 // Add data parameter and color styles to the Heading
-if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor' ) ) {
+if ( ! function_exists( 'mh_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor' ) ) {
 	// Before Elementor 2.1.0
-	add_action( 'elementor/frontend/element/before_render', 'tm_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor', 10, 1 );
+	add_action( 'elementor/frontend/element/before_render', 'mh_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor', 10, 1 );
 	// After Elementor 2.1.0
-	add_action( 'elementor/frontend/widget/before_render', 'tm_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor', 10, 1 );
-	function tm_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor( $element ) {
+	add_action( 'elementor/frontend/widget/before_render', 'mh_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor', 10, 1 );
+	function mh_shadhin_cursor_mouse_helper_highlight_before_render_heading_in_elementor( $element ) {
 		if ( is_object( $element ) && (int) shadhin_plugins_get_redux_option( 'mouse_helper' ) > 0 ) {
 			$el_name = $element->get_name();
-			if ( 'tm-ele-section-title' == $el_name ) {
+			if ( 'mh-ele-section-title' == $el_name ) {
 				$highlight = $element->get_settings( 'mouse_helper_highlight' );
 				if ( ! empty( $highlight ) ) {
 					$element->add_render_attribute( 'title', 'data-mouse-helper', 'highlight' );
@@ -413,18 +413,18 @@ if ( ! function_exists( 'tm_shadhin_cursor_mouse_helper_highlight_before_render_
 //========================================================================
 
 // Add "Mouse helper" params to all elements
-if (!function_exists('tm_shadhin_cursor_mouse_helper_add_params_to_elements')) {
-	add_action( 'elementor/element/before_section_start', 'tm_shadhin_cursor_mouse_helper_add_params_to_elements', 10, 3 );
-	add_action( 'elementor/widget/before_section_start', 'tm_shadhin_cursor_mouse_helper_add_params_to_elements', 10, 3 );
-	function tm_shadhin_cursor_mouse_helper_add_params_to_elements($element, $section_id, $args) {
+if (!function_exists('mh_shadhin_cursor_mouse_helper_add_params_to_elements')) {
+	add_action( 'elementor/element/before_section_start', 'mh_shadhin_cursor_mouse_helper_add_params_to_elements', 10, 3 );
+	add_action( 'elementor/widget/before_section_start', 'mh_shadhin_cursor_mouse_helper_add_params_to_elements', 10, 3 );
+	function mh_shadhin_cursor_mouse_helper_add_params_to_elements($element, $section_id, $args) {
 
 		if ( !is_object($element) ) return;
 
 		if ( in_array( $element->get_name(), array( 'container', 'section', 'column', 'common' ) ) && $section_id == '_section_responsive' && (int) shadhin_plugins_get_redux_option( 'mouse_helper' ) > 0 ) {
 
-			$element->start_controls_section( 'section_tm_mouse_helper', array(
+			$element->start_controls_section( 'section_mh_mouse_helper', array(
 																		'tab' => !empty($args['tab']) ? $args['tab'] : \Elementor\Controls_Manager::TAB_ADVANCED,
-																		'label' => TM_ELEMENTOR_WIDGET_BADGE . __( 'Mascot - Mouse Helper', 'shadhin-plugins' )
+																		'label' => MH_ELEMENTOR_WIDGET_BADGE . __( 'Mascot - Mouse Helper', 'shadhin-plugins' )
 																	) );
 			$element->add_control( 'mouse_helper', array(
 				'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -439,7 +439,7 @@ if (!function_exists('tm_shadhin_cursor_mouse_helper_add_params_to_elements')) {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'label' => __( 'Action', 'shadhin-plugins' ),
 				'label_block' => false,
-				'options' => apply_filters( 'tm_addons_filter_mouse_helper_action', array(
+				'options' => apply_filters( 'mh_addons_filter_mouse_helper_action', array(
 					'hover' => esc_html__( 'Hover', 'shadhin-plugins' ),
 				) ),
 				'condition' => array(
@@ -529,7 +529,7 @@ if (!function_exists('tm_shadhin_cursor_mouse_helper_add_params_to_elements')) {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'label' => __( 'Overlay mode', 'shadhin-plugins' ),
 				'label_block' => false,
-				'options' => apply_filters( 'tm_addons_filter_mouse_helper_mode', array(
+				'options' => apply_filters( 'mh_addons_filter_mouse_helper_mode', array(
 					'' => esc_html__( 'Default', 'shadhin-plugins' ),
 					'normal' => esc_html__( 'Normal', 'shadhin-plugins' ),
 					'multiply'  => esc_html__( 'Multiply', 'shadhin-plugins' ),
@@ -698,14 +698,14 @@ if (!function_exists('tm_shadhin_cursor_mouse_helper_add_params_to_elements')) {
 }
 
 // Add "data-mouse-helper" to the wrapper of the row
-if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_before_render_elements' ) ) {
+if ( !function_exists( 'mh_shadhin_cursor_mouse_helper_before_render_elements' ) ) {
 	// Before Elementor 2.1.0
-	add_action( 'elementor/frontend/element/before_render',  'tm_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
+	add_action( 'elementor/frontend/element/before_render',  'mh_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
 	// After Elementor 2.1.0
-	add_action( 'elementor/frontend/section/before_render', 'tm_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
-	add_action( 'elementor/frontend/column/before_render', 'tm_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
-	add_action( 'elementor/frontend/widget/before_render', 'tm_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
-	function tm_shadhin_cursor_mouse_helper_before_render_elements($element) {
+	add_action( 'elementor/frontend/section/before_render', 'mh_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
+	add_action( 'elementor/frontend/column/before_render', 'mh_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
+	add_action( 'elementor/frontend/widget/before_render', 'mh_shadhin_cursor_mouse_helper_before_render_elements', 10, 1 );
+	function mh_shadhin_cursor_mouse_helper_before_render_elements($element) {
 		if ( is_object($element) ) {
 			$mouse_helper = $element->get_settings( 'mouse_helper' );
 			if ( ! empty( $mouse_helper ) ) {
@@ -750,9 +750,9 @@ if ( !function_exists( 'tm_shadhin_cursor_mouse_helper_before_render_elements' )
 
 
 // Add mouse_helper_in_swiper_slider to the list with JS vars
-if ( ! function_exists( 'tm_shadhin_skin_mouse_helper_in_swiper_slider_localize_script' ) ) {
-	add_action( 'tm_addons_filter_localize_script', 'tm_shadhin_skin_mouse_helper_in_swiper_slider_localize_script' );
-	function tm_shadhin_skin_mouse_helper_in_swiper_slider_localize_script( $vars = array() ) {
+if ( ! function_exists( 'mh_shadhin_skin_mouse_helper_in_swiper_slider_localize_script' ) ) {
+	add_action( 'mh_addons_filter_localize_script', 'mh_shadhin_skin_mouse_helper_in_swiper_slider_localize_script' );
+	function mh_shadhin_skin_mouse_helper_in_swiper_slider_localize_script( $vars = array() ) {
 		$vars['mouse_helper_on_swiper_slider'] = (int) shadhin_plugins_get_redux_option('mouse_helper_on_swiper_slider', 1);
         return $vars;
 	}

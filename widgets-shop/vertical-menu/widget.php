@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Vertical_Menu extends Widget_Base {
+class MH_Elementor_Vertical_Menu extends Widget_Base {
     protected $nav_menu_index = 1;
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-vertical-menu', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/vertical-menu' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-vertical-menu', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/vertical-menu' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -34,7 +34,7 @@ class TM_Elementor_Vertical_Menu extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-vertical-menu';
+		return 'mh-ele-vertical-menu';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_Vertical_Menu extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -96,7 +96,7 @@ class TM_Elementor_Vertical_Menu extends Widget_Base {
 		return [ 'mascot-core-hellojs' ];
 	}
 	public function get_style_depends() {
-		return [ 'tm-vertical-menu' ];
+		return [ 'mh-vertical-menu' ];
 	}
 
     protected function get_nav_menu_index() {

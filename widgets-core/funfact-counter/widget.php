@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Funfact_Counter extends Widget_Base {
+class MH_Elementor_Funfact_Counter extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-funfacts-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/funfacts' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-funfacts-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/funfacts' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-funfact-counter';
+		return 'mh-ele-funfact-counter';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-funfacts-style' ];
+		return [ 'mh-funfacts-style' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -159,8 +159,8 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'label_block' => false,
 				'options' => shadhin_plugins_text_align_choose(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'text-align: {{VALUE}};',
-					'{{WRAPPER}} .tm-sc-funfact .details' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-funfact' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-funfact .details' => 'text-align: {{VALUE}};',
 				]
 			]
 		);
@@ -186,7 +186,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'label' => esc_html__( "Content Display Flex?", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact .funfact-inner' => 'display: flex;',
+					'{{WRAPPER}} .mh-sc-funfact .funfact-inner' => 'display: flex;',
 				],
 				'condition' => [
 					'design_style' => array('funfact-iconleft','funfact-iconright')
@@ -1297,7 +1297,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-funfact' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1308,7 +1308,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-funfact' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1318,7 +1318,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'label' => esc_html__( "Content Display Flex + Vertical Center?", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'display: flex; align-items: center;',
+					'{{WRAPPER}} .mh-sc-funfact' => 'display: flex; align-items: center;',
 				]
 			]
 		);
@@ -1328,7 +1328,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'label' => esc_html__( "Minimum Height", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'min-height: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-funfact' => 'min-height: {{VALUE}};'
 				]
 			]
 		);
@@ -1346,7 +1346,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-funfact' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1358,7 +1358,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-funfact' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1377,7 +1377,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-funfact' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1386,7 +1386,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 			[
 				'name' => 'funfact_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-funfact',
+				'selector' => '{{WRAPPER}} .mh-sc-funfact',
 			]
 		);
 		$this->add_group_control(
@@ -1394,7 +1394,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 			[
 				'name' => 'border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-funfact',
+				'selector' => '{{WRAPPER}} .mh-sc-funfact',
 			]
 		);
 		$this->add_control(
@@ -1405,7 +1405,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-funfact' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-funfact' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1431,7 +1431,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-funfact' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-sc-funfact' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1443,7 +1443,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-funfact' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-funfact' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1462,7 +1462,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-funfact' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}}:hover .mh-sc-funfact' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1471,7 +1471,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 			[
 				'name' => 'funfact_wrapper_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-funfact',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-funfact',
 			]
 		);
 		$this->add_group_control(
@@ -1479,7 +1479,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 			[
 				'name' => 'funfact_wrapper_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-funfact',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-funfact',
 			]
 		);
 		$this->add_control(
@@ -1490,7 +1490,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-funfact' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-funfact' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1558,7 +1558,7 @@ class TM_Elementor_Funfact_Counter extends Widget_Base {
 		$classes[] = $settings['design_style'];
 		$classes[] = $settings['custom_css_class'];
 		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'tm-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
+			$classes[] = 'mh-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
 		}
 		if( $settings['everything_centered_in_responsive_tablet'] === 'yes' ) {
 			$classes[] = 'funfact-centered-in-responsive-tablet';

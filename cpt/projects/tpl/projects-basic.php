@@ -1,11 +1,11 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="tm-sc-projects tm-sc-projects-grid <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-projects mh-sc-projects-grid <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<?php include('filter.php'); ?>
 
 
 		<!-- gsap pin spacer added -->
-		<?php if(isset($tm_gsap_pin) && !empty($tm_gsap_pin) && $tm_gsap_pin == 'yes' ) { $classes[] = 'gsap-pin-' . esc_attr($tm_gsap_pin); } ?>
+		<?php if(isset($mh_gsap_pin) && !empty($mh_gsap_pin) && $mh_gsap_pin == 'yes' ) { $classes[] = 'gsap-pin-' . esc_attr($mh_gsap_pin); } ?>
 
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="project-layout <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">

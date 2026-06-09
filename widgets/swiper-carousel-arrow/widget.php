@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
+class MH_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         $direction_suffix = is_rtl() ? '.rtl' : '';
 
-        wp_register_style( 'tm-swiper-carousel-arrow', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/swiper-carousel-arrow' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-swiper-carousel-arrow', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/swiper-carousel-arrow' . $direction_suffix . '.css' );
     }
 
 	/**
@@ -31,7 +31,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-swiper-carousel-arrow';
+		return 'mh-ele-swiper-carousel-arrow';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -94,7 +94,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-swiper-carousel-arrow' ];
+		return [ 'mh-swiper-carousel-arrow' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -153,7 +153,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				],
 				'default' => 'flex',
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap' => 'display: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap' => 'display: {{VALUE}};'
 				],
 			]
 		);
@@ -180,7 +180,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'label' => esc_html__( "Arrow BG Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow' => 'background-color: {{VALUE}};'
 				],
 			]
 		);
@@ -192,7 +192,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -211,7 +211,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'label' => esc_html__( "Arrow Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow i' => 'color: {{VALUE}};'
 				],
 			]
 		);
@@ -222,7 +222,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -250,7 +250,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -262,7 +262,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -274,7 +274,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -291,7 +291,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 			[
 				'name' => 'swiper_arrow_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow',
+				'selector' => '{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow',
 			]
 		);
 
@@ -301,7 +301,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'name' => 'swiper_arrow_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow',
+				'selector' => '{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow',
 			]
 		);
 
@@ -310,7 +310,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 			[
 				'name' => 'swiper_arrow_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow i',
+				'selector' => '{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow i',
 			]
 		);
 
@@ -336,7 +336,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow' => 'opacity: {{SIZE}};'
 				]
 			]
 		);
@@ -354,7 +354,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'label' => esc_html__( "Arrow BG Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow:hover' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow:hover' => 'background-color: {{VALUE}};'
 				],
 			]
 		);
@@ -366,7 +366,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow:hover' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow:hover' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -376,7 +376,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'label' => esc_html__( "Arrow Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow:hover i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow:hover i' => 'color: {{VALUE}};'
 				],
 			]
 		);
@@ -387,7 +387,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow:hover i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow:hover i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -404,7 +404,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 			[
 				'name' => 'swiper_arrow_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow:hover',
+				'selector' => '{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow:hover',
 			]
 		);
 		$this->add_responsive_control(
@@ -420,7 +420,7 @@ class TM_Elementor_Swiper_Carousel_Arrow extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-carousel-arrow-wrap .tm-swiper-arrow:hover' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-swiper-carousel-arrow-wrap .mh-swiper-arrow:hover' => 'opacity: {{SIZE}};'
 				]
 			]
 		);

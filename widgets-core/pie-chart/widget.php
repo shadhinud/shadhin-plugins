@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Pie_Chart extends Widget_Base {
+class MH_Elementor_Pie_Chart extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
@@ -21,8 +21,8 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-pie-chart-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/pie-chart' . $direction_suffix . '.css' );
-		wp_register_script( 'tm-pie-chart', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/pie-chart.js', array('jquery', 'jquery-easypiechart'), false, true );
+		wp_register_style( 'mh-pie-chart-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/pie-chart' . $direction_suffix . '.css' );
+		wp_register_script( 'mh-pie-chart', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/pie-chart.js', array('jquery', 'jquery-easypiechart'), false, true );
 	}
 
 	/**
@@ -35,7 +35,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-pie-chart';
+		return 'mh-ele-pie-chart';
 	}
 
 	/**
@@ -61,7 +61,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -94,11 +94,11 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'jquery-easypiechart', 'tm-pie-chart' ];
+		return [ 'mascot-core-hellojs', 'jquery-easypiechart', 'mh-pie-chart' ];
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-pie-chart-style' ];
+		return [ 'mh-pie-chart-style' ];
 	}
 
 	/**
@@ -113,7 +113,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -318,7 +318,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-pie-chart .title',
+				'selector' => '{{WRAPPER}} .mh-sc-pie-chart .title',
 			]
 		);
 		$this->add_control(
@@ -327,7 +327,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 				'label' => esc_html__( "Title Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pie-chart .title' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-pie-chart .title' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -337,7 +337,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 				'label' => esc_html__( "Title Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-pie-chart .title' => 'color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-sc-pie-chart .title' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -349,7 +349,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pie-chart .title' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-pie-chart .title' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -361,7 +361,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-pie-chart .title' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-pie-chart .title' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -372,7 +372,7 @@ class TM_Elementor_Pie_Chart extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pie-chart .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-pie-chart .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

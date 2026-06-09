@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Header_Top_Info extends Widget_Base {
+class MH_Elementor_Header_Top_Info extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 	}
@@ -28,7 +28,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-header-top-info';
+		return 'mh-ele-header-top-info';
 	}
 
 	/**
@@ -54,7 +54,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -101,7 +101,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -210,7 +210,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'return_value'	=> 'none',
 				'default'	=> 'inline-block',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'display: {{VALUE}}',
+					'{{WRAPPER}} .mh-header-top-info li i' => 'display: {{VALUE}}',
 				],
 			]
 		);
@@ -219,7 +219,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'icon_typography',
 				'label' => esc_html__( 'Icon Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li i',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li i',
 			]
 		);
 		$this->add_control(
@@ -228,7 +228,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( "Icon Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-header-top-info li i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -240,7 +240,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-header-top-info li i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -250,7 +250,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( 'Icon Background Color', 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-header-top-info li i' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -261,7 +261,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li i' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -271,7 +271,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( 'Icon Margin', 'shadhin-plugins' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -280,7 +280,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'icon_border',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li i',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li i',
 			]
 		);
 		$this->add_control(
@@ -290,7 +290,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -319,7 +319,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'return_value'	=> 'none',
 				'default'	=> 'inline-block',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li .prefix' => 'display: {{VALUE}}',
+					'{{WRAPPER}} .mh-header-top-info li .prefix' => 'display: {{VALUE}}',
 				],
 			]
 		);
@@ -328,7 +328,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'prefix_typography',
 				'label' => esc_html__( 'Prefix Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li .prefix',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li .prefix',
 			]
 		);
 		$this->add_control(
@@ -337,7 +337,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( "Prefix Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li .prefix' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-header-top-info li .prefix' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -349,7 +349,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li .prefix' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-header-top-info li .prefix' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -359,7 +359,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( 'Prefix Margin', 'shadhin-plugins' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li .prefix' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li .prefix' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -381,7 +381,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'link_typography',
 				'label' => esc_html__( 'Link Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li a',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li a',
 			]
 		);
 		$this->add_control(
@@ -390,7 +390,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( "Link Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li a' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-header-top-info li a' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -400,7 +400,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( "Link Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li a:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-header-top-info li a:hover' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -412,7 +412,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li a' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-header-top-info li a' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -424,7 +424,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li a:hover' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-header-top-info li a:hover' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -447,7 +447,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'text_typography',
 				'label' => esc_html__( 'Text Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li > *',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li > *',
 			]
 		);
 		$this->add_control(
@@ -456,7 +456,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li > *' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-header-top-info li > *' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -468,7 +468,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li > *' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-header-top-info li > *' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -502,7 +502,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -513,7 +513,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -522,7 +522,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'list_item_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li',
 			]
 		);
 		$this->end_controls_section();
@@ -548,7 +548,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -559,7 +559,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-header-top-info li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-header-top-info li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -568,7 +568,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 			[
 				'name' => 'last_item_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-header-top-info li:last-child',
+				'selector' => '{{WRAPPER}} .mh-header-top-info li:last-child',
 			]
 		);
 		$this->end_controls_section();
@@ -588,7 +588,7 @@ class TM_Elementor_Header_Top_Info extends Widget_Base {
 		$html = '';
 		//classes
 		$classes = array();
-		$classes[] = 'tm-header-top-info';
+		$classes[] = 'mh-header-top-info';
 		$classes[] = $settings['custom_css_class'];
 		$settings['classes'] = $classes;
 	?>

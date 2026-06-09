@@ -15,13 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
+class MH_Elementor_InteractiveTabsTitle extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_register_style( 'tm-interactive-tabs', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/interactive-tabs/interactive-tabs-loader' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-interactive-tabs', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/interactive-tabs/interactive-tabs-loader' . $direction_suffix . '.css' );
 
-		wp_register_script( 'tm-interactive-tabs', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/interactive-tabs.js', array('jquery'), false, true );
+		wp_register_script( 'mh-interactive-tabs', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/interactive-tabs.js', array('jquery'), false, true );
 	}
 
 	/**
@@ -34,7 +34,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-interactive-tabs-title';
+		return 'mh-ele-interactive-tabs-title';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -93,11 +93,11 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'tm-interactive-tabs' ];
+		return [ 'mascot-core-hellojs', 'mh-interactive-tabs' ];
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-interactive-tabs' ];
+		return [ 'mh-interactive-tabs' ];
 	}
 
 
@@ -119,7 +119,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -196,7 +196,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Title Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-interactive-tabs .features-list li',
+				'selector' => '{{WRAPPER}} .mh-interactive-tabs .features-list li',
 			]
 		);
 		$this->start_controls_tabs('tabs_title_styling');
@@ -212,7 +212,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Title Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -224,7 +224,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -242,8 +242,8 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Title Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -255,8 +255,8 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:hover' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -282,7 +282,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li .icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li .icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -299,7 +299,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Icon Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li .icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li .icon' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -311,7 +311,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li .icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li .icon' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -321,7 +321,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Icon Bg Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li .icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li .icon' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -333,7 +333,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li .icon' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li .icon' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -351,8 +351,8 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Icon Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:hover .icon' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn .icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:hover .icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn .icon' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -364,8 +364,8 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:hover .icon' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn .icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:hover .icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn .icon' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -375,8 +375,8 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Icon Bg Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:hover .icon' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:active-btn .icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:hover .icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:active-btn .icon' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -388,8 +388,8 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:hover .icon' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:active-btn .icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:hover .icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:active-btn .icon' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -413,7 +413,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -424,7 +424,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -443,7 +443,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -453,7 +453,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Custom BG Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -462,7 +462,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 			[
 				'name' => 'list_border',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-interactive-tabs .features-list li',
+				'selector' => '{{WRAPPER}} .mh-interactive-tabs .features-list li',
 			]
 		);
 		$this->end_controls_tab();
@@ -481,7 +481,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} {{WRAPPER}} .tm-interactive-tabs .features-list li:hover, {{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} {{WRAPPER}} .mh-interactive-tabs .features-list li:hover, {{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -491,7 +491,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'label' => esc_html__( "Custom BG Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} {{WRAPPER}} .tm-interactive-tabs .features-list li:hover, {{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} {{WRAPPER}} .mh-interactive-tabs .features-list li:hover, {{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -500,7 +500,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 			[
 				'name' => 'list_border_hover',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-interactive-tabs .features-list li:hover, {{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn',
+				'selector' => '{{WRAPPER}} .mh-interactive-tabs .features-list li:hover, {{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn',
 			]
 		);
 		$this->end_controls_tab();
@@ -524,7 +524,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -535,7 +535,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-interactive-tabs .features-list li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-interactive-tabs .features-list li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -551,7 +551,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 			[
 				'name' => 'list_lastchild_border',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-interactive-tabs .features-list li:last-child',
+				'selector' => '{{WRAPPER}} .mh-interactive-tabs .features-list li:last-child',
 			]
 		);
 		$this->end_controls_tab();
@@ -567,7 +567,7 @@ class TM_Elementor_InteractiveTabsTitle extends Widget_Base {
 			[
 				'name' => 'list_lastchild_border_hover',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-interactive-tabs .features-list li:hover:last-child, {{WRAPPER}} .tm-interactive-tabs .features-list li.active-btn:last-child',
+				'selector' => '{{WRAPPER}} .mh-interactive-tabs .features-list li:hover:last-child, {{WRAPPER}} .mh-interactive-tabs .features-list li.active-btn:last-child',
 			]
 		);
 		$this->end_controls_tab();

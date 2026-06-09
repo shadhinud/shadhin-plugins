@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style_Current_Theme5 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-cpt-projects/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-cpt-projects/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -35,14 +35,14 @@ class Skin_Style_Current_Theme5 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-project-skin-current-theme5', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/project-skin-current-theme5' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-project-skin-current-theme5', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/project-skin-current-theme5' . $direction_suffix . '.css' );
 
-		wp_enqueue_script( 'tm-projects-block-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/cpt/project-block5.js', array('jquery'), false, true );
+		wp_enqueue_script( 'mh-projects-block-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/cpt/project-block5.js', array('jquery'), false, true );
 
 		//gsap pin spacer added
 		wp_enqueue_script( 'gsap' );
 		wp_enqueue_script( 'gsap-scrolltrigger' );
-		wp_enqueue_script( 'tm-gsap-pin-scroll', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/gsap-pin-scroll.js', array('jquery'), false, true );
+		wp_enqueue_script( 'mh-gsap-pin-scroll', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/gsap-pin-scroll.js', array('jquery'), false, true );
 
 
 		$new_cpt_class = CPT_Projects::Instance();

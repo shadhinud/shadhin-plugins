@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Custom_CSS_Play_Button extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-video-popup/tm_general/after_section_end', [ $this, 'register_layout_controls_play_btn' ] );
+		add_action( 'elementor/element/mh-ele-video-popup/mh_general/after_section_end', [ $this, 'register_layout_controls_play_btn' ] );
 	}
 
 	public function get_id() {
@@ -217,7 +217,7 @@ class Skin_Custom_CSS_Play_Button extends Elementor_Skin_Base {
 				'label' => esc_html__( "Icon Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -229,7 +229,7 @@ class Skin_Custom_CSS_Play_Button extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -246,7 +246,7 @@ class Skin_Custom_CSS_Play_Button extends Elementor_Skin_Base {
 				'label' => esc_html__( "Icon Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -258,7 +258,7 @@ class Skin_Custom_CSS_Play_Button extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -272,7 +272,7 @@ class Skin_Custom_CSS_Play_Button extends Elementor_Skin_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-sc-video-popup';
+		$classes[] = 'mh-sc-video-popup';
 
 		$settings['classes'] = $classes;
 

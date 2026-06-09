@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-image-gallery/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-image-gallery/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -32,7 +32,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 		shadhin_plugins_wp_enqueue_script_lightgallery();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-skin-style-current-theme2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/image-gallery/skin-style-current-theme2' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-skin-style-current-theme2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/image-gallery/skin-style-current-theme2' . $direction_suffix . '.css' );
 
 
 		//classes

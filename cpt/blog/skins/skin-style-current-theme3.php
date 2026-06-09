@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style_Current_Theme3 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-blog/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-blog/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -35,7 +35,7 @@ class Skin_Style_Current_Theme3 extends Elementor_Skin_Base {
 		$class_instance =  '';
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-blog-skin-style-current-theme3', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/blog/blog-skin-style-current-theme3' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-blog-skin-style-current-theme3', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/blog/blog-skin-style-current-theme3' . $direction_suffix . '.css' );
 
 
 		if(isset($settings['post_meta_options']) && !empty($settings['post_meta_options'])) {

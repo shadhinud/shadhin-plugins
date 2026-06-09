@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Circle_Text extends Widget_Base {
+class MH_Elementor_Circle_Text extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         $direction_suffix = is_rtl() ? '.rtl' : '';
 
-        wp_register_style( 'tm-circle-text', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/circle-text' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-circle-text', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/circle-text' . $direction_suffix . '.css' );
     }
 
 	/**
@@ -31,7 +31,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-circle-text';
+		return 'mh-ele-circle-text';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -94,7 +94,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-circle-text' ];
+		return [ 'mh-circle-text' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -216,7 +216,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-circle-text svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -691,7 +691,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text img' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-circle-text img' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -712,7 +712,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text img' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-circle-text img' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -730,7 +730,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					'scale-down' => esc_html__( 'Scale Down', 'shadhin-plugins' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text img' => 'object-fit: {{VALUE}};',
+					'{{WRAPPER}} .mh-circle-text img' => 'object-fit: {{VALUE}};',
 				],
 			]
 		);
@@ -752,7 +752,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					'bottom right' => esc_html__( 'Bottom Right', 'shadhin-plugins' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text img' => 'object-position: {{VALUE}};',
+					'{{WRAPPER}} .mh-circle-text img' => 'object-position: {{VALUE}};',
 				],
 				'condition' => [
 					'img_object_fit!' => 'fill',
@@ -984,7 +984,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-circle-text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -995,7 +995,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-circle-text' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1012,7 +1012,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-circle-text' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1024,7 +1024,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-circle-text' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1034,7 +1034,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'name' => 'wrapper_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-circle-text',
+				'selector' => '{{WRAPPER}} .mh-circle-text',
 			]
 		);
 		$this->add_group_control(
@@ -1043,7 +1043,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'name' => 'wrapper_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-circle-text',
+				'selector' => '{{WRAPPER}} .mh-circle-text',
 			]
 		);
 		$this->add_responsive_control(
@@ -1064,7 +1064,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					'size' => 0,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-circle-text' => 'backdrop-filter: blur({{SIZE}}{{UNIT}}); -webkit-backdrop-filter: blur({{SIZE}}{{UNIT}});',
+					'{{WRAPPER}} .mh-circle-text' => 'backdrop-filter: blur({{SIZE}}{{UNIT}}); -webkit-backdrop-filter: blur({{SIZE}}{{UNIT}});',
 				],
 				'separator' => 'before',
 			]
@@ -1082,7 +1082,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-circle-text' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-circle-text' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1094,7 +1094,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-circle-text' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-circle-text' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1104,7 +1104,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'name' => 'wrapper_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}}:hover .tm-circle-text',
+				'selector' => '{{WRAPPER}}:hover .mh-circle-text',
 			]
 		);
 		$this->add_group_control(
@@ -1113,7 +1113,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 				'name' => 'wrapper_box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}}:hover .tm-circle-text',
+				'selector' => '{{WRAPPER}}:hover .mh-circle-text',
 			]
 		);
 		$this->add_responsive_control(
@@ -1130,7 +1130,7 @@ class TM_Elementor_Circle_Text extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-circle-text' => 'backdrop-filter: blur({{SIZE}}{{UNIT}}); -webkit-backdrop-filter: blur({{SIZE}}{{UNIT}});',
+					'{{WRAPPER}}:hover .mh-circle-text' => 'backdrop-filter: blur({{SIZE}}{{UNIT}}); -webkit-backdrop-filter: blur({{SIZE}}{{UNIT}});',
 				],
 				'separator' => 'before',
 			]

@@ -18,12 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Contact_Form_7 extends Widget_Base {
+class MH_Elementor_Contact_Form_7 extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         $direction_suffix = is_rtl() ? '.rtl' : '';
 
-        wp_register_style( 'tm-contact-form-7-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/contact-form-7' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-contact-form-7-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/contact-form-7' . $direction_suffix . '.css' );
     }
 
 	/**
@@ -36,7 +36,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-contact-form-7';
+		return 'mh-ele-contact-form-7';
 	}
 
 	/**
@@ -62,7 +62,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -99,7 +99,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-contact-form-7-style' ];
+		return [ 'mh-contact-form-7-style' ];
 	}
 
 	/**
@@ -116,18 +116,18 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 
 		if (!function_exists('wpcf7')) {
 			$this->start_controls_section(
-				'tm_global_warning',
+				'mh_global_warning',
 				[
 					'label' => esc_html__('Warning!', 'shadhin-plugins'),
 				]
 			);
 
 			$this->add_control(
-				'tm_global_warning_text',
+				'mh_global_warning_text',
 				[
 					'type' => Controls_Manager::RAW_HTML,
 					'raw' => esc_html__('<strong>Contact Form 7</strong> is not installed/activated on your site. Please install and activate <strong>Contact Form 7</strong> first.', 'shadhin-plugins'),
-					'content_classes' => 'tm-warning',
+					'content_classes' => 'mh-warning',
 				]
 			);
 
@@ -326,7 +326,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 						'hide' => 'none',
 					],
 					'selectors' => [
-						'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip' => 'display: {{VALUE}} !important;',
+						'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip' => 'display: {{VALUE}} !important;',
 					],
 				]
 			);
@@ -346,7 +346,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 						'hide' => 'none',
 					],
 					'selectors' => [
-						'{{WRAPPER}} .tm-contact-form-7 .wpcf7-validation-errors' => 'display: {{VALUE}} !important;',
+						'{{WRAPPER}} .mh-contact-form-7 .wpcf7-validation-errors' => 'display: {{VALUE}} !important;',
 					],
 				]
 			);
@@ -372,10 +372,10 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
-				'name' => 'tm_contact_form_background',
+				'name' => 'mh_contact_form_background',
 				'label' => esc_html__('Background', 'shadhin-plugins'),
 				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .tm-contact-form',
+				'selector' => '{{WRAPPER}} .mh-contact-form',
 			]
 		);
 		$this->add_control(
@@ -386,7 +386,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -398,13 +398,13 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-contact-form' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-contact-form' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'tm_contact_form_alignment',
+			'mh_contact_form_alignment',
 			[
 				'label' => esc_html__('Form Alignment', 'shadhin-plugins'),
 				'type' => Controls_Manager::CHOOSE,
@@ -432,7 +432,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
-			'tm_contact_form_max_width',
+			'mh_contact_form_max_width',
 			[
 				'label' => esc_html__('Form Max Width', 'shadhin-plugins'),
 				'type' => Controls_Manager::SLIDER,
@@ -448,44 +448,44 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7-wrapper .tm-contact-form.tm-contact-form-7' => 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7-wrapper .mh-contact-form.mh-contact-form-7' => 'max-width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'tm_contact_form_margin',
+			'mh_contact_form_margin',
 			[
 				'label' => esc_html__('Margin', 'shadhin-plugins'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'tm_contact_form_padding',
+			'mh_contact_form_padding',
 			[
 				'label' => esc_html__('Form Padding', 'shadhin-plugins'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
 
 		$this->add_responsive_control(
-			'tm_contact_form_border_radius',
+			'mh_contact_form_border_radius',
 			[
 				'label' => esc_html__('Border Radius', 'shadhin-plugins'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'separator' => 'before',
 				'size_units' => ['px'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -493,16 +493,16 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			[
-				'name' => 'tm_contact_form_border',
-				'selector' => '{{WRAPPER}} .tm-contact-form',
+				'name' => 'mh_contact_form_border',
+				'selector' => '{{WRAPPER}} .mh-contact-form',
 			]
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
 			[
-				'name' => 'tm_contact_form_box_shadow',
-				'selector' => '{{WRAPPER}} .tm-contact-form',
+				'name' => 'mh_contact_form_box_shadow',
+				'selector' => '{{WRAPPER}} .mh-contact-form',
 			]
 		);
 
@@ -550,7 +550,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-heading' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-heading' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -570,7 +570,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -582,7 +582,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-title' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-title' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -591,7 +591,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-title',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-title',
 			]
 		);
 		$this->add_responsive_control(
@@ -601,7 +601,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -626,7 +626,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-subtitle' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-subtitle' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -638,7 +638,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-subtitle' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-subtitle' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -647,7 +647,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'subtitle_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-subtitle',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-subtitle',
 			]
 		);
 		$this->add_responsive_control(
@@ -657,7 +657,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -682,7 +682,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-description' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-description' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -694,7 +694,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-description' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-description' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -703,7 +703,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'description_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-description',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-description',
 			]
 		);
 		$this->add_responsive_control(
@@ -713,7 +713,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .tm-contact-form-7-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .mh-contact-form-7-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -752,7 +752,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7-heading' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7-heading' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -763,7 +763,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7-heading' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -780,7 +780,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7-heading' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-contact-form-7-heading' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -792,7 +792,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7-heading' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7-heading' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -808,7 +808,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'form_heading_wrapper_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7-heading',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7-heading',
 			]
 		);
 		$this->add_responsive_control(
@@ -818,7 +818,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7-heading' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-contact-form-7-heading' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -827,7 +827,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'form_heading_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7-heading',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7-heading',
 			]
 		);
 		$this->end_controls_section();
@@ -852,7 +852,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -863,7 +863,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -880,7 +880,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -892,7 +892,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -908,7 +908,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'form_wrapper_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7',
 			]
 		);
 		$this->add_responsive_control(
@@ -918,7 +918,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -927,7 +927,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'form_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7',
 			]
 		);
 		$this->end_controls_section();
@@ -954,7 +954,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select.nice-select:after' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select.nice-select:after' => 'border-color: {{VALUE}}',
 				],
 				'separator' => 'before',
 			]
@@ -966,7 +966,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select.nice-select .current' => 'color: {{VALUE}} !important',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select.nice-select .current' => 'color: {{VALUE}} !important',
 				],
 				'separator' => 'before',
 			]
@@ -975,7 +975,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'field_dropdown_box_shadow',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select.nice-select, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select.nice-select, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select',
 				'separator' => 'before',
 			]
 		);
@@ -1018,7 +1018,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -1030,7 +1030,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'background-color: var(--theme-color{{VALUE}})',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'background-color: var(--theme-color{{VALUE}})',
 				],
 			]
 		);
@@ -1041,7 +1041,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select, {{WRAPPER}} .tm-contact-form-7 .wpcf7-list-item-label' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select, {{WRAPPER}} .mh-contact-form-7 .wpcf7-list-item-label' => 'color: {{VALUE}}',
 				],
 				'separator' => 'before',
 			]
@@ -1065,7 +1065,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form .wpcf7-form-control-wrap .wpcf7-form-control' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form .wpcf7-form-control-wrap .wpcf7-form-control' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1077,7 +1077,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1101,7 +1101,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'text-indent: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'text-indent: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1120,8 +1120,8 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'width: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control-wrap' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control-wrap' => 'width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1140,7 +1140,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1159,7 +1159,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea' => 'width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1178,7 +1178,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea' => 'height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea' => 'height: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1190,7 +1190,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Border', 'shadhin-plugins'),
 				'placeholder' => '1px',
 				'default' => '1px',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select',
 				'separator' => 'before',
 			]
 		);
@@ -1202,7 +1202,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-date, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1212,7 +1212,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'field_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select',
 				'separator' => 'before',
 			]
 		);
@@ -1221,7 +1221,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'field_box_shadow',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control.wpcf7-select',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-text, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-quiz, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-textarea, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control.wpcf7-select',
 				'separator' => 'before',
 			]
 		);
@@ -1242,7 +1242,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input:focus, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form textarea:focus' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input:focus, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form textarea:focus' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -1254,7 +1254,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Border', 'shadhin-plugins'),
 				'placeholder' => '1px',
 				'default' => '1px',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input:focus, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form textarea:focus',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input:focus, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form textarea:focus',
 				'separator' => 'before',
 			]
 		);
@@ -1263,7 +1263,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'focus_box_shadow',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input:focus, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form textarea:focus',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input:focus, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form textarea:focus',
 				'separator' => 'before',
 			]
 		);
@@ -1296,7 +1296,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
 				'raw' => esc_html__('if label spacing doesn\'t worked, please update label display', 'shadhin-plugins'),
-				'content_classes' => 'tm-warning',
+				'content_classes' => 'mh-warning',
 			]
 		);
 		$this->add_control(
@@ -1307,7 +1307,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'default' => '',
 				'options' => shadhin_plugins_disply_type_list_elementor(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form label, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form .wpcf7-quiz-label' => 'display: {{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form label, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form .wpcf7-quiz-label' => 'display: {{UNIT}}',
 				],
 			]
 		);
@@ -1318,8 +1318,8 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Text Color', 'shadhin-plugins'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form label' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .tm-contact-form-7 label' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form label' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 label' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'labels_switch' => 'yes',
@@ -1341,7 +1341,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form label, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form .wpcf7-quiz-label' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form label, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form .wpcf7-quiz-label' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'labels_switch' => 'yes',
@@ -1354,7 +1354,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'typography_label',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form label, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form .wpcf7-quiz-label',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form label, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form .wpcf7-quiz-label',
 				'condition' => [
 					'labels_switch' => 'yes',
 				],
@@ -1392,8 +1392,8 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Text Color', 'shadhin-plugins'),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control::-webkit-input-placeholder' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control::-moz-placeholder' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control::-webkit-input-placeholder' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control::-moz-placeholder' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'placeholder_switch' => 'yes',
@@ -1406,7 +1406,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'typography_placeholder',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control::-webkit-input-placeholder, {{WRAPPER}} .tm-contact-form-7 .wpcf7-form-control::-moz-placeholder',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control::-webkit-input-placeholder, {{WRAPPER}} .mh-contact-form-7 .wpcf7-form-control::-moz-placeholder',
 				'condition' => [
 					'placeholder_switch' => 'yes',
 				],
@@ -1456,7 +1456,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"]' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"]' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1483,7 +1483,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"]' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"]' => 'background: {{VALUE}}',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1505,7 +1505,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"]' => 'border-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"]' => 'border-width: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1520,7 +1520,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"]' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"]' => 'border-color: {{VALUE}}',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1546,7 +1546,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"], {{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1572,7 +1572,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"], {{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"], {{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"]:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1599,7 +1599,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-custom-radio-checkbox input[type="checkbox"]:checked:before, {{WRAPPER}} .tm-custom-radio-checkbox input[type="radio"]:checked:before' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .mh-custom-radio-checkbox input[type="checkbox"]:checked:before, {{WRAPPER}} .mh-custom-radio-checkbox input[type="radio"]:checked:before' => 'background: {{VALUE}}',
 				],
 				'condition' => [
 					'custom_radio_checkbox' => 'yes',
@@ -1653,7 +1653,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 						'icon' => 'eicon-h-align-right',
 					],
 				],
-				'prefix_class' => 'tm-contact-form-7-button-align-',
+				'prefix_class' => 'mh-contact-form-7-button-align-',
 				'condition' => [
 					'button_width_type' => 'custom',
 				],
@@ -1670,7 +1670,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 					'full-width' => esc_html__('Full Width', 'shadhin-plugins'),
 					'custom' => esc_html__('Custom', 'shadhin-plugins'),
 				],
-				'prefix_class' => 'tm-contact-form-7-button-',
+				'prefix_class' => 'mh-contact-form-7-button-',
 			]
 		);
 
@@ -1688,7 +1688,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'width: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'button_width_type' => 'custom',
@@ -1712,7 +1712,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -1725,7 +1725,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'background-color: var(--theme-color{{VALUE}})',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'background-color: var(--theme-color{{VALUE}})',
 				],
 			]
 		);
@@ -1737,7 +1737,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -1749,7 +1749,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1760,7 +1760,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'name' => 'button_border_normal',
 				'label' => esc_html__('Border', 'shadhin-plugins'),
 				'default' => '1px',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]',
 			]
 		);
 
@@ -1771,7 +1771,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1783,7 +1783,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1802,7 +1802,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -1812,7 +1812,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'button_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]',
 				'separator' => 'before',
 			]
 		);
@@ -1821,7 +1821,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name' => 'button_box_shadow',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]',
 				'separator' => 'before',
 			]
 		);
@@ -1842,7 +1842,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -1855,7 +1855,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'background-color: var(--theme-color{{VALUE}})',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'background-color: var(--theme-color{{VALUE}})',
 				],
 			]
 		);
@@ -1867,7 +1867,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -1879,7 +1879,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1891,7 +1891,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'border-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:hover,{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]:focus' => 'border-color: {{VALUE}}',
 				],
 			]
 		);
@@ -1919,7 +1919,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__( "Top", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;top: {{VALUE}};bottom:auto;'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;top: {{VALUE}};bottom:auto;'
 				]
 			]
 		);
@@ -1929,7 +1929,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__( "Right", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;right: {{VALUE}};left:auto;'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;right: {{VALUE}};left:auto;'
 				]
 			]
 		);
@@ -1939,7 +1939,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__( "Bottom", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;bottom: {{VALUE}};top:auto;'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;bottom: {{VALUE}};top:auto;'
 				]
 			]
 		);
@@ -1949,7 +1949,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__( "Left", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;left: {{VALUE}};right:auto;'
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form input[type="submit"]' => 'position:absolute;left: {{VALUE}};right:auto;'
 				]
 			]
 		);
@@ -1975,7 +1975,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'yes',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form .wpcf7-spinner' => 'display: none',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form .wpcf7-spinner' => 'display: none',
 				],
 			]
 		);
@@ -2001,7 +2001,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .get-quote__progress-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .get-quote__progress-title' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -2010,7 +2010,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'progress_range_label_text_typography',
 				'label' => esc_html__('Label/Title Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .get-quote__progress-title',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .get-quote__progress-title',
 				'separator' => 'before',
 			]
 		);
@@ -2021,7 +2021,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .get-quote__balance-box' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .get-quote__balance-box' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -2030,7 +2030,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'progress_range_amount_text_typography',
 				'label' => esc_html__('Amount Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .get-quote__balance-box .get-quote__balance',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .get-quote__balance-box .get-quote__balance',
 				'separator' => 'before',
 			]
 		);
@@ -2041,7 +2041,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .get-quote__progress-range .irs--flat .irs-bar' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .get-quote__progress-range .irs--flat .irs-bar' => 'background: {{VALUE}}',
 				],
 			]
 		);
@@ -2071,7 +2071,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .get-quote__progress-range .irs--flat .irs-handle' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .get-quote__progress-range .irs--flat .irs-handle' => 'background-color: {{VALUE}}',
 				],
 			]
 		);
@@ -2126,7 +2126,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'error_messages' => 'show',
@@ -2141,7 +2141,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip' => 'background: {{VALUE}}',
 				],
 				'condition' => [
 					'error_messages' => 'show',
@@ -2154,7 +2154,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'error_alert_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip',
 				'separator' => 'before',
 				'condition' => [
 					'error_messages' => 'show',
@@ -2169,7 +2169,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Border', 'shadhin-plugins'),
 				'placeholder' => '1px',
 				'default' => '1px',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip',
 				'separator' => 'before',
 				'condition' => [
 					'error_messages' => 'show',
@@ -2184,7 +2184,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 					'error_messages' => 'show',
@@ -2206,7 +2206,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				],
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid-tip' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid-tip' => 'margin-top: {{SIZE}}{{UNIT}}',
 				],
 				'condition' => [
 					'error_messages' => 'show',
@@ -2233,7 +2233,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid' => 'background: {{VALUE}}',
 				],
 				'condition' => [
 					'error_messages' => 'show',
@@ -2248,7 +2248,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid.wpcf7-text' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid.wpcf7-text' => 'color: {{VALUE}}',
 				],
 				'condition' => [
 					'error_messages' => 'show',
@@ -2263,7 +2263,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Border', 'shadhin-plugins'),
 				'placeholder' => '1px',
 				'default' => '1px',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-not-valid',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-not-valid',
 				'separator' => 'before',
 				'condition' => [
 					'error_messages' => 'show',
@@ -2294,8 +2294,8 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::SWITCHER,
 				'default' => 'no',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form .ajax-loader' => 'display: none;',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-form.submitting .ajax-loader' => 'display: block;',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form .ajax-loader' => 'display: none;',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-form.submitting .ajax-loader' => 'display: block;',
 				]
 			]
 		);
@@ -2319,7 +2319,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			[
 				'name' => 'contact_form_after_submit_feedback_typography',
 				'label' => esc_html__('Typography', 'shadhin-plugins'),
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng, {{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok, {{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng, {{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok, {{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output',
 				'separator' => 'before',
 			]
 		);
@@ -2331,9 +2331,9 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output' => 'color: {{VALUE}}',
 				],
 			]
 		);
@@ -2344,7 +2344,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'name' => 'contact_form_after_submit_feedback_background',
 				'label' => esc_html__('Background', 'shadhin-plugins'),
 				'types' => ['classic', 'gradient'],
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng, {{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok, {{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng, {{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok, {{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output',
 				'separator' => 'before',
 			]
 		);
@@ -2356,7 +2356,7 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'label' => esc_html__('Border', 'shadhin-plugins'),
 				'placeholder' => '1px',
 				'default' => '1px',
-				'selector' => '{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng, {{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok, {{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output',
+				'selector' => '{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng, {{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok, {{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output',
 				'separator' => 'before',
 			]
 		);
@@ -2378,9 +2378,9 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng' => 'border-radius: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok' => 'border-radius: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok' => 'border-radius: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output' => 'border-radius: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -2392,9 +2392,9 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -2407,9 +2407,9 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em', '%'],
 				'selectors' => [
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ng' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-mail-sent-ok' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .tm-contact-form-7 .wpcf7-response-output' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ng' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-mail-sent-ok' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-contact-form-7 .wpcf7-response-output' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -2449,9 +2449,9 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$this->add_render_attribute('contact-form', 'class', [
-			'tm-contact-form',
-			'tm-contact-form-7',
-			'tm-contact-form-' . esc_attr($this->get_id()),
+			'mh-contact-form',
+			'mh-contact-form-7',
+			'mh-contact-form-' . esc_attr($this->get_id()),
 		]);
 
 		if ($settings['labels_switch'] != 'yes') {
@@ -2461,48 +2461,48 @@ class TM_Elementor_Contact_Form_7 extends Widget_Base {
 			$this->add_render_attribute('contact-form', 'class', 'placeholder-show');
 		}
 		if ($settings['custom_radio_checkbox'] == 'yes') {
-			$this->add_render_attribute('contact-form', 'class', 'tm-custom-radio-checkbox');
+			$this->add_render_attribute('contact-form', 'class', 'mh-custom-radio-checkbox');
 		}
-		if ($settings['tm_contact_form_alignment'] == 'left') {
-			$this->add_render_attribute('contact-form', 'class', 'tm-contact-form-align-left');
-		} elseif ($settings['tm_contact_form_alignment'] == 'center') {
-			$this->add_render_attribute('contact-form', 'class', 'tm-contact-form-align-center');
-		} elseif ($settings['tm_contact_form_alignment'] == 'right') {
-			$this->add_render_attribute('contact-form', 'class', 'tm-contact-form-align-right');
+		if ($settings['mh_contact_form_alignment'] == 'left') {
+			$this->add_render_attribute('contact-form', 'class', 'mh-contact-form-align-left');
+		} elseif ($settings['mh_contact_form_alignment'] == 'center') {
+			$this->add_render_attribute('contact-form', 'class', 'mh-contact-form-align-center');
+		} elseif ($settings['mh_contact_form_alignment'] == 'right') {
+			$this->add_render_attribute('contact-form', 'class', 'mh-contact-form-align-right');
 		} else {
-			$this->add_render_attribute('contact-form', 'class', 'tm-contact-form-align-default');
+			$this->add_render_attribute('contact-form', 'class', 'mh-contact-form-align-default');
 		}
 
 		if (!empty($settings['contact_form_list'])) {
-			echo '<div class="tm-contact-form-7-wrapper">
+			echo '<div class="mh-contact-form-7-wrapper">
 				<div ' . $this->get_render_attribute_string('contact-form') . '>';
 			if ($settings['form_title'] == 'yes' || $settings['form_description'] == 'yes') {
-				echo '<div class="tm-contact-form-7-heading">';
+				echo '<div class="mh-contact-form-7-heading">';
 
 				if ($settings['form_subtitle'] == 'yes' && $settings['form_subtitle_text'] != '') {
 					if ($settings['form_subtitle_position'] == 'above-title') {
-						echo '<'.esc_attr( $settings['subtitle_tag'] ).' class="tm-contact-form-subtitle tm-contact-form-7-subtitle">
+						echo '<'.esc_attr( $settings['subtitle_tag'] ).' class="mh-contact-form-subtitle mh-contact-form-7-subtitle">
 								' . esc_attr($settings['form_subtitle_text']) . '
 							</'.esc_attr( $settings['subtitle_tag'] ).'>';
 					}
 				}
 
 				if ($settings['form_title'] == 'yes' && $settings['form_title_text'] != '') {
-					echo '<'.esc_attr( $settings['title_tag'] ).' class="tm-contact-form-title tm-contact-form-7-title">
+					echo '<'.esc_attr( $settings['title_tag'] ).' class="mh-contact-form-title mh-contact-form-7-title">
 								' . esc_attr($settings['form_title_text']) . '
 							</'.esc_attr( $settings['title_tag'] ).'>';
 				}
 
 				if ($settings['form_subtitle'] == 'yes' && $settings['form_subtitle_text'] != '') {
 					if ($settings['form_subtitle_position'] == 'below-title') {
-						echo '<'.esc_attr( $settings['subtitle_tag'] ).' class="tm-contact-form-subtitle tm-contact-form-7-subtitle">
+						echo '<'.esc_attr( $settings['subtitle_tag'] ).' class="mh-contact-form-subtitle mh-contact-form-7-subtitle">
 								' . esc_attr($settings['form_subtitle_text']) . '
 							</'.esc_attr( $settings['subtitle_tag'] ).'>';
 					}
 				}
 
 				if ($settings['form_description'] == 'yes' && $settings['form_description_text'] != '') {
-					echo '<div class="tm-contact-form-description tm-contact-form-7-description">
+					echo '<div class="mh-contact-form-description mh-contact-form-7-description">
 								' . $this->parse_text_editor($settings['form_description_text']) . '
 							</div>';
 				}

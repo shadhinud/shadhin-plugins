@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Accordion_Bordered extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-accordion/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-accordion/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -33,7 +33,7 @@ class Skin_Accordion_Bordered extends Elementor_Skin_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-accordion';
+		$classes[] = 'mh-accordion';
 		if( $settings['icon_round_border'] === 'yes' ) {
 			$classes[] = 'icon-round-border';
 		}

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-pricing-plan-switcher/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-pricing-plan-switcher/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -42,7 +42,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'label_block' => true,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons' => 'display:flex; justify-content: {{VALUE}};',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons' => 'display:flex; justify-content: {{VALUE}};',
 				],
 			]
 		);
@@ -51,7 +51,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
             [
                 'label' => esc_html__( 'Round Button', 'shadhin-plugins' ),
                 'type' => Controls_Manager::SWITCHER,
-                'prefix_class' => 'tm-switch-buttons-round-',
+                'prefix_class' => 'mh-switch-buttons-round-',
             ]
         );
 		$this->end_controls_section();
@@ -71,7 +71,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -83,7 +83,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -92,7 +92,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 			[
 				'name' => 'button_default_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)',
+				'selector' => '{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)',
 			]
 		);
 		$this->add_responsive_control(
@@ -102,7 +102,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -113,7 +113,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -125,7 +125,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -136,7 +136,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'border-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'border-color: {{VALUE}};'
 				]
 			]
 		);
@@ -148,7 +148,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:not(.active)' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -169,8 +169,8 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a.active' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a.active' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -182,8 +182,8 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:hover' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a.active' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a.active' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -194,8 +194,8 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:hover' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a.active' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a.active' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -207,8 +207,8 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:hover' => 'background-color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a.active' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:hover' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a.active' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -219,8 +219,8 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'separator' => 'before',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:hover' => 'border-color: {{VALUE}};',
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a.active' => 'border-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a.active' => 'border-color: {{VALUE}};'
 				]
 			]
 		);
@@ -232,8 +232,8 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a:hover' => 'border-color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a.active' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a:hover' => 'border-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a.active' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -255,7 +255,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -267,7 +267,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -276,7 +276,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 			[
 				'name' => 'text_offer_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer',
+				'selector' => '{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer',
 			]
 		);
 		$this->add_control(
@@ -285,7 +285,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -297,7 +297,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -308,7 +308,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);

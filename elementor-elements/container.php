@@ -5,9 +5,9 @@ class Shadhin_plugins_Container_Handler {
     public $sections = array();
 
     public function __construct() {
-        add_action('elementor/editor/before_enqueue_scripts', array( $this, 'tm_elementor_enqueue_base_scripts' ));
-        add_action( 'wp_enqueue_scripts', array( $this, 'tm_elementor_enqueue_front_scripts' ) );
-        add_action( 'elementor/controls/controls_registered', array( $this, 'tm_elementor_init_controls' ));
+        add_action('elementor/editor/before_enqueue_scripts', array( $this, 'mh_elementor_enqueue_base_scripts' ));
+        add_action( 'wp_enqueue_scripts', array( $this, 'mh_elementor_enqueue_front_scripts' ) );
+        add_action( 'elementor/controls/controls_registered', array( $this, 'mh_elementor_init_controls' ));
         add_action( 'elementor/element/container/section_layout/after_section_end', array( $this, 'extend_elementor_section_options' ), 10, 2 );
         add_action( 'elementor/element/container/section_layout/after_section_end', array( $this, 'extend_elementor_gsap_scroll_fixed_options' ), 10, 2 );
         add_action( 'elementor/element/container/section_layout/after_section_end', array( $this, 'render_core_options' ), 10, 2 );
@@ -25,7 +25,7 @@ class Shadhin_plugins_Container_Handler {
         add_action( 'elementor/frontend/container/before_render', [ $this, 'bg_move_effect_options_before_render' ] );
 
 
-		add_action('elementor/frontend/before_render', [$this, 'tm_gsap_before_section_render'], 3);
+		add_action('elementor/frontend/before_render', [$this, 'mh_gsap_before_section_render'], 3);
     }
 
     public static function get_instance() {
@@ -36,29 +36,29 @@ class Shadhin_plugins_Container_Handler {
         return self::$instance;
     }
 
-    public function tm_elementor_enqueue_base_scripts(){
-        wp_enqueue_script( 'tm-elementor-base', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/tm-stretch-base.js' );
+    public function mh_elementor_enqueue_base_scripts(){
+        wp_enqueue_script( 'mh-elementor-base', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/mh-stretch-base.js' );
     }
 
-    public function tm_elementor_enqueue_front_scripts(){
-        wp_enqueue_script( 'tm-elementor-script', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/tm-stretch.js' );
-        wp_enqueue_style( 'tm-elementor-style', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/tm-stretch.css' );
+    public function mh_elementor_enqueue_front_scripts(){
+        wp_enqueue_script( 'mh-elementor-script', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/mh-stretch.js' );
+        wp_enqueue_style( 'mh-elementor-style', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/mh-stretch.css' );
         if ( defined('ELEMENTOR_VERSION') && \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
-            wp_enqueue_script(  'tm-elementor-frontview', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/elementor-frontview.js' );
+            wp_enqueue_script(  'mh-elementor-frontview', SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/elementor-frontview.js' );
         }
     }
 
 
 
     //add new control type
-    public function tm_elementor_init_controls() {
-        require_once( 'controls/control-tm-imgselect.php' );
+    public function mh_elementor_init_controls() {
+        require_once( 'controls/control-mh-imgselect.php' );
         if ( class_exists( 'DSVY_imgselect' ) ) {
-            \Elementor\Plugin::$instance->controls_manager->register_control( 'tm_imgselect', new DSVY_imgselect() );
+            \Elementor\Plugin::$instance->controls_manager->register_control( 'mh_imgselect', new DSVY_imgselect() );
         }
     }
 
-    public function tm_gsap_before_section_render($element)
+    public function mh_gsap_before_section_render($element)
 	{
 		$gsap_scroll_fixed = $element->get_settings_for_display('gsap_scroll_fixed');
 		$gsap_scroll_fixed_stop_under = $element->get_settings_for_display('gsap_scroll_fixed_stop_under');
@@ -80,9 +80,9 @@ class Shadhin_plugins_Container_Handler {
     public function extend_elementor_gsap_scroll_fixed_options( $element ){
 
         $element->start_controls_section(
-            'tm_element_gsap_scroll_fixed_section',
+            'mh_element_gsap_scroll_fixed_section',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . __('TM GSAP Pin Scroll Fixed', 'shadhin-plugins'),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . __('TM GSAP Pin Scroll Fixed', 'shadhin-plugins'),
                 'tab' => Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -150,24 +150,24 @@ class Shadhin_plugins_Container_Handler {
     public function extend_elementor_section_options( $element ){
 
         $element->start_controls_section(
-            'tm_element_section_title',
+            'mh_element_section_title',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . __('TM BG Stretched Options', 'shadhin-plugins'),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . __('TM BG Stretched Options', 'shadhin-plugins'),
                 'tab' => Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
 
         $element->add_control(
-            'tm-extended-column',
+            'mh-extended-column',
             [
                 'label'         => esc_attr__( 'Extend Column for background image', 'shadhin-plugins' ),
                 'description'   => esc_attr__( 'Select which column will be extended with background image.', 'shadhin-plugins' ),
-                'type'          => 'tm_imgselect',
+                'type'          => 'mh_imgselect',
                 'label_block'   => true,
                 'hide_in_inner' => true,
                 'thumb_width'   => '110px',
                 'default'       => 'none',
-                'prefix_class'  => 'tm-col-stretched-',
+                'prefix_class'  => 'mh-col-stretched-',
                 'options' => [
                     'none'          => SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/elementor/bg-stretched-none.png',
                     'left'          => SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/elementor/bg-stretched-first.png',
@@ -178,71 +178,71 @@ class Shadhin_plugins_Container_Handler {
         );
 
         $element->add_control(
-            'tm-strech-content-left',
+            'mh-strech-content-left',
             [
                 'label'         => esc_attr__( 'Also stretch left content too?', 'shadhin-plugins' ),
                 'description'   => esc_attr__( 'Also stretch left content too?', 'shadhin-plugins' ),
                 'type'          => Elementor\Controls_Manager::SWITCHER,
-                'prefix_class'  => 'tm-left-col-stretched-content-',
+                'prefix_class'  => 'mh-left-col-stretched-content-',
                 'hide_in_inner' => true,
                 'label_on'      => esc_attr__( 'Yes', 'shadhin-plugins' ),
                 'label_off'     => esc_attr__( 'No', 'shadhin-plugins' ),
                 'return_value'  => 'yes',
                 'default'       => '',
                 'condition'     => [
-                    'tm-extended-column' => array('left', 'both'),
+                    'mh-extended-column' => array('left', 'both'),
                 ]
             ]
         );
         $element->add_control(
-            'tm-strech-content-right',
+            'mh-strech-content-right',
             [
                 'label'         => esc_attr__( 'Also stretch right content too?', 'shadhin-plugins' ),
                 'description'   => esc_attr__( 'Also stretch right content too?', 'shadhin-plugins' ),
                 'type'          => Elementor\Controls_Manager::SWITCHER,
-                'prefix_class'  => 'tm-right-col-stretched-content-',
+                'prefix_class'  => 'mh-right-col-stretched-content-',
                 'hide_in_inner' => true,
                 'label_on'      => esc_attr__( 'Yes', 'shadhin-plugins' ),
                 'label_off'     => esc_attr__( 'No', 'shadhin-plugins' ),
                 'return_value'  => 'yes',
                 'default'       => '',
                 'condition'     => [
-                    'tm-extended-column' => array('right', 'both'),
+                    'mh-extended-column' => array('right', 'both'),
                 ]
             ]
         );
         $element->add_control(
-            'tm-left-margin',
+            'mh-left-margin',
             [
                 'label'         => esc_html__( 'Left Content Area Margin', 'shadhin-plugins' ),
                 'description'   => esc_html__( 'This is useful if you like to overlap columns on each other.', 'shadhin-plugins' ),
                 'type'          => Elementor\Controls_Manager::DIMENSIONS,
                 'separator'     => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-stretched-div.tm-stretched-left' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-stretched-div.mh-stretched-left' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
         $element->add_control(
-            'tm-right-margin',
+            'mh-right-margin',
             [
                 'label'         => esc_html__( 'Right Content Area Margin', 'shadhin-plugins' ),
                 'description'   => esc_html__( 'This is useful if you like to overlap columns on each other.', 'shadhin-plugins' ),
                 'type'          => Elementor\Controls_Manager::DIMENSIONS,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-stretched-div.tm-stretched-right' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-stretched-div.mh-stretched-right' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
         $element->add_control(
-            'tm_bg_color',
+            'mh_bg_color',
             [
                 'label'         => esc_html__( 'Container Background Color', 'shadhin-plugins' ),
                 'description'   => esc_html__( 'Pre-defined Background Color for this Container (ROW)', 'shadhin-plugins' ),
                 'type'          => Elementor\Controls_Manager::SELECT,
                 'default'       => '',
                 'separator'     => 'before',
-                'prefix_class'  => 'tm-bg-color-yes tm-elementor-bg-color-',
+                'prefix_class'  => 'mh-bg-color-yes mh-elementor-bg-color-',
                 'options'       => [
                     ''              => esc_attr__( 'Transparent', 'shadhin-plugins' ),
                     'white'         => esc_attr__( 'White', 'shadhin-plugins' ),
@@ -256,13 +256,13 @@ class Shadhin_plugins_Container_Handler {
         );
 
         $element->add_control(
-            'tm_text_color',
+            'mh_text_color',
             [
                 'label'         => esc_html__( 'Container Text Color', 'shadhin-plugins' ),
                 'description'   => esc_html__( 'Pre-defined Text Color in this Container (ROW)', 'shadhin-plugins' ),
                 'type'          => Elementor\Controls_Manager::SELECT,
                 'default'       => '',
-                'prefix_class'  => 'tm-text-color-',
+                'prefix_class'  => 'mh-text-color-',
                 'options' => [
                     ''          => __( 'Default', 'shadhin-plugins' ),
                     'white'     => __( 'White', 'shadhin-plugins' ),
@@ -272,15 +272,15 @@ class Shadhin_plugins_Container_Handler {
         );
 
         $element->add_control(
-            'tm-bg-image-color-order',
+            'mh-bg-image-color-order',
             [
                 'label'         => esc_attr__( 'BG Image - BG Color Order', 'shadhin-plugins' ),
                 'description'   => esc_attr__( 'You can show BG image over BG Color or reverse too.', 'shadhin-plugins' ),
-                'type'          => 'tm_imgselect',
+                'type'          => 'mh_imgselect',
                 'label_block'   => true,
                 'thumb_width'   => '110px',
                 'default'       => 'none',
-                'prefix_class'  => 'tm-bg-',
+                'prefix_class'  => 'mh-bg-',
                 'default'       => 'color-over-image',
                 'options'       => [
                     'image-over-color'  => SHADHIN_PLUGINS_ASSETS_URI . '/section-col-stretch/elementor/img-over-color.png',
@@ -294,14 +294,14 @@ class Shadhin_plugins_Container_Handler {
 
     public function render_core_options( $section, $args ) {
         $section->start_controls_section(
-            'tm_core_options',
+            'mh_core_options',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Core Options', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Core Options', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
         $section->add_responsive_control(
-            'tm_section_bg_theme_colored',
+            'mh_section_bg_theme_colored',
             [
                 'label' => esc_html__( "Background Theme Colored", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
@@ -313,7 +313,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_responsive_control(
-            'tm_core_content_width',
+            'mh_core_content_width',
             [
                 'label' => esc_html__( 'Section Custom Width (px)', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -334,7 +334,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_responsive_control(
-            'tm_section_bg_overlay_display_type',
+            'mh_section_bg_overlay_display_type',
             [
                 'label' => esc_html__( "BG Overlay Display Type", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
@@ -349,7 +349,7 @@ class Shadhin_plugins_Container_Handler {
         );
 
         $section->add_control(
-            'tm_section_appear_animation_heading',
+            'mh_section_appear_animation_heading',
             [
                 'label' => esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
@@ -357,46 +357,46 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_control(
-            'tm_section_appear_animation',
+            'mh_section_appear_animation',
             [
                 'label' => esc_html__( "Clip Path Appear Animation", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
                     '' =>  esc_html__( 'No Animation', 'shadhin-plugins' ),
-                    'tm-item-appear-clip-path'  =>  esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
-                    'tm-item-appear-clip-path-right'  =>  esc_html__( 'Clip Path Animation Right to Left', 'shadhin-plugins' ),
-                    'tm-appear-block-holder'  =>  esc_html__( 'Block Clip Path Animation', 'shadhin-plugins' ),
+                    'mh-item-appear-clip-path'  =>  esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
+                    'mh-item-appear-clip-path-right'  =>  esc_html__( 'Clip Path Animation Right to Left', 'shadhin-plugins' ),
+                    'mh-appear-block-holder'  =>  esc_html__( 'Block Clip Path Animation', 'shadhin-plugins' ),
                 ],
             ]
         );
         $section->add_control(
-            'tm_section_appear_animationbg_theme_colored1',
+            'mh_section_appear_animationbg_theme_colored1',
             [
                 'label' => esc_html__( "Color1", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'condition' => [
-                    'tm_section_appear_animation' => array('tm-appear-block-holder')
+                    'mh_section_appear_animation' => array('mh-appear-block-holder')
                 ],
                 'selectors' => [
-                    '{{WRAPPER}}.tm-appear-block-holder:before' => 'background-color: {{VALUE}};'
+                    '{{WRAPPER}}.mh-appear-block-holder:before' => 'background-color: {{VALUE}};'
                 ],
             ]
         );
         $section->add_control(
-            'tm_section_appear_animationbg_theme_colored2',
+            'mh_section_appear_animationbg_theme_colored2',
             [
                 'label' => esc_html__( "Color2", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'condition' => [
-                    'tm_section_appear_animation' => array('tm-appear-block-holder')
+                    'mh_section_appear_animation' => array('mh-appear-block-holder')
                 ],
                 'selectors' => [
-                    '{{WRAPPER}}.tm-appear-block-holder:after' => 'background-color: {{VALUE}};'
+                    '{{WRAPPER}}.mh-appear-block-holder:after' => 'background-color: {{VALUE}};'
                 ],
             ]
         );
         $section->add_control(
-            'tm_section_wow_appear_animation_heading',
+            'mh_section_wow_appear_animation_heading',
             [
                 'label' => esc_html__( 'Wow Animation', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::HEADING,
@@ -404,7 +404,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_control(
-            'tm_section_wow_appear_animation',
+            'mh_section_wow_appear_animation',
             [
                 'label' => esc_html__( "Wow Appear Animation", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
@@ -412,14 +412,14 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_control(
-            'tm_section_wow_animate_delay',
+            'mh_section_wow_animate_delay',
             [
                 'label' => esc_html__( "Wow Animate Delay(ms or s)", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => '0',
                 'description' => 'Enter number. Default 0ms',
                 'condition' => [
-                    'tm_section_wow_appear_animation!' => ''
+                    'mh_section_wow_appear_animation!' => ''
                 ],
             ]
         );
@@ -460,18 +460,18 @@ class Shadhin_plugins_Container_Handler {
 
     public function render_curve_bg_options( $section, $args ) {
         $section->start_controls_section(
-            'tm_curve_bg_options',
+            'mh_curve_bg_options',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Curve BG Options', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Curve BG Options', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
         $section->add_control(
-            'tm_curve_bg_enable',
+            'mh_curve_bg_enable',
             [
                 'label'         => esc_attr__( 'Enable Curve BG?', 'shadhin-plugins' ),
                 'type'          => \Elementor\Controls_Manager::SWITCHER,
-                'prefix_class'  => 'tm-curve-cta-',
+                'prefix_class'  => 'mh-curve-cta-',
                 'label_on'      => esc_attr__( 'Yes', 'shadhin-plugins' ),
                 'label_off'     => esc_attr__( 'No', 'shadhin-plugins' ),
                 'return_value'  => 'yes',
@@ -479,29 +479,29 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_control(
-            'tm_curve_bg_theme_colored',
+            'mh_curve_bg_theme_colored',
             [
                 'label' => esc_html__( "Curve BG 1st Theme Colored", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}.tm-curve-cta-yes:after' => 'background-color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}}.mh-curve-cta-yes:after' => 'background-color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
         $section->add_control(
-            'tm_curve_bg_custom_color',
+            'mh_curve_bg_custom_color',
             [
                 'label' => esc_html__( "Curve BG 1st Custom Color", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}}.tm-curve-cta-yes:after' => 'background-color: {{VALUE}};'
+                    '{{WRAPPER}}.mh-curve-cta-yes:after' => 'background-color: {{VALUE}};'
                 ],
             ]
         );
         $section->add_responsive_control(
-            'tm_curve_bg_custom_width',
+            'mh_curve_bg_custom_width',
             [
                 'label' => esc_html__( 'Curve BG 1st Custom Width', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -512,7 +512,7 @@ class Shadhin_plugins_Container_Handler {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}}.tm-curve-cta-yes:after' => 'width: {{SIZE}}%;',
+                    '{{WRAPPER}}.mh-curve-cta-yes:after' => 'width: {{SIZE}}%;',
                 ],
                 'separator' => 'none',
             ]
@@ -520,29 +520,29 @@ class Shadhin_plugins_Container_Handler {
 
 
         $section->add_control(
-            'tm_curve_bg_theme_colored2',
+            'mh_curve_bg_theme_colored2',
             [
                 'label' => esc_html__( "Curve BG 2nd Theme Colored", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}}.tm-curve-cta-yes:before' => 'background-color: var(--theme-color{{VALUE}});'
+                    '{{WRAPPER}}.mh-curve-cta-yes:before' => 'background-color: var(--theme-color{{VALUE}});'
                 ],
             ]
         );
         $section->add_control(
-            'tm_curve_bg_custom_color2',
+            'mh_curve_bg_custom_color2',
             [
                 'label' => esc_html__( "Curve BG 2nd Custom Color", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}}.tm-curve-cta-yes:before' => 'background-color: {{VALUE}};'
+                    '{{WRAPPER}}.mh-curve-cta-yes:before' => 'background-color: {{VALUE}};'
                 ],
             ]
         );
         $section->add_responsive_control(
-            'tm_curve_bg_custom_width2',
+            'mh_curve_bg_custom_width2',
             [
                 'label' => esc_html__( 'Curve BG 2nd Custom Width', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -553,7 +553,7 @@ class Shadhin_plugins_Container_Handler {
                     ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}}.tm-curve-cta-yes:before' => 'width: {{SIZE}}%;',
+                    '{{WRAPPER}}.mh-curve-cta-yes:before' => 'width: {{SIZE}}%;',
                 ],
                 'separator' => 'none',
             ]
@@ -564,14 +564,14 @@ class Shadhin_plugins_Container_Handler {
     public function register_controls_custom_width($section, $args) {
 
         $section->start_controls_section(
-            'tm_section_custom_width_controls',
+            'mh_section_custom_width_controls',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Container Custom Width', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Container Custom Width', 'shadhin-plugins' ),
                 'tab' => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
         $section->add_responsive_control(
-            'tm_section_custom_width',
+            'mh_section_custom_width',
             [
                 'label' => esc_html__( 'Container Custom Width (px)', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -588,7 +588,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_responsive_control(
-            'tm_section_custom_margin_auto',
+            'mh_section_custom_margin_auto',
             [
                 'label' => esc_html__('Container Left/Right Margin Auto', 'shadhin-plugins'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
@@ -606,7 +606,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_responsive_control(
-            'tm_section_content_width',
+            'mh_section_content_width',
             [
                 'label' => esc_html__( 'Container Inner Custom Width (px)', 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -631,14 +631,14 @@ class Shadhin_plugins_Container_Handler {
     public function register_controls_equal_height($section, $args) {
 
         $section->start_controls_section(
-            'tm_section_equal_height_controls',
+            'mh_section_equal_height_controls',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Equal Height', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Equal Height', 'shadhin-plugins' ),
                 'tab' => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
         $section->add_control(
-            'tm_section_equal_height_on',
+            'mh_section_equal_height_on',
             [
                 'label'        => esc_html__( 'Enable Equal Height', 'shadhin-plugins' ),
                 'type'         => \Elementor\Controls_Manager::SWITCHER,
@@ -647,7 +647,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_control(
-            'tm_section_equal_height_selector',
+            'mh_section_equal_height_selector',
             [
                 'label'     => esc_html__( 'Equal Height For', 'shadhin-plugins' ),
                 'type'      => \Elementor\Controls_Manager::SELECT,
@@ -661,41 +661,41 @@ class Shadhin_plugins_Container_Handler {
                 ],
                 'default'   => 'widgets',
                 'condition' => [
-                    'tm_section_equal_height_on' => 'yes',
+                    'mh_section_equal_height_on' => 'yes',
                 ],
             ]
         );
         $section->add_control(
-            'tm_section_equal_height_custom_selector',
+            'mh_section_equal_height_custom_selector',
             [
                 'label'       => esc_html__( 'Custom Selector', 'shadhin-plugins' ),
                 'type'        => \Elementor\Controls_Manager::TEXT,
                 'placeholder' => '.class-name',
                 'condition'   => [
-                    'tm_section_equal_height_on' => 'yes',
-                    'tm_section_equal_height_selector' => 'custom',
+                    'mh_section_equal_height_on' => 'yes',
+                    'mh_section_equal_height_selector' => 'custom',
                 ],
             ]
         );
         $section->add_control(
-            'tm_section_equal_height_disable_on_tablet',
+            'mh_section_equal_height_disable_on_tablet',
             [
                 'label'        => esc_html__( 'Disable On Tablet', 'shadhin-plugins' ),
                 'type'         => \Elementor\Controls_Manager::SWITCHER,
                 'default'      => 'no',
                 'condition'   => [
-                    'tm_section_equal_height_on' => 'yes',
+                    'mh_section_equal_height_on' => 'yes',
                 ],
             ]
         );
         $section->add_control(
-            'tm_section_equal_height_disable_on_mobile',
+            'mh_section_equal_height_disable_on_mobile',
             [
                 'label'        => esc_html__( 'Disable On Mobile', 'shadhin-plugins' ),
                 'type'         => \Elementor\Controls_Manager::SWITCHER,
                 'default'      => 'yes',
                 'condition'   => [
-                    'tm_section_equal_height_on' => 'yes',
+                    'mh_section_equal_height_on' => 'yes',
                 ],
             ]
         );
@@ -705,14 +705,14 @@ class Shadhin_plugins_Container_Handler {
 
     public function other_options( $section, $args ) {
         $section->start_controls_section(
-            'tm_other_options',
+            'mh_other_options',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Other Options', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Other Options', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
         $section->add_control(
-            'tm_four_vertical_line',
+            'mh_four_vertical_line',
             [
                 'label' => esc_html__( "Show Four Vertical Lines in Background?", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -720,7 +720,7 @@ class Shadhin_plugins_Container_Handler {
             ]
         );
         $section->add_control(
-            'tm_small_vertical_line',
+            'mh_small_vertical_line',
             [
                 'label' => esc_html__( "Show Smaill Vertical Lines in Background?", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -732,14 +732,14 @@ class Shadhin_plugins_Container_Handler {
 
     public function bg_move_effect_options( $section, $args ) {
         $section->start_controls_section(
-            'tm_bg_move_effect_options',
+            'mh_bg_move_effect_options',
             [
-                'label' => TM_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - BG Gsap Clip Path Effect', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - BG Gsap Clip Path Effect', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
         $section->add_control(
-            'tm_bg_move_effect_enable',
+            'mh_bg_move_effect_enable',
             [
                 'label' => esc_html__( "Enable BG Move Effect?", 'shadhin-plugins' ),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
@@ -755,12 +755,12 @@ class Shadhin_plugins_Container_Handler {
         $settings = $data['settings'];
 
         if ( 'container' === $type || 'widget' === $type ) {
-          if ( isset( $settings['tm_section_appear_animation'] ) && $settings['tm_section_appear_animation'] != '' ) {
-            $widget->add_render_attribute( '_wrapper', 'class', $settings['tm_section_appear_animation'] );
+          if ( isset( $settings['mh_section_appear_animation'] ) && $settings['mh_section_appear_animation'] != '' ) {
+            $widget->add_render_attribute( '_wrapper', 'class', $settings['mh_section_appear_animation'] );
           }
-          if ( isset( $settings['tm_section_wow_appear_animation'] ) && $settings['tm_section_wow_appear_animation'] != '' ) {
-            $widget->add_render_attribute( '_wrapper', 'class', 'wow '.$settings['tm_section_wow_appear_animation'] );
-            $widget->add_render_attribute( '_wrapper', 'data-wow-delay', $settings['tm_section_wow_animate_delay'] );
+          if ( isset( $settings['mh_section_wow_appear_animation'] ) && $settings['mh_section_wow_appear_animation'] != '' ) {
+            $widget->add_render_attribute( '_wrapper', 'class', 'wow '.$settings['mh_section_wow_appear_animation'] );
+            $widget->add_render_attribute( '_wrapper', 'data-wow-delay', $settings['mh_section_wow_animate_delay'] );
           }
         }
     }
@@ -768,43 +768,43 @@ class Shadhin_plugins_Container_Handler {
 
     public function equal_height_before_render($section) {
         $settings = $section->get_settings_for_display();
-        if( $settings[ 'tm_section_equal_height_on' ] == 'yes' ) {
+        if( $settings[ 'mh_section_equal_height_on' ] == 'yes' ) {
             wp_enqueue_script( 'matchHeight' );
 
             $height_option = '';
 
-            if ( 'column' == $settings['tm_section_equal_height_selector']) {
+            if ( 'column' == $settings['mh_section_equal_height_selector']) {
                 $height_option = '.e-con-inner';
             }
 
-            if ( 'widgets' == $settings['tm_section_equal_height_selector']) {
+            if ( 'widgets' == $settings['mh_section_equal_height_selector']) {
                 $height_option = '.e-con-inner .elementor-widget > .elementor-widget-container';
             }
 
-            if ( 'widgets_c1' == $settings['tm_section_equal_height_selector']) {
+            if ( 'widgets_c1' == $settings['mh_section_equal_height_selector']) {
                 $height_option = '.e-con-inner .elementor-widget > .elementor-widget-container > div:nth-of-type(1)';
             }
 
-            if ( 'widgets_c2' == $settings['tm_section_equal_height_selector']) {
+            if ( 'widgets_c2' == $settings['mh_section_equal_height_selector']) {
                 $height_option = '.e-con-inner .elementor-widget > .elementor-widget-container > div > div:nth-of-type(1)';
             }
 
-            if ( 'widgets_c3' == $settings['tm_section_equal_height_selector']) {
+            if ( 'widgets_c3' == $settings['mh_section_equal_height_selector']) {
                 $height_option = '.e-con-inner .elementor-widget > .elementor-widget-container > div > div > div:nth-of-type(1)';
             }
 
-            if ( 'custom' == $settings['tm_section_equal_height_selector'] and $settings['tm_section_equal_height_custom_selector']) {
-                $height_option = '' . esc_attr($settings['tm_section_equal_height_custom_selector']) ;
+            if ( 'custom' == $settings['mh_section_equal_height_selector'] and $settings['mh_section_equal_height_custom_selector']) {
+                $height_option = '' . esc_attr($settings['mh_section_equal_height_custom_selector']) ;
             }
 
             if ($height_option) {
-                $section->add_render_attribute( '_wrapper', 'data-tm-equal-height-col', $height_option );
+                $section->add_render_attribute( '_wrapper', 'data-mh-equal-height-col', $height_option );
 
-                if (  $settings['tm_section_equal_height_disable_on_tablet'] === 'yes' ) {
-                    $section->add_render_attribute( '_wrapper', 'class', 'tm-eqh-disable-on-tablet' );
+                if (  $settings['mh_section_equal_height_disable_on_tablet'] === 'yes' ) {
+                    $section->add_render_attribute( '_wrapper', 'class', 'mh-eqh-disable-on-tablet' );
                 }
-                if (  $settings['tm_section_equal_height_disable_on_mobile'] === 'yes' ) {
-                    $section->add_render_attribute( '_wrapper', 'class', 'tm-eqh-disable-on-mobile' );
+                if (  $settings['mh_section_equal_height_disable_on_mobile'] === 'yes' ) {
+                    $section->add_render_attribute( '_wrapper', 'class', 'mh-eqh-disable-on-mobile' );
                 }
             }
         }
@@ -814,20 +814,20 @@ class Shadhin_plugins_Container_Handler {
 
     public function other_options_before_render( $section ) {
         $settings = $section->get_settings_for_display();
-        if( $settings['tm_four_vertical_line'] == 'yes' ) {
-            $section->add_render_attribute( '_wrapper', 'class', 'tm-enable-four-vertical-line' );
+        if( $settings['mh_four_vertical_line'] == 'yes' ) {
+            $section->add_render_attribute( '_wrapper', 'class', 'mh-enable-four-vertical-line' );
         }
-        if( $settings['tm_small_vertical_line'] == 'yes' ) {
-            $section->add_render_attribute( '_wrapper', 'class', 'tm-one-vertical-line' );
+        if( $settings['mh_small_vertical_line'] == 'yes' ) {
+            $section->add_render_attribute( '_wrapper', 'class', 'mh-one-vertical-line' );
         }
     }
     public function bg_move_effect_options_before_render( $section ) {
         $settings = $section->get_settings_for_display();
-        if( $settings['tm_bg_move_effect_enable'] == 'yes' ) {
-            $section->add_render_attribute( '_wrapper', 'class', 'tm-enable-bg-move-effect' );
+        if( $settings['mh_bg_move_effect_enable'] == 'yes' ) {
+            $section->add_render_attribute( '_wrapper', 'class', 'mh-enable-bg-move-effect' );
             wp_enqueue_script( 'gsap' );
             wp_enqueue_script( 'gsap-scrolltrigger' );
-            wp_enqueue_script( 'tm-gsap-bg-animation' );
+            wp_enqueue_script( 'mh-gsap-bg-animation' );
         }
     }
 }

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style6 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-testimonial-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-testimonial-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -32,7 +32,7 @@ class Skin_Style6 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-testimonial-block-style6', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-style6' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-testimonial-block-style6', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-style6' . $direction_suffix . '.css' );
 
 
 		if( $settings['animate_icon_on_hover'] ) {

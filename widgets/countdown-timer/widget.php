@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Countdown_Timer extends Widget_Base {
+class MH_Elementor_Countdown_Timer extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
@@ -24,12 +24,12 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
 
-		wp_register_script( 'tm-countdown-timer-current-style-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/countdown-timer.js' );
+		wp_register_script( 'mh-countdown-timer-current-style-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/countdown-timer.js' );
 
 
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-countdown-timer-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/countdown-timer/countdown-timer-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-countdown-timer-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/countdown-timer/countdown-timer-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -43,7 +43,7 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-countdown-timer-current';
+		return 'mh-ele-countdown-timer-current';
 	}
 
 	/**
@@ -69,7 +69,7 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -102,7 +102,7 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'jquery-countdown', 'jquery-final-countdown', 'kinetic', 'tm-countdown-timer-current-style-script' ];
+		return [ 'mascot-core-hellojs', 'jquery-countdown', 'jquery-final-countdown', 'kinetic', 'mh-countdown-timer-current-style-script' ];
 	}
 
 
@@ -137,7 +137,7 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -174,7 +174,7 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 				'label_block' => false,
 				'options' => shadhin_plugins_text_align_choose(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-countdown-timer' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-countdown-timer' => 'text-align: {{VALUE}};'
 				],
 			]
 		);
@@ -187,7 +187,7 @@ class TM_Elementor_Countdown_Timer extends Widget_Base {
 				'label_block' => true,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-countdown-timer > div' => 'display:flex; justify-content: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-countdown-timer > div' => 'display:flex; justify-content: {{VALUE}};',
 				],
 			]
 		);

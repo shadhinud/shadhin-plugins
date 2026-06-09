@@ -13,14 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Header_Cart extends Widget_Base {
+class MH_Elementor_Header_Cart extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
 		wp_enqueue_style( 'shadhin-woo-shop-mini-cart' );
-		wp_enqueue_style( 'tm-header-cart', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/header-cart' . $direction_suffix . '.css' );
-		wp_enqueue_script('tm-header-cart', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/header-cart.js', array('jquery'), SHADHIN_PLUGINS_VERSION, true);
+		wp_enqueue_style( 'mh-header-cart', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/header-cart' . $direction_suffix . '.css' );
+		wp_enqueue_script('mh-header-cart', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/header-cart.js', array('jquery'), SHADHIN_PLUGINS_VERSION, true);
 	}
 
 	/**
@@ -33,7 +33,7 @@ class TM_Elementor_Header_Cart extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-header-cart';
+		return 'mh-ele-header-cart';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class TM_Elementor_Header_Cart extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -92,7 +92,7 @@ class TM_Elementor_Header_Cart extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'tm-header-cart' ];
+		return [ 'mascot-core-hellojs', 'mh-header-cart' ];
 	}
 
 	/**
@@ -123,7 +123,7 @@ class TM_Elementor_Header_Cart extends Widget_Base {
                     'style-no-dropdown' => esc_html__('No Dropdown Content', 'shadhin-plugins'),
                     'style-side-panel'    => esc_html__('Side Panel', 'shadhin-plugins'),
                 ],
-                'prefix_class'	=> 'tm-header-search-content-',
+                'prefix_class'	=> 'mh-header-search-content-',
             ]
         );
         $this->add_control(

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style8 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-features-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-features-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -31,7 +31,7 @@ class Skin_Style8 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-features-block-style8', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/features-block/features-block-style8' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-features-block-style8', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/features-block/features-block-style8' . $direction_suffix . '.css' );
 
 		if( $settings['animate_icon_on_hover'] ) {
 			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];

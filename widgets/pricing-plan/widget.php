@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Pricing_Plan extends Widget_Base {
+class MH_Elementor_Pricing_Plan extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-pricing-plan-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-plan-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-pricing-plan-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-plan-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -33,7 +33,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-pricing-plan';
+		return 'mh-ele-pricing-plan';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -117,7 +117,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -197,7 +197,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'label_block' => false,
 				'options' => shadhin_plugins_text_align_choose(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper' => 'text-align: {{VALUE}};'
 				],
 			]
 		);
@@ -1778,7 +1778,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'bg_wrapper_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper',
 			]
 		);
 		$this->add_control(
@@ -1789,7 +1789,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1799,7 +1799,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'parent_wrapper_border',
 				'label' => esc_html__( 'Wrapper Border', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper',
 			]
 		);
 		$this->add_group_control(
@@ -1808,7 +1808,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'parent_wrapper_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper',
 			]
 		);
 		$this->end_controls_tab();
@@ -1826,7 +1826,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'bg_wrapper_background_hover',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper',
 			]
 		);
 		$this->add_control(
@@ -1837,7 +1837,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1846,7 +1846,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 			[
 				'name' => 'parent_wrapper_border_hover',
 				'label' => esc_html__( 'Wrapper Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper',
 			]
 		);
 		$this->add_group_control(
@@ -1855,7 +1855,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'parent_wrapper_box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper',
 			]
 		);
 		$this->end_controls_tab();
@@ -1869,7 +1869,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'separator' => 'before',
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1880,7 +1880,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1891,7 +1891,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper .pricing-plan-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper .pricing-plan-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1902,7 +1902,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1958,7 +1958,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'wrapper_bg_before_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper:before',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper:before',
 			]
 		);
 		$this->add_control(
@@ -1976,7 +1976,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper:before' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper:before' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -1993,7 +1993,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'wrapper_bg_before_background_hover',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper:before',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper:before',
 			]
 		);
 		$this->add_control(
@@ -2011,7 +2011,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper:before' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper:before' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -2041,7 +2041,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'wrapper_bg_after_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper:after',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper:after',
 			]
 		);
 		$this->add_control(
@@ -2059,7 +2059,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-inner-wrapper:after' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-inner-wrapper:after' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -2076,7 +2076,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 				'name' => 'wrapper_bg_after_background_hover',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper:after',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper:after',
 			]
 		);
 		$this->add_control(
@@ -2094,7 +2094,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-inner-wrapper:after' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-inner-wrapper:after' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -2139,7 +2139,7 @@ class TM_Elementor_Pricing_Plan extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-pricing-skin-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-skin-style1' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-pricing-skin-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-skin-style1' . $direction_suffix . '.css' );
 
 		//link url
 		$settings['button']['target'] = $settings['link']['is_external'] ? ' target="_blank"' : '';

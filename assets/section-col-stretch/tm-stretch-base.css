@@ -1,25 +1,25 @@
 /* --------------------------------------
- * Elementor - tm_imgselect
+ * Elementor - mh_imgselect
  * ---------------------------------------*/
 
-.tm-imgselect-thumbs input {
+.mh-imgselect-thumbs input {
     display: none;
 }
-.tm-imgselect-thumbs label {
+.mh-imgselect-thumbs label {
     display: block;
     margin: 5px;
     position: relative;
     float: left;
     width: 70px;
 }
-.tm-imgselect-thumb{
+.mh-imgselect-thumb{
     cursor: pointer;
 }
-.elementor-panel .tm-imgselect-thumb img {
+.elementor-panel .mh-imgselect-thumb img {
     padding: 3px;
     border: 3px solid #eee;
 }
-.elementor-panel .tm-imgselect-thumb i {
+.elementor-panel .mh-imgselect-thumb i {
     background-color: #39b54a;
     position: absolute;
     right: 3px;
@@ -28,13 +28,13 @@
     color: white;
     display: none;
 }
-.elementor-panel .tm-imgselect-thumb input:checked ~ img {
+.elementor-panel .mh-imgselect-thumb input:checked ~ img {
     border-color: #39b54a;
 }
-.elementor-panel .tm-imgselect-thumb input:checked ~ i {
+.elementor-panel .mh-imgselect-thumb input:checked ~ i {
     display: block;
 }
-.elementor-panel .tm-imgselect-thumb input:checked ~ img:before {
+.elementor-panel .mh-imgselect-thumb input:checked ~ img:before {
     content: "";
     position: absolute;
     top: 100px;
@@ -60,6 +60,6 @@
     color: green;
 }
 /* Elementor icon picker icon size */
-.elementor-icons-manager__tab__item__icon.tm-colza-icon:before{
+.elementor-icons-manager__tab__item__icon.mh-colza-icon:before{
     font-size: 35px;
 }

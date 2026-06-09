@@ -13,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Header_Search extends Widget_Base {
+class MH_Elementor_Header_Search extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
-        wp_enqueue_script('tm-header-search-popup', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/header-search-popup.js', array('jquery'), SHADHIN_PLUGINS_VERSION, true);
+        wp_enqueue_script('mh-header-search-popup', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/header-search-popup.js', array('jquery'), SHADHIN_PLUGINS_VERSION, true);
 	}
 
 	/**
@@ -29,7 +29,7 @@ class TM_Elementor_Header_Search extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-header-search';
+		return 'mh-ele-header-search';
 	}
 
 	/**
@@ -55,7 +55,7 @@ class TM_Elementor_Header_Search extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -179,7 +179,7 @@ class TM_Elementor_Header_Search extends Widget_Base {
                 ],
                 'label_block' => false,
                 'selectors'   => [
-                    '{{WRAPPER}} .tm-widget-search-form' => 'text-align: {{VALUE}};'
+                    '{{WRAPPER}} .mh-widget-search-form' => 'text-align: {{VALUE}};'
                 ],
                 'condition' => [
                     'search_layout' => 'icon'

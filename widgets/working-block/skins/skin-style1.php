@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style1 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-working-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-working-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -31,9 +31,9 @@ class Skin_Style1 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-working-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/working-block/working-block-style1' . $direction_suffix . '.css' );
-		wp_register_script( 'tm-working-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/working-block-style1.js', array( 'jquery' ), false, true );
-		wp_enqueue_script( 'tm-working-block-style1' );
+		wp_enqueue_style( 'mh-working-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/working-block/working-block-style1' . $direction_suffix . '.css' );
+		wp_register_script( 'mh-working-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/working-block-style1.js', array( 'jquery' ), false, true );
+		wp_enqueue_script( 'mh-working-block-style1' );
 
 		if( $settings['animate_icon_on_hover'] ) {
 			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];

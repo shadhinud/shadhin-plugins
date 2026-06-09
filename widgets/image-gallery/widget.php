@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Image_Gallery extends Widget_Base {
+class MH_Elementor_Image_Gallery extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-image-gallery-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/image-gallery/image-gallery-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-image-gallery-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/image-gallery/image-gallery-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -34,7 +34,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-image-gallery2';
+		return 'mh-ele-image-gallery2';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -117,7 +117,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -165,7 +165,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-image-gallery img' => 'min-height: {{SIZE}}{{UNIT}}; object-fit: cover;'
+					'{{WRAPPER}} .mh-image-gallery img' => 'min-height: {{SIZE}}{{UNIT}}; object-fit: cover;'
 				],
 				'condition' => [
 					'display_type' => array('masonry')
@@ -270,7 +270,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .tm-image-gallery img' => 'min-height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} {{CURRENT_ITEM}} .mh-image-gallery img' => 'min-height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -291,7 +291,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}} .tm-image-gallery img' => 'width: 100%; max-height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} {{CURRENT_ITEM}} .mh-image-gallery img' => 'width: 100%; max-height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -384,7 +384,7 @@ class TM_Elementor_Image_Gallery extends Widget_Base {
 		shadhin_plugins_wp_enqueue_script_lightgallery();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-image-gallery-default', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/image-gallery/image-gallery-default' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-image-gallery-default', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/image-gallery/image-gallery-default' . $direction_suffix . '.css' );
 
 		//classes
 		$classes = array();

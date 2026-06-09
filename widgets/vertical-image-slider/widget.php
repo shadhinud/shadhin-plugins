@@ -14,19 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
+class MH_Elementor_Vertical_Image_Slider extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-vertical-image-slider-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/vertical-image-slider/vertical-image-slider-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-vertical-image-slider-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/vertical-image-slider/vertical-image-slider-loader' . $direction_suffix . '.css' );
 		}
 
 		wp_enqueue_style( 'swiper' );
 		wp_enqueue_script( 'swiper' );
-		wp_register_script( 'tm-vertical-image-slider', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/vertical-image-slider.js', array('jquery', 'swiper'), false, true );
-		wp_enqueue_script( array( 'tm-vertical-image-slider' ) );
+		wp_register_script( 'mh-vertical-image-slider', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/vertical-image-slider.js', array('jquery', 'swiper'), false, true );
+		wp_enqueue_script( array( 'mh-vertical-image-slider' ) );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-vertical-image-slider';
+		return 'mh-ele-vertical-image-slider';
 	}
 
 	/**
@@ -65,7 +65,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -98,7 +98,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'swiper', 'tm-vertical-image-slider' ];
+		return [ 'mascot-core-hellojs', 'swiper', 'mh-vertical-image-slider' ];
 	}
 
 	/**
@@ -112,7 +112,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -149,7 +149,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 					'size' => 80,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-vertical-image-slider-wrapper' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-vertical-image-slider-wrapper' => 'height: {{SIZE}}{{UNIT}};'
 				],
 				'condition' => [
 					'slider_direction' => 'vertical'
@@ -179,7 +179,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 					'size' => 100,
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-vertical-image-slider-wrapper' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-vertical-image-slider-wrapper' => 'width: {{SIZE}}{{UNIT}};'
 				],
 				'condition' => [
 					'slider_direction' => 'horizontal'
@@ -542,8 +542,8 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-vertical-image-slider .slider-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .tm-vertical-image-slider .slider-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-vertical-image-slider .slider-image' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-vertical-image-slider .slider-image img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -552,7 +552,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 			[
 				'name' => 'image_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-vertical-image-slider .slider-image img',
+				'selector' => '{{WRAPPER}} .mh-vertical-image-slider .slider-image img',
 			]
 		);
 		$this->add_control(
@@ -671,8 +671,8 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(odd) .tm-vertical-image-slider-item .slider-image' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(odd) .tm-vertical-image-slider-item .slider-image img' => 'height: {{SIZE}}{{UNIT}}; object-fit: cover;'
+					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(odd) .mh-vertical-image-slider-item .slider-image' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(odd) .mh-vertical-image-slider-item .slider-image img' => 'height: {{SIZE}}{{UNIT}}; object-fit: cover;'
 				]
 			]
 		);
@@ -769,8 +769,8 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(even) .tm-vertical-image-slider-item .slider-image' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(even) .tm-vertical-image-slider-item .slider-image img' => 'height: {{SIZE}}{{UNIT}}; object-fit: cover;'
+					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(even) .mh-vertical-image-slider-item .slider-image' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .swiper-wrapper .swiper-slide:nth-child(even) .mh-vertical-image-slider-item .slider-image img' => 'height: {{SIZE}}{{UNIT}}; object-fit: cover;'
 				]
 			]
 		);
@@ -801,7 +801,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 				'label' => esc_html__( "Title Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-vertical-image-slider .slider-title' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-vertical-image-slider .slider-title' => 'color: {{VALUE}};'
 				],
 				'condition' => [
 					'show_title' => 'yes'
@@ -813,7 +813,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-vertical-image-slider .slider-title',
+				'selector' => '{{WRAPPER}} .mh-vertical-image-slider .slider-title',
 				'condition' => [
 					'show_title' => 'yes'
 				]
@@ -835,7 +835,7 @@ class TM_Elementor_Vertical_Image_Slider extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-vertical-image-slider-default', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/vertical-image-slider/vertical-image-slider-default' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-vertical-image-slider-default', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/vertical-image-slider/vertical-image-slider-default' . $direction_suffix . '.css' );
 
 		$settings['holder_id'] = shadhin_plugins_get_isotope_holder_ID('vertical-image-slider');
 

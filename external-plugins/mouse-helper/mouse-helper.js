@@ -35,7 +35,7 @@
 		_window_scroll_left   = $window.scrollLeft(),
 		$document             = jQuery( document ),
 		$body                 = jQuery( 'body' ),
-		$mouse_helper         = jQuery('.tm_cursor_mouse_helper');
+		$mouse_helper         = jQuery('.mh_cursor_mouse_helper');
 
 	var $mouse_helper_targets,
 		$mouse_helper_magnets;
@@ -47,7 +47,7 @@
 	function update_jquery_links(e) {
 		if ( first_run && e && e.namespace == 'init_hidden_elements' ) {
 			first_run = false;
-			return; 
+			return;
 		}
 		$mouse_helper_targets = jQuery('[data-mouse-helper]');
 		$mouse_helper_magnets = jQuery('[data-mouse-helper-magnet]:not([data-mouse-helper-magnet="0"])');
@@ -59,13 +59,13 @@
 		_window_width = $window.width();
 		_window_height = $window.height();
 		_window_scroll_top = $window.scrollTop();
-		_window_scroll_left = $window.scrollLeft();	
+		_window_scroll_left = $window.scrollLeft();
 	} );
 	$window.on( 'scroll', function() {
 		_window_scroll_top = $window.scrollTop();
-		_window_scroll_left = $window.scrollLeft();	
+		_window_scroll_left = $window.scrollLeft();
 	} );
-	
+
 	function trx_addons_window_scroll_top() {
 		return _window_scroll_top;
 	}
@@ -74,9 +74,9 @@
 	}
 
 
-	$document.trigger('action.init_tm_addons');
+	$document.trigger('action.init_mh_addons');
 	// Init Mouse helper
-	$document.on('action.init_tm_addons', function() {
+	$document.on('action.init_mh_addons', function() {
 	} );
 
 	if ( $mouse_helper.length > 0 ) {
@@ -84,17 +84,17 @@
 		mouse_helper_color      = $mouse_helper.css( 'color' );
 		mouse_helper_bg_color   = $mouse_helper.css( 'background-color' );
 		mouse_helper_bd_color   = $mouse_helper.css( 'border-color' );
-		mouse_helper_delay      = TM_MOUSEHELPER_STORAGE['mouse_helper_delay'];
+		mouse_helper_delay      = MH_MOUSEHELPER_STORAGE['mouse_helper_delay'];
 		var pointermove_allowed = false;
 
 		$document
 			.on("mouseover", 'a', function(e) {
 				// Set 'active' and 'action' classes
-				$mouse_helper.addClass( "tm_cursor_mouse_helper_link_active");
+				$mouse_helper.addClass( "mh_cursor_mouse_helper_link_active");
 
 			} )
 			.on("mouseout", 'a', function(e) {
-				$mouse_helper.removeClass( "tm_cursor_mouse_helper_link_active");
+				$mouse_helper.removeClass( "mh_cursor_mouse_helper_link_active");
 			} )
 
 
@@ -105,11 +105,11 @@
 				if ( e.originalEvent.type == 'mousemove' && pointermove_allowed ) {
 					return;
 				}
-				tm_cursor_mouse_helper_get_state(e);
+				mh_cursor_mouse_helper_get_state(e);
 				if ( mouse_helper_callback && typeof window[mouse_helper_callback] == 'function' ) {
 					window[mouse_helper_callback]( 'mousemove', $mouse_helper, mouse_helper_target, e );
-				} else if ( typeof window['tm_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
-					window['tm_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mousemove', $mouse_helper, mouse_helper_target, e );
+				} else if ( typeof window['mh_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
+					window['mh_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mousemove', $mouse_helper, mouse_helper_target, e );
 				}
 				if ( mouse_helper_action == 'highlight' && mouse_helper_target ) {
 					var targetOffset = mouse_helper_target.offset(),
@@ -118,42 +118,42 @@
 						size = parseFloat( mouse_helper_target.css('background-size').split(' ')[0] ) / 2;
 					mouse_helper_target.css( 'background-position', ( mouseX - targetX - size) + 'px ' + ( mouseY - targetY - size ) + 'px' );
 				}
-				if ( _window_width >= TM_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
+				if ( _window_width >= MH_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
 					if ( mouse_helper_delay < 2 ) {
 						destX.fill( mouseX );
 						destY.fill( mouseY );
 						$mouse_helper.css("transform", "translate(" + destX[0] + "px," + destY[0] + "px)");
 					}
 					if ( mouseX > _window_width - 100 ) {
-						if ( ! $mouse_helper.hasClass( 'tm_cursor_mouse_helper_left' ) ) {
-							$mouse_helper.addClass( 'tm_cursor_mouse_helper_left' );
+						if ( ! $mouse_helper.hasClass( 'mh_cursor_mouse_helper_left' ) ) {
+							$mouse_helper.addClass( 'mh_cursor_mouse_helper_left' );
 						}
 					} else {
-						if ( $mouse_helper.hasClass( 'tm_cursor_mouse_helper_left' ) ) {
-							$mouse_helper.removeClass( 'tm_cursor_mouse_helper_left' );
+						if ( $mouse_helper.hasClass( 'mh_cursor_mouse_helper_left' ) ) {
+							$mouse_helper.removeClass( 'mh_cursor_mouse_helper_left' );
 						}
 					}
 					if ( mouseY > _window_height - 100 ) {
-						if ( ! $mouse_helper.hasClass( 'tm_cursor_mouse_helper_top' ) ) {
-							$mouse_helper.addClass( 'tm_cursor_mouse_helper_top' );
+						if ( ! $mouse_helper.hasClass( 'mh_cursor_mouse_helper_top' ) ) {
+							$mouse_helper.addClass( 'mh_cursor_mouse_helper_top' );
 						}
 					} else {
-						if ( $mouse_helper.hasClass( 'tm_cursor_mouse_helper_top' ) ) {
-							$mouse_helper.removeClass( 'tm_cursor_mouse_helper_top' );
+						if ( $mouse_helper.hasClass( 'mh_cursor_mouse_helper_top' ) ) {
+							$mouse_helper.removeClass( 'mh_cursor_mouse_helper_top' );
 						}
 					}
 					// Check magnets
-					tm_cursor_mouse_helper_check_magnets();
+					mh_cursor_mouse_helper_check_magnets();
 				}
 			} )
 
 
 
 			.on("mouseenter", '[data-mouse-helper]', function(e) {
-				var $self = jQuery(this).addClass('tm_cursor_mouse_helper_over');
+				var $self = jQuery(this).addClass('mh_cursor_mouse_helper_over');
 				mouse_helper_target = mouse_helper_last_target = $self;
 				mouse_helper_action = mouse_helper_last_action = $self.data( 'mouse-helper' );
-				if ( _window_width >= TM_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
+				if ( _window_width >= MH_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
 					mouse_helper_reset();
 					if ( mouse_helper_timeout ) {
 						clearTimeout( mouse_helper_timeout );
@@ -166,8 +166,8 @@
 				}
 				if ( mouse_helper_callback && typeof window[mouse_helper_callback] == 'function' ) {
 					window[mouse_helper_callback]( 'mouseenter', $mouse_helper, $self, e );
-				} else if ( typeof window['tm_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
-					window['tm_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mouseenter', $mouse_helper, $self, e );
+				} else if ( typeof window['mh_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
+					window['mh_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mouseenter', $mouse_helper, $self, e );
 				}
 				mouse_helper_axis = $self.data( 'mouse-helper-axis' );
 				if ( mouse_helper_axis === undefined ) {
@@ -175,17 +175,17 @@
 				}
 				mouse_helper_delay = $self.data( 'mouse-helper-delay' );
 				if ( mouse_helper_delay === undefined ) {
-					mouse_helper_delay = TM_MOUSEHELPER_STORAGE['mouse_helper_delay'];
+					mouse_helper_delay = MH_MOUSEHELPER_STORAGE['mouse_helper_delay'];
 				}
-				
-				tm_cursor_mouse_helper_get_state(e);
 
-				if ( _window_width >= TM_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
+				mh_cursor_mouse_helper_get_state(e);
+
+				if ( _window_width >= MH_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
 					// Centered
-					var pos = TM_MOUSEHELPER_STORAGE['mouse_helper_centered'] > 0 || $self.data("mouse-helper-centered") > 0 || '';
+					var pos = MH_MOUSEHELPER_STORAGE['mouse_helper_centered'] > 0 || $self.data("mouse-helper-centered") > 0 || '';
 					if ( pos > 0 ) {
 						$mouse_helper
-							.addClass( 'tm_cursor_mouse_helper_centered' );
+							.addClass( 'mh_cursor_mouse_helper_centered' );
 					}
 					// Overlay mode
 					var mode = $self.data("mouse-helper-mode") || '';
@@ -211,9 +211,9 @@
 					var img = $self.data("mouse-helper-image") || '';
 					if ( img ) {
 						$mouse_helper
-							.find('.tm_cursor_mouse_helper_image').remove().end()
-							.append( '<span class="tm_cursor_mouse_helper_image" style="background-image:url(' + img + ');"></span>' )
-							.addClass( "tm_cursor_mouse_helper_with_image");
+							.find('.mh_cursor_mouse_helper_image').remove().end()
+							.append( '<span class="mh_cursor_mouse_helper_image" style="background-image:url(' + img + ');"></span>' )
+							.addClass( "mh_cursor_mouse_helper_with_image");
 					}
 					// Add icon
 					var icon = $self.data("mouse-helper-icon") || '';
@@ -221,14 +221,14 @@
 						var icon_color = $self.data("mouse-helper-icon-color") || '',
 							icon_size = $self.data("mouse-helper-icon-size") || '';
 						$mouse_helper
-							.find('.tm_cursor_mouse_helper_icon').remove().end()
-							.append( '<span class="tm_cursor_mouse_helper_icon ' + icon + '"'
+							.find('.mh_cursor_mouse_helper_icon').remove().end()
+							.append( '<span class="mh_cursor_mouse_helper_icon ' + icon + '"'
 											+ ' style="'
 												+ ( icon_color ? 'color: ' + icon_color + ';' : '' )
 												+ ( icon_size ? 'font-size: ' + icon_size + 'em;' : '' )
 											+ '"'
 										+'></span>' )
-							.addClass( 'tm_cursor_mouse_helper_with_icon' );
+							.addClass( 'mh_cursor_mouse_helper_with_icon' );
 					}
 					// Add text
 					var text = $self.data("mouse-helper-text") || '',
@@ -236,18 +236,18 @@
 						text_size = $self.data("mouse-helper-text-size") || '';
 					if ( text ) {
 						$mouse_helper
-							.find('.tm_cursor_mouse_helper_text').remove().end()
-							.append( '<span class="tm_cursor_mouse_helper_text' + ( text_round ? ' tm_cursor_mouse_helper_text_round' : '' ) + '"'
+							.find('.mh_cursor_mouse_helper_text').remove().end()
+							.append( '<span class="mh_cursor_mouse_helper_text' + ( text_round ? ' mh_cursor_mouse_helper_text_round' : '' ) + '"'
 										+ ( text_size ? ' style="font-size:' + text_size + 'em;"' : '' )
 										+ '>'
-											+ ( text_round ? tm_addons_wrap_chars( text, '<span class="tm_cursor_mouse_helper_text_round_item">', '</span>' ) : text )
+											+ ( text_round ? mh_addons_wrap_chars( text, '<span class="mh_cursor_mouse_helper_text_round_item">', '</span>' ) : text )
 										+ '</span>' )
-							.addClass( 'tm_cursor_mouse_helper_with_text' + ( text_round ? ' tm_cursor_mouse_helper_with_text_round' : '' ) );
+							.addClass( 'mh_cursor_mouse_helper_with_text' + ( text_round ? ' mh_cursor_mouse_helper_with_text_round' : '' ) );
 						if ( text_round ) {
 							var rtl = $body.hasClass( 'rtl' );
 							setTimeout( function() {
-								var text_wrap = $mouse_helper.find( '.tm_cursor_mouse_helper_text' ),
-									items = text_wrap.find( '.tm_cursor_mouse_helper_text_round_item' );
+								var text_wrap = $mouse_helper.find( '.mh_cursor_mouse_helper_text' ),
+									items = text_wrap.find( '.mh_cursor_mouse_helper_text_round_item' );
 								if ( items.length > 0) {
 									var r = Math.ceil( text_wrap.width() / 2 ),
 										a = 0,
@@ -283,12 +283,12 @@
 					var layout = $self.data("mouse-helper-layout") || '';
 					if ( layout ) {
 						$mouse_helper
-							.find('.tm_cursor_mouse_helper_layout').remove().end()
-							.append( '<span class="tm_cursor_mouse_helper_layout">' + layout + '</span>' )
-							.addClass( 'tm_cursor_mouse_helper_with_layout' );
+							.find('.mh_cursor_mouse_helper_layout').remove().end()
+							.append( '<span class="mh_cursor_mouse_helper_layout">' + layout + '</span>' )
+							.addClass( 'mh_cursor_mouse_helper_with_layout' );
 					}
 					// Set 'active' and 'action' classes
-					$mouse_helper.addClass( "tm_cursor_mouse_helper_active tm_cursor_mouse_helper_action_" + mouse_helper_action);
+					$mouse_helper.addClass( "mh_cursor_mouse_helper_active mh_cursor_mouse_helper_action_" + mouse_helper_action);
 				}
 			} )
 
@@ -296,20 +296,20 @@
 				if ( mouse_helper_callback && typeof window[mouse_helper_callback] == 'function' ) {
 					window[mouse_helper_callback]( 'mouseleave', $mouse_helper, mouse_helper_target, e );
 					mouse_helper_callback = '';
-				} else if ( typeof window['tm_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
-					window['tm_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mouseleave', $mouse_helper, mouse_helper_target, e );
+				} else if ( typeof window['mh_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
+					window['mh_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mouseleave', $mouse_helper, mouse_helper_target, e );
 				}
-				$mouse_helper.removeClass( 'tm_cursor_mouse_helper_click'
-											+ ' tm_cursor_mouse_helper_action_' + mouse_helper_action
+				$mouse_helper.removeClass( 'mh_cursor_mouse_helper_click'
+											+ ' mh_cursor_mouse_helper_action_' + mouse_helper_action
 											);
 				if ( mouse_helper_target ) {
-					mouse_helper_target.removeClass('tm_cursor_mouse_helper_over');
+					mouse_helper_target.removeClass('mh_cursor_mouse_helper_over');
 				}
 				mouse_helper_target = null;
 				mouse_helper_action = '';
 				mouse_helper_axis = 'xy';
-				mouse_helper_delay = TM_MOUSEHELPER_STORAGE['mouse_helper_delay'];
-				if ( _window_width >= TM_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
+				mouse_helper_delay = MH_MOUSEHELPER_STORAGE['mouse_helper_delay'];
+				if ( _window_width >= MH_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] ) {
 					mouse_helper_timeout = setTimeout( function() {
 						mouse_helper_reset();
 						}, 300 );
@@ -328,42 +328,42 @@
 			} )
 
 			.on("mousedown pointerdown", '[data-mouse-helper]', function(e) {
-				$body.addClass('tm-mouse-helper-pointer-down');
+				$body.addClass('mh-mouse-helper-pointer-down');
 				var $self = jQuery(this);
-				$mouse_helper.addClass('tm_cursor_mouse_helper_click');
+				$mouse_helper.addClass('mh_cursor_mouse_helper_click');
 				mouse_helper_callback = $self.data( 'mouse-helper-callback' );
 				if ( mouse_helper_callback === undefined ) {
 					mouse_helper_callback = '';
 				}
 				if ( mouse_helper_callback && typeof window[mouse_helper_callback] == 'function' ) {
 					window[mouse_helper_callback]( 'mousedown', $mouse_helper, $self, e );
-				} else if ( typeof window['tm_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
-					window['tm_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mousedown', $mouse_helper, $self, e );
+				} else if ( typeof window['mh_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
+					window['mh_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mousedown', $mouse_helper, $self, e );
 				}
 			} )
 
 			.on("mouseup pointerup", '[data-mouse-helper]', function(e) {
-				$body.removeClass('tm-mouse-helper-pointer-down');
+				$body.removeClass('mh-mouse-helper-pointer-down');
 				var $self = jQuery(this);
-				$mouse_helper.removeClass('tm_cursor_mouse_helper_click');
+				$mouse_helper.removeClass('mh_cursor_mouse_helper_click');
 				mouse_helper_callback = $self.data( 'mouse-helper-callback' );
 				if ( mouse_helper_callback === undefined ) {
 					mouse_helper_callback = '';
 				}
 				if ( mouse_helper_callback && typeof window[mouse_helper_callback] == 'function' ) {
 					window[mouse_helper_callback]( 'mouseup', $mouse_helper, $self, e );
-				} else if ( typeof window['tm_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
-					window['tm_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mouseup', $mouse_helper, $self, e );
+				} else if ( typeof window['mh_cursor_mouse_helper_callback_' + mouse_helper_action] == 'function' ) {
+					window['mh_cursor_mouse_helper_callback_' + mouse_helper_action]( 'mouseup', $mouse_helper, $self, e );
 				}
 			} );
 
 		var mouse_helper_reset = function() {
 			$mouse_helper
-				.find('.tm_cursor_mouse_helper_image,.tm_cursor_mouse_helper_text,.tm_cursor_mouse_helper_icon,.tm_cursor_mouse_helper_layout')
-				.addClass('tm_cursor_mouse_helper_reset_item')
+				.find('.mh_cursor_mouse_helper_image,.mh_cursor_mouse_helper_text,.mh_cursor_mouse_helper_icon,.mh_cursor_mouse_helper_layout')
+				.addClass('mh_cursor_mouse_helper_reset_item')
 				.fadeOut('slow', function() {
 					var $self = jQuery(this);
-					if ( $self.hasClass('tm_cursor_mouse_helper_reset_item') ) {
+					if ( $self.hasClass('mh_cursor_mouse_helper_reset_item') ) {
 						$self.remove();
 					}
 				});
@@ -375,26 +375,26 @@
 					'border-color': mouse_helper_bd_color
 				} )
 				.removeClass(
-					"tm_cursor_mouse_helper_active"
-					+ " tm_cursor_mouse_helper_with_icon"
-					+ " tm_cursor_mouse_helper_with_text"
-					+ " tm_cursor_mouse_helper_text_round"
-					+ " tm_cursor_mouse_helper_with_image"
-					+ " tm_cursor_mouse_helper_with_layout"
-					+ ( TM_MOUSEHELPER_STORAGE['mouse_helper_centered'] > 0 ? "" : " tm_cursor_mouse_helper_centered" )
+					"mh_cursor_mouse_helper_active"
+					+ " mh_cursor_mouse_helper_with_icon"
+					+ " mh_cursor_mouse_helper_with_text"
+					+ " mh_cursor_mouse_helper_text_round"
+					+ " mh_cursor_mouse_helper_with_image"
+					+ " mh_cursor_mouse_helper_with_layout"
+					+ ( MH_MOUSEHELPER_STORAGE['mouse_helper_centered'] > 0 ? "" : " mh_cursor_mouse_helper_centered" )
 					);
 			if ( mouse_helper_callback && typeof window[mouse_helper_callback] == 'function' ) {
 				window[mouse_helper_callback]( 'reset', $mouse_helper, mouse_helper_last_target, null );
 				mouse_helper_callback = '';
-			} else if ( typeof window['tm_cursor_mouse_helper_callback_' + mouse_helper_last_action] == 'function' ) {
-				window['tm_cursor_mouse_helper_callback_' + mouse_helper_last_action]( 'reset', $mouse_helper, mouse_helper_last_target, e );
+			} else if ( typeof window['mh_cursor_mouse_helper_callback_' + mouse_helper_last_action] == 'function' ) {
+				window['mh_cursor_mouse_helper_callback_' + mouse_helper_last_action]( 'reset', $mouse_helper, mouse_helper_last_target, e );
 			}
 		};
 
 		var mouse_helper_move = function() {
 			cancelAnimationFrame(mouse_helper_move);
-			if ( _window_width >= TM_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] && null !== mouseX && ( destX != mouseX || destY != mouseY ) && mouse_helper_delay > 1 ) {
-				if ( $mouse_helper.hasClass( 'tm_cursor_mouse_helper_permanent' ) || $mouse_helper.hasClass( 'tm_cursor_mouse_helper_active' ) ) {
+			if ( _window_width >= MH_MOUSEHELPER_STORAGE['mobile_breakpoint_mousehelper_off'] && null !== mouseX && ( destX != mouseX || destY != mouseY ) && mouse_helper_delay > 1 ) {
+				if ( $mouse_helper.hasClass( 'mh_cursor_mouse_helper_permanent' ) || $mouse_helper.hasClass( 'mh_cursor_mouse_helper_active' ) ) {
 					destX += (mouseX - destX) / mouse_helper_delay;
 					destY += (mouseY - destY) / mouse_helper_delay;
 				} else {
@@ -409,7 +409,7 @@
 
 
 		// Get current state
-		function tm_cursor_mouse_helper_get_state(e) {
+		function mh_cursor_mouse_helper_get_state(e) {
 			if ( e.clientX === undefined ) return;
 			realX = e.clientX + _window_scroll_left;
 			realY = e.clientY + _window_scroll_top;
@@ -419,7 +419,7 @@
 
 
 		// Check magnets
-		function tm_cursor_mouse_helper_check_magnets() {
+		function mh_cursor_mouse_helper_check_magnets() {
 
 			$mouse_helper_magnets.each( function() {
 
@@ -443,16 +443,16 @@
 					near = Math.abs(ix - cx) < iw * koef && Math.abs(iy - cy) < ih * koef;
 
 					if (near) {
-						! item.hasClass('tm_cursor_mouse_helper_near') && move_item();
+						! item.hasClass('mh_cursor_mouse_helper_near') && move_item();
 						requestAnimationFrame(control_item);
 					} else {
-						item.hasClass('tm_cursor_mouse_helper_near') && reset_item();
+						item.hasClass('mh_cursor_mouse_helper_near') && reset_item();
 					}
 				}
 
 				function move_item() {
 
-					item.addClass('tm_cursor_mouse_helper_near');
+					item.addClass('mh_cursor_mouse_helper_near');
 
 					var d  = get_closest_position(),
 						dx = d.x,
@@ -491,14 +491,14 @@
 
 				function reset_item() {
 
-					item.removeClass('tm_cursor_mouse_helper_near');
+					item.removeClass('mh_cursor_mouse_helper_near');
 
 					inner
 						.css({
 							'transition': 'transform 0.5s',
 							'transform':  'translate3d(0px, 0px, 0px)'
 						})
-						.one( typeof window.tm_addons_transition_end != 'undefined' ? tm_addons_transition_end() : 'transitionend', function () {
+						.one( typeof window.mh_addons_transition_end != 'undefined' ? mh_addons_transition_end() : 'transitionend', function () {
 							inner.css({
 								'transition': 'none'
 							});
@@ -508,9 +508,9 @@
 		}
 	}
 
-	if ( TM_MOUSEHELPER_STORAGE['mouse_helper'] > 0 && TM_MOUSEHELPER_STORAGE['mouse_helper_on_swiper_slider'] > 0 ) {
-		if (jQuery('body').find('.tm-swiper-container:not(.go)').length > 0) {
-			jQuery('body').find('.tm-swiper-container:not(.go)').each(function () {
+	if ( MH_MOUSEHELPER_STORAGE['mouse_helper'] > 0 && MH_MOUSEHELPER_STORAGE['mouse_helper_on_swiper_slider'] > 0 ) {
+		if (jQuery('body').find('.mh-swiper-container:not(.go)').length > 0) {
+			jQuery('body').find('.mh-swiper-container:not(.go)').each(function () {
 				jQuery(this).addClass('go');
 				var check_helper = jQuery(this).closest('.elementor-widget').data('mouse-helper');
 				if(!check_helper) {
@@ -536,13 +536,13 @@
 	// Add Mouse helper to the TOC menu
 	$document.on( 'action.build_page_toc', function() {
 		jQuery( '#toc_menu .toc_menu_item' ).each( function() {
-			if ( TM_MOUSEHELPER_STORAGE['mouse_helper'] > 0 ) {
+			if ( MH_MOUSEHELPER_STORAGE['mouse_helper'] > 0 ) {
 				var $self = jQuery(this),
 					title = $self.attr( 'title' ) || $self.find('.toc_menu_description_title').text();
 				$self.attr( {
 					'data-mouse-helper': 'hover',
 					'data-mouse-helper-axis': 'y',
-					'data-mouse-helper-text': TM_MOUSEHELPER_STORAGE['msg_mouse_helper_anchor'] + ( title ? ' ' + title : '' )
+					'data-mouse-helper-text': MH_MOUSEHELPER_STORAGE['msg_mouse_helper_anchor'] + ( title ? ' ' + title : '' )
 				} );
 			}
 		} );

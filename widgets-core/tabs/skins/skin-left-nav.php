@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Left_Nav extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-tabs/tm_general/after_section_end', [ $this, 'register_layout_controls1' ] );
-		add_action( 'elementor/element/tm-ele-tabs/tm_general/after_section_end', [ $this, 'register_layout_controls2' ] );
+		add_action( 'elementor/element/mh-ele-tabs/mh_general/after_section_end', [ $this, 'register_layout_controls1' ] );
+		add_action( 'elementor/element/mh-ele-tabs/mh_general/after_section_end', [ $this, 'register_layout_controls2' ] );
 	}
 
 	public function get_id() {
@@ -82,7 +82,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_disply_flex_direction_elementor(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .row' => 'flex-direction: {{VALUE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .row' => 'flex-direction: {{VALUE}};',
 				],
 			]
 		);
@@ -122,7 +122,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'breadcrumb_nav_icon_typography',
 				'label' => esc_html__( 'Icon Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon',
 			]
 		);
 		$this->start_controls_tabs('tabs_nav_icon_style');
@@ -142,7 +142,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'return_value'	=> 'none',
 				'default'	=> 'flex',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'display: {{VALUE}}',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'display: {{VALUE}}',
 				],
 			]
 		);
@@ -159,7 +159,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -171,7 +171,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -188,7 +188,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -200,7 +200,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -244,7 +244,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' =>
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' =>
 							'{{skin_left_nav_list_icon_orientation_vertical.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -282,7 +282,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' =>
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' =>
 							'{{skin_left_nav_list_icon_orientation_horizontal.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -307,7 +307,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -324,7 +324,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -340,7 +340,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_icon_border_color',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon',
 			]
 		);
 		$this->add_control(
@@ -351,7 +351,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -362,7 +362,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -371,7 +371,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_icon_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon',
 			]
 		);
 		$this->add_responsive_control(
@@ -381,7 +381,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -399,7 +399,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li .tabs-icon' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li .tabs-icon' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -425,7 +425,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -437,7 +437,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -454,7 +454,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -466,7 +466,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -510,7 +510,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' =>
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' =>
 							'{{skin_left_nav_list_icon_orientation_vertical_hover.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -548,7 +548,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' =>
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' =>
 							'{{skin_left_nav_list_icon_orientation_horizontal_hover.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -573,7 +573,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -590,7 +590,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -606,7 +606,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_icon_border_color_hover',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon',
 			]
 		);
 		$this->add_control(
@@ -617,7 +617,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -628,7 +628,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -637,7 +637,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_icon_box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon',
 			]
 		);
 		$this->add_responsive_control(
@@ -647,7 +647,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -665,7 +665,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li:hover .tabs-icon' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li:hover .tabs-icon' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -695,7 +695,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -707,7 +707,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -724,7 +724,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -736,7 +736,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -780,7 +780,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' =>
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' =>
 							'{{skin_left_nav_list_icon_orientation_vertical_active.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -818,7 +818,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' =>
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' =>
 							'{{skin_left_nav_list_icon_orientation_horizontal_active.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -843,7 +843,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -860,7 +860,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -876,7 +876,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_icon_border_color_active',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon',
 			]
 		);
 		$this->add_control(
@@ -887,7 +887,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -898,7 +898,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -907,7 +907,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_icon_box_shadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon',
 			]
 		);
 		$this->add_responsive_control(
@@ -917,7 +917,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -935,7 +935,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active .tabs-icon' => 'opacity: {{SIZE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active .tabs-icon' => 'opacity: {{SIZE}};',
 				],
 			]
 		);
@@ -966,7 +966,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list__typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li, {{WRAPPER}} .tm-tabs-vertical-nav li a',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li, {{WRAPPER}} .mh-tabs-vertical-nav li a',
 			]
 		);
 		$this->add_control(
@@ -982,8 +982,8 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -995,8 +995,8 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1014,7 +1014,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1026,7 +1026,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1043,7 +1043,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_border',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li a',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1053,7 +1053,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1062,7 +1062,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li a',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1072,7 +1072,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1083,7 +1083,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1105,7 +1105,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list__typography_hover',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li a:hover',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li a:hover',
 			]
 		);
 		$this->add_control(
@@ -1121,7 +1121,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -1133,7 +1133,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -1151,7 +1151,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -1163,7 +1163,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -1180,7 +1180,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_border_hover',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li a:hover',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li a:hover',
 			]
 		);
 		$this->add_responsive_control(
@@ -1190,7 +1190,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1199,7 +1199,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li a:hover',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li a:hover',
 			]
 		);
 		$this->add_responsive_control(
@@ -1209,7 +1209,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1220,7 +1220,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li a:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li a:hover' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1244,7 +1244,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list__typography_active',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li.active, {{WRAPPER}} .tm-tabs-vertical-nav li.active a',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li.active, {{WRAPPER}} .mh-tabs-vertical-nav li.active a',
 			]
 		);
 		$this->add_control(
@@ -1260,7 +1260,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1272,7 +1272,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1290,7 +1290,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1302,7 +1302,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1319,7 +1319,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'list_border_active',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li.active a',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li.active a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1329,7 +1329,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1338,7 +1338,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'box_shadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav li.active a',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav li.active a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1348,7 +1348,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1359,7 +1359,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav li.active a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav li.active a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1409,7 +1409,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1421,7 +1421,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1432,7 +1432,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'before',
 			]
@@ -1444,7 +1444,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1455,7 +1455,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1464,7 +1464,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'title_block_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link',
 			]
 		);
 		$this->add_control(
@@ -1480,7 +1480,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'title_block_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link',
 			]
 		);
 		$this->add_responsive_control(
@@ -1488,7 +1488,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1499,7 +1499,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -1520,7 +1520,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:not(.active):not(:hover)' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:not(.active):not(:hover)' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1547,7 +1547,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1559,7 +1559,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1568,7 +1568,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'title_block_boxshadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active',
 			]
 		);
 		$this->add_control(
@@ -1584,7 +1584,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1595,7 +1595,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -1616,7 +1616,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link.active' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1645,7 +1645,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1657,7 +1657,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1666,7 +1666,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'title_block_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover',
 			]
 		);
 		$this->add_control(
@@ -1682,7 +1682,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'border-color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'border-color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1693,7 +1693,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'border-color: var(--theme-color{{VALUE}}) !important;'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'border-color: var(--theme-color{{VALUE}}) !important;'
 				],
 			]
 		);
@@ -1714,7 +1714,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs .nav-tabs .nav-link:hover' => 'height: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1756,7 +1756,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs' => 'width: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1767,7 +1767,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1778,7 +1778,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1794,7 +1794,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'tab_link_wrapper_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs',
 			]
 		);
 		$this->add_responsive_control(
@@ -1804,7 +1804,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1813,7 +1813,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'tab_link_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs',
 			]
 		);
 		$this->add_group_control(
@@ -1821,7 +1821,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'tab_link_wrapper_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow(Hover)', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-tabs-vertical-nav .col-nav-tabs',
+				'selector' => '{{WRAPPER}}:hover .mh-tabs-vertical-nav .col-nav-tabs',
 			]
 		);
 		$this->add_control(
@@ -1837,7 +1837,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1847,7 +1847,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-tabs-vertical-nav .col-nav-tabs' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-tabs-vertical-nav .col-nav-tabs' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1859,7 +1859,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-nav-tabs' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-nav-tabs' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1871,7 +1871,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-tabs-vertical-nav .col-nav-tabs' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-tabs-vertical-nav .col-nav-tabs' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1917,7 +1917,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .col-content' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .col-content' => 'width: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1928,7 +1928,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1939,7 +1939,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1962,7 +1962,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'tab_content_wrapper_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .tab-content',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .tab-content',
 			]
 		);
 		$this->add_responsive_control(
@@ -1972,7 +1972,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1981,7 +1981,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 			[
 				'name' => 'tab_content_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-tabs-vertical-nav .tab-content',
+				'selector' => '{{WRAPPER}} .mh-tabs-vertical-nav .tab-content',
 			]
 		);
 		$this->add_control(
@@ -1997,7 +1997,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -2009,7 +2009,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -2026,7 +2026,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -2038,7 +2038,7 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-tabs-vertical-nav .tab-content' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-tabs-vertical-nav .tab-content' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -2053,8 +2053,8 @@ class Skin_Left_Nav extends Elementor_Skin_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-tabs';
-		$classes[] = 'tm-tabs-vertical-nav';
+		$classes[] = 'mh-tabs';
+		$classes[] = 'mh-tabs-vertical-nav';
 		$classes[] = $settings['skin_left_nav_design_style'];
 
 		$settings['classes'] = $classes;

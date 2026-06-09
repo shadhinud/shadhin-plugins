@@ -12,9 +12,9 @@ class Skin_Single extends Elementor_Skin_Base {
 	protected function _register_controls_actions() {
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_script( 'tm-testimonial-thumb-carousel-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/testimonial-thumb-carousel.js', array('jquery'), false, true );
+			wp_enqueue_script( 'mh-testimonial-thumb-carousel-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/testimonial-thumb-carousel.js', array('jquery'), false, true );
 		}
-		add_action( 'elementor/element/tm-ele-testimonial-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-testimonial-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -322,8 +322,8 @@ class Skin_Single extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-testimonial-block-single', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-single' . $direction_suffix . '.css' );
-		wp_enqueue_script( 'tm-testimonial-thumb-carousel-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/testimonial-thumb-carousel.js', array('jquery'), false, true );
+		wp_enqueue_style( 'mh-testimonial-block-single', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-single' . $direction_suffix . '.css' );
+		wp_enqueue_script( 'mh-testimonial-thumb-carousel-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/testimonial-thumb-carousel.js', array('jquery'), false, true );
 
 
 		if( $settings['animate_icon_on_hover'] ) {

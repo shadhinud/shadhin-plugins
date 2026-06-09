@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Section_Title extends Widget_Base {
+class MH_Elementor_Section_Title extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_register_script( 'tm-section-title-split-text', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/section-title-split-text.js', array( 'jquery', 'gsap', 'gsap-scrolltrigger', 'gsap-splittext' ), false, true );
-		wp_register_script( 'tm-section-title-text-reveal', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/section-title-text-reveal.js', array('jquery', 'gsap', 'gsap-scrolltrigger', 'gsap-splittext'), false, true );
+		wp_register_script( 'mh-section-title-split-text', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/section-title-split-text.js', array( 'jquery', 'gsap', 'gsap-scrolltrigger', 'gsap-splittext' ), false, true );
+		wp_register_script( 'mh-section-title-text-reveal', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/section-title-text-reveal.js', array('jquery', 'gsap', 'gsap-scrolltrigger', 'gsap-splittext'), false, true );
 	}
 
 	/**
@@ -33,7 +33,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-section-title';
+		return 'mh-ele-section-title';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -92,7 +92,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'tm-section-title-split-text' ];
+		return [ 'mascot-core-hellojs', 'mh-section-title-split-text' ];
 	}
 
 	/**
@@ -461,7 +461,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 			[
 				'name' => 'title_other_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .title  .tm-typed-text-animation-wrapper',
+				'selector' => '{{WRAPPER}} .title  .mh-typed-text-animation-wrapper',
 			]
 		);
 		$this->add_control(
@@ -470,7 +470,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .title  .tm-typed-text-animation-wrapper' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .title  .mh-typed-text-animation-wrapper' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -482,7 +482,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .title  .tm-typed-text-animation-wrapper' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .title  .mh-typed-text-animation-wrapper' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -581,7 +581,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -1011,7 +1011,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'label' => esc_html__( "Sub Title Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'color: {{VALUE}} !important;'
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1021,7 +1021,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'label' => esc_html__( "Sub Title Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-section-title .subtitle' => 'color: {{VALUE}} !important;'
+					'{{WRAPPER}}:hover .mh-sc-section-title .subtitle' => 'color: {{VALUE}} !important;'
 				]
 			]
 		);
@@ -1033,7 +1033,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1045,7 +1045,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-section-title .subtitle' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-section-title .subtitle' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1054,7 +1054,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 			[
 				'name' => 'subtitle_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-section-title .subtitle',
+				'selector' => '{{WRAPPER}} .mh-sc-section-title .subtitle',
 			]
 		);
 		$this->add_responsive_control(
@@ -1064,7 +1064,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1082,7 +1082,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'margin-top: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'margin-top: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1101,7 +1101,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};'
 				]
 			]
 		);
@@ -1112,7 +1112,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1122,7 +1122,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'name' => 'subtitle_wrapper_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-section-title .title-wrapper .sub-title-outer .subtitle',
+				'selector' => '{{WRAPPER}} .mh-sc-section-title .title-wrapper .sub-title-outer .subtitle',
 				'fields_options' => [
 					'position' => ['default' => 'center center'],
 					'repeat' => ['default' => 'no-repeat'],
@@ -1137,7 +1137,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1148,7 +1148,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-section-title .subtitle' =>
+					'{{WRAPPER}} .mh-sc-section-title .subtitle' =>
 						'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
@@ -1566,18 +1566,18 @@ class TM_Elementor_Section_Title extends Widget_Base {
 			wp_enqueue_script( 'gsap-splittext' );
 		}
 		if( isset($settings['enable_gsap_text_reveal']) && $settings['enable_gsap_text_reveal'] == 'yes' ) {
-			$title_classes[] = 'tm-text-reveal';
+			$title_classes[] = 'mh-text-reveal';
 			wp_enqueue_script( 'gsap' );
 			wp_enqueue_script( 'gsap-scrolltrigger' );
 			wp_enqueue_script( 'gsap-splittext' );
-			wp_enqueue_script( 'tm-section-title-text-reveal' );
+			wp_enqueue_script( 'mh-section-title-text-reveal' );
 		}
 		$settings['title_classes'] = $title_classes;
 
 
 		$title_part1_classes = array();
 		if( $settings['title_part1_slide_animation'] == "yes" ) {
-			$title_part1_classes[] = 'tm-onappear-slide-animation';
+			$title_part1_classes[] = 'mh-onappear-slide-animation';
 		}
 		$settings['title_part1_classes'] = $title_part1_classes;
 
@@ -1599,7 +1599,7 @@ class TM_Elementor_Section_Title extends Widget_Base {
 		if ( $settings['shadow_text_enable_textillate_animation'] == 'yes' ) {
 			wp_enqueue_script( 'jquery-lettering' );
 			wp_enqueue_script( 'jquery-textillate' );
-			$title_shadow_text_class[] = 'tm-textillate-animation';
+			$title_shadow_text_class[] = 'mh-textillate-animation';
 		}
 		$settings['title_shadow_text_class'] = $title_shadow_text_class;
 

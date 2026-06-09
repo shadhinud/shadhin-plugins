@@ -18,12 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_InfoBox extends Widget_Base {
+class MH_Elementor_InfoBox extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-info-box-loader-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/info-box/info-box-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-info-box-loader-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/info-box/info-box-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -37,7 +37,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-info-box';
+		return 'mh-ele-info-box';
 	}
 
 	/**
@@ -63,7 +63,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -125,7 +125,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -246,7 +246,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'icon_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box .icon-wrapper i, {{WRAPPER}} .tm-sc-info-box .icon-wrapper svg',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box .icon-wrapper i, {{WRAPPER}} .mh-sc-info-box .icon-wrapper svg',
 			]
 		);
 		$this->add_responsive_control(
@@ -256,7 +256,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -267,7 +267,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -292,8 +292,8 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper svg' => 'fill: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper svg' => 'fill: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -305,8 +305,8 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-box .icon-wrapper' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}}:hover .tm-sc-info-box .icon-wrapper svg' => 'fill: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}}:hover .mh-sc-info-box .icon-wrapper' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}}:hover .mh-sc-info-box .icon-wrapper svg' => 'fill: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -316,8 +316,8 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Icon Custom Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper i' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper svg' => 'fill: {{VALUE}};',
 				]
 			]
 		);
@@ -327,8 +327,8 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Icon Custom Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-box .icon-wrapper i' => 'color: {{VALUE}};',
-					'{{WRAPPER}}:hover .tm-sc-info-box .icon-wrapper svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}}:hover .mh-sc-info-box .icon-wrapper i' => 'color: {{VALUE}};',
+					'{{WRAPPER}}:hover .mh-sc-info-box .icon-wrapper svg' => 'fill: {{VALUE}};',
 				]
 			]
 		);
@@ -347,7 +347,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -359,7 +359,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-box .icon-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-info-box .icon-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -369,7 +369,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Icon BG Custom Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -379,7 +379,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Icon BG Custom Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-info-box .icon-wrapper' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-sc-info-box .icon-wrapper' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -404,7 +404,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'width: {{SIZE}}{{UNIT}};',
 				]
 			]
 		);
@@ -422,7 +422,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'height: {{SIZE}}{{UNIT}};',
 				]
 			]
 		);
@@ -440,7 +440,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper i' => 'line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper i' => 'line-height: {{SIZE}}{{UNIT}};',
 				]
 			]
 		);
@@ -456,7 +456,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'icon_area_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box .icon-wrapper',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box .icon-wrapper',
 			]
 		);
 		$this->add_responsive_control(
@@ -466,7 +466,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .icon-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-info-box .icon-wrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -475,7 +475,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'icon_area_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box .icon-wrapper',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box .icon-wrapper',
 			]
 		);
 		$this->end_controls_section();
@@ -499,7 +499,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .title' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box .title' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -509,8 +509,8 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Text Color (Title Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .title:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-sc-info-box .title a:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box .title:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-info-box .title a:hover' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -520,7 +520,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Text Color (Item Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box:hover .title' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box:hover .title' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -532,7 +532,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .title' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box .title' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -544,8 +544,8 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .title:hover' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-sc-info-box .title a:hover' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box .title:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-info-box .title a:hover' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -557,7 +557,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box:hover .title' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box:hover .title' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -566,7 +566,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'title_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box .title',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box .title',
 			]
 		);
 		$this->add_responsive_control(
@@ -576,7 +576,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -587,7 +587,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -615,7 +615,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .text' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box .text' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -625,7 +625,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box:hover .text' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box:hover .text' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -637,7 +637,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .text' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box .text' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -649,7 +649,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box:hover .text' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box:hover .text' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -658,7 +658,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'excerpt_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box .text',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box .text',
 			]
 		);
 		$this->add_responsive_control(
@@ -668,7 +668,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .text' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .text' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -679,7 +679,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .text' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -710,7 +710,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .info-box-wrapper' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box .info-box-wrapper' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -720,7 +720,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box:hover .info-box-wrapper' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-info-box:hover .info-box-wrapper' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -732,7 +732,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .info-box-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box .info-box-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -744,7 +744,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box:hover .info-box-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-info-box:hover .info-box-wrapper' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -755,7 +755,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .info-box-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .info-box-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -766,7 +766,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box .info-box-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-info-box .info-box-wrapper' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -782,7 +782,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'content_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box',
 			]
 		);
 		$this->add_responsive_control(
@@ -792,7 +792,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-info-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-info-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -801,7 +801,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 			[
 				'name' => 'content_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-info-box',
+				'selector' => '{{WRAPPER}} .mh-sc-info-box',
 			]
 		);
 		$this->end_controls_section();
@@ -858,7 +858,7 @@ class TM_Elementor_InfoBox extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-info-box-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/info-box/info-box-skin1' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-info-box-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/info-box/info-box-skin1' . $direction_suffix . '.css' );
 
 		//link url
 		$settings['target'] = ( $settings['link'] && $settings['link']['is_external'] ) ? ' target="_blank"' : '';

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-award-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-award-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -31,7 +31,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-award-block-skin-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/award-block/award-block-skin-style2' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-award-block-skin-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/award-block/award-block-skin-style2' . $direction_suffix . '.css' );
 		wp_register_script( 'award-block2', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/award-block2.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'award-block2' );
 

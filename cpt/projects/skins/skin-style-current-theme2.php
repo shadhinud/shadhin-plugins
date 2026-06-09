@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-cpt-projects/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-cpt-projects/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -59,7 +59,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-projects .info-box' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-projects .info-box' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -76,7 +76,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Icon Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-projects .icon i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-projects .icon i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -86,7 +86,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Icon Bg Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-projects .icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-projects .icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -112,7 +112,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-projects:hover .info-box' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-projects:hover .info-box' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -129,7 +129,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Icon Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-projects:hover .icon i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-projects:hover .icon i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -139,7 +139,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Icon Bg Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-projects:hover .icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-projects:hover .icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -156,7 +156,7 @@ class Skin_Style_Current_Theme2 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-project-skin-current-theme2', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/project-skin-current-theme2' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-project-skin-current-theme2', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/project-skin-current-theme2' . $direction_suffix . '.css' );
 
 		$new_cpt_class = CPT_Projects::Instance();
 		$class_instance =  (array) $new_cpt_class;

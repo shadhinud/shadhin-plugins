@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Floating_Objects extends Widget_Base {
+class MH_Elementor_Floating_Objects extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
@@ -29,7 +29,7 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-floating-objects';
+		return 'mh-ele-floating-objects';
 	}
 
 	/**
@@ -55,7 +55,7 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -102,7 +102,7 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -252,9 +252,9 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => [
 					'' =>  esc_html__( 'No Animation', 'shadhin-plugins' ),
-					'tm-item-appear-clip-path'  =>  esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
-					'tm-item-appear-clip-path-right'  =>  esc_html__( 'Clip Path Animation Right to Left', 'shadhin-plugins' ),
-					'tm-appear-block-holder'  =>  esc_html__( 'Block Clip Path Animation', 'shadhin-plugins' ),
+					'mh-item-appear-clip-path'  =>  esc_html__( 'Clip Path Animation', 'shadhin-plugins' ),
+					'mh-item-appear-clip-path-right'  =>  esc_html__( 'Clip Path Animation Right to Left', 'shadhin-plugins' ),
+					'mh-appear-block-holder'  =>  esc_html__( 'Block Clip Path Animation', 'shadhin-plugins' ),
 				],
 			]
 		);
@@ -263,7 +263,7 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 				'label' => esc_html__( "Floating Animation Type", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_get_animation_type(),
-				'default' => 'tm-animation-floating'
+				'default' => 'mh-animation-floating'
 			]
 		);
 		$repeater->add_control(
@@ -530,7 +530,7 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 		$html = '';
 		//classes
 		$classes = array();
-		$classes[] = 'tm-ele-floating-objects';
+		$classes[] = 'mh-ele-floating-objects';
 		$classes[] = $settings['custom_css_class'];
 		if ( $settings['visible_mobile'] != 'yes' ) {
 			$classes[] = 'd-none d-lg-block';
@@ -556,7 +556,7 @@ class TM_Elementor_Floating_Objects extends Widget_Base {
 				if($item['gsap_scrolling_effect'] === 'parallax') {
 					wp_enqueue_script( 'gsap' );
 					wp_enqueue_script( 'gsap-scrolltrigger' );
-					wp_enqueue_script( 'tm-gsap-parallax' );
+					wp_enqueue_script( 'mh-gsap-parallax' );
 					$parallax_params = [
 							'x' => $item['gsap_motion_x'],
 							'y' => $item['gsap_motion_y'],

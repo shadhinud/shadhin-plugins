@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
+class MH_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-bg-angle-left-right-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/bg-angle-left-right' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-bg-angle-left-right-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/bg-angle-left-right' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -31,7 +31,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-bg-angle-left-right';
+		return 'mh-ele-bg-angle-left-right';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -94,7 +94,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-bg-angle-left-right-style' ];
+		return [ 'mh-bg-angle-left-right-style' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -161,7 +161,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Top Width", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-top-width: {{VALUE}};border-top-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-top-width: {{VALUE}};border-top-style:solid;'
 				]
 			]
 		);
@@ -171,7 +171,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Top Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-top-color: {{VALUE}};border-top-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-top-color: {{VALUE}};border-top-style:solid;'
 				]
 			]
 		);
@@ -183,7 +183,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-top-color: var(--theme-color{{VALUE}});border-top-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-top-color: var(--theme-color{{VALUE}});border-top-style:solid;'
 				],
 			]
 		);
@@ -214,7 +214,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Right Width", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-right-width: {{VALUE}};border-right-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-right-width: {{VALUE}};border-right-style:solid;'
 				]
 			]
 		);
@@ -224,7 +224,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Right Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-right-color: {{VALUE}};border-right-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-right-color: {{VALUE}};border-right-style:solid;'
 				]
 			]
 		);
@@ -236,7 +236,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-right-color: var(--theme-color{{VALUE}});border-right-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-right-color: var(--theme-color{{VALUE}});border-right-style:solid;'
 				],
 			]
 		);
@@ -267,7 +267,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Bottom Width", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-bottom-width: {{VALUE}};border-bottom-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-bottom-width: {{VALUE}};border-bottom-style:solid;'
 				]
 			]
 		);
@@ -277,7 +277,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Bottom Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-bottom-color: {{VALUE}};border-bottom-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-bottom-color: {{VALUE}};border-bottom-style:solid;'
 				]
 			]
 		);
@@ -289,7 +289,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-bottom-color: var(--theme-color{{VALUE}});border-bottom-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-bottom-color: var(--theme-color{{VALUE}});border-bottom-style:solid;'
 				],
 			]
 		);
@@ -320,7 +320,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Left Width", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-left-width: {{VALUE}};border-left-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-left-width: {{VALUE}};border-left-style:solid;'
 				]
 			]
 		);
@@ -330,7 +330,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Border Left Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-left-color: {{VALUE}};border-left-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-left-color: {{VALUE}};border-left-style:solid;'
 				]
 			]
 		);
@@ -342,7 +342,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'border-left-color: var(--theme-color{{VALUE}});border-left-style:solid;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'border-left-color: var(--theme-color{{VALUE}});border-left-style:solid;'
 				],
 			]
 		);
@@ -367,7 +367,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Top", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'top: {{VALUE}};bottom:auto;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'top: {{VALUE}};bottom:auto;'
 				]
 			]
 		);
@@ -377,7 +377,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Right", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'right: {{VALUE}};left:auto;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'right: {{VALUE}};left:auto;'
 				]
 			]
 		);
@@ -387,7 +387,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Bottom", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'bottom: {{VALUE}};top:auto;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'bottom: {{VALUE}};top:auto;'
 				]
 			]
 		);
@@ -397,7 +397,7 @@ class TM_Elementor_BG_Aangle_Left_Right extends Widget_Base {
 				'label' => esc_html__( "Left", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-bg-angle-left-right:after' => 'left: {{VALUE}};right:auto;'
+					'{{WRAPPER}} .mh-bg-angle-left-right:after' => 'left: {{VALUE}};right:auto;'
 				]
 			]
 		);

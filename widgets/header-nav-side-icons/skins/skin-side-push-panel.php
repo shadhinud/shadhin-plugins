@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Side_Push_Panel extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-header-nav-side-icons/tm_general/before_section_end', [ $this, 'register_layout_controls' ] );
-		add_action( 'elementor/element/tm-ele-header-nav-side-icons/tm_general/after_section_end', [ $this, 'register_layout_controls_two' ] );
+		add_action( 'elementor/element/mh-ele-header-nav-side-icons/mh_general/before_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-header-nav-side-icons/mh_general/after_section_end', [ $this, 'register_layout_controls_two' ] );
 	}
 
 	public function get_id() {
@@ -108,7 +108,7 @@ class Skin_Side_Push_Panel extends Elementor_Skin_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-sc-header-primary-nav';
+		$classes[] = 'mh-sc-header-primary-nav';
 		$settings['classes'] = $classes;
 
 		$settings['holder_id'] = shadhin_plugins_get_isotope_holder_ID($settings['_skin']);

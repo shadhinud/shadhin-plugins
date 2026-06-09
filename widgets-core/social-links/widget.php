@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Social_Links extends Widget_Base {
+class MH_Elementor_Social_Links extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
@@ -30,7 +30,7 @@ class TM_Elementor_Social_Links extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-social-links';
+		return 'mh-ele-social-links';
 	}
 
 	/**
@@ -56,7 +56,7 @@ class TM_Elementor_Social_Links extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -199,7 +199,7 @@ class TM_Elementor_Social_Links extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'Design Style', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -225,7 +225,7 @@ class TM_Elementor_Social_Links extends Widget_Base {
 				'options' => shadhin_plugins_disply_flex_horizontal_align_elementor(),
 				'default' => 'default',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-social-links' => 'justify-content: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-social-links' => 'justify-content: {{VALUE}};'
 				]
 			]
 		);
@@ -272,7 +272,7 @@ class TM_Elementor_Social_Links extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-social-links li a' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-social-links li a' => 'font-size: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -289,7 +289,7 @@ class TM_Elementor_Social_Links extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-social-links li a' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-social-links li a' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);

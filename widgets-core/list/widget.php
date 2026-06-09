@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_List extends Widget_Base {
+class MH_Elementor_List extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-list-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/list' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-list-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/list' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_List extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-list';
+		return 'mh-ele-list';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_List extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_List extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-list-style' ];
+		return [ 'mh-list-style' ];
 	}
 
 	/**
@@ -181,7 +181,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Hide Icon", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list i' => 'display: none;'
+					'{{WRAPPER}} .mh-sc-list i' => 'display: none;'
 				]
 			]
 		);
@@ -202,7 +202,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-list i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -212,7 +212,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:hover i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-list li:hover i' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -224,7 +224,7 @@ class TM_Elementor_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-list li i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -236,7 +236,7 @@ class TM_Elementor_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:hover i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-list li:hover i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -245,7 +245,7 @@ class TM_Elementor_List extends Widget_Base {
 			[
 				'name' => 'list_icon_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-list i',
+				'selector' => '{{WRAPPER}} .mh-sc-list i',
 			]
 		);
 		$this->add_responsive_control(
@@ -255,7 +255,7 @@ class TM_Elementor_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-list i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -295,7 +295,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-list li' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -305,7 +305,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-list li:hover' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -317,7 +317,7 @@ class TM_Elementor_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-list li' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -329,7 +329,7 @@ class TM_Elementor_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:hover' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-list li:hover' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -338,7 +338,7 @@ class TM_Elementor_List extends Widget_Base {
 			[
 				'name' => 'list__typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-list li',
+				'selector' => '{{WRAPPER}} .mh-sc-list li',
 			]
 		);
 		$this->add_control(
@@ -354,7 +354,7 @@ class TM_Elementor_List extends Widget_Base {
 			[
 				'name' => 'list_border',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-list li',
+				'selector' => '{{WRAPPER}} .mh-sc-list li',
 			]
 		);
 		$this->add_control(
@@ -366,7 +366,7 @@ class TM_Elementor_List extends Widget_Base {
 					'list_bordered' => array('yes')
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li' => 'border-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-list li' => 'border-color: {{VALUE}};'
 				]
 			]
 		);
@@ -376,7 +376,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Border Bottom Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-list li' => 'border-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-sc-list li' => 'border-color: {{VALUE}};'
 				]
 			]
 		);
@@ -387,7 +387,7 @@ class TM_Elementor_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-list li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -398,7 +398,7 @@ class TM_Elementor_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-list li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -420,7 +420,7 @@ class TM_Elementor_List extends Widget_Base {
 			[
 				'name' => 'list_border_last_item',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-list li:last-child',
+				'selector' => '{{WRAPPER}} .mh-sc-list li:last-child',
 			]
 		);
 		$this->add_control(
@@ -432,7 +432,7 @@ class TM_Elementor_List extends Widget_Base {
 					'list_bordered' => array('yes')
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:last-child' => 'border-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-list li:last-child' => 'border-color: {{VALUE}};'
 				]
 			]
 		);
@@ -442,7 +442,7 @@ class TM_Elementor_List extends Widget_Base {
 				'label' => esc_html__( "Border Bottom Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-list li:last-child' => 'border-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-sc-list li:last-child' => 'border-color: {{VALUE}};'
 				]
 			]
 		);
@@ -453,7 +453,7 @@ class TM_Elementor_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-list li:last-child' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -464,7 +464,7 @@ class TM_Elementor_List extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-list li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-list li:last-child' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -486,11 +486,11 @@ class TM_Elementor_List extends Widget_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-sc-list';
+		$classes[] = 'mh-sc-list';
 		$classes[] = $settings['custom_css_class'];
 
 		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'tm-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
+			$classes[] = 'mh-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
 		}
 
 		$settings['classes'] = $classes;

@@ -15,13 +15,13 @@
   }
 
   //smart btn
-  var TM_Pricing_Switcher_Smart = function ($scope) {
-    var pricing_smart_switcher = $('.tm-pricing-plan-switcher');
+  var MH_Pricing_Switcher_Smart = function ($scope) {
+    var pricing_smart_switcher = $('.mh-pricing-plan-switcher');
     if( pricing_smart_switcher.length > 0 ) {
       pricing_smart_switcher.find("[data-pricing-trigger]").on("click", function (e) {
         var $self = $(e.target);
         $self.toggleClass("secondary-active");
-        var pricing_plan = $self.parents(".e-con-inner").find(".tm-sc-pricing-plan");
+        var pricing_plan = $self.parents(".e-con-inner").find(".mh-sc-pricing-plan");
 
         if( $self.hasClass( 'secondary-active' ) ) {
           show_secondary_price(pricing_plan);
@@ -33,15 +33,15 @@
   };
 
   //round, flat btn
-  var TM_Pricing_Switcher_Btn = function ($scope) {
-    var pricing_btn_switcher = $('.tm-pricing-plan-switcher-button');
+  var MH_Pricing_Switcher_Btn = function ($scope) {
+    var pricing_btn_switcher = $('.mh-pricing-plan-switcher-button');
     if( pricing_btn_switcher.length > 0 ) {
       pricing_btn_switcher.find("[data-pricing-trigger]").on("click", function (e) {
         var target_id = $(this).data('show');
         var $self = $(e.target);
         pricing_btn_switcher.find("[data-pricing-trigger]").removeClass("active");
         $(this).addClass("active");
-        var pricing_plan = $self.parents(".e-con-inner").find(".tm-sc-pricing-plan");
+        var pricing_plan = $self.parents(".e-con-inner").find(".mh-sc-pricing-plan");
 
         if( target_id == "year" ) {
           show_secondary_price(pricing_plan);
@@ -56,16 +56,16 @@
   //elementor front start
   $(window).on("elementor/frontend/init", function () {
       elementorFrontend.hooks.addAction(
-          "frontend/element_ready/tm-ele-pricing-plan-switcher.default",
-          TM_Pricing_Switcher_Smart
+          "frontend/element_ready/mh-ele-pricing-plan-switcher.default",
+          MH_Pricing_Switcher_Smart
       );
       elementorFrontend.hooks.addAction(
-          "frontend/element_ready/tm-ele-pricing-plan-switcher.skin-style1",
-          TM_Pricing_Switcher_Smart
+          "frontend/element_ready/mh-ele-pricing-plan-switcher.skin-style1",
+          MH_Pricing_Switcher_Smart
       );
       elementorFrontend.hooks.addAction(
-          "frontend/element_ready/tm-ele-pricing-plan-switcher.skin-style2",
-          TM_Pricing_Switcher_Btn
+          "frontend/element_ready/mh-ele-pricing-plan-switcher.skin-style2",
+          MH_Pricing_Switcher_Btn
       );
   });
 })(jQuery);

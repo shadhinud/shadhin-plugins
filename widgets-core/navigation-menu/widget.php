@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Navigation_Menu extends Widget_Base {
+class MH_Elementor_Navigation_Menu extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-navigation-menu-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/navigation-menu' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-navigation-menu-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/navigation-menu' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-navigation-menu';
+		return 'mh-ele-navigation-menu';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-navigation-menu-style' ];
+		return [ 'mh-navigation-menu-style' ];
 	}
 
 	/**
@@ -132,7 +132,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -150,7 +150,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 
 		if ($simple_menus) {
 			$this->add_control(
-				'tm_menu_selected',
+				'mh_menu_selected',
 				[
 					'label'       => esc_html__('Select Menu', 'shadhin-plugins'),
 					'description' => wp_kses_post( sprintf( __( 'Go to the <a href="%s" target="_blank">Menu screen</a> to manage your menus.', 'shadhin-plugins' ), esc_url( admin_url( 'nav-menus.php' ) ) ) ),
@@ -195,7 +195,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'default' => '',
 				'options' => shadhin_plugins_disply_type_list_elementor(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu ul li' => 'display: {{UNIT}}',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu ul li' => 'display: {{UNIT}}',
 				],
 			]
 		);
@@ -207,7 +207,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label_block' => false,
 				'options' => shadhin_plugins_text_align_choose(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu ul' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu ul' => 'text-align: {{VALUE}};'
 				]
 			]
 		);
@@ -223,7 +223,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					'block'  => esc_html__( 'Show', 'shadhin-plugins' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:first-child .tm-nav-arrow-icon' => 'display: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:first-child .mh-nav-arrow-icon' => 'display: {{VALUE}};',
 				]
 			]
 		);
@@ -238,7 +238,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					'block'  => esc_html__( 'Show', 'shadhin-plugins' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:last-child .tm-nav-arrow-icon' => 'display: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:last-child .mh-nav-arrow-icon' => 'display: {{VALUE}};',
 				]
 			]
 		);
@@ -253,7 +253,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					'block'  => esc_html__( 'Show', 'shadhin-plugins' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'display: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'display: {{VALUE}};',
 				]
 			]
 		);
@@ -284,7 +284,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( 'Hide Icon', 'shadhin-plugins' ),
 				'type' => Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'display: none',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'display: none',
 				],
 			]
 		);
@@ -322,7 +322,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'breadcrumb_nav_icon_typography',
 				'label' => esc_html__( 'Icon Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon',
 			]
 		);
 		$this->start_controls_tabs('tabs_nav_icon_style');
@@ -345,7 +345,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -357,7 +357,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -374,7 +374,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -386,7 +386,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -430,7 +430,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' =>
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' =>
 							'{{list_icon_orientation_vertical.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -468,7 +468,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' =>
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' =>
 							'{{list_icon_orientation_horizontal.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -493,7 +493,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -510,7 +510,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -526,7 +526,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_icon_border_color',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon',
 			]
 		);
 		$this->add_control(
@@ -537,7 +537,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -548,7 +548,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -557,7 +557,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_icon_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li .mh-nav-arrow-icon',
 			]
 		);
 		$this->end_controls_tab();
@@ -582,7 +582,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -594,7 +594,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -611,7 +611,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -623,7 +623,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -667,7 +667,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' =>
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' =>
 							'{{list_icon_orientation_vertical_hover.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -705,7 +705,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' =>
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' =>
 							'{{list_icon_orientation_horizontal_hover.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -730,7 +730,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -747,7 +747,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -763,7 +763,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_icon_border_color_hover',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon',
 			]
 		);
 		$this->add_control(
@@ -774,7 +774,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -785,7 +785,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -794,7 +794,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_icon_box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li:hover .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li:hover .mh-nav-arrow-icon',
 			]
 		);
 		$this->end_controls_tab();
@@ -823,7 +823,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -835,7 +835,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -852,7 +852,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -864,7 +864,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -908,7 +908,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' =>
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' =>
 							'{{list_icon_orientation_vertical_active.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -946,7 +946,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' =>
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' =>
 							'{{list_icon_orientation_horizontal_active.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
@@ -971,7 +971,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -988,7 +988,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -1004,7 +1004,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_icon_border_color_active',
 				'label' => esc_html__( 'Icon Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon',
 			]
 		);
 		$this->add_control(
@@ -1015,7 +1015,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1026,7 +1026,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1035,7 +1035,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_icon_box_shadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item .tm-nav-arrow-icon',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item .mh-nav-arrow-icon',
 			]
 		);
 		$this->end_controls_tab();
@@ -1058,7 +1058,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list__typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li, {{WRAPPER}} .tm-sc-simple-nav-menu li a',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li, {{WRAPPER}} .mh-sc-simple-nav-menu li a',
 			]
 		);
 		$this->start_controls_tabs('tabs_list_style');
@@ -1081,8 +1081,8 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1094,8 +1094,8 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1113,7 +1113,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1125,7 +1125,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1142,7 +1142,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_border',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li a',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1152,7 +1152,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1161,7 +1161,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li a',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li a',
 			]
 		);
 		$this->end_controls_tab();
@@ -1190,7 +1190,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -1202,7 +1202,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -1220,7 +1220,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -1232,7 +1232,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -1249,7 +1249,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_border_hover',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover',
 			]
 		);
 		$this->add_responsive_control(
@@ -1259,7 +1259,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1268,7 +1268,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li a:hover',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li a:hover',
 			]
 		);
 		$this->end_controls_tab();
@@ -1299,7 +1299,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -1311,7 +1311,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1329,7 +1329,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1341,7 +1341,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1358,7 +1358,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'list_border_active',
 				'label' => esc_html__( 'List Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a',
 			]
 		);
 		$this->add_responsive_control(
@@ -1368,7 +1368,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1377,7 +1377,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 			[
 				'name' => 'box_shadow_active',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-simple-nav-menu li.current-menu-item a',
+				'selector' => '{{WRAPPER}} .mh-sc-simple-nav-menu li.current-menu-item a',
 			]
 		);
 		$this->end_controls_tab();
@@ -1404,7 +1404,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1415,7 +1415,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-simple-nav-menu li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-simple-nav-menu li a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1443,7 +1443,7 @@ class TM_Elementor_Navigation_Menu extends Widget_Base {
 		}
 
 		if( $settings['animate_icon_on_hover'] ) {
-			$classes[] = 'tm-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
+			$classes[] = 'mh-animate-hover animate-icon-'.$settings['animate_icon_on_hover'];
 		}
 
 		$settings['classes'] = $classes;

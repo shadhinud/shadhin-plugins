@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Products_Category extends Widget_Base {
+class MH_Elementor_Products_Category extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-product-category', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/product-category/product-category-loader' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-product-category', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/product-category/product-category-loader' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -33,7 +33,7 @@ class TM_Elementor_Products_Category extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-product-category';
+		return 'mh-ele-product-category';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class TM_Elementor_Products_Category extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_Products_Category extends Widget_Base {
 		return [ 'mascot-core-hellojs' ];
 	}
 	public function get_style_depends() {
-		return [ 'tm-product-category' ];
+		return [ 'mh-product-category' ];
 	}
 
 	/**
@@ -846,7 +846,7 @@ class TM_Elementor_Products_Category extends Widget_Base {
 			}
 			?>
 
-			<div class="tm-product-category-default">
+			<div class="mh-product-category-default">
 				<div class="cat-image">
 					<a class="link_category_product" href="<?php echo esc_url(get_term_link($category)); ?>"
 					   title="<?php echo esc_attr($category->name); ?>">

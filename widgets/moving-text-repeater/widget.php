@@ -15,11 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_MovingTextRepeater extends Widget_Base {
+class MH_Elementor_MovingTextRepeater extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_register_style( 'tm-moving-text-repeater', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/moving-text-repeater/moving-text-repeater' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-moving-text-repeater', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/moving-text-repeater/moving-text-repeater' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-moving-text-repeater';
+		return 'mh-ele-moving-text-repeater';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-moving-text-repeater' ];
+		return [ 'mh-moving-text-repeater' ];
 	}
 
 
@@ -190,7 +190,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-parent' => 'transform: rotate({{SIZE}}deg); -ms-transform: rotate({{SIZE}}deg); -webkit-transform: rotate({{SIZE}}deg);',
+					'{{WRAPPER}} .mh-marquee-parent' => 'transform: rotate({{SIZE}}deg); -ms-transform: rotate({{SIZE}}deg); -webkit-transform: rotate({{SIZE}}deg);',
 				],
 			]
 		);
@@ -208,7 +208,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater' => '--tm-marquee-animation-duration: {{SIZE}}s;',
+					'{{WRAPPER}} .mh-marquee-repeater' => '--mh-marquee-animation-duration: {{SIZE}}s;',
 				],
 			]
 		);
@@ -247,7 +247,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group .text:before' => '-webkit-text-fill-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group .text:before' => '-webkit-text-fill-color: {{VALUE}};',
 				],
 				'condition' => [
 					'mouseover_text_fill_animation' => array('yes')
@@ -262,7 +262,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group .text:before' => '-webkit-text-fill-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group .text:before' => '-webkit-text-fill-color: var(--theme-color{{VALUE}});',
 				],
 				'condition' => [
 					'mouseover_text_fill_animation' => array('yes')
@@ -297,7 +297,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'dynamic' => ['active' => true],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-marquee-repeater' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-marquee-repeater' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -309,7 +309,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater' => 'background-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater' => 'background-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -320,7 +320,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-marquee-repeater' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -357,7 +357,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'text_typography',
-				'selector' => '{{WRAPPER}} .tm-marquee-repeater .text',
+				'selector' => '{{WRAPPER}} .mh-marquee-repeater .text',
 				'fields_options' => [
 					'font_size' => [
 						'default' => [
@@ -387,7 +387,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				//'default' => WGL_Globals::get_h_font_color(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .text' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .text' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -399,7 +399,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .text' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .text' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -414,7 +414,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
                     'px' => [ 'min' => 0.1, 'max' => 10 ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-marquee-repeater .text' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-marquee-repeater .text' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -426,7 +426,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .text' => '-webkit-text-stroke-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .text' => '-webkit-text-stroke-color: {{VALUE}};',
 				],
 			]
 		);
@@ -438,7 +438,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .text' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .text' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -463,7 +463,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group div:nth-of-type(even)' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group div:nth-of-type(even)' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -475,7 +475,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group div:nth-of-type(even)' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group div:nth-of-type(even)' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -490,7 +490,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
                     'px' => [ 'min' => 0.1, 'max' => 10 ],
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group div:nth-of-type(even)' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group div:nth-of-type(even)' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -502,7 +502,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group div:nth-of-type(even)' => '-webkit-text-stroke-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group div:nth-of-type(even)' => '-webkit-text-stroke-color: {{VALUE}};',
 				],
 			]
 		);
@@ -514,7 +514,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .tm-marquee-group div:nth-of-type(even)' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .mh-marquee-group div:nth-of-type(even)' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -552,7 +552,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name' => 'divider_typography',
-				'selector' => '{{WRAPPER}} .tm-marquee-repeater .divider',
+				'selector' => '{{WRAPPER}} .mh-marquee-repeater .divider',
 				'fields_options' => [
 					'font_size' => [
 						'default' => [
@@ -580,7 +580,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				//'default' => WGL_Globals::get_primary_color(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -592,7 +592,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -620,7 +620,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -630,7 +630,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'label' => esc_html__( 'Stroke Color', 'shadhin-plugins' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => '-webkit-text-stroke-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => '-webkit-text-stroke-color: {{VALUE}};',
 				],
 			]
 		);
@@ -642,7 +642,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -653,7 +653,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -676,7 +676,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				//'default' => WGL_Globals::get_primary_color(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider:nth-of-type(even)' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider:nth-of-type(even)' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -688,7 +688,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider:nth-of-type(even)' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .divider:nth-of-type(even)' => 'color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -716,7 +716,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider:nth-of-type(even)' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .mh-marquee-repeater .divider:nth-of-type(even)' => '-webkit-text-stroke-width: {{SIZE}}{{UNIT}}',
 				],
 			]
 		);
@@ -726,7 +726,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'label' => esc_html__( 'Stroke Color', 'shadhin-plugins' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider:nth-of-type(even)' => '-webkit-text-stroke-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider:nth-of-type(even)' => '-webkit-text-stroke-color: {{VALUE}};',
 				],
 			]
 		);
@@ -738,7 +738,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider:nth-of-type(even)' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-marquee-repeater .divider:nth-of-type(even)' => '-webkit-text-stroke-color: var(--theme-color{{VALUE}});',
 				],
 			]
 		);
@@ -762,7 +762,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 				'label' => esc_html__( "Background Image", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::MEDIA,
 				'selectors' => [
-					'{{SELECTOR}} .tm-marquee-repeater .divider' => 'background-image: url("{{URL}}");',
+					'{{SELECTOR}} .mh-marquee-repeater .divider' => 'background-image: url("{{URL}}");',
 				],
 				'has_sizes' => true,
 				'render_type' => 'template',
@@ -798,7 +798,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -832,7 +832,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-marquee-repeater .divider' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-marquee-repeater .divider' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -865,9 +865,9 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 			$mouseover_text_fill_animation = "hover-fill-animation";
 		}
 		?>
-        <div class="tm-marquee-parent">
-			<div class="tm-marquee-repeater <?php echo esc_attr($moving_direction_class);?> <?php echo esc_attr($mouseover_text_fill_animation);?>">
-				<div class="tm-marquee-group">
+        <div class="mh-marquee-parent">
+			<div class="mh-marquee-repeater <?php echo esc_attr($moving_direction_class);?> <?php echo esc_attr($mouseover_text_fill_animation);?>">
+				<div class="mh-marquee-group">
 					<?php foreach (  $settings['moving_texts_array'] as $each_item ) {  ?>
 					<div class="text" data-text="<?php echo esc_attr($each_item['text']);?>"><?php echo esc_html($each_item['text']);?></div>
 					<span class="text divider <?php echo esc_attr($divider_animation_type);?>">
@@ -877,7 +877,7 @@ class TM_Elementor_MovingTextRepeater extends Widget_Base {
 					<?php } ?>
 				</div>
 
-				<div aria-hidden="true" class="tm-marquee-group">
+				<div aria-hidden="true" class="mh-marquee-group">
 					<?php foreach (  $settings['moving_texts_array'] as $each_item ) {  ?>
 					<div class="text" data-text="<?php echo esc_attr($each_item['text']);?>"><?php echo esc_html($each_item['text']);?></div>
 					<span class="text divider">

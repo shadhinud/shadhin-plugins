@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style_Mouse_Follow_Floating_Info extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-cpt-projects/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-cpt-projects/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -34,7 +34,7 @@ class Skin_Style_Mouse_Follow_Floating_Info extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-project-skin-mouse-follow-floating-info', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/project-skin-mouse-follow-floating-info' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-project-skin-mouse-follow-floating-info', SHADHIN_PLUGINS_ASSETS_URI . '/css/cpt/projects/project-skin-mouse-follow-floating-info' . $direction_suffix . '.css' );
 
 		$new_cpt_class = CPT_Projects::Instance();
 		$class_instance =  (array) $new_cpt_class;
@@ -61,7 +61,7 @@ class Skin_Style_Mouse_Follow_Floating_Info extends Elementor_Skin_Base {
 		if( $settings['add_border_radius'] ) {
 			$classes[] = 'border-radius-around-box';
 		}
-		$classes[] = 'tm-has-mouse-follow-floating-info';
+		$classes[] = 'mh-has-mouse-follow-floating-info';
 		$settings['classes'] = $classes;
 
 		//button classes

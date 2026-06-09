@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Before_After_Slider extends Widget_Base {
+class MH_Elementor_Before_After_Slider extends Widget_Base {
 
 	/**
 	 * Retrieve the widget name.
@@ -26,7 +26,7 @@ class TM_Elementor_Before_After_Slider extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-before-after-slider';
+		return 'mh-ele-before-after-slider';
 	}
 
 	/**
@@ -52,7 +52,7 @@ class TM_Elementor_Before_After_Slider extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -204,7 +204,7 @@ class TM_Elementor_Before_After_Slider extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_display_settings',
+			'mh_display_settings',
 			[
 				'label' => esc_html__( 'Display Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,

@@ -1167,7 +1167,7 @@ if(!function_exists('shadhin_plugins_get_button_control')) {
 		}
 		shadhin_plugins_get_button_arraylist($control_object, 1);
 		$control_object->add_responsive_control(
-			'tm_btn_padding',
+			'mh_btn_padding',
 			[
 				'label' => esc_html__( 'Button Padding', 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
@@ -1851,12 +1851,12 @@ if(!function_exists('shadhin_plugins_get_animation_type')) {
 	function shadhin_plugins_get_animation_type() {
 		$array = array(
 			''  =>  esc_html__( 'None', 'shadhin-plugins' ),
-			'tm-animation-floating'  =>  esc_html__( 'Floating Animation', 'shadhin-plugins' ),
-			'tm-animation-slide-horizontal'  =>  esc_html__( 'Horizontal Slide Animation', 'shadhin-plugins' ),
-			'tm-animation-flicker'  =>  esc_html__( 'Flicker Animation', 'shadhin-plugins' ),
-			'tm-animation-spin'  =>  esc_html__( 'Spin Animation', 'shadhin-plugins' ),
-			'tm-animation-random-animation1'	=>	esc_html__( 'Random Animation 1', 'shadhin-plugins' ),
-			'tm-animation-random-animation2'	=>	esc_html__( 'Random Animation 2', 'shadhin-plugins' ),
+			'mh-animation-floating'  =>  esc_html__( 'Floating Animation', 'shadhin-plugins' ),
+			'mh-animation-slide-horizontal'  =>  esc_html__( 'Horizontal Slide Animation', 'shadhin-plugins' ),
+			'mh-animation-flicker'  =>  esc_html__( 'Flicker Animation', 'shadhin-plugins' ),
+			'mh-animation-spin'  =>  esc_html__( 'Spin Animation', 'shadhin-plugins' ),
+			'mh-animation-random-animation1'	=>	esc_html__( 'Random Animation 1', 'shadhin-plugins' ),
+			'mh-animation-random-animation2'	=>	esc_html__( 'Random Animation 2', 'shadhin-plugins' ),
 		);
 		return $array;
 	}

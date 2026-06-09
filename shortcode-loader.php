@@ -63,7 +63,7 @@ class Plugin {
 
 	public function widget_styles_frontend() {
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-header-search', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/header-search' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-header-search', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/header-search' . $direction_suffix . '.css' );
 		wp_enqueue_style( 'mascot-core-widgets-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/mhshadhin-core-widgets-style' . $direction_suffix . '.css' );
 	}
 
@@ -255,38 +255,38 @@ class Plugin {
 		// WooCommerce.
 		$this->include_widgets_files_shop();
 
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\HeroSlider\TM_Elementor_HeroSlider() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Circle_Text() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Blog_List() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Before_After_Slider() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ThemeButton\TM_Elementor_Theme_Button() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\AwardBlock\TM_Elementor_AwardBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\SkillBlock\TM_Elementor_SkillBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\FeaturesBlock\TM_Elementor_FeaturesBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ServiceBlock\TM_Elementor_ServiceBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\PricingBlock\TM_Elementor_PricingBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ShowcaseBlock\TM_Elementor_ShowcaseBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\WorkingBlock\TM_Elementor_WorkingBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ImageGallery\TM_Elementor_Image_Gallery() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TeamBlock\TM_Elementor_TeamBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TestimonialBlock\TM_Elementor_TestimonialBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\CounterBlock\TM_Elementor_CounterBlock() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\CountdownTimer\TM_Elementor_Countdown_Timer() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Page_Title() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Site_Logo() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Top_Primary_Nav() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Header_Nav_Side_Icons() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_App_Button() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InteractiveList\TM_Elementor_InteractiveList() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MovingTextRepeater\TM_Elementor_MovingTextRepeater() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Spin_Text_Around_Logo() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InteractiveTabs\TM_Elementor_InteractiveTabsTitle() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InteractiveTabs\TM_Elementor_InteractiveTabsContent() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\PricingPlan\TM_Elementor_Pricing_Plan() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\PricingPlanSwitcher\TM_Elementor_Pricing_Plan_Switcher() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Swiper_Carousel_Arrow() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Projects_Pre_Next() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\VerticalImageSlider\TM_Elementor_Vertical_Image_Slider() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\HeroSlider\MH_Elementor_HeroSlider() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Circle_Text() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Blog_List() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Before_After_Slider() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ThemeButton\MH_Elementor_Theme_Button() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\AwardBlock\MH_Elementor_AwardBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\SkillBlock\MH_Elementor_SkillBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\FeaturesBlock\MH_Elementor_FeaturesBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ServiceBlock\MH_Elementor_ServiceBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\PricingBlock\MH_Elementor_PricingBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ShowcaseBlock\MH_Elementor_ShowcaseBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\WorkingBlock\MH_Elementor_WorkingBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\ImageGallery\MH_Elementor_Image_Gallery() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TeamBlock\MH_Elementor_TeamBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TestimonialBlock\MH_Elementor_TestimonialBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\CounterBlock\MH_Elementor_CounterBlock() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\CountdownTimer\MH_Elementor_Countdown_Timer() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Page_Title() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Site_Logo() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Top_Primary_Nav() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Header_Nav_Side_Icons() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_App_Button() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InteractiveList\MH_Elementor_InteractiveList() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MovingTextRepeater\MH_Elementor_MovingTextRepeater() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Spin_Text_Around_Logo() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InteractiveTabs\MH_Elementor_InteractiveTabsTitle() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InteractiveTabs\MH_Elementor_InteractiveTabsContent() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\PricingPlan\MH_Elementor_Pricing_Plan() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\PricingPlanSwitcher\MH_Elementor_Pricing_Plan_Switcher() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Swiper_Carousel_Arrow() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Projects_Pre_Next() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\VerticalImageSlider\MH_Elementor_Vertical_Image_Slider() );
 
 
 
@@ -296,55 +296,55 @@ class Plugin {
 
 		//shortcodes
 		// Register Widgets
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Accordion\TM_Elementor_Accordion() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Animated_Layers() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_BG_Aangle_Left_Right() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Blank_Box() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Button() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Clients_logo() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Contact_Form_7() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Contact_List() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Floating_Objects() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Funfact_Counter() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Accordion\MH_Elementor_Accordion() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Animated_Layers() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_BG_Aangle_Left_Right() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Blank_Box() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Button() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Clients_logo() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Contact_Form_7() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Contact_List() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Floating_Objects() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Funfact_Counter() );
 		//header shortcodes
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Header_Top_Info() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Header_Top_Info() );
 
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Iconbox() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Image_Background_Text_Effect() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Image_With_Rotated_Text() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InfoBox\TM_Elementor_InfoBox() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_List() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Navigation_Menu() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Newsletter() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Paroller_Animation() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Pie_Chart() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Progress_Bar() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Rotated_Text() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Section_Title() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Social_Links() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Tabs\TM_Elementor_Tabs() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_TextEditor() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_TextEditorAdvanced() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Unordered_List() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\VerticalBgImgList\TM_Elementor_Vertical_Bg_Img_List() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\VideoPopup\TM_Elementor_Video_Popup() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Iconbox() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Image_Background_Text_Effect() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Image_With_Rotated_Text() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\InfoBox\MH_Elementor_InfoBox() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_List() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Navigation_Menu() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Newsletter() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Paroller_Animation() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Pie_Chart() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Progress_Bar() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Rotated_Text() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Section_Title() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Social_Links() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Tabs\MH_Elementor_Tabs() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_TextEditor() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_TextEditorAdvanced() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Unordered_List() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\VerticalBgImgList\MH_Elementor_Vertical_Bg_Img_List() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\VideoPopup\MH_Elementor_Video_Popup() );
 
 
 		//cpt
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Projects\TM_Elementor_Projects() );
-		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Blog\TM_Elementor_Blog() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Projects\MH_Elementor_Projects() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Blog\MH_Elementor_Blog() );
 
 		//Shop Widgets
 		if ( $this->woocommerce_status() ) {
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Header_Cart() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Header_Search() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Products\TM_Elementor_WC_Products() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_InfoBanner() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Products_Category\TM_Elementor_Products_Category() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Product_List\TM_Elementor_Product_List() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Product_Tabs() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Vertical_Menu() );
-			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\TM_Elementor_Wishlist() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Header_Cart() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Header_Search() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Products\MH_Elementor_WC_Products() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_InfoBanner() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Products_Category\MH_Elementor_Products_Category() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Product_List\MH_Elementor_Product_List() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Product_Tabs() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Vertical_Menu() );
+			\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\MH_Elementor_Wishlist() );
 		}
 
 	}

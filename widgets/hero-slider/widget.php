@@ -15,18 +15,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_HeroSlider extends Widget_Base {
+class MH_Elementor_HeroSlider extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-hero-slider-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/hero-slider/hero-slider-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-hero-slider-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/hero-slider/hero-slider-loader' . $direction_suffix . '.css' );
 		}
 
 		wp_enqueue_style( 'swiper' );
 		wp_enqueue_script( 'swiper' );
-		wp_register_script( 'tm-hero-slider', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/hero-slider.js', array('jquery'), false, true );
-		wp_enqueue_script( array( 'tm-hero-slider' ) );
+		wp_register_script( 'mh-hero-slider', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/hero-slider.js', array('jquery'), false, true );
+		wp_enqueue_script( array( 'mh-hero-slider' ) );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-hero-slider';
+		return 'mh-ele-hero-slider';
 	}
 
 	/**
@@ -65,7 +65,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -245,7 +245,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_animation',
+			'mh_animation',
 			[
 				'label' => esc_html__( 'Slider Default Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -318,7 +318,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -727,7 +727,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_thumb_settings',
+			'mh_thumb_settings',
 			[
 				'label' => esc_html__( 'Thumb Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -750,7 +750,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-parts-thumbnail' => 'width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-parts-thumbnail' => 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -771,8 +771,8 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-parts-thumbnail .thumb-item' => 'height: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .tm-parts-thumbnail .thumb-item img' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-parts-thumbnail .thumb-item' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-parts-thumbnail .thumb-item img' => 'height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -783,7 +783,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-				'{{WRAPPER}} .tm-parts-thumbnail .thumb-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				'{{WRAPPER}} .mh-parts-thumbnail .thumb-item' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
 				],
 			]
 		);
@@ -794,7 +794,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-				'{{WRAPPER}} .tm-parts-thumbnail .thumb-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				'{{WRAPPER}} .mh-parts-thumbnail .thumb-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
 				],
 			]
 		);
@@ -805,7 +805,7 @@ class TM_Elementor_HeroSlider extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-parts-thumbnail .thumb-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-parts-thumbnail .thumb-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);

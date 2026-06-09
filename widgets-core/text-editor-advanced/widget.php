@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_TextEditorAdvanced extends Widget_Base {
+class MH_Elementor_TextEditorAdvanced extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-text-editor-advanced-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/text-editor-advanced' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-text-editor-advanced-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/text-editor-advanced' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-text-editor-advanced';
+		return 'mh-ele-text-editor-advanced';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -95,7 +95,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-text-editor-advanced-style' ];
+		return [ 'mh-text-editor-advanced-style' ];
 	}
 
 	/**
@@ -110,7 +110,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -400,7 +400,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 					'flex'	=> 	esc_html__( "Flex", 'shadhin-plugins' ),
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-text-editor-advanced' => 'display: {{VALUE}};'
+					'{{WRAPPER}} .mh-text-editor-advanced' => 'display: {{VALUE}};'
 				],
 			]
 		);
@@ -410,7 +410,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 				'label' => esc_html__( "Flex - Justify Content center", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-text-editor-advanced' => 'justify-content: center;'
+					'{{WRAPPER}} .mh-text-editor-advanced' => 'justify-content: center;'
 				],
 				'condition' => [
 					'items_display_type' => array('flex')
@@ -423,7 +423,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 				'label' => esc_html__( "Flex - Align Items center", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-text-editor-advanced' => 'align-items: center;'
+					'{{WRAPPER}} .mh-text-editor-advanced' => 'align-items: center;'
 				],
 				'condition' => [
 					'items_display_type' => array('flex')
@@ -448,7 +448,7 @@ class TM_Elementor_TextEditorAdvanced extends Widget_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-text-editor-advanced';
+		$classes[] = 'mh-text-editor-advanced';
 		$settings['classes'] = $classes;
 
 	?>

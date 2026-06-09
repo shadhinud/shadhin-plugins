@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Style2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-service-block/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-service-block/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -33,7 +33,7 @@ class Skin_Style2 extends Elementor_Skin_Base {
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 		wp_enqueue_style( 'service-block-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/service-block/service-block-style2' . $direction_suffix . '.css' );
-		wp_enqueue_script( 'tm-service-block-style2-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/service-block2.js', array('jquery'), false, true );
+		wp_enqueue_script( 'mh-service-block-style2-script', SHADHIN_PLUGINS_ASSETS_URI . '/js/widgets/service-block2.js', array('jquery'), false, true );
 
 
 		if( $settings['animate_icon_on_hover'] ) {

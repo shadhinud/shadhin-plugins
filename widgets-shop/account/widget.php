@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Wishlist extends Widget_Base {
+class MH_Elementor_Wishlist extends Widget_Base {
     protected $nav_menu_index = 1;
 
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-woo-wishlist', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/wishlist' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-woo-wishlist', SHADHIN_PLUGINS_ASSETS_URI . '/css/woo/wishlist' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -34,7 +34,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-woo-wishlist';
+		return 'mh-ele-woo-wishlist';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -96,7 +96,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 		return [ 'mascot-core-hellojs' ];
 	}
 	public function get_style_depends() {
-		return [ 'tm-woo-wishlist' ];
+		return [ 'mh-woo-wishlist' ];
 	}
 
     protected function get_nav_menu_index() {
@@ -263,7 +263,7 @@ class TM_Elementor_Wishlist extends Widget_Base {
 
                 ?>
                 <div class="site-header-wishlist woosw-check">
-                    <a class="header-wishlist" data-toggle="button-side" data-target=".tm-wishlist-side" href="<?php echo esc_url(\WPCleverWoosw::get_url($key, true)); ?>">
+                    <a class="header-wishlist" data-toggle="button-side" data-target=".mh-wishlist-side" href="<?php echo esc_url(\WPCleverWoosw::get_url($key, true)); ?>">
                         <i class="lnr lnr-icon-heart"></i>
                         <span class="count"><?php echo esc_html(\WPCleverWoosw::get_count($key)); ?></span>
                     </a>

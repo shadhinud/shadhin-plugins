@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Newsletter extends Widget_Base {
+class MH_Elementor_Newsletter extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         $direction_suffix = is_rtl() ? '.rtl' : '';
 
-        wp_register_style( 'tm-newsletter-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/newsletter' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-newsletter-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/newsletter' . $direction_suffix . '.css' );
     }
 
     /**
@@ -33,7 +33,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'tm-ele-newsletter';
+        return 'mh-ele-newsletter';
     }
 
     /**
@@ -59,7 +59,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
      * @return string Widget icon.
      */
     public function get_icon() {
-        return 'tm-elementor-widget-icon';
+        return 'mh-elementor-widget-icon';
     }
 
     /**
@@ -96,7 +96,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
     }
 
 	public function get_style_depends() {
-		return [ 'tm-newsletter-style' ];
+		return [ 'mh-newsletter-style' ];
 	}
 
     /**
@@ -110,7 +110,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
      */
     protected function register_controls() {
         $this->start_controls_section(
-            'tm_general',
+            'mh_general',
             [
                 'label' => esc_html__( 'General', 'shadhin-plugins' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
@@ -156,7 +156,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label_on'  => esc_html__( 'On', 'shadhin-plugins' ),
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter .mc4wp-form-fields' => 'display: flex; flex-direction: column;',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter .mc4wp-form-fields' => 'display: flex; flex-direction: column;',
                 ],
             ]
         );
@@ -184,7 +184,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 ],
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -199,7 +199,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'default'      => '',
                 'return_value' => 'none',
                 'selectors'    => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter span' => 'display: {{VALUE}}',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter span' => 'display: {{VALUE}}',
                 ],
             ]
         );
@@ -223,7 +223,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'default'      => '',
                 'return_value' => 'none',
                 'selectors'    => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter i' => 'display: {{VALUE}}',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter i' => 'display: {{VALUE}}',
                 ],
             ]
         );
@@ -235,7 +235,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -264,7 +264,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                     'form_style' => 'yes',
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter .mc4wp-form-fields' => 'align-items: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter .mc4wp-form-fields' => 'align-items: {{VALUE}};',
                 ],
             ]
         );
@@ -282,7 +282,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 ],
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'width: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'width: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -313,7 +313,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Background Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -325,7 +325,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'background-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'background-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -336,7 +336,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Text Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -348,7 +348,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -359,9 +359,9 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Placeholder Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter ::-webkit-input-placeholder' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .tm-mc4wp-newsletter ::-moz-placeholder'          => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .tm-mc4wp-newsletter ::-ms-input-placeholder'     => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter ::-webkit-input-placeholder' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter ::-moz-placeholder'          => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter ::-ms-input-placeholder'     => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -387,7 +387,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 ],
                 'default'   => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -399,7 +399,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'name'        => 'border_input',
                 'placeholder' => '1px',
                 'default'     => '1px',
-                'selector'    => '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]',
+                'selector'    => '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]',
                 'separator'   => 'before',
             ]
         );
@@ -411,7 +411,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -423,7 +423,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -434,7 +434,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter input[name="EMAIL"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter input[name="EMAIL"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -462,7 +462,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name'     => 'typography',
-                'selector' => '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]',
+                'selector' => '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]',
             ]
         );
 
@@ -480,7 +480,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Background Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -492,7 +492,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'background-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'background-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -502,7 +502,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Text Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -514,7 +514,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -534,7 +534,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Background Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:hover' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -546,7 +546,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:hover' => 'background-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:hover' => 'background-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -556,7 +556,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Text Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:hover' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -568,7 +568,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:hover' => 'color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:hover' => 'color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -578,7 +578,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Border Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:hover' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:hover' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -599,7 +599,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Background Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:forcus' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:forcus' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -611,7 +611,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:forcus' => 'background-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:forcus' => 'background-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -621,7 +621,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Text Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:focus' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:focus' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -633,7 +633,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:forcus' => 'color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:forcus' => 'color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -643,7 +643,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'label'     => esc_html__( 'Border Color', 'shadhin-plugins' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:focus' => 'border-color: {{VALUE}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:focus' => 'border-color: {{VALUE}};',
                 ],
             ]
         );
@@ -655,7 +655,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'options' => shadhin_plugins_theme_color_list(),
                 'default' => '',
                 'selectors' => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]:forcus' => 'border-color: var(--theme-color{{VALUE}})',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]:forcus' => 'border-color: var(--theme-color{{VALUE}})',
                 ],
             ]
         );
@@ -670,7 +670,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'name'        => 'border_button',
                 'placeholder' => '1px',
                 'default'     => '1px',
-                'selector'    => '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]',
+                'selector'    => '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]',
                 'separator'   => 'before',
             ]
         );
@@ -682,7 +682,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -694,7 +694,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -705,7 +705,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors'  => [
-                    '{{WRAPPER}} .tm-mc4wp-newsletter [type="submit"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .mh-mc4wp-newsletter [type="submit"]' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -732,7 +732,7 @@ class TM_Elementor_Newsletter extends Widget_Base {
         $settings['classes'] = $classes;
 
         ?>
-        <div class="tm-mc4wp-newsletter <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+        <div class="mh-mc4wp-newsletter <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
             <?php
                 if (function_exists('mc4wp_show_form')) {
                     try {

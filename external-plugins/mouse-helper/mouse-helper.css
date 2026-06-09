@@ -1,6 +1,6 @@
 /* Mouse helper
 --------------------------------------------------------------- */
-.tm_cursor_mouse_helper {
+.mh_cursor_mouse_helper {
   --mouse-helper-width: 15px;
   --mouse-helper-height: 15px;
   --mouse-helper-left: 5px;
@@ -43,30 +43,30 @@
   opacity: 0;
   pointer-events: none;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_permanent {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_permanent {
   opacity: 0.5;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_centered {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_centered {
   left: calc( var(--mouse-helper-width) / -2 );
   top: calc( var(--mouse-helper-height) / -2 );
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_left:not(.tm_cursor_mouse_helper_centered) {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_left:not(.mh_cursor_mouse_helper_centered) {
   left: calc( var(--mouse-helper-width) * -1 - 15px );
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_top:not(.tm_cursor_mouse_helper_centered) {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_top:not(.mh_cursor_mouse_helper_centered) {
   top: calc( var(--mouse-helper-height) * -1 - 15px );
 }
-.tm_cursor_mouse_helper .tm_cursor_mouse_helper_icon {
+.mh_cursor_mouse_helper .mh_cursor_mouse_helper_icon {
   font-size: 3em;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_with_text .tm_cursor_mouse_helper_icon {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_with_text .mh_cursor_mouse_helper_icon {
   margin-bottom: 0.25em;
   font-size: 1.5em;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_with_text_round .tm_cursor_mouse_helper_icon {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_with_text_round .mh_cursor_mouse_helper_icon {
   margin-bottom: 0;
 }
-.tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round {
+.mh_cursor_mouse_helper .mh_cursor_mouse_helper_text_round {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -74,17 +74,17 @@
   right: 0;
   bottom: 0;
 }
-body:not(.rtl) .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round {
+body:not(.rtl) .mh_cursor_mouse_helper .mh_cursor_mouse_helper_text_round {
   -webkit-animation: spin-ccw 8s infinite linear;
   -ms-animation: spin-ccw 8s infinite linear;
   animation: spin-ccw 8s infinite linear;
 }
-body.rtl .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round {
+body.rtl .mh_cursor_mouse_helper .mh_cursor_mouse_helper_text_round {
   -webkit-animation: spin 8s infinite linear;
   -ms-animation: spin 8s infinite linear;
   animation: spin 8s infinite linear;
 }
-.tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round .tm_cursor_mouse_helper_text_round_item {
+.mh_cursor_mouse_helper .mh_cursor_mouse_helper_text_round .mh_cursor_mouse_helper_text_round_item {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -94,14 +94,14 @@ body.rtl .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round {
   transform-origin: left top;
   line-height: 1.25em;
 }
-body.rtl .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round .tm_cursor_mouse_helper_text_round_item {
+body.rtl .mh_cursor_mouse_helper .mh_cursor_mouse_helper_text_round .mh_cursor_mouse_helper_text_round_item {
   left: auto;
   right: 0;
   -webkit-transform-origin: right top;
   -ms-transform-origin: right top;
   transform-origin: right top;
 }
-.tm_cursor_mouse_helper .tm_cursor_mouse_helper_image {
+.mh_cursor_mouse_helper .mh_cursor_mouse_helper_image {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -110,38 +110,38 @@ body.rtl .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round .tm_cursor_m
   bottom: 0;
   background-size: cover;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active {
   --mouse-helper-width: 25px;
   --mouse-helper-height: 25px;
   color: #fff;
   opacity: 1;
   text-indent: 0;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active.tm_cursor_mouse_helper_action_highlight {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active.mh_cursor_mouse_helper_action_highlight {
   display: none;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active.tm_cursor_mouse_helper_with_icon {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active.mh_cursor_mouse_helper_with_icon {
   --mouse-helper-width: 50px;
   --mouse-helper-height: 50px;
   padding: 5px;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active.tm_cursor_mouse_helper_with_text {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active.mh_cursor_mouse_helper_with_text {
   --mouse-helper-width: 75px;
   --mouse-helper-height: 75px;
   padding: 5px;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active.tm_cursor_mouse_helper_with_image {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active.mh_cursor_mouse_helper_with_image {
   --mouse-helper-width: 128px;
   --mouse-helper-height: 128px;
   -webkit-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active.tm_cursor_mouse_helper_with_image.tm_cursor_mouse_helper_with_text {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active.mh_cursor_mouse_helper_with_image.mh_cursor_mouse_helper_with_text {
   --mouse-helper-width: 160px;
   --mouse-helper-height: 160px;
 }
-.tm_cursor_mouse_helper.tm_cursor_mouse_helper_active.tm_cursor_mouse_helper_with_image.tm_cursor_mouse_helper_with_text .tm_cursor_mouse_helper_image:before {
+.mh_cursor_mouse_helper.mh_cursor_mouse_helper_active.mh_cursor_mouse_helper_with_image.mh_cursor_mouse_helper_with_text .mh_cursor_mouse_helper_image:before {
   content: ' ';
   position: absolute;
   z-index: -1;
@@ -165,7 +165,7 @@ body.rtl .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round .tm_cursor_m
   background-size: 0 0;
 
 }
-[data-mouse-helper="highlight"].tm_cursor_mouse_helper_over {
+[data-mouse-helper="highlight"].mh_cursor_mouse_helper_over {
   background-size: 4em 4em;
 }
 [data-mouse-helper="highlight"].sc_item_title_style_shadow {
@@ -177,7 +177,7 @@ body.rtl .tm_cursor_mouse_helper .tm_cursor_mouse_helper_text_round .tm_cursor_m
 }
 
 /* Mouse helper in the Elementor editor */
-body.elementor-editor-active .tm_cursor_mouse_helper {
+body.elementor-editor-active .mh_cursor_mouse_helper {
   display: none !important;
 }
 

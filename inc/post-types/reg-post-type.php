@@ -103,7 +103,7 @@ class Reg_Post_Type {
 /**
  * enable elementor for each custom post types
  */
-function tm_enable_elementor_for_all_cpt(){
+function mh_enable_elementor_for_all_cpt(){
     add_post_type_support( 'header-top', 'elementor' );
     add_post_type_support( 'megamenu', 'elementor' );
     add_post_type_support( 'page-title', 'elementor' );
@@ -112,4 +112,4 @@ function tm_enable_elementor_for_all_cpt(){
     //add_post_type_support( 'portfolio-items', 'elementor' );
     add_post_type_support( 'projects', 'elementor' );
 }
-add_action('elementor/init','Shadhinplugins\CPT\tm_enable_elementor_for_all_cpt');
+add_action('elementor/init','Shadhinplugins\CPT\mh_enable_elementor_for_all_cpt');

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Current_Theme1 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-wc-products/tm_general/after_section_end', [ $this, 'register_layout_controls1' ] );
+		add_action( 'elementor/element/mh-ele-wc-products/mh_general/after_section_end', [ $this, 'register_layout_controls1' ] );
 	}
 
 	public function get_id() {

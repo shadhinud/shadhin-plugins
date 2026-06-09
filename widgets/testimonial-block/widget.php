@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_TestimonialBlock extends Widget_Base {
+class MH_Elementor_TestimonialBlock extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		if( \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 			$direction_suffix = is_rtl() ? '.rtl' : '';
-			wp_enqueue_style( 'tm-testimonial-block-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-loader' . $direction_suffix . '.css' );
+			wp_enqueue_style( 'mh-testimonial-block-loader', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-loader' . $direction_suffix . '.css' );
 		}
 	}
 
@@ -34,7 +34,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-testimonial-block';
+		return 'mh-ele-testimonial-block';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -256,7 +256,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -483,7 +483,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -495,7 +495,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -504,7 +504,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 			[
 				'name' => 'author_name_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name',
+				'selector' => '{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name',
 			]
 		);
 		$this->add_responsive_control(
@@ -514,7 +514,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -525,7 +525,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -543,7 +543,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item:hover .inner-box .testimonial-name' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item:hover .inner-box .testimonial-name' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -555,7 +555,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item:hover .inner-box .testimonial-name' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item:hover .inner-box .testimonial-name' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -573,8 +573,8 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name a:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name a:hover' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -586,8 +586,8 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name:hover' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-name a:hover' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-name a:hover' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -621,7 +621,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -633,7 +633,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -642,7 +642,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 			[
 				'name' => 'author_position_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position',
+				'selector' => '{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position',
 			]
 		);
 		$this->add_responsive_control(
@@ -652,7 +652,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -663,7 +663,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -681,7 +681,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item:hover .inner-box .testimonial-position' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item:hover .inner-box .testimonial-position' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -693,7 +693,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item:hover .inner-box .testimonial-position' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item:hover .inner-box .testimonial-position' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -711,8 +711,8 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position:hover' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position a:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position a:hover' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -724,8 +724,8 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position:hover' => 'color: var(--theme-color{{VALUE}});',
-					'{{WRAPPER}} .tm-sc-testimonials .testimonial-item .inner-box .testimonial-position a:hover' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position:hover' => 'color: var(--theme-color{{VALUE}});',
+					'{{WRAPPER}} .mh-sc-testimonials .testimonial-item .inner-box .testimonial-position a:hover' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1073,7 +1073,7 @@ class TM_Elementor_TestimonialBlock extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-testimonial-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-style1' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-testimonial-block-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/testimonial-block/testimonial-block-style1' . $direction_suffix . '.css' );
 
 		if( $settings['animate_icon_on_hover'] ) {
 			$classes[] = 'animate-hover animate-icon-'.$settings['animate_icon_on_hover'];

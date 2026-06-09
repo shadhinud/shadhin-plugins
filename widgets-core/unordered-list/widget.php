@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Unordered_List extends Widget_Base {
+class MH_Elementor_Unordered_List extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 
-		wp_register_style( 'tm-unordered-list-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/unordered-list' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-unordered-list-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/unordered-list' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-unordered-list';
+		return 'mh-ele-unordered-list';
 	}
 
 	/**
@@ -58,7 +58,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -105,7 +105,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 	 */
 	protected function register_controls() {
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -162,7 +162,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-unordered-list' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-unordered-list' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -172,7 +172,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 				'label' => esc_html__( "Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-unordered-list ul li ' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-unordered-list ul li ' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -181,7 +181,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 			[
 				'name' => 'list_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-unordered-list ul li',
+				'selector' => '{{WRAPPER}} .mh-sc-unordered-list ul li',
 			]
 		);
 		$this->add_control(
@@ -192,7 +192,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-unordered-list ul li:before' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-unordered-list ul li:before' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -202,7 +202,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 				'label' => esc_html__( "Icon Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-unordered-list ul li:before ' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-unordered-list ul li:before ' => 'color: {{VALUE}};'
 				]
 			]
 		);
@@ -224,7 +224,7 @@ class TM_Elementor_Unordered_List extends Widget_Base {
 
 	//classes
 	$classes = array();
-	$classes[] = 'tm-sc-unordered-list';
+	$classes[] = 'mh-sc-unordered-list';
 	$classes[] = $settings['custom_css_class'];
 	$classes[] = $settings['unordered_list_style'];
 

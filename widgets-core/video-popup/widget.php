@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Video_Popup extends Widget_Base {
+class MH_Elementor_Video_Popup extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
@@ -23,7 +23,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 		wp_enqueue_style( 'magnific-popup' );
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_register_style( 'tm-video-popup-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/video-popup' . $direction_suffix . '.css' );
+		wp_register_style( 'mh-video-popup-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/video-popup' . $direction_suffix . '.css' );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-video-popup';
+		return 'mh-ele-video-popup';
 	}
 
 	/**
@@ -62,7 +62,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -99,7 +99,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-video-popup-style' ];
+		return [ 'mh-video-popup-style' ];
 	}
 
 	/**
@@ -124,7 +124,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -147,7 +147,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 				'options' => shadhin_plugins_disply_flex_horizontal_align_elementor(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup' => 'display:flex; justify-content: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup' => 'display:flex; justify-content: {{VALUE}};',
 				],
 			]
 		);
@@ -346,7 +346,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 				'label' => esc_html__( "Icon Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'color: {{VALUE}};',
 				]
 			]
 		);
@@ -358,7 +358,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -375,7 +375,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 				'label' => esc_html__( "Icon Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'background-color: {{VALUE}};',
 				]
 			]
 		);
@@ -387,7 +387,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-video-popup:hover .video-play-button' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-video-popup:hover .video-play-button' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -411,7 +411,7 @@ class TM_Elementor_Video_Popup extends Widget_Base {
 
 		//classes
 		$classes = array();
-		$classes[] = 'tm-sc-video-popup';
+		$classes[] = 'mh-sc-video-popup';
 
 		$settings['classes'] = $classes;
 

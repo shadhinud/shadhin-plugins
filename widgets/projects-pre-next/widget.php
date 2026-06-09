@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Projects_Pre_Next extends Widget_Base {
+class MH_Elementor_Projects_Pre_Next extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
         $direction_suffix = is_rtl() ? '.rtl' : '';
 
-        wp_register_style( 'tm-projects-pre-next', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/projects-pre-next' . $direction_suffix . '.css' );
+        wp_register_style( 'mh-projects-pre-next', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/projects-pre-next' . $direction_suffix . '.css' );
     }
 
 	/**
@@ -31,7 +31,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-projects-pre-next';
+		return 'mh-ele-projects-pre-next';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -94,7 +94,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 'tm-projects-pre-next' ];
+		return [ 'mh-projects-pre-next' ];
 	}
 
 	/**
@@ -109,7 +109,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 	protected function register_controls() {
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -413,7 +413,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'label' => esc_html__( "Right Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-app-btn .content' => 'border-left-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-app-btn .content' => 'border-left-color: {{VALUE}};'
 				]
 			]
 		);
@@ -460,7 +460,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'label' => esc_html__( "Right Border Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-app-btn .content' => 'border-left-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-app-btn .content' => 'border-left-color: {{VALUE}};'
 				]
 			]
 		);
@@ -501,7 +501,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-app-btn' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-app-btn' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -513,7 +513,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-app-btn' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-app-btn' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -523,7 +523,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'name' => 'btn_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-app-btn',
+				'selector' => '{{WRAPPER}} .mh-app-btn',
 			]
 		);
 		$this->add_group_control(
@@ -532,7 +532,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'name' => 'btn_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-app-btn',
+				'selector' => '{{WRAPPER}} .mh-app-btn',
 			]
 		);
 		$this->end_controls_tab();
@@ -548,7 +548,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'label' => esc_html__( "Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-app-btn' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-app-btn' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -560,7 +560,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-app-btn' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-app-btn' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -570,7 +570,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'name' => 'btn_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}}:hover .tm-app-btn',
+				'selector' => '{{WRAPPER}}:hover .mh-app-btn',
 			]
 		);
 		$this->add_group_control(
@@ -579,7 +579,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'name' => 'btn_box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}}:hover .tm-app-btn',
+				'selector' => '{{WRAPPER}}:hover .mh-app-btn',
 			]
 		);
 		$this->end_controls_tab();
@@ -592,7 +592,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-app-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-app-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -603,7 +603,7 @@ class TM_Elementor_Projects_Pre_Next extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-app-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-app-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);

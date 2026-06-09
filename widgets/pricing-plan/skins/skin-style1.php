@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Pricing_Style1 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-pricing-plan/tm_general/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-pricing-plan/mh_general/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -31,7 +31,7 @@ class Skin_Pricing_Style1 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-pricing-skin-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-skin-style1' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-pricing-skin-style1', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-skin-style1' . $direction_suffix . '.css' );
 
 		//link url
 		$settings['button']['target'] = $settings['link']['is_external'] ? ' target="_blank"' : '';

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TM_Elementor_Iconbox extends Widget_Base {
+class MH_Elementor_Iconbox extends Widget_Base {
 	public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
@@ -31,7 +31,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'tm-ele-iconbox';
+		return 'mh-ele-iconbox';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'tm-elementor-widget-icon';
+		return 'mh-elementor-widget-icon';
 	}
 
 	/**
@@ -376,7 +376,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 
 
 		$this->start_controls_section(
-			'tm_general',
+			'mh_general',
 			[
 				'label' => esc_html__( 'General Settings', 'shadhin-plugins' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -390,7 +390,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'label_block' => false,
 				'options' => shadhin_plugins_text_align_choose(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'text-align: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'text-align: {{VALUE}};'
 				],
 				'default' => 'center',
 			]
@@ -447,7 +447,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'label' => esc_html__( "Wrapper Overflow Hidden", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'overflow: hidden;'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'overflow: hidden;'
 				]
 			]
 		);
@@ -1589,7 +1589,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-icon-box' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1600,7 +1600,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-icon-box' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1610,7 +1610,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'label' => esc_html__( "Content Display Flex + Vertical Center?", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'display: flex; align-items: center;',
+					'{{WRAPPER}} .mh-sc-icon-box' => 'display: flex; align-items: center;',
 				]
 			]
 		);
@@ -1620,7 +1620,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'label' => esc_html__( "Minimum Height", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'min-height: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'min-height: {{VALUE}};'
 				]
 			]
 		);
@@ -1638,7 +1638,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'name' => 'iconbox_wrapper_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-icon-box',
+				'selector' => '{{WRAPPER}} .mh-sc-icon-box',
 			]
 		);
 		$this->add_responsive_control(
@@ -1647,7 +1647,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1659,7 +1659,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1678,7 +1678,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1687,7 +1687,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 			[
 				'name' => 'iconbox_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-icon-box',
+				'selector' => '{{WRAPPER}} .mh-sc-icon-box',
 			]
 		);
 		$this->add_group_control(
@@ -1695,7 +1695,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 			[
 				'name' => 'border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-sc-icon-box',
+				'selector' => '{{WRAPPER}} .mh-sc-icon-box',
 			]
 		);
 		$this->add_control(
@@ -1706,7 +1706,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-icon-box' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-icon-box' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1732,7 +1732,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'name' => 'iconbox_wrapper_bg_color_hover',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}}:hover .tm-sc-icon-box',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-icon-box',
 			]
 		);
 		$this->add_responsive_control(
@@ -1741,7 +1741,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-icon-box' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .mh-sc-icon-box' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1753,7 +1753,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-icon-box' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-icon-box' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1772,7 +1772,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-icon-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}}:hover .mh-sc-icon-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1781,7 +1781,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 			[
 				'name' => 'iconbox_wrapper_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-icon-box',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-icon-box',
 			]
 		);
 		$this->add_group_control(
@@ -1789,7 +1789,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 			[
 				'name' => 'iconbox_wrapper_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .tm-sc-icon-box',
+				'selector' => '{{WRAPPER}}:hover .mh-sc-icon-box',
 			]
 		);
 		$this->add_control(
@@ -1800,7 +1800,7 @@ class TM_Elementor_Iconbox extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-icon-box' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-icon-box' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
