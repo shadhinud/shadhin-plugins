@@ -31,8 +31,8 @@
             elementorFrontend.hooks.addAction( 'frontend/element_ready/global', function( $scope ) {
             } );
             elementorFrontend.hooks.addAction( 'frontend/element_ready/widget', function( $scope ) {
-                THEMEMASCOT.documentOnReady.init();
-                THEMEMASCOT.windowOnLoad.init();
+                MHSHADHIN.documentOnReady.init();
+                MHSHADHIN.windowOnLoad.init();
             } );
         });
     }

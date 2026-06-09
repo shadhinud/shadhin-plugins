@@ -282,7 +282,7 @@ function shadhin_plugins_admin_bar_menu( $wp_admin_bar ) {
 		'parent'  => 'mascot-options',
 		'id'	  => 'mascot-themes',
 		'title'   => 'Browse Our Themes',
-		'href'	=> 'http://themeforest.net/user/ThemeMascot/portfolio?ref=ThemeMascot',
+		'href'	=> 'http://themeforest.net/user/MhShadhin/portfolio?ref=MhShadhin',
 		'meta'	=> array( 'target' => '_blank' )
 	));
 }

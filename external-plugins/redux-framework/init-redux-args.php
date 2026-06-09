@@ -143,18 +143,18 @@
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
     $args['share_icons'][] = array(
-        'url'   => 'mailto:thememascot@gmail.com',
-        'title' => 'Send an email to ThemeMascot',
+        'url'   => 'mailto:mhshadhin@gmail.com',
+        'title' => 'Send an email to MhShadhin',
         'icon'  => 'el el-icon-envelope'
         //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
     );
     $args['share_icons'][] = array(
-        'url'   => 'https://www.facebook.com/thememascot',
+        'url'   => 'https://www.facebook.com/mhshadhin',
         'title' => 'Like us on Facebook',
         'icon'  => 'el el-facebook'
     );
     $args['share_icons'][] = array(
-        'url'   => 'https://themeforest.net/user/thememascot',
+        'url'   => 'https://themeforest.net/user/mhshadhin',
         'title' => 'Contact with Author',
         'icon'  => 'el el-icon-link'
     );

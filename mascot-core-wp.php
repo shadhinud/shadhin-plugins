@@ -2,11 +2,11 @@
 /**
  *
 Plugin Name: Mascot Core - Shadhin
-Plugin URI:  https://themeforest.net/user/thememascot/portfolio
+Plugin URI:  https://themeforest.net/user/mhshadhin/portfolio
 Description: Mascot Core Plugin for Elementor. It includes all the required Shortcodes needed by Elementor.
 Version:     2.0
-Author:      ThemeMascot
-Author URI:  https://themeforest.net/user/thememascot/portfolio
+Author:      MhShadhin
+Author URI:  https://themeforest.net/user/mhshadhin/portfolio
 Text Domain: shadhin-plugins
 Domain Path: /languages/
  */

@@ -26,8 +26,8 @@
 
   function isRTL() {
     // Check if RTL using multiple methods
-    if (typeof THEMEMASCOT !== "undefined" && THEMEMASCOT.isRTL && typeof THEMEMASCOT.isRTL.check === "function") {
-      return THEMEMASCOT.isRTL.check();
+    if (typeof MHSHADHIN !== "undefined" && MHSHADHIN.isRTL && typeof MHSHADHIN.isRTL.check === "function") {
+      return MHSHADHIN.isRTL.check();
     }
     // Fallback to document direction
     return $("html").attr("dir") === "rtl" || $("body").hasClass("rtl");

@@ -1,6 +1,6 @@
 (function($) {
 	"use strict";
-	var THEMEMASCOT_LIGHT_GALLERY = {};
+	var MHSHADHIN_LIGHT_GALLERY = {};
 
 	/* ---------------------------------------------------------------------- */
 	/* -------------------------- Declare Variables ------------------------- */
@@ -18,11 +18,11 @@
 	var $sections = $('.vc_row.vc-row-tm-parent-section');
 	var windowHeight = $window.height();
 
-	THEMEMASCOT_LIGHT_GALLERY.initialize = {
+	MHSHADHIN_LIGHT_GALLERY.initialize = {
 
 		init: function() {
-			THEMEMASCOT_LIGHT_GALLERY.initialize.TM_lightgallery_lightbox();
-			THEMEMASCOT_LIGHT_GALLERY.initialize.TM_lightgallery_lightbox_reset();
+			MHSHADHIN_LIGHT_GALLERY.initialize.TM_lightgallery_lightbox();
+			MHSHADHIN_LIGHT_GALLERY.initialize.TM_lightgallery_lightbox_reset();
 		},
 
 
@@ -35,7 +35,7 @@
 			if( $lightgallery_lightbox.length > 0 ) {
 				$lightgallery_lightbox.lightGallery({
 					// Please read about gallery options here: http://sachinchoolur.github.io/lightGallery/docs/api.html
-					// lightgallery core 
+					// lightgallery core
 					selector: '.lightgallery-trigger',
 					mode: 'lg-fade', // Type of transition between images ('lg-fade' or 'lg-slide').
 					height: '100%', // Height of the gallery (ex: '100%' or '300px').
@@ -93,7 +93,7 @@
 					// Vimeo video options
 					loadVimeoThumbnail: true, // You can automatically load thumbnails for vimeo videos from vimeo by setting loadYoutubeThumbnail true.
 					vimeoThumbSize: 'thumbnail_medium', // Thumbnail size for vimeo videos: 'thumbnail_large' or 'thumbnail_medium' or 'thumbnail_small'.
-					vimeoPlayerParams: { // Change vimeo player parameters: https://developer.vimeo.com/player/embedding#universal-parameters 
+					vimeoPlayerParams: { // Change vimeo player parameters: https://developer.vimeo.com/player/embedding#universal-parameters
 						byline : 1,
 						portrait : 1,
 						title: 1,
@@ -110,7 +110,7 @@
 			if( $loadmore_btn_lightgallery_lightbox.length > 0 ) {
 				$loadmore_btn_lightgallery_lightbox.on('click', function(e) {
 					$(".lightgallery-lightbox").data("lightGallery").destroy(true);
-					THEMEMASCOT_LIGHT_GALLERY.initialize.TM_lightgallery_lightbox();	
+					MHSHADHIN_LIGHT_GALLERY.initialize.TM_lightgallery_lightbox();
 				});
 			}
 		},
@@ -122,18 +122,18 @@
 	/* ---------- document ready, window load, scroll and resize ------------ */
 	/* ---------------------------------------------------------------------- */
 	//document ready
-	THEMEMASCOT_LIGHT_GALLERY.documentOnReady = {
+	MHSHADHIN_LIGHT_GALLERY.documentOnReady = {
 		init: function() {
-			THEMEMASCOT_LIGHT_GALLERY.initialize.init();
+			MHSHADHIN_LIGHT_GALLERY.initialize.init();
 		}
 	};
-	
+
 
 	/* ---------------------------------------------------------------------- */
 	/* ---------------------------- Call Functions -------------------------- */
 	/* ---------------------------------------------------------------------- */
 	$document.ready(
-		THEMEMASCOT_LIGHT_GALLERY.documentOnReady.init
+		MHSHADHIN_LIGHT_GALLERY.documentOnReady.init
 	);
 
 
