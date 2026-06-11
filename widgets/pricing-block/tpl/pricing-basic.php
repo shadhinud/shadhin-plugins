@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $pricing_items_array ) : ?>
-	<div class="tm-sc-pricing tm-pricing-basic">
+	<div class="mh-sc-pricing mh-pricing-basic">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="pricing-layout clearfix">
 			<div class="pricing-block-basic-wrapper">

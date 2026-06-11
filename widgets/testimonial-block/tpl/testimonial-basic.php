@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $testimonial_items_array ) : ?>
-	<div class="tm-testimonial-basic tm-sc-testimonials">
+	<div class="mh-testimonial-basic mh-sc-testimonials">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="testimonial-layout clearfix">
 			<!-- the loop -->

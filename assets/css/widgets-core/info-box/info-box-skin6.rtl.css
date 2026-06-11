@@ -1,8 +1,8 @@
-.tm-info-box-skin6 {
+.mh-info-box-skin6 {
   position: relative;
   margin-bottom: 30px;
 }
-.tm-info-box-skin6 .info-box-wrapper {
+.mh-info-box-skin6 .info-box-wrapper {
   position: relative;
   display: block;
   padding: 55px;
@@ -11,7 +11,7 @@
   box-shadow: 0px 10px 40px 0px rgba(22, 32, 60, 0.08);
   transition: all 500ms ease;
 }
-.tm-info-box-skin6 .info-box-wrapper .icon-wrapper {
+.mh-info-box-skin6 .info-box-wrapper .icon-wrapper {
   position: relative;
   color: #232226;
   font-size: 64px;
@@ -20,10 +20,10 @@
   z-index: 1;
   transition: all 0.5s ease-in-out;
 }
-.tm-info-box-skin6 .info-box-wrapper .icon-wrapper .info-text .title {
+.mh-info-box-skin6 .info-box-wrapper .icon-wrapper .info-text .title {
   margin: 20px 0 30px;
 }
-.tm-info-box-skin6 .info-box-wrapper .icon-wrapper:before {
+.mh-info-box-skin6 .info-box-wrapper .icon-wrapper:before {
   background-color: var(--theme-color1);
   border-radius: 50%;
   content: "";
@@ -35,7 +35,7 @@
   z-index: -1;
   transition: all 0.5s ease-in-out;
 }
-.tm-info-box-skin6 .info-box-wrapper .icon-wrapper:after {
+.mh-info-box-skin6 .info-box-wrapper .icon-wrapper:after {
   background-color: #232226;
   border-radius: 50%;
   content: "";
@@ -47,7 +47,7 @@
   z-index: -1;
   transition: all 0.5s ease-in-out;
 }
-.tm-info-box-skin6 .info-box-wrapper:after {
+.mh-info-box-skin6 .info-box-wrapper:after {
   content: "";
   background: var(--theme-color1);
   position: absolute;
@@ -60,28 +60,28 @@
   transform: translate(0, 0);
   transition: 500ms;
 }
-.tm-info-box-skin6 .info-box-wrapper:hover {
+.mh-info-box-skin6 .info-box-wrapper:hover {
   background: var(--theme-color1);
 }
-.tm-info-box-skin6 .info-box-wrapper:hover .icon-wrapper:before {
+.mh-info-box-skin6 .info-box-wrapper:hover .icon-wrapper:before {
   background-color: #fff;
   transform: scaleX(-1);
 }
-.tm-info-box-skin6 .info-box-wrapper:hover .title {
+.mh-info-box-skin6 .info-box-wrapper:hover .title {
   color: #ffffff;
   position: relative;
   z-index: 1;
   transition: all 500ms ease;
 }
-.tm-info-box-skin6 .info-box-wrapper:hover .title a {
+.mh-info-box-skin6 .info-box-wrapper:hover .title a {
   color: #ffffff;
 }
-.tm-info-box-skin6 .info-box-wrapper:hover .text {
+.mh-info-box-skin6 .info-box-wrapper:hover .text {
   color: #fff;
   position: relative;
   z-index: 1;
 }
-.tm-info-box-skin6 .info-box-wrapper:hover:after {
+.mh-info-box-skin6 .info-box-wrapper:hover:after {
   height: 100%;
   top: 0;
   transform: translate(-12px, 12px);

@@ -1,9 +1,9 @@
 <?php
 /**
  *
-Plugin Name: Mascot Core - Shadhin
+Plugin Name: Shadhin Core - Shadhin
 Plugin URI:  https://themeforest.net/user/mhshadhin/portfolio
-Description: Mascot Core Plugin for Elementor. It includes all the required Shortcodes needed by Elementor.
+Description: Shadhin Core Plugin for Elementor. It includes all the required Shortcodes needed by Elementor.
 Version:     2.0
 Author:      MhShadhin
 Author URI:  https://themeforest.net/user/mhshadhin/portfolio
@@ -14,7 +14,7 @@ Domain Path: /languages/
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Main Mascot Core - Shadhin Elementor Class
+ * Main Shadhin Core - Shadhin Elementor Class
  *
  * The init class that runs the Hello World plugin.
  * Intended To make sure that the plugin's minimum requirements are met.
@@ -148,12 +148,12 @@ final class Shadhin_plugins_Elementor {
 	 * enque style
 	 */
 	public function admin_enque_scripts() {
-		wp_enqueue_style( 'mascot-core-custom-admin', SHADHIN_PLUGINS_ASSETS_URI . '/css/custom-admin.css' );
+		wp_enqueue_style( 'shadhin-core-custom-admin', SHADHIN_PLUGINS_ASSETS_URI . '/css/custom-admin.css' );
 	}
 
 	public function enque_scripts() {
 		if (function_exists('woosw_init')) {
-			//wp_enqueue_script('mascot-core-wishlist', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/wishlist.js', array('jquery'), SHADHIN_PLUGINS_VERSION, true);
+			//wp_enqueue_script('shadhin-core-wishlist', SHADHIN_PLUGINS_ASSETS_URI . '/js/woo/wishlist.js', array('jquery'), SHADHIN_PLUGINS_VERSION, true);
 		}
 	}
 
@@ -174,8 +174,8 @@ final class Shadhin_plugins_Elementor {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'shadhin-plugins' ),
-			'<strong>' . esc_html__( 'Mascot Core - Shadhin', 'shadhin-plugins' ) . '</strong>',
-			'<strong>' . esc_html__( 'Mascot Core', 'shadhin-plugins' ) . '</strong>'
+			'<strong>' . esc_html__( 'Shadhin Core - Shadhin', 'shadhin-plugins' ) . '</strong>',
+			'<strong>' . esc_html__( 'Shadhin Core', 'shadhin-plugins' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
@@ -197,7 +197,7 @@ final class Shadhin_plugins_Elementor {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'shadhin-plugins' ),
-			'<strong>' . esc_html__( 'Mascot Core - Shadhin Elementor', 'shadhin-plugins' ) . '</strong>',
+			'<strong>' . esc_html__( 'Shadhin Core - Shadhin Elementor', 'shadhin-plugins' ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', 'shadhin-plugins' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
@@ -228,8 +228,8 @@ final class Shadhin_plugins_Elementor {
 			'fetchJson'     => SHADHIN_PLUGINS_ASSETS_URI . '/flaticon-set-ev/icon-list.js',
 			'native'        => 1,
 		];
-        $settings['mascot-flaticon-common'] = [
-            'name'          => 'mascot-flaticon-common',
+        $settings['shadhin-flaticon-common'] = [
+            'name'          => 'shadhin-flaticon-common',
             'label'         => 'Shadhin Common Icons',
             'url'           => '',
             'enqueue'       => array(
@@ -299,7 +299,7 @@ final class Shadhin_plugins_Elementor {
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'shadhin-plugins' ),
-			'<strong>' . esc_html__( 'Mascot Core - Shadhin Elementor', 'shadhin-plugins' ) . '</strong>',
+			'<strong>' . esc_html__( 'Shadhin Core - Shadhin Elementor', 'shadhin-plugins' ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', 'shadhin-plugins' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
@@ -336,7 +336,7 @@ if( !function_exists('shadhin_plugins_theme_active') ) {
 	* @return bool
 	*/
 	function shadhin_plugins_theme_active() {
-		return defined('MASCOT_THEME_ACTIVE');
+		return defined('SHADHIN_THEME_ACTIVE');
 	}
 }
 

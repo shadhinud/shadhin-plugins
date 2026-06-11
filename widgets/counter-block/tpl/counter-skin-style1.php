@@ -20,7 +20,7 @@ if( empty($image[0])) {
 }
 ?>
 
-<div class="counter-item counter-item-style1 mascot-counter <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
+<div class="counter-item counter-item-style1 shadhin-counter <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
   <div class="inner-block">
     <div class="content">
       <?php shadhin_plugins_get_shortcode_template_part( 'title', null, 'counter-block/tpl', $settings, false );?>

@@ -24,6 +24,6 @@
 
   //elementor front start
   $(window).on("elementor/frontend/init", function () {
-      elementorFrontend.elementsHandler.attachHandler( 'tm-ele-features-block', WidgetFeaturesBlockHandler, 'skin-style1' );
+      elementorFrontend.elementsHandler.attachHandler( 'mh-ele-features-block', WidgetFeaturesBlockHandler, 'skin-style1' );
   });
 })(jQuery);

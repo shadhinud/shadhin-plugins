@@ -11,7 +11,7 @@
     border: 1px solid #d4d0e4;
     -webkit-box-shadow: 0 10px 60px rgba(0, 0, 0, 0.06);
     box-shadow: 0 10px 60px rgba(0, 0, 0, 0.06);
-    [data-tm-layout="dark"] & {
+    [data-mh-layout="dark"] & {
       background-color: #1a1b1d;
       border: 1px solid #3d3b44;
     }
@@ -74,7 +74,7 @@
           color: #2e2d2d;
           font-weight: 600;
           margin-bottom: 15px;
-          [data-tm-layout="dark"] & {
+          [data-mh-layout="dark"] & {
             color: #fff;
           }
           &:before {

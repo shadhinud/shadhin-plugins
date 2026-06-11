@@ -7,29 +7,29 @@
 	$term_slugs_list_string = implode( ' ', $term_slugs_list );
 
 
-	$masonry_tiles_image_size_class = 'tm-masonry-default';
+	$masonry_tiles_image_size_class = 'mh-masonry-default';
 	if ( $use_masonry_tiles_featured_image_size == 'yes' ) :
 		$settings['featured_image_size'] = $meta_featured_image_size = shadhin_get_rwmb_group( 'shadhin_' . "portfolio_mb_featured_image_size_settings", 'masonry_tiles_featured_image_size' );
 
-		$masonry_tiles_image_size_class = 'tm-masonry-default';
+		$masonry_tiles_image_size_class = 'mh-masonry-default';
 		switch ( $meta_featured_image_size ) {
 			case 'shadhin_height':
 				# code...
-				$masonry_tiles_image_size_class = 'tm-masonry-large-height';
+				$masonry_tiles_image_size_class = 'mh-masonry-large-height';
 				break;
 
 			case 'shadhin_wide':
 				# code...
-				$masonry_tiles_image_size_class = 'tm-masonry-large-wide';
+				$masonry_tiles_image_size_class = 'mh-masonry-large-wide';
 				break;
 
 			case 'shadhin_width_height':
 				# code...
-				$masonry_tiles_image_size_class = 'tm-masonry-large-width-height';
+				$masonry_tiles_image_size_class = 'mh-masonry-large-width-height';
 				break;
 
 			case 'default':
-				$masonry_tiles_image_size_class = 'tm-masonry-default';
+				$masonry_tiles_image_size_class = 'mh-masonry-default';
 				$settings['featured_image_size'] = $featured_image_size;
 				# code...
 				break;

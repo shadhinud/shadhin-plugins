@@ -1,5 +1,5 @@
 
-<div class="box-hover-effect play-video-button tm-sc-video-popup tm-sc-video-popup-button-over-image2 <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="box-hover-effect play-video-button mh-sc-video-popup mh-sc-video-popup-button-over-image2 <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<div class="effect-wrapper">
 		<?php if( isset( $button_over_image2_featured_image['id'] ) && !empty( $button_over_image2_featured_image['id'] ) ): ?>
 		<div class="thumb" style="background-image:url('<?php $image = wp_get_attachment_image_src( $button_over_image2_featured_image['id'], $button_over_image2_featured_image_size); echo esc_url( $image[0] );?>')">

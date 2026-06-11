@@ -21,7 +21,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-pricing-block.skin-style2",
+            "frontend/element_ready/mh-ele-pricing-block.skin-style2",
             WidgetPricingBlock2Handler
         );
     });

@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings;?>
 
-<div class="tm-sc-pricing-plan <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?> pricing-plan-skin-style3">
+<div class="mh-sc-pricing-plan <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?> pricing-plan-skin-style3">
   <div class="inner-block">
     <div class="price-head">
       <div class="title-box">

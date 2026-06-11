@@ -1,4 +1,4 @@
-<div class="tm-sc-image-with-rotated-text <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-image-with-rotated-text <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<div class="image-text-wrapper">
 		<?php if ( ! empty( $image_rotate_text ) ) : ?>
 

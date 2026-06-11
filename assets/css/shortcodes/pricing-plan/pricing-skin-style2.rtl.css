@@ -218,7 +218,7 @@
   background-color: #999;
   content: "";
 }
-[data-tm-layout=dark] .pricing-plan-skin-style2 .pricing-plan-inner .pricing-plan-content .features-list li.line-through:after {
+[data-mh-layout=dark] .pricing-plan-skin-style2 .pricing-plan-inner .pricing-plan-content .features-list li.line-through:after {
   background-color: #1b1b1b;
 }
 .pricing-plan-skin-style2 .pricing-plan-inner .pricing-plan-content .features-list li i,

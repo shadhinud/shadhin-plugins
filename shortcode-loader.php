@@ -54,17 +54,17 @@ class Plugin {
 			wp_enqueue_script( 'swiper' );
 			wp_enqueue_style( 'swiper' );
 		}
-		wp_register_script( 'mascot-core-hellojs', plugins_url( '/assets/js/elementor-mhshadhin.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'shadhin-core-hellojs', plugins_url( '/assets/js/elementor-mhshadhin.js', __FILE__ ), [ 'jquery' ], false, true );
 	}
 
 	public function widget_styles() {
-		wp_enqueue_style( 'mascot-core-elementor-css', plugins_url( '/assets/css/elementor-mhshadhin.css', __FILE__ ) );
+		wp_enqueue_style( 'shadhin-core-elementor-css', plugins_url( '/assets/css/elementor-mhshadhin.css', __FILE__ ) );
 	}
 
 	public function widget_styles_frontend() {
 		$direction_suffix = is_rtl() ? '.rtl' : '';
 		wp_enqueue_style( 'mh-header-search', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/header-search' . $direction_suffix . '.css' );
-		wp_enqueue_style( 'mascot-core-widgets-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/mhshadhin-core-widgets-style' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'shadhin-core-widgets-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/widgets-core/mhshadhin-core-widgets-style' . $direction_suffix . '.css' );
 	}
 
 
@@ -78,7 +78,7 @@ class Plugin {
 	}
 
 
-	// collected from mascot-core
+	// collected from shadhin-core
 	public function widgets_core_list() {
 		$this->widgets_core = array_merge(
 			$this->widgets_core, array(
@@ -291,7 +291,7 @@ class Plugin {
 
 
 
-		//Collected from mascot-core
+		//Collected from shadhin-core
 		$this->include_widgets_core_files();
 
 		//shortcodes

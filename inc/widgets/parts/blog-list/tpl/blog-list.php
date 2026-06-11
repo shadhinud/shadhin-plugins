@@ -1,6 +1,6 @@
 
 <?php if ( $the_query->have_posts() ) : ?>
-  <div class="tm-widget tm-widget-blog-list <?php echo esc_attr( $custom_css_class );?>">
+  <div class="mh-widget mh-widget-blog-list <?php echo esc_attr( $custom_css_class );?>">
 	<!-- the loop -->
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 	<article class="post media-post clearfix">

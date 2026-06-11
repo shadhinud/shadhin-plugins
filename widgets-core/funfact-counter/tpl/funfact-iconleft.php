@@ -1,5 +1,5 @@
 <?php $settings['settings'] = $settings;?>
-	<div class="tm-sc-funfact <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-funfact <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<div class="funfact-inner">
 			<div class="element-left">
 				<?php if ( $show_icon_image == 'yes' ) : ?>

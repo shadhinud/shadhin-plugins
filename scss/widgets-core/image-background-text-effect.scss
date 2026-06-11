@@ -1,6 +1,6 @@
 @import "../bootstrap-loader";
 
-.tm-image-background-text-effect {
+.mh-image-background-text-effect {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -13,13 +13,13 @@
 }
 
 .bg-animation-yes {
-  .tm-image-background-text-effect {
+  .mh-image-background-text-effect {
     animation: textImgMoving 20s linear infinite;
   }
 }
 
 .bg-animation-dir-rtl {
-  .tm-image-background-text-effect {
+  .mh-image-background-text-effect {
     animation-name: textImgMovingRTL;
   }
 }

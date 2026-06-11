@@ -6,7 +6,7 @@
       return Math.floor(Math.random() * (max - min) + min);
     }
     var WidgetPieChartHandler = function ($scope) {
-      var piechart = '.tm-sc-pie-chart .pie-chart';
+      var piechart = '.mh-sc-pie-chart .pie-chart';
       var $piechart = $(piechart);
       if( $piechart.length > 0 ) {
         $piechart.appear();
@@ -30,7 +30,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-pie-chart.default",
+            "frontend/element_ready/mh-ele-pie-chart.default",
             WidgetPieChartHandler
         );
     });

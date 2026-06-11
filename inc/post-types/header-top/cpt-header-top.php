@@ -41,7 +41,7 @@ final class CPT_HeaderTop implements Lib\Shadhin_plugins_Interface_PostType {
 		$this->ptPluralName = esc_html__( 'Parts - Header Top', 'shadhin-plugins' );
 		$this->ptKey = 'header-top';
 		$this->ptKeyRewriteBase = $this->ptKey;
-		$this->ptMenuIcon = 'dashicons-mascot';
+		$this->ptMenuIcon = 'dashicons-shadhin';
 		add_filter( 'manage_edit-'.$this->ptKey.'_columns', array($this, 'customColumnsSettings') ) ;
 		add_filter( 'manage_'.$this->ptKey.'_posts_custom_column', array($this, 'customColumnsContent') ) ;
 	}
@@ -144,25 +144,25 @@ final class CPT_HeaderTop implements Lib\Shadhin_plugins_Interface_PostType {
 					//default
 					$active_headertop_id = shadhin_get_redux_option( 'header-settings-choose-header-top-cpt-elementor', 'default' );
 					if( $post->ID == $active_headertop_id ) {
-						echo '<a class="tm-btn tm-btn-danger tm-btn-sm disabled">Active Header</a>';
+						echo '<a class="mh-btn mh-btn-danger mh-btn-sm disabled">Active Header</a>';
 					}
 
 					//transparent
 					$active_headertop_id = shadhin_get_redux_option( 'header-settings-choose-header-top-cpt-elementor-transparent', 'default' );
 					if( $post->ID == $active_headertop_id ) {
-						echo '<a class="tm-btn tm-btn-danger tm-btn-sm disabled">Active Header Transparent</a>';
+						echo '<a class="mh-btn mh-btn-danger mh-btn-sm disabled">Active Header Transparent</a>';
 					}
 
 					//transparent
 					$active_headertop_id = shadhin_get_redux_option( 'header-settings-choose-header-top-cpt-elementor-sticky', 'default' );
 					if( $post->ID == $active_headertop_id ) {
-						echo '<a class="tm-btn tm-btn-danger tm-btn-sm disabled">Active Header Sticky</a>';
+						echo '<a class="mh-btn mh-btn-danger mh-btn-sm disabled">Active Header Sticky</a>';
 					}
 
 					//transparent
 					$active_headertop_id = shadhin_get_redux_option( 'header-settings-choose-header-top-cpt-elementor-mobile', 'default' );
 					if( $post->ID == $active_headertop_id ) {
-						echo '<a class="tm-btn tm-btn-danger tm-btn-sm disabled">Active Header Mobile</a>';
+						echo '<a class="mh-btn mh-btn-danger mh-btn-sm disabled">Active Header Mobile</a>';
 					}
 				}
 			break;

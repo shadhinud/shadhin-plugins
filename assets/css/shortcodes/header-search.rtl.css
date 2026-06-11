@@ -1,8 +1,8 @@
-.tm-widget-search-form .search-form-default {
+.mh-widget-search-form .search-form-default {
   position: relative;
   margin: 0px;
 }
-.tm-widget-search-form .search-form-default input[type=search] {
+.mh-widget-search-form .search-form-default input[type=search] {
   position: relative;
   padding-right: 1.5em;
   padding-left: 4em;
@@ -16,11 +16,11 @@
   height: 55px;
   transition: all 500ms ease;
 }
-.tm-widget-search-form .search-form-default input:focus {
+.mh-widget-search-form .search-form-default input:focus {
   border-color: var(--theme-color-dark2);
   box-shadow: none;
 }
-.tm-widget-search-form .search-form-default button {
+.mh-widget-search-form .search-form-default button {
   position: absolute;
   left: 0;
   top: 0px;
@@ -37,7 +37,7 @@
   font-weight: normal;
   transition: all 0.3s ease;
 }
-.tm-widget-search-form .search-form-default button:hover {
+.mh-widget-search-form .search-form-default button:hover {
   color: var(--theme-color-dark);
 }
 
@@ -104,15 +104,15 @@
   border-color: var(--theme-color2);
 }
 
-.tm-widget-search-form .icon-search-popup {
+.mh-widget-search-form .icon-search-popup {
   font-size: 22px;
   color: #2f382f;
   line-height: 1;
 }
-.tm-widget-search-form .icon-search-popup:hover {
+.mh-widget-search-form .icon-search-popup:hover {
   color: var(--theme-color1);
 }
-.tm-widget-search-form .icon-search-popup i {
+.mh-widget-search-form .icon-search-popup i {
   line-height: 1;
   vertical-align: middle;
 }

@@ -1,9 +1,9 @@
-.tm-sc-working .icon {
+.mh-sc-working .icon {
   display: inline-block;
 }
-.tm-sc-working .icon,
-.tm-sc-working .working-title,
-.tm-sc-working .working-details {
+.mh-sc-working .icon,
+.mh-sc-working .working-title,
+.mh-sc-working .working-details {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }

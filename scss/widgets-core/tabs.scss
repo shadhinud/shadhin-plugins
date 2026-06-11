@@ -5,7 +5,7 @@
  * -----------------------------------------------
 */
 
-.tm-tabs-horizontal-nav {
+.mh-tabs-horizontal-nav {
   .nav-tabs {
     border-bottom: 0;
     .nav-link {
@@ -59,7 +59,7 @@
   }
 }
 
-.tm-tabs-vertical-nav {
+.mh-tabs-vertical-nav {
   .col-nav-tabs {
     @include media-breakpoint-down(lg) {
       width: 100%;

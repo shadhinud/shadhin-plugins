@@ -1,9 +1,9 @@
-.tm-sc-service .icon {
+.mh-sc-service .icon {
   display: inline-block;
 }
-.tm-sc-service .icon,
-.tm-sc-service .feature-title,
-.tm-sc-service .feature-details {
+.mh-sc-service .icon,
+.mh-sc-service .feature-title,
+.mh-sc-service .feature-details {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -20,7 +20,7 @@
   border: 1px solid #e6e8ed;
   transition: all 300ms ease;
 }
-[data-tm-layout=dark] .service-block-style10 .service-inner {
+[data-mh-layout=dark] .service-block-style10 .service-inner {
   background-color: #1a1b1d;
   border: 1px solid #3e3f41;
 }
@@ -115,7 +115,7 @@
 .service-block-style10 .service-content .service-title:hover {
   color: var(--theme-color2);
 }
-[data-tm-layout=dark] .service-block-style10 .service-content .service-title:hover {
+[data-mh-layout=dark] .service-block-style10 .service-content .service-title:hover {
   color: #fff;
 }
 .service-block-style10 .service-content .service-details {

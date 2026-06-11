@@ -1,4 +1,4 @@
-	<div class="tm-sc-projects tm-sc-projects-grid ">
+	<div class="mh-sc-projects mh-sc-projects-grid ">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="isotope-layout <?php echo esc_attr( $layout_mode ); ?> grid-<?php echo esc_attr( $items_per_row ); ?> <?php echo esc_attr( $gutter ); ?> clearfix">
 			<div class="isotope-layout-inner">

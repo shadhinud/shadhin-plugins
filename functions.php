@@ -123,7 +123,7 @@ if(!function_exists('shadhin_plugins_locate_template')) {
 	/**
 	 * Retrieve the name of the highest priority template file that exists.
 	 *
-	 * Searches in the MASCOT_STYLESHEET_DIR before MASCOT_TEMPLATE_DIR
+	 * Searches in the SHADHIN_STYLESHEET_DIR before SHADHIN_TEMPLATE_DIR
 	 * so that themes which inherit from a parent theme can just overload one file.
 	 *
 	 * @param string|array $template_names Template file(s) to search for, in order.

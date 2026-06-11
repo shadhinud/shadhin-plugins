@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $slider_items_array ) : ?>
-	<div class="tm-twentytwenty-slider tm-twentytwenty-slider-basic">
+	<div class="mh-twentytwenty-slider mh-twentytwenty-slider-basic">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="feature-layout clearfix">
 				<!-- the loop -->

@@ -24,7 +24,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-cpt-projects.skin-style-current-theme5",
+            "frontend/element_ready/mh-ele-cpt-projects.skin-style-current-theme5",
             WidgetProjectsBlock5Handler
         );
     });

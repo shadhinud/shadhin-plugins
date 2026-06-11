@@ -1,39 +1,39 @@
-.mascot-language-switcher ul {
+.shadhin-language-switcher ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   font-size: 12px;
 }
-.mascot-language-switcher span {
+.shadhin-language-switcher span {
   color: #737474;
   font-size: 14px;
   line-height: 1.4;
 }
-.mascot-language-switcher .language-switcher-head i {
+.shadhin-language-switcher .language-switcher-head i {
   font-weight: 700;
   font-size: 8px;
   margin-right: 5px;
 }
-.mascot-language-switcher a {
+.shadhin-language-switcher a {
   display: block;
 }
-.mascot-language-switcher img {
+.shadhin-language-switcher img {
   display: inline-block;
   margin-left: 5px;
 }
-.mascot-language-switcher .item > div {
+.shadhin-language-switcher .item > div {
   display: flex;
   cursor: pointer;
   align-items: center;
 }
-.mascot-language-switcher .item > div img {
+.shadhin-language-switcher .item > div img {
   width: 16px;
   height: 16px;
   object-fit: cover;
   margin-left: 8px;
   border-radius: 50%;
 }
-.mascot-language-switcher .sub-item {
+.shadhin-language-switcher .sub-item {
   display: none;
   position: absolute;
   right: 0;
@@ -43,7 +43,7 @@
   background-color: #fff;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
 }
-.mascot-language-switcher .sub-item:before {
+.shadhin-language-switcher .sub-item:before {
   position: absolute;
   content: "";
   display: block;
@@ -51,30 +51,30 @@
   height: 1rem;
   top: -1rem;
 }
-.mascot-language-switcher .sub-item li {
+.shadhin-language-switcher .sub-item li {
   padding: 0;
 }
-.mascot-language-switcher .sub-item a {
+.shadhin-language-switcher .sub-item a {
   padding: 10px 20px;
   font-size: 0.9em;
   min-width: 126px;
   white-space: nowrap;
 }
-.mascot-language-switcher .sub-item a:hover, .mascot-language-switcher .sub-item a:focus {
+.shadhin-language-switcher .sub-item a:hover, .shadhin-language-switcher .sub-item a:focus {
   background-color: rgba(0, 0, 0, 0.05);
 }
-.mascot-language-switcher li.item {
+.shadhin-language-switcher li.item {
   position: relative;
 }
-.mascot-language-switcher li.item > div span.title:after {
+.shadhin-language-switcher li.item > div span.title:after {
   margin-right: 0.5em;
   margin-top: -1px;
 }
-.mascot-language-switcher li.item:hover .sub-item {
+.shadhin-language-switcher li.item:hover .sub-item {
   display: block;
 }
 
-.language-switcher-style-hover-right-yes .mascot-language-switcher .sub-item {
+.language-switcher-style-hover-right-yes .shadhin-language-switcher .sub-item {
   left: 0;
   right: unset;
 }

@@ -6,7 +6,7 @@ if (class_exists('Woocommerce')) :
     $myaccount_page_url = '';
     $myaccount_page_url = get_permalink( $myaccount_page );
     ?>
-<div class="tm-widget-search-form">
+<div class="mh-widget-search-form">
     <form role="search" method="get" class="search-form-cat" action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <div class="product-search-category">
             <select name="product_cat">

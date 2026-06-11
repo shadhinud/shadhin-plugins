@@ -1,5 +1,5 @@
 <?php if (substr($slave_tab_content_id, 0, 1) !== '#') { $slave_tab_content_id = '#' . $slave_tab_content_id; } ?>
-<div class="tm-interactive-tabs tabs-skin-style1 <?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-tab-content-id="<?php echo esc_attr( $slave_tab_content_id ); ?>">
+<div class="mh-interactive-tabs tabs-skin-style1 <?php echo esc_attr( implode( ' ', $classes ) ); ?>" data-tab-content-id="<?php echo esc_attr( $slave_tab_content_id ); ?>">
     <ul class="features-list tab-buttons">
     <?php
     foreach ($list_items as $index => $item) :

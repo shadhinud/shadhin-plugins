@@ -1,6 +1,6 @@
 @import "../../bootstrap-loader";
 
-.tm-sc-hero-slider {
+.mh-sc-hero-slider {
   .slider-content {
     position: relative;
     max-width: 700px;
@@ -63,7 +63,7 @@
     margin-bottom: 30px;
   }
 
-  .tm-parts-thumbnail {
+  .mh-parts-thumbnail {
     padding: 20px 12px 0;
     @include media-breakpoint-up(lg) {
       width: 600px;
@@ -139,25 +139,33 @@
         transform: translateY(70px);
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+        transition:
+          opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
       }
       .slider-title {
         transform: translateY(70px);
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+        transition:
+          opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
       }
       .slider-details {
         transform: translateY(70px);
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+        transition:
+          opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
       }
       .slider-btn-area {
         transform: translateY(70px);
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1), transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+        transition:
+          opacity 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+          transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
       }
     }
     .swiper-slide.swiper-slide-active {
@@ -222,9 +230,9 @@
       width: 12px;
     }
   }
-  .tm-swiper-arrow-wrap {
-    .tm-swiper-button-prev,
-    .tm-swiper-button-next {
+  .mh-swiper-arrow-wrap {
+    .mh-swiper-button-prev,
+    .mh-swiper-button-next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -233,14 +241,14 @@
       font-size: 24px;
     }
 
-    .tm-swiper-button-prev {
+    .mh-swiper-button-prev {
       left: 20px;
     }
 
-    .tm-swiper-button-next {
+    .mh-swiper-button-next {
       right: 20px;
     }
-    .tm-swiper-arrow {
+    .mh-swiper-arrow {
       cursor: pointer;
       background-color: rgba(211, 211, 211, 0.2);
       width: 60px;

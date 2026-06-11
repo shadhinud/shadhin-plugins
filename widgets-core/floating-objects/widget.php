@@ -88,7 +88,7 @@ class MH_Elementor_Floating_Objects extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 
 	/**

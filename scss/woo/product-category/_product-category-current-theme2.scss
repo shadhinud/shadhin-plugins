@@ -1,4 +1,4 @@
-.tm-product-category-current-theme2 {
+.mh-product-category-current-theme2 {
   position: relative;
   padding-top: 70px;
   margin-bottom: 30px;
@@ -87,9 +87,9 @@
           transition: all 300ms ease;
         }
       }
-      .cat-details{
+      .cat-details {
         text-align: center;
-        .cat-title{
+        .cat-title {
           color: var(--theme-color3);
           margin-bottom: 15px;
           a {
@@ -103,7 +103,7 @@
           color: #797f7d;
           margin-bottom: 0px;
         }
-        .count{
+        .count {
           display: block;
           font-size: 15px;
         }
@@ -127,7 +127,7 @@
         }
       }
     }
-    &:hover{
+    &:hover {
       .content-inner {
         .cat-image {
           &:before {
@@ -135,7 +135,7 @@
             -webkit-transition: all 1000ms ease;
             transition: all 1000ms ease;
           }
-          img{
+          img {
             -webkit-transform: scale(0.9);
             transform: scale(0.9);
           }

@@ -6,7 +6,7 @@
 	wp_enqueue_style( 'magnific-popup' );
 
 	$direction_suffix = is_rtl() ? '.rtl' : '';
-	wp_register_style( 'tm-video-popup-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/video-popup' . $direction_suffix . '.css' );
+	wp_register_style( 'mh-video-popup-style', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/video-popup' . $direction_suffix . '.css' );
 	//classes_first
 	$classes_first = array();
 	if( !empty($display_type) ) {
@@ -16,7 +16,7 @@
 		$classes_first[] = $image_clip_path_animation;
 	}
 	if( !empty($image_animation_effect) ) {
-		$classes_first[] = 'tm-animation '.$image_animation_effect;
+		$classes_first[] = 'mh-animation '.$image_animation_effect;
 	}
 	$classes_first[] = $image_wrapper_custom_css_class;
 	$classes_first = $classes_first;

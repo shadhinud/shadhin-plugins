@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $skill_block_items_array ) : ?>
-	<div class="tm-sc-skill tm-skill-masonry">
+	<div class="mh-sc-skill mh-skill-masonry">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="isotope-layout masonry grid-<?php echo esc_attr( $columns ); ?> <?php echo esc_attr( $gutter );?> clearfix">
 			<div class="isotope-layout-inner">

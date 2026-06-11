@@ -1,4 +1,4 @@
-.tm-header-wishlist {
+.mh-header-wishlist {
   width: 50px;
   height: 50px;
   background: #eddbdb;
@@ -8,21 +8,21 @@
   border-radius: 50%;
   transition: all 0.3s ease;
 }
-.tm-header-wishlist .header-wishlist {
+.mh-header-wishlist .header-wishlist {
   position: relative;
   transition: all 0.3s ease;
 }
-.tm-header-wishlist .header-wishlist:hover i {
+.mh-header-wishlist .header-wishlist:hover i {
   color: #111;
 }
-.tm-header-wishlist .header-wishlist i {
+.mh-header-wishlist .header-wishlist i {
   font-size: 23px;
   line-height: 1;
   vertical-align: middle;
   color: #222;
   transition: all 0.3s ease;
 }
-.tm-header-wishlist .header-wishlist .count {
+.mh-header-wishlist .header-wishlist .count {
   min-width: 18px;
   height: 18px;
   line-height: 19px;
@@ -39,6 +39,6 @@
   background-color: var(--theme-color1);
 }
 
-.hide-count-wishlist-yes .tm-header-wishlist .header-wishlist .count {
+.hide-count-wishlist-yes .mh-header-wishlist .header-wishlist .count {
   display: none;
 }

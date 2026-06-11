@@ -6,12 +6,12 @@
  * Shortcode: animated-layer-images.scss
  * -----------------------------------------------
 */
-.tm-sc-animated-layer-images {
+.mh-sc-animated-layer-images {
   position: relative;
   line-height: 0;
   max-width: 100%;
 }
-.tm-sc-animated-layer-images .layer-image-wrapper {
+.mh-sc-animated-layer-images .layer-image-wrapper {
   position: relative;
   line-height: 0;
   display: block;
@@ -20,11 +20,11 @@
   height: inherit;
   max-height: 100%;
 }
-.tm-sc-animated-layer-images .layer-image-wrapper:not(:first-child) {
+.mh-sc-animated-layer-images .layer-image-wrapper:not(:first-child) {
   position: absolute;
   top: 0;
 }
-.tm-sc-animated-layer-images .layer-image-wrapper .layer-image {
+.mh-sc-animated-layer-images .layer-image-wrapper .layer-image {
   transition: all 1s ease;
 }
 
@@ -474,41 +474,41 @@
  * Shortcode: line-with-text.scss
  * -----------------------------------------------
 */
-.tm-sc-line-with-text .horizontal-line {
+.mh-sc-line-with-text .horizontal-line {
   display: inline-block;
   vertical-align: middle;
   height: 2px;
   width: 50px;
   background-color: #fac400;
 }
-.tm-sc-line-with-text .horizontal-text {
+.mh-sc-line-with-text .horizontal-text {
   display: inline-block;
   vertical-align: middle;
   letter-spacing: 0.09em;
   padding-left: 15px;
 }
-.tm-sc-line-with-text.line-after-title .horizontal-text {
+.mh-sc-line-with-text.line-after-title .horizontal-text {
   padding-left: 0;
   padding-right: 15px;
 }
-.tm-sc-line-with-text.line-above-title .horizontal-line {
+.mh-sc-line-with-text.line-above-title .horizontal-line {
   display: block;
 }
-.tm-sc-line-with-text.line-above-title .horizontal-text {
+.mh-sc-line-with-text.line-above-title .horizontal-text {
   display: block;
   padding-left: 0;
   padding-top: 15px;
 }
-.tm-sc-line-with-text.line-below-title .horizontal-line {
+.mh-sc-line-with-text.line-below-title .horizontal-line {
   display: block;
 }
-.tm-sc-line-with-text.line-below-title .horizontal-text {
+.mh-sc-line-with-text.line-below-title .horizontal-text {
   display: block;
   padding-left: 0;
   padding-bottom: 15px;
 }
 
-.tm-section-box-bg {
+.mh-section-box-bg {
   position: absolute;
   top: -150px;
   left: 225px;
@@ -517,68 +517,68 @@
   background-color: var(--theme-color1);
 }
 
-.tm-header-top-info ul {
+.mh-header-top-info ul {
   list-style: none;
 }
-.tm-header-top-info ul li {
+.mh-header-top-info ul li {
   display: inline-block;
   margin-right: 20px;
 }
-.tm-header-top-info ul li > *,
-.tm-header-top-info ul li a {
+.mh-header-top-info ul li > *,
+.mh-header-top-info ul li a {
   display: inline-block;
   color: #fff;
   font-weight: var(--body-font-weight);
 }
-.tm-header-top-info ul li i,
-.tm-header-top-info ul li svg {
+.mh-header-top-info ul li i,
+.mh-header-top-info ul li svg {
   margin-right: 5px;
 }
-.tm-header-top-info ul li svg {
+.mh-header-top-info ul li svg {
   width: 16px;
 }
-.tm-header-top-info ul li:last-child {
+.mh-header-top-info ul li:last-child {
   margin-right: 0;
 }
-.tm-header-top-info ul li .prefix {
+.mh-header-top-info ul li .prefix {
   margin-right: 5px;
 }
-.tm-header-top-info.border-style ul {
+.mh-header-top-info.border-style ul {
   list-style: none;
 }
-.tm-header-top-info.border-style ul li {
+.mh-header-top-info.border-style ul li {
   display: inline-block;
   padding-right: 20px;
   border-right: 1px solid rgba(200, 200, 200, 0.7);
 }
 @media (max-width: 767.98px) {
-  .tm-header-top-info.border-style ul li {
+  .mh-header-top-info.border-style ul li {
     padding-left: 0;
     padding-right: 0;
     border: none;
   }
 }
-.tm-header-top-info.border-style ul li > *,
-.tm-header-top-info.border-style ul li a {
+.mh-header-top-info.border-style ul li > *,
+.mh-header-top-info.border-style ul li a {
   display: inline-block;
   color: #fff;
 }
-.tm-header-top-info.border-style ul li:last-child {
+.mh-header-top-info.border-style ul li:last-child {
   margin-right: 0;
   padding-right: 0;
   border-right: none;
 }
-.tm-header-top-info.align-center {
+.mh-header-top-info.align-center {
   text-align: center;
 }
-.tm-header-top-info.align-right {
+.mh-header-top-info.align-right {
   text-align: right;
 }
-.tm-header-top-info.align-right ul li {
+.mh-header-top-info.align-right ul li {
   margin-right: 0;
   margin-left: 20px;
 }
-.tm-header-top-info.align-right.border-style ul li {
+.mh-header-top-info.align-right.border-style ul li {
   margin-left: 0;
   padding-left: 0;
   border-left: none;
@@ -587,13 +587,13 @@
   border-right: 1px solid rgba(200, 200, 200, 0.7);
 }
 @media (max-width: 767.98px) {
-  .tm-header-top-info.align-right.border-style ul li {
+  .mh-header-top-info.align-right.border-style ul li {
     padding-left: 0;
     padding-right: 0;
     border: none;
   }
 }
-.tm-header-top-info.align-right.border-style ul li:last-child {
+.mh-header-top-info.align-right.border-style ul li:last-child {
   margin-right: 0;
   padding-right: 0;
   border-right: none;
@@ -603,16 +603,16 @@
  * social-links.scss
  * -----------------------------------------------
 */
-.tm-sc-social-links {
+.mh-sc-social-links {
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
 }
-.tm-sc-social-links li {
+.mh-sc-social-links li {
   font-size: 1rem;
 }
-.tm-sc-social-links li a.social-link {
+.mh-sc-social-links li a.social-link {
   position: relative;
   display: block;
   background: #333;
@@ -626,7 +626,7 @@
   z-index: 1;
   transition: all 0.3s;
 }
-.tm-sc-social-links li a.social-link:after {
+.mh-sc-social-links li a.social-link:after {
   content: "";
   position: absolute;
   top: 0;
@@ -640,70 +640,70 @@
   z-index: -1;
   transition: all 0.3s;
 }
-.tm-sc-social-links li a.social-link:hover {
+.mh-sc-social-links li a.social-link:hover {
   background: #eee;
   color: #31354c;
 }
-.tm-sc-social-links li:not(:last-child) {
+.mh-sc-social-links li:not(:last-child) {
   margin-right: 10px;
 }
-.tm-sc-social-links.icon-light li a.social-link {
+.mh-sc-social-links.icon-light li a.social-link {
   background: #f5f5f5;
   color: #333;
   border: 1px solid #fff;
 }
-.tm-sc-social-links.icon-light li a.social-link:hover {
+.mh-sc-social-links.icon-light li a.social-link:hover {
   background: #333;
   color: #fff;
   border: 1px solid #333;
 }
-.tm-sc-social-links.icon-rounded li a {
+.mh-sc-social-links.icon-rounded li a {
   border-radius: 5px;
 }
-.tm-sc-social-links.icon-square li a {
+.mh-sc-social-links.icon-square li a {
   border-radius: 0;
 }
-.tm-sc-social-links.icon-xs li a {
+.mh-sc-social-links.icon-xs li a {
   font-size: 10px;
   height: 26px;
   width: 26px;
   line-height: 26px;
 }
-.tm-sc-social-links.icon-sm li a {
+.mh-sc-social-links.icon-sm li a {
   font-size: 14px;
   height: 32px;
   width: 32px;
   line-height: 32px;
 }
-.tm-sc-social-links.icon-md li a {
+.mh-sc-social-links.icon-md li a {
   font-size: 18px;
   height: 40px;
   width: 40px;
   line-height: 40px;
 }
-.tm-sc-social-links.icon-lg li a {
+.mh-sc-social-links.icon-lg li a {
   font-size: 23px;
   height: 50px;
   width: 50px;
   line-height: 50px;
 }
-.tm-sc-social-links.icon-xl li a {
+.mh-sc-social-links.icon-xl li a {
   font-size: 28px;
   height: 60px;
   width: 60px;
   line-height: 60px;
 }
 
-.tm-sc-social-links.links-theme-colored1 li a {
+.mh-sc-social-links.links-theme-colored1 li a {
   background: var(--theme-color1);
 }
-.tm-sc-social-links.links-theme-colored2 li a {
+.mh-sc-social-links.links-theme-colored2 li a {
   background: var(--theme-color2);
 }
-.tm-sc-social-links.links-theme-colored3 li a {
+.mh-sc-social-links.links-theme-colored3 li a {
   background: var(--theme-color3);
 }
-.tm-sc-social-links.links-theme-colored4 li a {
+.mh-sc-social-links.links-theme-colored4 li a {
   background: var(--theme-color4);
 }
 
@@ -715,15 +715,15 @@
   list-style: none;
 }
 
-.tm-ordered-list ol {
+.mh-ordered-list ol {
   list-style: none;
   counter-reset: li;
 }
-.tm-ordered-list ol li {
+.mh-ordered-list ol li {
   position: relative;
   counter-increment: li;
 }
-.tm-ordered-list ol li:before {
+.mh-ordered-list ol li:before {
   content: "." counter(li);
   color: #333;
   display: inline-block;
@@ -733,20 +733,20 @@
   font-weight: 600;
   direction: rtl;
 }
-.tm-sc-unordered-list ul li:before {
+.mh-sc-unordered-list ul li:before {
   color: var(--theme-color1);
   display: inline-block;
 }
-.tm-sc-unordered-list.list-style1 ul {
+.mh-sc-unordered-list.list-style1 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style1 ul > li {
+.mh-sc-unordered-list.list-style1 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style1 ul li {
+.mh-sc-unordered-list.list-style1 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style1 ul li:before {
+.mh-sc-unordered-list.list-style1 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -755,22 +755,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style1 ul li li {
+.mh-sc-unordered-list.list-style1 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style1 ul li:before {
+.mh-sc-unordered-list.list-style1 ul li:before {
   content: "\f058";
 }
-.tm-sc-unordered-list.list-style2 ul {
+.mh-sc-unordered-list.list-style2 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style2 ul > li {
+.mh-sc-unordered-list.list-style2 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style2 ul li {
+.mh-sc-unordered-list.list-style2 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style2 ul li:before {
+.mh-sc-unordered-list.list-style2 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -779,24 +779,24 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style2 ul li li {
+.mh-sc-unordered-list.list-style2 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style2 ul li:before {
+.mh-sc-unordered-list.list-style2 ul li:before {
   content: "\f058";
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
-.tm-sc-unordered-list.list-style3 ul {
+.mh-sc-unordered-list.list-style3 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style3 ul > li {
+.mh-sc-unordered-list.list-style3 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style3 ul li {
+.mh-sc-unordered-list.list-style3 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style3 ul li:before {
+.mh-sc-unordered-list.list-style3 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -805,22 +805,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style3 ul li li {
+.mh-sc-unordered-list.list-style3 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style3 ul li:before {
+.mh-sc-unordered-list.list-style3 ul li:before {
   content: "\f14a";
 }
-.tm-sc-unordered-list.list-style4 ul {
+.mh-sc-unordered-list.list-style4 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style4 ul > li {
+.mh-sc-unordered-list.list-style4 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style4 ul li {
+.mh-sc-unordered-list.list-style4 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style4 ul li:before {
+.mh-sc-unordered-list.list-style4 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -829,24 +829,24 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style4 ul li li {
+.mh-sc-unordered-list.list-style4 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style4 ul li:before {
+.mh-sc-unordered-list.list-style4 ul li:before {
   content: "\f14a";
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
-.tm-sc-unordered-list.list-style5 ul {
+.mh-sc-unordered-list.list-style5 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style5 ul > li {
+.mh-sc-unordered-list.list-style5 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style5 ul li {
+.mh-sc-unordered-list.list-style5 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style5 ul li:before {
+.mh-sc-unordered-list.list-style5 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -855,22 +855,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style5 ul li li {
+.mh-sc-unordered-list.list-style5 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style5 ul li:before {
+.mh-sc-unordered-list.list-style5 ul li:before {
   content: "\f00c";
 }
-.tm-sc-unordered-list.list-style6 ul {
+.mh-sc-unordered-list.list-style6 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style6 ul > li {
+.mh-sc-unordered-list.list-style6 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style6 ul li {
+.mh-sc-unordered-list.list-style6 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style6 ul li:before {
+.mh-sc-unordered-list.list-style6 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -879,22 +879,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style6 ul li li {
+.mh-sc-unordered-list.list-style6 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style6 ul li:before {
+.mh-sc-unordered-list.list-style6 ul li:before {
   content: "\f560";
 }
-.tm-sc-unordered-list.list-style7 ul {
+.mh-sc-unordered-list.list-style7 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style7 ul > li {
+.mh-sc-unordered-list.list-style7 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style7 ul li {
+.mh-sc-unordered-list.list-style7 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style7 ul li:before {
+.mh-sc-unordered-list.list-style7 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -903,22 +903,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style7 ul li li {
+.mh-sc-unordered-list.list-style7 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style7 ul li:before {
+.mh-sc-unordered-list.list-style7 ul li:before {
   content: "\f35a";
 }
-.tm-sc-unordered-list.list-style8 ul {
+.mh-sc-unordered-list.list-style8 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style8 ul > li {
+.mh-sc-unordered-list.list-style8 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style8 ul li {
+.mh-sc-unordered-list.list-style8 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style8 ul li:before {
+.mh-sc-unordered-list.list-style8 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -927,22 +927,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style8 ul li li {
+.mh-sc-unordered-list.list-style8 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style8 ul li:before {
+.mh-sc-unordered-list.list-style8 ul li:before {
   content: "\f30b";
 }
-.tm-sc-unordered-list.list-style9 ul {
+.mh-sc-unordered-list.list-style9 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style9 ul > li {
+.mh-sc-unordered-list.list-style9 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style9 ul li {
+.mh-sc-unordered-list.list-style9 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style9 ul li:before {
+.mh-sc-unordered-list.list-style9 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -951,22 +951,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style9 ul li li {
+.mh-sc-unordered-list.list-style9 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style9 ul li:before {
+.mh-sc-unordered-list.list-style9 ul li:before {
   content: "\f054";
 }
-.tm-sc-unordered-list.list-style10 ul {
+.mh-sc-unordered-list.list-style10 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style10 ul > li {
+.mh-sc-unordered-list.list-style10 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style10 ul li {
+.mh-sc-unordered-list.list-style10 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style10 ul li:before {
+.mh-sc-unordered-list.list-style10 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -975,22 +975,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style10 ul li li {
+.mh-sc-unordered-list.list-style10 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style10 ul li:before {
+.mh-sc-unordered-list.list-style10 ul li:before {
   content: "\f138";
 }
-.tm-sc-unordered-list.list-style11 ul {
+.mh-sc-unordered-list.list-style11 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style11 ul > li {
+.mh-sc-unordered-list.list-style11 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style11 ul li {
+.mh-sc-unordered-list.list-style11 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style11 ul li:before {
+.mh-sc-unordered-list.list-style11 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -999,22 +999,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style11 ul li li {
+.mh-sc-unordered-list.list-style11 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style11 ul li:before {
+.mh-sc-unordered-list.list-style11 ul li:before {
   content: "\f152";
 }
-.tm-sc-unordered-list.list-style12 ul {
+.mh-sc-unordered-list.list-style12 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style12 ul > li {
+.mh-sc-unordered-list.list-style12 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style12 ul li {
+.mh-sc-unordered-list.list-style12 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style12 ul li:before {
+.mh-sc-unordered-list.list-style12 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -1023,22 +1023,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style12 ul li li {
+.mh-sc-unordered-list.list-style12 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style12 ul li:before {
+.mh-sc-unordered-list.list-style12 ul li:before {
   content: "\f0da";
 }
-.tm-sc-unordered-list.list-style11 ul {
+.mh-sc-unordered-list.list-style11 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style11 ul > li {
+.mh-sc-unordered-list.list-style11 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style11 ul li {
+.mh-sc-unordered-list.list-style11 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style11 ul li:before {
+.mh-sc-unordered-list.list-style11 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -1047,22 +1047,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style11 ul li li {
+.mh-sc-unordered-list.list-style11 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style11 ul li:before {
+.mh-sc-unordered-list.list-style11 ul li:before {
   content: "\f105";
 }
-.tm-sc-unordered-list.list-style13 ul {
+.mh-sc-unordered-list.list-style13 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style13 ul > li {
+.mh-sc-unordered-list.list-style13 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style13 ul li {
+.mh-sc-unordered-list.list-style13 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style13 ul li:before {
+.mh-sc-unordered-list.list-style13 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -1071,22 +1071,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style13 ul li li {
+.mh-sc-unordered-list.list-style13 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style13 ul li:before {
+.mh-sc-unordered-list.list-style13 ul li:before {
   content: "\f101";
 }
-.tm-sc-unordered-list.list-style14 ul {
+.mh-sc-unordered-list.list-style14 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style14 ul > li {
+.mh-sc-unordered-list.list-style14 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style14 ul li {
+.mh-sc-unordered-list.list-style14 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style14 ul li:before {
+.mh-sc-unordered-list.list-style14 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -1095,24 +1095,24 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style14 ul li li {
+.mh-sc-unordered-list.list-style14 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style14 ul li:before {
+.mh-sc-unordered-list.list-style14 ul li:before {
   content: "\f152";
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
-.tm-sc-unordered-list.list-style15 ul {
+.mh-sc-unordered-list.list-style15 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style15 ul > li {
+.mh-sc-unordered-list.list-style15 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style15 ul li {
+.mh-sc-unordered-list.list-style15 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style15 ul li:before {
+.mh-sc-unordered-list.list-style15 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -1121,22 +1121,22 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style15 ul li li {
+.mh-sc-unordered-list.list-style15 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style15 ul li:before {
+.mh-sc-unordered-list.list-style15 ul li:before {
   content: "\f152";
 }
-.tm-sc-unordered-list.list-style16 ul {
+.mh-sc-unordered-list.list-style16 ul {
   list-style: none;
 }
-.tm-sc-unordered-list.list-style16 ul > li {
+.mh-sc-unordered-list.list-style16 ul > li {
   position: relative;
 }
-.tm-sc-unordered-list.list-style16 ul li {
+.mh-sc-unordered-list.list-style16 ul li {
   list-style-type: none;
 }
-.tm-sc-unordered-list.list-style16 ul li:before {
+.mh-sc-unordered-list.list-style16 ul li:before {
   z-index: 0;
   content: "\f058";
   font-family: "Font Awesome 5 Free";
@@ -1145,10 +1145,10 @@
   padding-right: 13px;
   vertical-align: middle;
 }
-.tm-sc-unordered-list.list-style16 ul li li {
+.mh-sc-unordered-list.list-style16 ul li li {
   padding-left: 15px;
 }
-.tm-sc-unordered-list.list-style16 ul li:before {
+.mh-sc-unordered-list.list-style16 ul li:before {
   content: "\f140";
 }
 

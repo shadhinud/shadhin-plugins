@@ -1,6 +1,6 @@
 <!-- Feature Block -->
 <?php $settings['settings'] = $settings;?>
-<div class="tm-interactive-list <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div class="mh-interactive-list <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<h2 class="list">
     <?php
     foreach ($list_items as $index => $item) :

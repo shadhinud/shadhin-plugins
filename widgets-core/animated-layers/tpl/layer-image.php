@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//classes_first
 	$classes_first = array();
 	if( !empty($display_type) ) {
@@ -8,7 +8,7 @@
 		$classes_first[] = $image_clip_path_animation;
 	}
 	if( !empty($image_animation_effect) ) {
-		$classes_first[] = 'tm-animation '.$image_animation_effect;
+		$classes_first[] = 'mh-animation '.$image_animation_effect;
 	}
 	$classes_first[] = $main_parent_wrapper_custom_css_class;
 	if ( $make_item_fullwidth == 'yes' ) {

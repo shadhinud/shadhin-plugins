@@ -14,7 +14,7 @@ class Shadhin_plugins_Widget_BlogList extends Shadhin_plugins_Widget_Loader {
 			'classname'		=> 'widget-blog-list clearfix',
 			'description'	=> esc_html__( 'A widget that displays list of blog posts.', 'shadhin-plugins' ),
 		);
-		parent::__construct( 'mh_widget_blog_list', esc_html__( '(TM) Latest News', 'shadhin-plugins' ), $this->widgetOptions );
+		parent::__construct( 'mh_widget_blog_list', esc_html__( '(MH) Latest News', 'shadhin-plugins' ), $this->widgetOptions );
 		$this->getFormFields();
 	}
 

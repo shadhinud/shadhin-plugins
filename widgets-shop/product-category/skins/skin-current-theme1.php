@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Current_Theme1 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-product-category/paragraph_opt/after_section_end', [ $this, 'register_layout_controls1' ] );
+		add_action( 'elementor/element/mh-ele-product-category/paragraph_opt/after_section_end', [ $this, 'register_layout_controls1' ] );
 	}
 
 	public function get_id() {
@@ -53,7 +53,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'name' => 'wrapper_before_background',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-product-category-current-theme1:before',
+				'selector' => '{{WRAPPER}} .mh-product-category-current-theme1:before',
 			]
 		);
 		$this->add_responsive_control(
@@ -69,7 +69,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tm-product-category-current-theme1:before' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-product-category-current-theme1:before' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -86,7 +86,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .tm-product-category-current-theme1:before' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}} .mh-product-category-current-theme1:before' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -97,7 +97,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-product-category-current-theme1:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .mh-product-category-current-theme1:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -109,7 +109,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-product-category-current-theme1:before' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-product-category-current-theme1:before' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -120,7 +120,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-product-category-current-theme1:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-product-category-current-theme1:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -137,7 +137,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'name' => 'wrapper_before_background_hover',
 				'label' => esc_html__( 'Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}}:hover .tm-product-category-current-theme1:before',
+				'selector' => '{{WRAPPER}}:hover .mh-product-category-current-theme1:before',
 			]
 		);
 		$this->add_responsive_control(
@@ -153,7 +153,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}}:hover .tm-product-category-current-theme1:before' => 'width: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}}:hover .mh-product-category-current-theme1:before' => 'width: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -170,7 +170,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				],
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}}:hover .tm-product-category-current-theme1:before' => 'height: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}}:hover .mh-product-category-current-theme1:before' => 'height: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -181,7 +181,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'type'      => \Elementor\Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-product-category-current-theme1:before' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}:hover .mh-product-category-current-theme1:before' => 'background-color: {{VALUE}};',
 				],
 			]
 		);
@@ -193,7 +193,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-product-category-current-theme1:before' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-product-category-current-theme1:before' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -204,7 +204,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-product-category-current-theme1:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}}:hover .mh-product-category-current-theme1:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -237,7 +237,7 @@ class Skin_Current_Theme1 extends Elementor_Skin_Base {
 			}
 			?>
 
-			<div class="tm-product-category-current-theme1">
+			<div class="mh-product-category-current-theme1">
 				<div class="cat-image">
 					<a class="link_category_product" href="<?php echo esc_url(get_term_link($category)); ?>"
 						title="<?php echo esc_attr($category->name); ?>">

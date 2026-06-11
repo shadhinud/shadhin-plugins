@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $skill_block_items_array ) : ?>
-	<div class="tm-sc-skill tm-skill-basic">
+	<div class="mh-sc-skill mh-skill-basic">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="skill-layout">
 			<!-- the loop -->

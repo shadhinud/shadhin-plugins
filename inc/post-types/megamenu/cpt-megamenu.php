@@ -41,7 +41,7 @@ final class CPT_MegaMenu implements Lib\Shadhin_plugins_Interface_PostType {
 		$this->ptPluralName = esc_html__( 'Parts - Mega Menu', 'shadhin-plugins' );
 		$this->ptKey = 'megamenu';
 		$this->ptKeyRewriteBase = $this->ptKey;
-		$this->ptMenuIcon = 'dashicons-mascot';
+		$this->ptMenuIcon = 'dashicons-shadhin';
 		add_filter( 'manage_edit-'.$this->ptKey.'_columns', array($this, 'customColumnsSettings') ) ;
 		add_filter( 'manage_'.$this->ptKey.'_posts_custom_column', array($this, 'customColumnsContent') ) ;
 	}
@@ -143,7 +143,7 @@ final class CPT_MegaMenu implements Lib\Shadhin_plugins_Interface_PostType {
 				if( shadhin_plugins_theme_installed() ) {
 					$active_headertop_id = shadhin_get_redux_option( 'megamenu-settings-choose-megamenu-cpt-widget-area', 'default' );
 					if( $post->ID == $active_headertop_id ) {
-						echo '<a class="tm-btn tm-btn-danger tm-btn-sm disabled">Active</a>';
+						echo '<a class="mh-btn mh-btn-danger mh-btn-sm disabled">Active</a>';
 					}
 				}
 			break;

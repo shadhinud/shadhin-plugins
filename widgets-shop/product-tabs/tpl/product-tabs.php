@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="tm-sc-wc-product-tabs woocommerce columns-<?php echo esc_attr($class) ?>">
+	<div class="mh-sc-wc-product-tabs woocommerce columns-<?php echo esc_attr($class) ?>">
 
 		<!-- Isotope Gallery Grid -->
 		<ul class="product-list products columns-<?php echo esc_attr($class) ?>">

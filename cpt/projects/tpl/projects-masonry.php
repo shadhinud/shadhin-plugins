@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; $real_featured_img_size = $settings['feature_thumb_image_size'];?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="tm-sc-projects tm-sc-projects-masonry <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-projects mh-sc-projects-masonry <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<?php include('filter.php'); ?>
 
 		<!-- Isotope Gallery Grid -->
@@ -18,9 +18,9 @@
 						$settings['feature_thumb_image_size'] = $image_size = $project_image_size_array_new[get_the_ID()];
 
 						if($image_size == 'shadhin_landscape') {
-							$image_size = 'tm-masonry-large-wide';
+							$image_size = 'mh-masonry-large-wide';
 						} else if($image_size == 'shadhin_huge_square') {
-							$image_size = 'tm-masonry-large-width-height';
+							$image_size = 'mh-masonry-large-width-height';
 						}
 					} else {
 						$settings['feature_thumb_image_size'] = $real_featured_img_size;

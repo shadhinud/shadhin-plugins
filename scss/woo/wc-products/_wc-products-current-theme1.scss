@@ -1,4 +1,4 @@
-.tm-woo-product-block-two {
+.mh-woo-product-block-two {
   position: relative;
   @include media-breakpoint-down(sm) {
     text-align: center;
@@ -174,7 +174,7 @@
         }
 
         //4. add to cart
-        .tm-btn-add-to-cart {
+        .mh-btn-add-to-cart {
           &:before {
             font-family: "linearicons-free";
             content: "\e003";
@@ -381,8 +381,8 @@
 }
 
 .owl-item {
-  .tm-carousel-item {
-    .tm-woo-product-block-two {
+  .mh-carousel-item {
+    .mh-woo-product-block-two {
       margin-top: 20px;
     }
   }

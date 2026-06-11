@@ -24,7 +24,7 @@ class Shadhin_plugins_Column_Handler {
 		$element->start_controls_section(
 			'mh_element_section_title',
 			[
-				'label' => MH_ELEMENTOR_WIDGET_BADGE . __('TM BG Stretched Options', 'shadhin-plugins'),
+				'label' => MH_ELEMENTOR_WIDGET_BADGE . __('MH BG Stretched Options', 'shadhin-plugins'),
 				'tab' => Elementor\Controls_Manager::TAB_LAYOUT,
 			]
 		);
@@ -91,7 +91,7 @@ class Shadhin_plugins_Column_Handler {
 		$section->start_controls_section(
 			'mh_core_options',
 			[
-				'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Core Options', 'shadhin-plugins' ),
+				'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Core Options', 'shadhin-plugins' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
 			]
 		);
@@ -155,7 +155,7 @@ class Shadhin_plugins_Column_Handler {
 		$section->start_controls_section(
 			'stretched_bg',
 			[
-				'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Stretched BG', 'shadhin-plugins' ),
+				'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Stretched BG', 'shadhin-plugins' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
 			]
 		);

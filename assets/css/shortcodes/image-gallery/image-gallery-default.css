@@ -1,33 +1,33 @@
-.tm-gallery-item-default a {
+.mh-gallery-item-default a {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: top;
   overflow: hidden;
 }
-.tm-gallery-item-default a img {
+.mh-gallery-item-default a img {
   width: 100%;
   transform: translateX(0) scale(1.06) rotate(0.1deg);
   transition: transform 0.6s cubic-bezier(0.5, 1, 0.89, 1);
 }
-.tm-gallery-item-default a:hover img {
+.mh-gallery-item-default a:hover img {
   transform: translateX(3%) scale(1.06) rotate(0);
 }
-.tm-gallery-item-default:hover .gallery-bottom-wrapper .title {
+.mh-gallery-item-default:hover .gallery-bottom-wrapper .title {
   transform: translate(0);
   opacity: 1;
 }
-.tm-gallery-item-default .gallery-bottom-wrapper {
+.mh-gallery-item-default .gallery-bottom-wrapper {
   left: 54px;
   margin: 0;
   position: absolute;
   bottom: 28px;
 }
-.tm-gallery-item-default .gallery-bottom-wrapper .title {
+.mh-gallery-item-default .gallery-bottom-wrapper .title {
   color: #fff;
   text-shadow: 0 0 20px #000;
 }
-.tm-gallery-item-default .gallery-bottom-wrapper .title {
+.mh-gallery-item-default .gallery-bottom-wrapper .title {
   margin-bottom: 2px;
   color: #ffffff;
   opacity: 0;
@@ -37,13 +37,13 @@
   z-index: 3;
   position: relative;
 }
-.tm-gallery-item-default .gallery-bottom-wrapper .title a:hover {
+.mh-gallery-item-default .gallery-bottom-wrapper .title a:hover {
   color: var(--theme-color1);
 }
 
-.hover-no-animation-yes .tm-gallery-item-default a img {
+.hover-no-animation-yes .mh-gallery-item-default a img {
   transform: scale(1) rotate(0);
 }
-.hover-no-animation-yes .tm-gallery-item-default a:hover img {
+.hover-no-animation-yes .mh-gallery-item-default a:hover img {
   transform: scale(1) rotate(0);
 }

@@ -1,5 +1,5 @@
 <?php if ( $gallery_images_array ) : ?>
-	<div class="tm-sc-gallery tm-sc-gallery-masonry-tiles <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-gallery mh-sc-gallery-masonry-tiles <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="isotope-layout masonry masonry-tiles grid-<?php echo esc_attr( $columns );?> <?php echo esc_attr( $gutter );?> lightgallery-lightbox">
 			<div class="isotope-layout-inner">

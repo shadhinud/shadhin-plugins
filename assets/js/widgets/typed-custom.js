@@ -1,7 +1,7 @@
 (function ($) {
     'use strict';
 
-      var $typed_text_carousel = $('.tm-typed-text-animation');
+      var $typed_text_carousel = $('.mh-typed-text-animation');
       if ( $typed_text_carousel.length > 0 ) {
         $typed_text_carousel.each(function() {
           var str = '';
@@ -19,7 +19,7 @@
             backDelay: $this.data('delay') > 0 ? Math.max(0, Math.min(10, $this.data('delay'))) * 1000 : 1000
           });
 
-          
+
         });
       }
 

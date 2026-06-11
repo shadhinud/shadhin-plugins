@@ -27,17 +27,17 @@
 
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-funfact-counter', WidgetFunfactAnimateNumberHandler );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'default' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style1' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style2' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style3' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style4' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style5' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style6' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style7' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style8' );
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style9' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-funfact-counter', WidgetFunfactAnimateNumberHandler );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'default' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style1' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style2' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style3' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style4' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style5' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style6' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style7' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style8' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-counter-block', WidgetFunfactAnimateNumberHandler, 'skin-style9' );
     });
 
 

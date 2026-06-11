@@ -424,7 +424,7 @@ if (!function_exists('mh_shadhin_cursor_mouse_helper_add_params_to_elements')) {
 
 			$element->start_controls_section( 'section_mh_mouse_helper', array(
 																		'tab' => !empty($args['tab']) ? $args['tab'] : \Elementor\Controls_Manager::TAB_ADVANCED,
-																		'label' => MH_ELEMENTOR_WIDGET_BADGE . __( 'Mascot - Mouse Helper', 'shadhin-plugins' )
+																		'label' => MH_ELEMENTOR_WIDGET_BADGE . __( 'Shadhin - Mouse Helper', 'shadhin-plugins' )
 																	) );
 			$element->add_control( 'mouse_helper', array(
 				'type' => \Elementor\Controls_Manager::SWITCHER,

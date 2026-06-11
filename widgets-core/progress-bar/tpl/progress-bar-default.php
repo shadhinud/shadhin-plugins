@@ -1,4 +1,4 @@
-<div class="tm-sc-progress-bar <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>" data-percent="<?php echo esc_attr( $percentage_value );?>" data-unit-left="<?php echo esc_attr( $unit_symbol_left );?>" data-unit-right="<?php echo esc_attr( $unit_symbol_right );?>">
+<div class="mh-sc-progress-bar <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>" data-percent="<?php echo esc_attr( $percentage_value );?>" data-unit-left="<?php echo esc_attr( $unit_symbol_left );?>" data-unit-right="<?php echo esc_attr( $unit_symbol_right );?>">
 	<div class="progress-title-holder">
 		<<?php echo esc_attr( $title_tag );?> class="pb-title"><?php echo esc_html( $title );?></<?php echo esc_attr( $title_tag );?>>
 	</div>

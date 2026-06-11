@@ -43,7 +43,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-award-block.skin-style2",
+            "frontend/element_ready/mh-ele-award-block.skin-style2",
             WidgetAwardBlock2Handler
         );
     });

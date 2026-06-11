@@ -1,8 +1,8 @@
 <?php
-	wp_register_style( 'classycountdown-css', MASCOT_TEMPLATE_URI . '/assets/js/classycountdown/css/jquery.classycountdown.css', array(), MASCOT_THEME_VERSION );
-	wp_register_script( 'jquery-knob', MASCOT_TEMPLATE_URI . '/assets/js/classycountdown/js/jquery.knob.js', array('jquery'), null, true );
-	wp_register_script( 'jquery-throttle', MASCOT_TEMPLATE_URI . '/assets/js/classycountdown/js/jquery.throttle.js', array('jquery'), null, true );
-	wp_register_script( 'classycountdown-js', MASCOT_TEMPLATE_URI . '/assets/js/classycountdown/js/jquery.classycountdown.js', array('jquery'), null, true );
+	wp_register_style( 'classycountdown-css', SHADHIN_TEMPLATE_URI . '/assets/js/classycountdown/css/jquery.classycountdown.css', array(), SHADHIN_THEME_VERSION );
+	wp_register_script( 'jquery-knob', SHADHIN_TEMPLATE_URI . '/assets/js/classycountdown/js/jquery.knob.js', array('jquery'), null, true );
+	wp_register_script( 'jquery-throttle', SHADHIN_TEMPLATE_URI . '/assets/js/classycountdown/js/jquery.throttle.js', array('jquery'), null, true );
+	wp_register_script( 'classycountdown-js', SHADHIN_TEMPLATE_URI . '/assets/js/classycountdown/js/jquery.classycountdown.js', array('jquery'), null, true );
 
 
 	//Enque Styles

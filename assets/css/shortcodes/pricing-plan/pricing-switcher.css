@@ -1,12 +1,12 @@
-.tm-sc-pricing-plan {
+.mh-sc-pricing-plan {
   position: relative;
 }
-.tm-sc-pricing-plan .pricing-plan-inner-wrapper {
+.mh-sc-pricing-plan .pricing-plan-inner-wrapper {
   background: #fff;
   z-index: 0;
   transition: all 0.3s ease;
 }
-.tm-sc-pricing-plan .pricing-plan-inner-wrapper:before, .tm-sc-pricing-plan .pricing-plan-inner-wrapper:after {
+.mh-sc-pricing-plan .pricing-plan-inner-wrapper:before, .mh-sc-pricing-plan .pricing-plan-inner-wrapper:after {
   content: "";
   position: absolute;
   left: 0;
@@ -16,37 +16,37 @@
   z-index: -1;
   transition: all 400ms ease;
 }
-.tm-sc-pricing-plan .pricing-plan-thumb img {
+.mh-sc-pricing-plan .pricing-plan-thumb img {
   transition: all 0.3s ease;
 }
-.tm-sc-pricing-plan .pricing-plan-thumb.has-thumb-hover .thumb {
+.mh-sc-pricing-plan .pricing-plan-thumb.has-thumb-hover .thumb {
   display: inline-block;
 }
-.tm-sc-pricing-plan .pricing-plan-thumb.has-thumb-hover .thumb-hover {
+.mh-sc-pricing-plan .pricing-plan-thumb.has-thumb-hover .thumb-hover {
   display: none;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-pricing .price {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-pricing .price {
   display: flex;
   align-items: baseline;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-pricing .price-secondary {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-pricing .price-secondary {
   display: none;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-pricing .on-sale .pricing-plan-price {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-pricing .on-sale .pricing-plan-price {
   color: #aaa;
   font-size: 20px;
   margin-right: 5px;
   text-decoration: line-through;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content .features-list-title {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content .features-list-title {
   color: var(--theme-color1);
   font-size: 16px;
   margin-bottom: 15px;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul {
   list-style: none;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li {
   color: #171e2e;
   font-size: 15px;
   padding: 0;
@@ -54,41 +54,41 @@
   margin-bottom: 5px;
   position: relative;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li:before {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li:before {
   color: var(--theme-color1);
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.no-action {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.no-action {
   color: #bbb;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.no-action .icon {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.no-action .icon {
   color: #bbb;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.line-through {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.line-through {
   color: #999;
   text-decoration: line-through;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.line-through .icon {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li.line-through .icon {
   color: #999;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li i,
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li svg {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li i,
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li svg {
   margin-right: 8px;
   font-size: 11px;
   color: #111;
   display: inline-block;
   transition: all 0.3s ease;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li svg {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li svg {
   width: 16px;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip {
   position: absolute;
   top: 0;
   right: 0;
   color: #294dff;
   padding: 3px;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:before {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:before {
   pointer-events: none;
   content: attr(title);
   visibility: hidden;
@@ -107,7 +107,7 @@
   transition: opacity 0.3s ease-in-out;
   box-shadow: 0 0 12px rgba(37, 48, 83, 0.25);
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:after {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:after {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -123,37 +123,37 @@
   transition: opacity 0.3s ease-in-out;
   box-shadow: 0 0 12px rgba(37, 48, 83, 0.25);
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip i {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip i {
   font-size: 14px;
   color: var(--theme-color1);
 }
-.tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:hover:before, .tm-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:hover:after {
+.mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:hover:before, .mh-sc-pricing-plan .pricing-plan-inner .pricing-plan-content ul li .has-tooltip:hover:after {
   opacity: 1;
   visibility: visible;
 }
-.tm-sc-pricing-plan .pricing-plan-inner .footer-hint-text {
+.mh-sc-pricing-plan .pricing-plan-inner .footer-hint-text {
   font-size: 13px;
   margin-top: 5px;
   transition: all 0.3s ease;
 }
-.tm-sc-pricing-plan.show-secondary-price .pricing-plan-inner .pricing-plan-pricing .price-normal {
+.mh-sc-pricing-plan.show-secondary-price .pricing-plan-inner .pricing-plan-pricing .price-normal {
   display: none;
 }
-.tm-sc-pricing-plan.show-secondary-price .pricing-plan-inner .pricing-plan-pricing .price-secondary {
+.mh-sc-pricing-plan.show-secondary-price .pricing-plan-inner .pricing-plan-pricing .price-secondary {
   display: flex;
 }
-.tm-sc-pricing-plan.pricing-list-bordered .pricing-plan-content ul li {
+.mh-sc-pricing-plan.pricing-list-bordered .pricing-plan-content ul li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.tm-sc-pricing-plan.pricing-list-bordered .pricing-plan-content ul li:last-child {
+.mh-sc-pricing-plan.pricing-list-bordered .pricing-plan-content ul li:last-child {
   border-bottom: none;
 }
-.tm-sc-pricing-plan.pricing-list-bullet .pricing-plan-content ul li {
+.mh-sc-pricing-plan.pricing-list-bullet .pricing-plan-content ul li {
   padding-left: 20px;
 }
-.tm-sc-pricing-plan.pricing-list-bullet .pricing-plan-content ul li:before {
+.mh-sc-pricing-plan.pricing-list-bullet .pricing-plan-content ul li:before {
   border: none;
   color: #777;
   content: "\f0da";
@@ -166,38 +166,38 @@
   top: 6px;
   opacity: 0.6;
 }
-.tm-sc-pricing-plan.pricing-plan-box-shadow .pricing-plan-inner-wrapper {
+.mh-sc-pricing-plan.pricing-plan-box-shadow .pricing-plan-inner-wrapper {
   box-shadow: 0 5px 70px rgba(32, 35, 66, 0.1);
 }
-.tm-sc-pricing-plan.pricing-plan-featured {
+.mh-sc-pricing-plan.pricing-plan-featured {
   z-index: 1;
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-.tm-sc-pricing-plan.pricing-plan-hover-effect:hover {
+.mh-sc-pricing-plan.pricing-plan-hover-effect:hover {
   -webkit-transform: translateY(-15px);
   -ms-transform: translateY(-15px);
   -o-transform: translateY(-15px);
   -moz-transform: translateY(-15px);
   transform: translateY(-15px);
 }
-.tm-sc-pricing-plan.pricing-plan-hover-effect.pricing-plan-featured:hover {
+.mh-sc-pricing-plan.pricing-plan-hover-effect.pricing-plan-featured:hover {
   -webkit-transform: translateY(-15px) scale(1.1);
   -ms-transform: translateY(-15px) scale(1.1);
   -o-transform: translateY(-15px) scale(1.1);
   -moz-transform: translateY(-15px) scale(1.1);
   transform: translateY(-15px) scale(1.1);
 }
-.tm-sc-pricing-plan:hover .pricing-plan-thumb.has-thumb-hover .thumb {
+.mh-sc-pricing-plan:hover .pricing-plan-thumb.has-thumb-hover .thumb {
   display: none;
 }
-.tm-sc-pricing-plan:hover .pricing-plan-thumb.has-thumb-hover .thumb-hover {
+.mh-sc-pricing-plan:hover .pricing-plan-thumb.has-thumb-hover .thumb-hover {
   display: inline-block;
 }
 
-.tm-pricing-plan-switcher {
+.mh-pricing-plan-switcher {
   color: var(--heading-color);
   font-size: 19px;
   letter-spacing: -0.2px;
@@ -212,7 +212,7 @@
   justify-content: center;
   margin-bottom: 55px;
 }
-.tm-pricing-plan-switcher .price-offer {
+.mh-pricing-plan-switcher .price-offer {
   color: var(--theme-color2-text-color);
   background-color: rgba(var(--theme-color2-rgb), 0.8);
   font-size: 12px;
@@ -222,12 +222,12 @@
   margin-left: 15px;
   text-transform: uppercase;
 }
-.tm-pricing-plan-switcher .pricing-switcher-btn {
+.mh-pricing-plan-switcher .pricing-switcher-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.tm-pricing-plan-switcher .pricing-switcher-btn .btn-toggle {
+.mh-pricing-plan-switcher .pricing-switcher-btn .btn-toggle {
   width: 70px;
   height: 33px;
   border-radius: 17px;
@@ -236,13 +236,13 @@
   display: inline-block;
   margin: 0 1rem;
 }
-.tm-pricing-plan-switcher .pricing-switcher-btn .btn-toggle.secondary-active {
+.mh-pricing-plan-switcher .pricing-switcher-btn .btn-toggle.secondary-active {
   background-color: var(--theme-color1);
 }
-.tm-pricing-plan-switcher .pricing-switcher-btn .btn-toggle.secondary-active span {
+.mh-pricing-plan-switcher .pricing-switcher-btn .btn-toggle.secondary-active span {
   right: 7px;
 }
-.tm-pricing-plan-switcher .pricing-switcher-btn .btn-toggle span {
+.mh-pricing-plan-switcher .pricing-switcher-btn .btn-toggle span {
   width: 20px;
   height: 20px;
   background-color: #ffffff;
@@ -258,7 +258,7 @@
   pointer-events: none;
 }
 
-.tm-pricing-plan-switcher-button .switch-buttons {
+.mh-pricing-plan-switcher-button .switch-buttons {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -266,11 +266,11 @@
   list-style: none;
   border: 0;
 }
-.tm-pricing-plan-switcher-button .switch-buttons li {
+.mh-pricing-plan-switcher-button .switch-buttons li {
   display: inline-block;
   margin-bottom: 0;
 }
-.tm-pricing-plan-switcher-button .switch-buttons li a {
+.mh-pricing-plan-switcher-button .switch-buttons li a {
   display: block;
   border: 1px solid #eee;
   outline: none;
@@ -282,12 +282,12 @@
   background-color: rgb(254, 253, 254);
   box-shadow: 0px 15px 30px 0px rgba(119, 123, 146, 0.1);
 }
-.tm-pricing-plan-switcher-button .switch-buttons li a:hover, .tm-pricing-plan-switcher-button .switch-buttons li a.active {
+.mh-pricing-plan-switcher-button .switch-buttons li a:hover, .mh-pricing-plan-switcher-button .switch-buttons li a.active {
   color: var(--theme-color1-text-color);
   border-color: var(--theme-color1);
   background-color: var(--theme-color1);
 }
-.tm-pricing-plan-switcher-button .switch-buttons li a span.price-offer {
+.mh-pricing-plan-switcher-button .switch-buttons li a span.price-offer {
   color: var(--theme-color2-text-color);
   background-color: rgba(var(--theme-color2-rgb), 0.8);
   font-size: 12px;
@@ -297,19 +297,19 @@
   margin-left: 15px;
   text-transform: uppercase;
 }
-.tm-pricing-plan-switcher-button .switch-buttons li:first-child a {
+.mh-pricing-plan-switcher-button .switch-buttons li:first-child a {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.tm-pricing-plan-switcher-button .switch-buttons li:last-child a {
+.mh-pricing-plan-switcher-button .switch-buttons li:last-child a {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-.tm-switch-buttons-round-yes .tm-pricing-plan-switcher-button .switch-buttons li:first-child a {
+.mh-switch-buttons-round-yes .mh-pricing-plan-switcher-button .switch-buttons li:first-child a {
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
 }
-.tm-switch-buttons-round-yes .tm-pricing-plan-switcher-button .switch-buttons li:last-child a {
+.mh-switch-buttons-round-yes .mh-pricing-plan-switcher-button .switch-buttons li:last-child a {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }

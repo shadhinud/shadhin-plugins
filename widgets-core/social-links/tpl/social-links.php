@@ -1,4 +1,4 @@
-<ul class="tm-sc-social-links <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<ul class="mh-sc-social-links <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 
 	<?php if( !empty( $url_twitter ) ) { ?>
 	<li><a class="social-link" aria-label="<?php echo esc_attr__('Social Link', 'shadhin-plugins'); ?>" href="<?php echo esc_url( $url_twitter ); ?>" target="<?php echo ( ( $target == '' ) ? esc_attr( '_self' ) : esc_attr( $target ) ); ?>"><i class="fa fa-twitter"></i></a></li>

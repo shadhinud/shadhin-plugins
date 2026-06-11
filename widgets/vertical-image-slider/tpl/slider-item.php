@@ -29,7 +29,7 @@ if (!empty($slider_item['link']['url'])) {
 }
 
 ?>
-<div class="tm-vertical-image-slider-item">
+<div class="mh-vertical-image-slider-item">
 	<div class="slider-image">
 		<?php if (!empty($link_url)) : ?>
 			<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"<?php if ( $link_nofollow ) : ?> rel="nofollow"<?php endif; ?>>

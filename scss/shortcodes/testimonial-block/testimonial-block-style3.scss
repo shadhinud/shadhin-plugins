@@ -7,7 +7,7 @@
     border: 1px solid rgba(12, 47, 37, 0.1);
     border-radius: 14px;
     padding: 23px 29px 30px;
-    [data-tm-layout="dark"] & {
+    [data-mh-layout="dark"] & {
       background-color: #15241f;
     }
   }
@@ -69,7 +69,7 @@
         color: var(--theme-color2);
         margin-top: 3px;
         margin-bottom: 0;
-        [data-tm-layout="dark"] & {
+        [data-mh-layout="dark"] & {
           color: #fff;
         }
       }

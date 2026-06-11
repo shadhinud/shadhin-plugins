@@ -1,4 +1,4 @@
-<div class="tm-sc-pie-chart <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-pie-chart <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<div class="pie-chart"
 		data-bar-color="<?php echo esc_attr( $barcolor ); ?>"
 		data-track-color="<?php echo esc_attr( $trackcolor ); ?>"

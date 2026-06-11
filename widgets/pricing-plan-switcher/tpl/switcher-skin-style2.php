@@ -1,4 +1,4 @@
-<div class="tm-pricing-plan-switcher-button">
+<div class="mh-pricing-plan-switcher-button">
   <ul class="switch-buttons">
     <li class="active">
       <a href="javascript:" aria-label="Pricing" class="btn-toggle active" data-pricing-trigger data-show="month"><span class="title"><?php echo esc_html($variant_text_default); ?></span></a>

@@ -93,7 +93,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 
 
@@ -168,8 +168,8 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'label_block' => false,
 				'options' => shadhin_plugins_text_align_choose(),
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'text-align: {{VALUE}};',
-					'{{WRAPPER}} .mascot-counter .details' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .shadhin-counter' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .shadhin-counter .details' => 'text-align: {{VALUE}};',
 					'{{WRAPPER}} .counter-block-two .inner' => 'text-align: {{VALUE}};',
 				]
 			]
@@ -1268,7 +1268,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .shadhin-counter' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1279,7 +1279,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .shadhin-counter' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -1289,7 +1289,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'label' => esc_html__( "Content Display Flex + Vertical Center?", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'display: flex; align-items: center;',
+					'{{WRAPPER}} .shadhin-counter' => 'display: flex; align-items: center;',
 				]
 			]
 		);
@@ -1299,7 +1299,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'label' => esc_html__( "Minimum Height", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'min-height: {{VALUE}};'
+					'{{WRAPPER}} .shadhin-counter' => 'min-height: {{VALUE}};'
 				]
 			]
 		);
@@ -1317,7 +1317,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .shadhin-counter' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1329,7 +1329,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .shadhin-counter' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1348,7 +1348,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .shadhin-counter' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1357,7 +1357,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 			[
 				'name' => 'funfact_wrapper_boxshadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .mascot-counter',
+				'selector' => '{{WRAPPER}} .shadhin-counter',
 			]
 		);
 		$this->add_group_control(
@@ -1365,7 +1365,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 			[
 				'name' => 'border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .mascot-counter',
+				'selector' => '{{WRAPPER}} .shadhin-counter',
 			]
 		);
 		$this->add_control(
@@ -1376,7 +1376,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .shadhin-counter' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1402,7 +1402,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}}:hover .mascot-counter' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}}:hover .shadhin-counter' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -1414,7 +1414,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .mascot-counter' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .shadhin-counter' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1433,7 +1433,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}}:hover .mascot-counter' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}}:hover .shadhin-counter' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1442,7 +1442,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 			[
 				'name' => 'funfact_wrapper_boxshadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .mascot-counter',
+				'selector' => '{{WRAPPER}}:hover .shadhin-counter',
 			]
 		);
 		$this->add_group_control(
@@ -1450,7 +1450,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 			[
 				'name' => 'funfact_wrapper_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}}:hover .mascot-counter',
+				'selector' => '{{WRAPPER}}:hover .shadhin-counter',
 			]
 		);
 		$this->add_control(
@@ -1461,7 +1461,7 @@ class MH_Elementor_CounterBlock extends Widget_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .mascot-counter' => 'border-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .shadhin-counter' => 'border-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);

@@ -1,4 +1,4 @@
-<div class="tm-sc-button btn-view-details <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-button btn-view-details <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<a  href="<?php echo esc_url( $button['url'] ); ?>"
 		<?php if ( ! empty( $link['is_external'] ) ) : ?> target="_blank"<?php endif; ?>
 		<?php if ( ! empty( $link['nofollow'] ) ) : ?> rel="nofollow"<?php endif; ?>

@@ -1,5 +1,5 @@
 <?php $post_format = get_post_format(get_the_ID()) ? : 'standard'; $settings['settings'] = $settings; ?>
-<div class="tm-sc-blog blog-vertical-list <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-blog blog-vertical-list <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<!-- the loop -->
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<article <?php post_class(); ?>>

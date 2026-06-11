@@ -48,7 +48,7 @@ class MH_Elementor_Product_Tabs extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'TM Product Tabs', 'shadhin-plugins' );
+		return esc_html__( 'MH Product Tabs', 'shadhin-plugins' );
 	}
 
 	/**
@@ -94,7 +94,7 @@ class MH_Elementor_Product_Tabs extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'mh-product-tabs', 'slick' ];
+		return [ 'shadhin-core-hellojs', 'mh-product-tabs', 'slick' ];
 	}
 	public function get_style_depends() {
 		return [ 'mh-product-tabs', 'slick', 'slick-theme' ];

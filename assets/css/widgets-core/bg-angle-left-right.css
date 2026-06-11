@@ -1,4 +1,4 @@
-.tm-bg-angle-left-right:after {
+.mh-bg-angle-left-right:after {
   content: "";
   height: 0;
   position: absolute;
@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 1200px) {
-  .elementor-hide-under-1201 .tm-bg-angle-left-right:after {
+  .elementor-hide-under-1201 .mh-bg-angle-left-right:after {
     display: none;
   }
 }

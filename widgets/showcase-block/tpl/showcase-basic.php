@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $showcase_items_array ) : ?>
-	<div class="tm-showcase-grid">
+	<div class="mh-showcase-grid">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="showcase-layout">
 			<!-- the loop -->

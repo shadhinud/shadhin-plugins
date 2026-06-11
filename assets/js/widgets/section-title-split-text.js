@@ -4,11 +4,11 @@
 
     var WidgetSectionTitleAnimationHandler = function ($scope) {
         setTimeout(function () {
-            var st = $scope.find(".tm-split-text");
+            var st = $scope.find(".mh-split-text");
             if(st.length == 0) return;
             gsap.registerPlugin(SplitText);
             st.each(function(index, el) {
-                el.split = new SplitText(el, { 
+                el.split = new SplitText(el, {
                     type: "lines,words,chars",
                     linesClass: "split-line"
                 });
@@ -74,7 +74,7 @@
                     rotateX: "0",
                     scale: 1,
                     opacity: 1,
-                    duration: 0.8, 
+                    duration: 0.8,
                     stagger: 0.02,
                 });
             });
@@ -84,7 +84,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-section-title.default",
+            "frontend/element_ready/mh-ele-section-title.default",
             WidgetSectionTitleAnimationHandler
         );
     });

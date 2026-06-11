@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="tm-sc-wc-products tm-sc-wc-products-grid woocommerce <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-wc-products mh-sc-wc-products-grid woocommerce <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<?php include('filter.php'); ?>
 
 		<!-- Isotope Gallery Grid -->

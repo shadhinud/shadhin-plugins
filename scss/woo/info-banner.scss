@@ -1,11 +1,10 @@
 @import "../bootstrap-loader";
 
-
 /*
  * Shortcode: info-banner.scss
  * -----------------------------------------------
 */
-.tm-sc-info-banner {
+.mh-sc-info-banner {
   position: relative;
   vertical-align: top;
   display: block;
@@ -19,7 +18,7 @@
       position: relative;
       img {
         width: 100%;
-        @include transition(all .3s ease);
+        @include transition(all 0.3s ease);
         @include scale(1);
       }
       .banner-overlay {

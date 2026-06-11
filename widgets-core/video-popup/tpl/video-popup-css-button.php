@@ -1,5 +1,5 @@
 
-<div class="tm-sc-video-popup tm-sc-video-popup-css-button <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-video-popup mh-sc-video-popup-css-button <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<div class="box-hover-effect play-video-button">
 		<div class="effect-wrapper d-flex align-items-center">
 			<div class="animated-css-play-button"><div class="bg-block"></div><span class="play-icon"><i class="fa fa-play"></i></span></div>

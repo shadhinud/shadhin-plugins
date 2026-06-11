@@ -1,6 +1,6 @@
 @import "../bootstrap-loader";
 
-.tm-contact-form-7 {
+.mh-contact-form-7 {
   transition: all 0.3s ease;
   .wpcf7-form {
     display: flex;
@@ -14,8 +14,8 @@
     }
   }
 }
-.tm-contact-form-7-button-align-left {
-  .tm-contact-form-7 {
+.mh-contact-form-7-button-align-left {
+  .mh-contact-form-7 {
     .wpcf7-form {
       .wpcf7-submit {
         margin-right: auto;
@@ -24,8 +24,8 @@
     }
   }
 }
-.tm-contact-form-7-button-align-center {
-  .tm-contact-form-7 {
+.mh-contact-form-7-button-align-center {
+  .mh-contact-form-7 {
     .wpcf7-form {
       .wpcf7-submit {
         margin: 0 auto;
@@ -34,8 +34,8 @@
     }
   }
 }
-.tm-contact-form-7-button-align-right {
-  .tm-contact-form-7 {
+.mh-contact-form-7-button-align-right {
+  .mh-contact-form-7 {
     .wpcf7-form {
       .wpcf7-submit {
         margin-left: auto;
@@ -45,8 +45,8 @@
     }
   }
 }
-.tm-contact-form-7-button-full-width {
-  .tm-contact-form-7 {
+.mh-contact-form-7-button-full-width {
+  .mh-contact-form-7 {
     .wpcf7-form {
       .wpcf7-submit {
         display: grid;
@@ -56,7 +56,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tm-contact-form-7 {
+  .mh-contact-form-7 {
     transition: none;
   }
 }

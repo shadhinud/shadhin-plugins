@@ -1,5 +1,5 @@
 <!-- Gallery Block -->
-<div class="tm-image-gallery tm-gallery-item-currenty-style2">
+<div class="mh-image-gallery mh-gallery-item-currenty-style2">
 	<div class="inner-box">
 		<div class="image-box">
 			<div class="image">

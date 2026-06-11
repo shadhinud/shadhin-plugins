@@ -12,7 +12,7 @@
   content: "";
   transition: all 400ms ease;
 }
-[data-tm-layout=dark] .team-current-theme5 .inner-box:before {
+[data-mh-layout=dark] .team-current-theme5 .inner-box:before {
   background-color: #1b1b1b;
 }
 .team-current-theme5 .inner-box .info-box {

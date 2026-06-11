@@ -1,11 +1,11 @@
 <?php
 // Extra classes
 $extra_classes = array();
-$extra_classes[] = 'tm-woo-product-item';
+$extra_classes[] = 'mh-woo-product-item';
 global $product;
-wp_enqueue_script('tm-countdown-script');
+wp_enqueue_script('mh-countdown-script');
 ?>
-<div class="tm-woo-product-style1">
+<div class="mh-woo-product-style1">
     <div class="product-inner">
         <div class="image-box">
             <div class="image">

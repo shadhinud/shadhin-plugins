@@ -1,19 +1,19 @@
-.tm-sc-projects .cat-list {
+.mh-sc-projects .cat-list {
   list-style: none;
   margin: 0;
 }
-.tm-sc-projects .cat-list li {
+.mh-sc-projects .cat-list li {
   display: inline;
   color: #aaa;
   margin-right: 7px;
   font-size: 13px;
 }
-.tm-sc-projects .cat-list li a {
+.mh-sc-projects .cat-list li a {
   color: #aaa;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
 }
-.tm-sc-projects .cat-list li:last-child span {
+.mh-sc-projects .cat-list li:last-child span {
   display: none;
 }
 
@@ -168,7 +168,7 @@
   color: var(--theme-color2);
   font-size: 20px;
 }
-[data-tm-layout=dark] .projects-current-theme1 .content ul li a {
+[data-mh-layout=dark] .projects-current-theme1 .content ul li a {
   color: #fff;
 }
 @media (max-width: 991.98px) {

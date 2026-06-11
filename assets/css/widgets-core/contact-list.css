@@ -1,9 +1,9 @@
-.tm-contact-list ul {
+.mh-contact-list ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.tm-contact-list ul li {
+.mh-contact-list ul li {
   clear: both;
   position: relative;
   list-style: none;
@@ -16,11 +16,11 @@
   display: flex;
   align-items: center;
 }
-.tm-contact-list ul li > * {
+.mh-contact-list ul li > * {
   display: flex;
   flex-wrap: nowrap;
 }
-.tm-contact-list ul li .icon {
+.mh-contact-list ul li .icon {
   font-size: 22px;
   text-align: center;
   margin-right: 15px;
@@ -32,24 +32,24 @@
   display: flex;
   align-items: center;
 }
-.tm-contact-list ul li .icon svg {
+.mh-contact-list ul li .icon svg {
   width: 1em;
   height: 1em;
   position: relative;
   display: block;
 }
-.tm-contact-list ul li .icon i {
+.mh-contact-list ul li .icon i {
   transition: all 0.3s ease;
 }
-.tm-contact-list ul li .prefix {
+.mh-contact-list ul li .prefix {
   margin-right: 5px;
 }
-.tm-contact-list ol {
+.mh-contact-list ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.tm-contact-list.contact-list-round ul li .icon {
+.mh-contact-list.contact-list-round ul li .icon {
   font-size: 18px;
   padding: 10px;
   display: flex;
@@ -63,7 +63,7 @@
   color: #fff;
   transition: all 0.3s ease;
 }
-.tm-contact-list.contact-list-round ul li .icon i {
+.mh-contact-list.contact-list-round ul li .icon i {
   line-height: 1;
   display: flex;
   justify-content: center;

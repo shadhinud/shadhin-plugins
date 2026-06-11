@@ -45,7 +45,7 @@ class MH_Elementor_List extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'TM List', 'shadhin-plugins' );
+		return esc_html__( 'MH List', 'shadhin-plugins' );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class MH_Elementor_List extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 
 	public function get_style_depends() {

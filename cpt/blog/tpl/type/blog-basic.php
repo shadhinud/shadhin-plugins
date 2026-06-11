@@ -1,6 +1,6 @@
 <?php $settings['post_format'] = get_post_format(get_the_ID()) ? : 'standard'; $settings['settings'] = $settings; ?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="tm-sc-blog tm-sc-blog-basic <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-blog mh-sc-blog-basic <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<!-- the loop -->
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<?php

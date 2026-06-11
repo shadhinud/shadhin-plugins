@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $team_items_array ) : ?>
-	<div class="tm-sc-team tm-team-basic">
+	<div class="mh-sc-team mh-team-basic">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="team-layout clearfix">
 				<!-- the loop -->

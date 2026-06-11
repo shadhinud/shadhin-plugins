@@ -4,24 +4,24 @@
 
     $( document ).ready(
         function () {
-            mascotBannerReveal.init();
+            shadhinBannerReveal.init();
         }
     );
 
-    var mascotBannerReveal = {
+    var shadhinBannerReveal = {
         init: function () {
-            this.holder = $( '.tm-sc-info-banner-advanced' );
+            this.holder = $( '.mh-sc-info-banner-advanced' );
 
             if ( this.holder.length ) {
                 this.holder.each(
                     function () {
-                        mascotBannerReveal.initItem( $( this ) );
+                        shadhinBannerReveal.initItem( $( this ) );
                     }
                 );
             }
         },
         initItem: function( $currentItem ) {
-            if ( $currentItem.hasClass( 'tm-layout-top-reveal' ) ) {
+            if ( $currentItem.hasClass( 'mh-layout-top-reveal' ) ) {
                 var $text      = $currentItem.find( '.text-paragraph' ),
                     $button    = $currentItem.find( '.btn-view-details' ),
                     textHeight = $text.outerHeight( true );
@@ -31,7 +31,7 @@
                 );
                 setTimeout(
                     function () {
-                        $currentItem.addClass( 'mascot--visible' );
+                        $currentItem.addClass( 'shadhin--visible' );
                     },
                     400
                 );
@@ -45,24 +45,24 @@
 
     $( document ).ready(
         function () {
-            mascotBannerFromBottom.init();
+            shadhinBannerFromBottom.init();
         }
     );
 
-    var mascotBannerFromBottom = {
+    var shadhinBannerFromBottom = {
         init: function () {
-            this.holder = $( '.tm-sc-info-banner-advanced' );
+            this.holder = $( '.mh-sc-info-banner-advanced' );
 
             if ( this.holder.length ) {
                 this.holder.each(
                     function () {
-                        mascotBannerFromBottom.initItem( $( this ) );
+                        shadhinBannerFromBottom.initItem( $( this ) );
                     }
                 );
             }
         },
         initItem: function ( $currentItem ) {
-            if ( $currentItem.hasClass( 'tm-layout-bottom' ) ) {
+            if ( $currentItem.hasClass( 'mh-layout-bottom' ) ) {
                 var $text      = $currentItem.find( '.content-holder' ),
                     $content   = $currentItem.find( '.info-banner-text-holder-inner' ),
                     textHeight = $text.outerHeight( true );
@@ -73,7 +73,7 @@
                 );
                 setTimeout(
                     function () {
-                        $currentItem.addClass( 'mascot--visible' );
+                        $currentItem.addClass( 'shadhin--visible' );
                     },
                     400
                 );

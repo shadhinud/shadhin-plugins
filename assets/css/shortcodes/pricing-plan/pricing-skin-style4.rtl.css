@@ -11,7 +11,7 @@
   -webkit-box-shadow: 0 10px 60px rgba(0, 0, 0, 0.06);
   box-shadow: 0 10px 60px rgba(0, 0, 0, 0.06);
 }
-[data-tm-layout=dark] .pricing-plan-skin-style4 .pricing-plan-inner-wrapper {
+[data-mh-layout=dark] .pricing-plan-skin-style4 .pricing-plan-inner-wrapper {
   background-color: #1a1b1d;
   border: 1px solid #3d3b44;
 }
@@ -71,7 +71,7 @@
   font-weight: 600;
   margin-bottom: 15px;
 }
-[data-tm-layout=dark] .pricing-plan-skin-style4 .pricing-plan-inner .pricing-plan-content .features-list li {
+[data-mh-layout=dark] .pricing-plan-skin-style4 .pricing-plan-inner .pricing-plan-content .features-list li {
   color: #fff;
 }
 .pricing-plan-skin-style4 .pricing-plan-inner .pricing-plan-content .features-list li:before {

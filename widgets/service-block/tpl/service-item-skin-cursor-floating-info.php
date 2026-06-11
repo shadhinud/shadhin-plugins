@@ -9,7 +9,7 @@ $target = ( $feature_link && $feature_link['is_external'] ) ? ' target="_blank"'
 $url = ( $feature_link && $feature_link['url'] ) ? $feature_link['url'] : '';
 ?>
 
-<div class="service-block-cursor-floating-info tm-floating-info-item">
+<div class="service-block-cursor-floating-info mh-floating-info-item">
   <div class="inner-box">
     <div class="image-box">
       <div class="image">

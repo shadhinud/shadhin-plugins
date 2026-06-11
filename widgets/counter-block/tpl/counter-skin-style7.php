@@ -10,7 +10,7 @@ if(isset($wow_animation_delay) && !empty($wow_animation_delay)) {
 	$animation_delay = $wow_animation_delay . 'ms';
 }
 ?>
-<div class="counter-block-seven mascot-counter <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
+<div class="counter-block-seven shadhin-counter <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
 	<div class="inner">
 		<div class="content">
 			<i class="icon lnr-icon-plus"></i>

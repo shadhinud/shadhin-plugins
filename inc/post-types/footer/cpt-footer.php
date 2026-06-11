@@ -41,7 +41,7 @@ final class CPT_Footer implements Lib\Shadhin_plugins_Interface_PostType {
 		$this->ptPluralName = esc_html__( 'Parts - Footer', 'shadhin-plugins' );
 		$this->ptKey = 'footer';
 		$this->ptKeyRewriteBase = $this->ptKey;
-		$this->ptMenuIcon = 'dashicons-mascot';
+		$this->ptMenuIcon = 'dashicons-shadhin';
 		add_filter( 'manage_edit-'.$this->ptKey.'_columns', array($this, 'customColumnsSettings') ) ;
 		add_filter( 'manage_'.$this->ptKey.'_posts_custom_column', array($this, 'customColumnsContent') ) ;
 	}
@@ -143,7 +143,7 @@ final class CPT_Footer implements Lib\Shadhin_plugins_Interface_PostType {
 				if( shadhin_plugins_theme_installed() ) {
 					$active_footer_id = shadhin_get_redux_option( 'footer-settings-choose-footer-widget-area', 'default' );
 					if( $post->ID == $active_footer_id ) {
-						echo '<a class="tm-btn tm-btn-danger tm-btn-sm disabled">Active</a>';
+						echo '<a class="mh-btn mh-btn-danger mh-btn-sm disabled">Active</a>';
 					}
 				}
 			break;

@@ -1,5 +1,5 @@
 
-<div class="box-hover-effect play-video-button tm-sc-video-popup tm-sc-video-popup-style-current-theme <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="box-hover-effect play-video-button mh-sc-video-popup mh-sc-video-popup-style-current-theme <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<div class="effect-wrapper">
 		<?php if( isset( $style1_featured_image['id'] ) && !empty( $style1_featured_image['id'] ) ): ?>
 		<div class="thumb">

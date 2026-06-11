@@ -12,7 +12,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-counter-block.skin-style2",
+            "frontend/element_ready/mh-ele-counter-block.skin-style2",
             WidgetCounterBlockHandler
         );
     });

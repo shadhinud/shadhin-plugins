@@ -1,1 +1,1 @@
-<span class="tm-bg-angle-left-right <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>"></span>
+<span class="mh-bg-angle-left-right <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>"></span>

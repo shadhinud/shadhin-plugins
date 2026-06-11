@@ -82,7 +82,7 @@ class Shadhin_plugins_Container_Handler {
         $element->start_controls_section(
             'mh_element_gsap_scroll_fixed_section',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . __('TM GSAP Pin Scroll Fixed', 'shadhin-plugins'),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . __('MH GSAP Pin Scroll Fixed', 'shadhin-plugins'),
                 'tab' => Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -152,7 +152,7 @@ class Shadhin_plugins_Container_Handler {
         $element->start_controls_section(
             'mh_element_section_title',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . __('TM BG Stretched Options', 'shadhin-plugins'),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . __('MH BG Stretched Options', 'shadhin-plugins'),
                 'tab' => Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -296,7 +296,7 @@ class Shadhin_plugins_Container_Handler {
         $section->start_controls_section(
             'mh_core_options',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Core Options', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Core Options', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -462,7 +462,7 @@ class Shadhin_plugins_Container_Handler {
         $section->start_controls_section(
             'mh_curve_bg_options',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Curve BG Options', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Curve BG Options', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -566,7 +566,7 @@ class Shadhin_plugins_Container_Handler {
         $section->start_controls_section(
             'mh_section_custom_width_controls',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Container Custom Width', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Container Custom Width', 'shadhin-plugins' ),
                 'tab' => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -633,7 +633,7 @@ class Shadhin_plugins_Container_Handler {
         $section->start_controls_section(
             'mh_section_equal_height_controls',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Equal Height', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Equal Height', 'shadhin-plugins' ),
                 'tab' => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -707,7 +707,7 @@ class Shadhin_plugins_Container_Handler {
         $section->start_controls_section(
             'mh_other_options',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - Other Options', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - Other Options', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );
@@ -734,7 +734,7 @@ class Shadhin_plugins_Container_Handler {
         $section->start_controls_section(
             'mh_bg_move_effect_options',
             [
-                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Mascot - BG Gsap Clip Path Effect', 'shadhin-plugins' ),
+                'label' => MH_ELEMENTOR_WIDGET_BADGE . esc_html__( 'Shadhin - BG Gsap Clip Path Effect', 'shadhin-plugins' ),
                 'tab'   => \Elementor\Controls_Manager::TAB_LAYOUT,
             ]
         );

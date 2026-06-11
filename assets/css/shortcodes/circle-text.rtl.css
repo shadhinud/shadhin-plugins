@@ -11,17 +11,17 @@
     opacity: 1;
   }
 }
-.tm-circle-text {
+.mh-circle-text {
   position: relative;
   display: inline-block;
   border-radius: 50%;
 }
-.tm-circle-text span {
+.mh-circle-text span {
   position: relative;
   font-size: 22px;
   display: inline-block;
 }
-.tm-circle-text span {
+.mh-circle-text span {
   animation-name: rotateme;
   animation-duration: 15s;
   animation-iteration-count: infinite;
@@ -43,7 +43,7 @@
   -o-animation-iteration-count: infinite;
   -o-animation-timing-function: linear;
 }
-.tm-circle-text .icon {
+.mh-circle-text .icon {
   position: absolute;
   top: 50%;
   right: 50%;
@@ -56,10 +56,10 @@
   align-items: center;
   z-index: 1;
 }
-.tm-circle-text .icon i {
+.mh-circle-text .icon i {
   font-size: 36px;
 }
-.tm-circle-text .icon .inner-text {
+.mh-circle-text .icon .inner-text {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -68,8 +68,8 @@
   animation: none;
   transform: none;
 }
-.tm-circle-text .icon .video-popup-link,
-.tm-circle-text .icon .lightgallery-trigger {
+.mh-circle-text .icon .video-popup-link,
+.mh-circle-text .icon .lightgallery-trigger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,16 +79,16 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.tm-circle-text .icon .video-popup-link i,
-.tm-circle-text .icon .lightgallery-trigger i {
+.mh-circle-text .icon .video-popup-link i,
+.mh-circle-text .icon .lightgallery-trigger i {
   font-size: 36px;
   transition: transform 0.3s ease;
 }
-.tm-circle-text .icon .video-popup-link:hover i,
-.tm-circle-text .icon .lightgallery-trigger:hover i {
+.mh-circle-text .icon .video-popup-link:hover i,
+.mh-circle-text .icon .lightgallery-trigger:hover i {
   transform: scale(1.2);
 }
-.tm-circle-text .icon img {
+.mh-circle-text .icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;

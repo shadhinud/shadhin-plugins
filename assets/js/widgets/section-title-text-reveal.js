@@ -3,7 +3,7 @@
 
     var WidgetSectionTitleTextRevealHandler = function ($scope) {
         setTimeout(function () {
-            var textheading = $scope.find(".title.tm-text-reveal");
+            var textheading = $scope.find(".title.mh-text-reveal");
 
             if(textheading.length == 0) return;
 
@@ -15,7 +15,7 @@
                     linesClass: "split-line"
                 });
 
-                if( $(el).hasClass('tm-text-reveal') ){
+                if( $(el).hasClass('mh-text-reveal') ){
                     var initialOpacity = $(el).data('reveal-opacity');
                     if( initialOpacity === undefined || initialOpacity === null ) {
                         initialOpacity = 0.3;
@@ -51,7 +51,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-section-title.default",
+            "frontend/element_ready/mh-ele-section-title.default",
             WidgetSectionTitleTextRevealHandler
         );
     });

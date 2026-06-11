@@ -2,7 +2,7 @@
     "use strict";
 
     var WidgetWorkingBlockHandler = function ($scope) {
-        var $swiper_wrapper = $scope.find(".tm-swiper-container");
+        var $swiper_wrapper = $scope.find(".mh-swiper-container");
         if ($swiper_wrapper.length === 0) return;
 
         $swiper_wrapper.each(function () {
@@ -40,8 +40,8 @@
                 autoplay:       autoplay_var,
 
                 navigation: {
-                    nextEl: this_item.find(".tm-swiper-button-next")[0],
-                    prevEl: this_item.find(".tm-swiper-button-prev")[0],
+                    nextEl: this_item.find(".mh-swiper-button-next")[0],
+                    prevEl: this_item.find(".mh-swiper-button-prev")[0],
                 },
                 pagination: {
                     el:        this_item.find(".swiper-pagination")[0],
@@ -79,7 +79,7 @@
     // elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-working-block.skin-style1",
+            "frontend/element_ready/mh-ele-working-block.skin-style1",
             WidgetWorkingBlockHandler
         );
     });

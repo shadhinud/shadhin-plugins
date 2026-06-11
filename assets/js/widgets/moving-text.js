@@ -20,9 +20,9 @@
             getDefaultSettings() {
                 return {
                     selectors: {
-                        pathContainer: '.tm-moving-text',
-                        svg: '.tm-moving-text > svg',
-                        line: '.tm-moving-text > .simple_line',
+                        pathContainer: '.mh-moving-text',
+                        svg: '.mh-moving-text > svg',
+                        line: '.mh-moving-text > .simple_line',
                     }
                 };
             }
@@ -44,7 +44,7 @@
                 this.elements = this.getDefaultElements(); // Generate unique IDs using the wrapper's `data-id`.
 
                 this.pathId = "wgl-path-".concat(this.elements.widgetWrapper.dataset.id);
-                this.textPathId = "tm-moving-text-".concat(this.elements.widgetWrapper.dataset.id);
+                this.textPathId = "mh-moving-text-".concat(this.elements.widgetWrapper.dataset.id);
 
                 if (!this.elements.svg && !this.elements.line) {
                     return;
@@ -541,7 +541,7 @@
                 if(this.elements.pathContainer.dataset.typeSvg === 'circle'){
                     let rotate = 360 * this.startOffset.value / 100;
                     this.elements.svg.style.transform = 'rotate(' + rotate + 'deg)';
-                }else if(this.elements.pathContainer.dataset.typeSvg === 'mascot_line_simple'){
+                }else if(this.elements.pathContainer.dataset.typeSvg === 'shadhin_line_simple'){
                     this.elements.line.style.transform = 'translateX(' + this.startOffset.value + 'px)';
                 }else{
                     this.elements.textPath.setAttribute('startOffset', this.startOffset.value + '%');
@@ -559,7 +559,7 @@
                     case 'line':
                         divider = '//';
                         break;
-                    
+
                     case 'arrow':
                         divider = '<svg viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><path d="M18.6742 30.3182L13.2701 30.2776L13.1406 13.0492L13.1316 11.8549L12.287 12.6994L5.30318 19.6833L1.44794 15.828L15.7504 1.52543L30.2803 16.0555L26.4931 19.8426L19.3983 12.7477L18.5355 11.8849L18.5447 13.105L18.6742 30.3182Z"/></svg>';
                         break;
@@ -595,7 +595,7 @@
             });
         };
 
-        elementorFrontend.hooks.addAction('frontend/element_ready/tm-ele-moving-text.default', addHandler);
+        elementorFrontend.hooks.addAction('frontend/element_ready/mh-ele-moving-text.default', addHandler);
     });
 
 })(jQuery);

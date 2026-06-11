@@ -1,6 +1,6 @@
 
 <?php if ( $enabled_social_networks ) : ?>
-	<div class="tm-social-share-icons">
+	<div class="mh-social-share-icons">
 		<div class="title"><i class="fa fa-share-alt"></i> <?php echo esc_html( $sharing_heading );?></div>
 		<?php
 			if( $social_icon_type == 'icon' ) {

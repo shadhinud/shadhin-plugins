@@ -1,6 +1,6 @@
 @import "../bootstrap-loader";
 
-.tm-bg-angle-left-right {
+.mh-bg-angle-left-right {
   &:after {
     //border-left: 50px solid var(--theme-color1);
     //border-top: 62px solid transparent;
@@ -12,7 +12,7 @@
   }
 }
 .elementor-hide-under-1201 {
-  .tm-bg-angle-left-right {
+  .mh-bg-angle-left-right {
     @media (max-width: 1200px) {
       &:after {
         display: none;

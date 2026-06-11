@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Skin_Pricing_Style2 extends Elementor_Skin_Base {
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/tm-ele-pricing-plan/sub_title_options/after_section_end', [ $this, 'register_layout_controls' ] );
+		add_action( 'elementor/element/mh-ele-pricing-plan/sub_title_options/after_section_end', [ $this, 'register_layout_controls' ] );
 	}
 
 	public function get_id() {
@@ -38,7 +38,7 @@ class Skin_Pricing_Style2 extends Elementor_Skin_Base {
 				'name' => 'title_head_section_background',
 				'label' => esc_html__( 'Head Background', 'shadhin-plugins' ),
 				'types' => [ 'classic', 'gradient', 'video' ],
-				'selector' => '{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-head',
+				'selector' => '{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-head',
 			]
 		);
 		$this->add_control(
@@ -49,7 +49,7 @@ class Skin_Pricing_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-head' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-head' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -61,7 +61,7 @@ class Skin_Pricing_Style2 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}}:hover .tm-sc-pricing-plan .pricing-plan-head' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}}:hover .mh-sc-pricing-plan .pricing-plan-head' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -72,7 +72,7 @@ class Skin_Pricing_Style2 extends Elementor_Skin_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-sc-pricing-plan .pricing-plan-head' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .mh-sc-pricing-plan .pricing-plan-head' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -83,7 +83,7 @@ class Skin_Pricing_Style2 extends Elementor_Skin_Base {
 		$settings = $this->parent->get_settings_for_display();
 
 		$direction_suffix = is_rtl() ? '.rtl' : '';
-		wp_enqueue_style( 'tm-pricing-skin-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-skin-style2' . $direction_suffix . '.css' );
+		wp_enqueue_style( 'mh-pricing-skin-style2', SHADHIN_PLUGINS_ASSETS_URI . '/css/shortcodes/pricing-plan/pricing-skin-style2' . $direction_suffix . '.css' );
 
 
 		//link url

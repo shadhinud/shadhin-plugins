@@ -30,7 +30,7 @@ if( ! function_exists('shadhin_plugins_add_elementor_widget_categories') ) {
 			$elements_manager->add_category(
 				'tm',
 				[
-					'title' => esc_html__('Mascot', 'shadhin-plugins'),
+					'title' => esc_html__('Shadhin', 'shadhin-plugins'),
 					'icon' => 'fa fa-plug',
 				]
 			);

@@ -93,7 +93,7 @@ class MH_Elementor_InfoBanner extends Widget_Base {
 	* @return array Widget scripts dependencies.
 	*/
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'mh-info-banner-advanced-script' ];
+		return [ 'shadhin-core-hellojs', 'mh-info-banner-advanced-script' ];
 	}
 
 	public function get_style_depends() {

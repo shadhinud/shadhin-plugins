@@ -4,7 +4,7 @@
  * Shortcode: funfacts.scss
  * -----------------------------------------------
 */
-.tm-sc-funfact {
+.mh-sc-funfact {
   @include transition(all 0.3s ease);
   position: relative;
   .funfact-inner {
@@ -85,7 +85,7 @@
     }
   }
 
-  &.tm-animate-hover {
+  &.mh-animate-hover {
     &:hover {
       &.icon-rotate {
         .funfact-icon {

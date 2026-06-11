@@ -1,4 +1,4 @@
-.tm-sc-info-banner-advanced {
+.mh-sc-info-banner-advanced {
   position: relative;
   overflow: hidden;
   .info-banner-inner {
@@ -16,7 +16,7 @@
       left: 0;
       position: absolute;
       z-index: -1;
-      @include transition(all .3s ease);
+      @include transition(all 0.3s ease);
       @include scale(1);
     }
     .banner-background-overlay {
@@ -38,7 +38,7 @@
       align-items: end;
       img {
         width: 290px;
-        @include transition(all .3s ease);
+        @include transition(all 0.3s ease);
         @include scale(1);
       }
       .floating-img {
@@ -64,20 +64,25 @@
       span.btn-text {
         position: relative;
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
           width: 100%;
           height: 1px;
           background-color: currentColor;
-          transition: background-color 0.25s ease-in-out, width 0.36s cubic-bezier(0.51, 0.5, 0.07, 0.99);
+          transition:
+            background-color 0.25s ease-in-out,
+            width 0.36s cubic-bezier(0.51, 0.5, 0.07, 0.99);
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
         }
       }
-      i, svg {
-        transition: transform 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93), opacity 0.2s ease-in-out;
+      i,
+      svg {
+        transition:
+          transform 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93),
+          opacity 0.2s ease-in-out;
         transform: translateX(0);
         will-change: transform;
       }
@@ -87,7 +92,8 @@
             width: 0;
           }
         }
-        i, svg {
+        i,
+        svg {
           transform: translateX(4px);
         }
       }
@@ -95,7 +101,9 @@
     .info-banner-text-holder-wrapper {
       .info-banner-text-holder {
         .info-banner-text-holder-inner {
-          .title, .subtitle, .text-paragraph {
+          .title,
+          .subtitle,
+          .text-paragraph {
           }
         }
       }
@@ -118,9 +126,8 @@
   }
 }
 
-
-.tm-inner-border-around-wrapper-yes {
-  .tm-sc-info-banner-advanced {
+.mh-inner-border-around-wrapper-yes {
+  .mh-sc-info-banner-advanced {
     &:before {
       position: absolute;
       left: 20px;
@@ -135,11 +142,10 @@
   }
 }
 
-
-.tm-circle-animation-yes {
-  .tm-sc-info-banner-advanced {
+.mh-circle-animation-yes {
+  .mh-sc-info-banner-advanced {
     position: relative;
-    &:after{
+    &:after {
       position: absolute;
       left: -40px;
       top: -60px;
@@ -147,22 +153,21 @@
       width: 180px;
       background: #111;
       border-radius: 50%;
-      opacity: .03;
+      opacity: 0.03;
       content: "";
       transition: all 500ms ease;
       z-index: 0;
     }
     &:hover {
       &:after {
-        transform: scale(1.3)
+        transform: scale(1.3);
       }
     }
   }
 }
 
-
-.tm-bg-img-zoom-animation-yes {
-  .tm-sc-info-banner-advanced {
+.mh-bg-img-zoom-animation-yes {
+  .mh-sc-info-banner-advanced {
     &:hover {
       .info-banner-inner {
         .banner-background {

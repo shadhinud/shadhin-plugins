@@ -1,6 +1,6 @@
 @import "../bootstrap-loader";
 
-.tm-sc-simple-nav-menu {
+.mh-sc-simple-nav-menu {
   ul {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@
           color: #aaa;
         }
       }
-      .tm-nav-arrow-icon {
+      .mh-nav-arrow-icon {
         color: var(--theme-color1);
         display: flex;
         justify-content: center;
@@ -50,7 +50,7 @@
       padding-right: 3px;
     }
   }
-  .tm-animate-hover {
+  .mh-animate-hover {
     &.icon-rotate {
       li {
         &:hover {

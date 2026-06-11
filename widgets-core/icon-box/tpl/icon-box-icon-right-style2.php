@@ -1,5 +1,5 @@
 <?php $settings['settings'] = $settings;?>
-<div class="tm-sc-icon-box icon-box icon-right icon-right-style2 <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-icon-box icon-box icon-right icon-right-style2 <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<?php shadhin_plugins_get_widgetcore_template_part( 'bgimg-hover', null, 'icon-box/tpl', $settings, false );?>
 	<div class="icon-box-wrapper">
 		<div class="icon-right-block">

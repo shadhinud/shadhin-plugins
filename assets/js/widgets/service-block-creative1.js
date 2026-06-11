@@ -22,7 +22,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-service-block.skin-creative1",
+            "frontend/element_ready/mh-ele-service-block.skin-creative1",
             WidgetServiceBlockCreative1Handler
         );
     });

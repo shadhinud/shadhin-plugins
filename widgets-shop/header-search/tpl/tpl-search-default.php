@@ -1,4 +1,4 @@
-<div class="tm-widget-search-form">
+<div class="mh-widget-search-form">
     <form role="search" method="get" class="search-form-default" action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <input type="search" class="form-control search-field" placeholder="<?php echo esc_attr( $placeholder_text ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" />
         <button type="submit" class="search-submit"><i class="lnr lnr-icon-search"></i></button>

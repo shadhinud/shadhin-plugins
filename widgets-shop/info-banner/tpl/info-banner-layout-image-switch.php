@@ -1,5 +1,5 @@
 <?php $settings['settings'] = $settings;?>
-<div class="tm-sc-info-banner-advanced <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-info-banner-advanced <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<div class="info-banner-inner">
 		<div class="banner-background"></div>
 		<div class="banner-background-overlay"></div>

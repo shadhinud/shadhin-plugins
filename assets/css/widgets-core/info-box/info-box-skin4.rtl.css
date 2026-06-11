@@ -1,8 +1,8 @@
-.tm-info-box-skin4 {
+.mh-info-box-skin4 {
   position: relative;
   margin-bottom: 30px;
 }
-.tm-info-box-skin4 .info-box-wrapper {
+.mh-info-box-skin4 .info-box-wrapper {
   position: relative;
   display: block;
   padding: 50px 45px 40px;
@@ -13,7 +13,7 @@
   overflow: hidden;
   transition: all 0.4s ease-in-out;
 }
-.tm-info-box-skin4 .info-box-wrapper .top-shape {
+.mh-info-box-skin4 .info-box-wrapper .top-shape {
   position: absolute;
   left: 0;
   top: 0;
@@ -26,7 +26,7 @@
   border-radius: 10px;
   transition: all 0.6s ease 0.2s;
 }
-.tm-info-box-skin4 .info-box-wrapper .bottom-shape {
+.mh-info-box-skin4 .info-box-wrapper .bottom-shape {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -39,7 +39,7 @@
   border-radius: 10px;
   transition: all 0.6s ease 0.2s;
 }
-.tm-info-box-skin4 .info-box-wrapper .icon-wrapper {
+.mh-info-box-skin4 .info-box-wrapper .icon-wrapper {
   position: relative;
   color: var(--theme-color1);
   font-size: 64px;
@@ -47,35 +47,35 @@
   margin-bottom: 20px;
   transition: all 0.3s ease-in-out;
 }
-.tm-info-box-skin4 .info-box-wrapper:hover {
+.mh-info-box-skin4 .info-box-wrapper:hover {
   background: var(--theme-color1);
 }
-.tm-info-box-skin4 .info-box-wrapper:hover .top-shape {
+.mh-info-box-skin4 .info-box-wrapper:hover .top-shape {
   transform: translate(0%, 0%);
   background: rgba(250, 250, 250, 0.01);
 }
-.tm-info-box-skin4 .info-box-wrapper:hover .bottom-shape {
+.mh-info-box-skin4 .info-box-wrapper:hover .bottom-shape {
   transform: translate(0%, 0%);
   background: rgba(250, 250, 250, 0.01);
 }
-.tm-info-box-skin4 .info-box-wrapper:hover .icon-wrapper {
+.mh-info-box-skin4 .info-box-wrapper:hover .icon-wrapper {
   color: #fff;
 }
-.tm-info-box-skin4 .info-box-wrapper:hover .title {
+.mh-info-box-skin4 .info-box-wrapper:hover .title {
   color: #ffffff;
 }
-.tm-info-box-skin4 .info-box-wrapper:hover .title a {
+.mh-info-box-skin4 .info-box-wrapper:hover .title a {
   color: #ffffff;
 }
-.tm-info-box-skin4 .info-box-wrapper:hover .text {
+.mh-info-box-skin4 .info-box-wrapper:hover .text {
   color: #fff;
 }
-.tm-info-box-skin4 .text {
+.mh-info-box-skin4 .text {
   position: relative;
   display: block;
   z-index: 1;
 }
-.tm-info-box-skin4 .link-box {
+.mh-info-box-skin4 .link-box {
   position: absolute;
   left: 3px;
   bottom: 8px;
@@ -83,13 +83,13 @@
   height: 30px;
   z-index: 1;
 }
-.tm-info-box-skin4 .link-box a {
+.mh-info-box-skin4 .link-box a {
   position: relative;
   line-height: 30px;
   font-size: 20px;
   color: #ffffff;
 }
-.tm-info-box-skin4:after {
+.mh-info-box-skin4:after {
   content: "";
   background: blue;
   position: absolute;

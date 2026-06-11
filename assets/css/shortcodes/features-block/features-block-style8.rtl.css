@@ -1,9 +1,9 @@
-.tm-sc-features .icon {
+.mh-sc-features .icon {
   display: inline-block;
 }
-.tm-sc-features .icon,
-.tm-sc-features .features-title,
-.tm-sc-features .features-details {
+.mh-sc-features .icon,
+.mh-sc-features .features-title,
+.mh-sc-features .features-details {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }

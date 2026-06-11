@@ -1,12 +1,12 @@
-.tm-product-category-default {
+.mh-product-category-default {
   .cat-image {
     display: flex;
     justify-content: center;
-    a{
+    a {
       display: inline-block;
       position: relative;
       text-align: center;
-      &:before{
+      &:before {
         content: "";
         position: absolute;
         width: 210px;
@@ -20,26 +20,26 @@
         transition: all 0.3s ease;
       }
     }
-    img{
+    img {
       transition: all 0.3s ease;
     }
   }
-  .cat-details{
+  .cat-details {
     text-align: center;
-    .cat-title{
+    .cat-title {
       margin-top: 0;
       margin-bottom: 10px;
-      a{
+      a {
       }
     }
-    .count{
+    .count {
       display: block;
       font-size: 15px;
     }
   }
-  &:hover{
+  &:hover {
     .cat-image {
-      img{
+      img {
         transform: scale(1.04);
       }
     }

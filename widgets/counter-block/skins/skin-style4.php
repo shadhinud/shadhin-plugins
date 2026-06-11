@@ -53,7 +53,7 @@ class Skin_Style4 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter .count-box' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .shadhin-counter .count-box' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -65,7 +65,7 @@ class Skin_Style4 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter .count-box' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .shadhin-counter .count-box' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -83,7 +83,7 @@ class Skin_Style4 extends Elementor_Skin_Base {
 				'label' => esc_html__( "Custom Background Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter:hover .count-box' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .shadhin-counter:hover .count-box' => 'background-color: {{VALUE}};'
 				]
 			]
 		);
@@ -95,7 +95,7 @@ class Skin_Style4 extends Elementor_Skin_Base {
 				'options' => shadhin_plugins_theme_color_list(),
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter:hover .count-box' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .shadhin-counter:hover .count-box' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -116,7 +116,7 @@ class Skin_Style4 extends Elementor_Skin_Base {
 			[
 				'name' => 'current_skin_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .mascot-counter .count-box',
+				'selector' => '{{WRAPPER}} .shadhin-counter .count-box',
 			]
 		);
 		$this->add_responsive_control(
@@ -126,7 +126,7 @@ class Skin_Style4 extends Elementor_Skin_Base {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .mascot-counter .count-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .shadhin-counter .count-box' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);

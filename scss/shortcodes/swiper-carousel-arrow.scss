@@ -1,7 +1,7 @@
 @import "../bootstrap-loader";
-.tm-swiper-carousel-arrow-wrap {
+.mh-swiper-carousel-arrow-wrap {
   display: flex;
-  .tm-swiper-arrow {
+  .mh-swiper-arrow {
     cursor: pointer;
     background-color: var(--theme-color-white);
     display: flex;
@@ -39,13 +39,13 @@
       }
     }
 
-    &.tm-swiper-arrow-prev {
+    &.mh-swiper-arrow-prev {
       margin-right: 12px;
     }
   }
 
   &.style1 {
-    .tm-swiper-arrow {
+    .mh-swiper-arrow {
       width: 52px;
       height: 52px;
       -webkit-border-radius: 50%;
@@ -58,17 +58,17 @@
   }
 
   &.style2 {
-    .tm-swiper-arrow {
+    .mh-swiper-arrow {
       width: 60px;
       height: 60px;
     }
   }
 
-  .tm-swiper-arrow {
-    &.tm-swiper-arrow-prev:hover i::before {
+  .mh-swiper-arrow {
+    &.mh-swiper-arrow-prev:hover i::before {
       content: "\e879";
     }
-    &.tm-swiper-arrow-next:hover i::before {
+    &.mh-swiper-arrow-next:hover i::before {
       content: "\e87a";
     }
   }

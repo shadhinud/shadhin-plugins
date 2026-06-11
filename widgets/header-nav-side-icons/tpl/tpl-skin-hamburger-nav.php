@@ -13,7 +13,7 @@
 						'container'			=> '',
 						'link_before'		=> '<span>',
 						'link_after'		=> '</span>',
-						'walker'			=> new Mascot_Theme_Nav_Walker
+						'walker'			=> new Shadhin_Theme_Nav_Walker
 					)
 				);
 			?>

@@ -1,7 +1,7 @@
 @import "../bootstrap-loader";
 
 //1 - default search
-.tm-widget-search-form {
+.mh-widget-search-form {
   .search-form-default {
     position: relative;
     margin: 0px;
@@ -118,7 +118,7 @@
 }
 
 //3 - search icon
-.tm-widget-search-form {
+.mh-widget-search-form {
   .icon-search-popup {
     font-size: 22px;
     color: #2f382f;
@@ -183,7 +183,10 @@
         width: 26px;
         height: 2px;
         background-color: #222;
-        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, width 0.2s ease-in-out;
+        transition:
+          background-color 0.2s ease-in-out,
+          transform 0.2s ease-in-out,
+          width 0.2s ease-in-out;
         right: 0;
         @include transform(rotate(-45deg));
       }

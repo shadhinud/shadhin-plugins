@@ -1,4 +1,4 @@
-.tm-sc-info-banner-advanced.tm-layout-center {
+.mh-sc-info-banner-advanced.mh-layout-center {
   position: relative;
   overflow: hidden;
   .info-banner-inner {
@@ -18,7 +18,9 @@
           .subtitle,
           .btn-view-details {
             opacity: 0;
-            transition: opacity .23s ease-out,transform .28s ease-out;
+            transition:
+              opacity 0.23s ease-out,
+              transform 0.28s ease-out;
           }
 
           .subtitle {
@@ -48,5 +50,3 @@
     }
   }
 }
-
-

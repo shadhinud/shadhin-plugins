@@ -1,19 +1,19 @@
-.tm-gallery-item-currenty-style3 {
+.mh-gallery-item-currenty-style3 {
   position: relative;
 }
-.tm-gallery-item-currenty-style3 .inner-box:hover .image-box:before {
+.mh-gallery-item-currenty-style3 .inner-box:hover .image-box:before {
   height: 0%;
 }
-.tm-gallery-item-currenty-style3 .inner-box:hover .image-box .image img {
+.mh-gallery-item-currenty-style3 .inner-box:hover .image-box .image img {
   transform: scale(1.1);
 }
-.tm-gallery-item-currenty-style3 .inner-box:hover .image-box .title:before {
+.mh-gallery-item-currenty-style3 .inner-box:hover .image-box .title:before {
   transform: scale(1);
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box {
+.mh-gallery-item-currenty-style3 .inner-box .image-box {
   position: relative;
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box:before {
+.mh-gallery-item-currenty-style3 .inner-box .image-box:before {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -25,15 +25,15 @@
   transition: all 300ms ease;
   content: "";
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box .image {
+.mh-gallery-item-currenty-style3 .inner-box .image-box .image {
   position: relative;
   overflow: hidden;
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box .image img {
+.mh-gallery-item-currenty-style3 .inner-box .image-box .image img {
   width: 100%;
   transition: all 0.3s ease;
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box .title {
+.mh-gallery-item-currenty-style3 .inner-box .image-box .title {
   position: absolute;
   bottom: 48px;
   right: 50%;
@@ -48,7 +48,7 @@
   transition: all 300ms ease;
   z-index: 3;
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box .title:before {
+.mh-gallery-item-currenty-style3 .inner-box .image-box .title:before {
   content: "";
   position: absolute;
   right: 0;
@@ -61,7 +61,7 @@
   transition: all 300ms ease;
   z-index: -1;
 }
-.tm-gallery-item-currenty-style3 .inner-box .image-box .title:after {
+.mh-gallery-item-currenty-style3 .inner-box .image-box .title:after {
   content: "";
   position: absolute;
   top: 0;

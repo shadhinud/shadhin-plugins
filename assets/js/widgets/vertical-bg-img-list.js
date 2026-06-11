@@ -43,11 +43,11 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-vertical-bg-img-list.default",
+            "frontend/element_ready/mh-ele-vertical-bg-img-list.default",
             WidgetVerticalBGImageListHandler
         );
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-vertical-bg-img-list.skin-style2",
+            "frontend/element_ready/mh-ele-vertical-bg-img-list.skin-style2",
             WidgetVerticalBGImageListHandler
         );
     });

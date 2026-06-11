@@ -92,7 +92,7 @@ class MH_Elementor_Vertical_Bg_Img_List extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'mh-vertical-bg-img-list' ];
+		return [ 'shadhin-core-hellojs', 'mh-vertical-bg-img-list' ];
 	}
 
 	public function get_style_depends() {

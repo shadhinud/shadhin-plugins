@@ -3,30 +3,30 @@
 
     var elementorBlogSlider = {};
 
-    elementorBlogSlider.MascotCoreElementorInitScript = MascotCoreElementorInitScript;
+    elementorBlogSlider.ShadhinCoreElementorInitScript = ShadhinCoreElementorInitScript;
 
 
-    elementorBlogSlider.MascotCoreElementorOnWindowLoad = MascotCoreElementorOnWindowLoad;
+    elementorBlogSlider.ShadhinCoreElementorOnWindowLoad = ShadhinCoreElementorOnWindowLoad;
 
-    $(window).load(MascotCoreElementorOnWindowLoad);
+    $(window).load(ShadhinCoreElementorOnWindowLoad);
 
     /*
      ** All functions to be called on $(window).load() should be in this function
      */
-    function MascotCoreElementorOnWindowLoad() {
+    function ShadhinCoreElementorOnWindowLoad() {
 
         var isEditMode = Boolean(elementorFrontend.isEditMode());
         if (isEditMode) {
-            MascotCoreElementorInitScript();
+            ShadhinCoreElementorInitScript();
         }
     }
 
-    function MascotCoreElementorInitScript(){
+    function ShadhinCoreElementorInitScript(){
         $(window).on('elementor/frontend/init', function () {
             elementorFrontend.hooks.addAction( 'frontend/element_ready/init', function() {
             // Do something that is based on the elementorFrontend object.
             } );
-            elementorFrontend.hooks.addAction( 'frontend/element_ready/tm-ele-animated-layers.default', function() {
+            elementorFrontend.hooks.addAction( 'frontend/element_ready/mh-ele-animated-layers.default', function() {
             } );
             elementorFrontend.hooks.addAction( 'frontend/element_ready/global', function( $scope ) {
             } );

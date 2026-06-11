@@ -1,7 +1,7 @@
 @import "../bootstrap-loader";
 
-.tm-absolute-content {
-  content: '';
+.mh-absolute-content {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -15,60 +15,61 @@
       position: relative;
       overflow: hidden;
       border-radius: 5px;
-      @include box-shadow(0 10px 20px rgba(#8997BA, 0.25));
+      @include box-shadow(0 10px 20px rgba(#8997ba, 0.25));
       margin-bottom: 22px;
       &:before {
-        @extend .tm-absolute-content;
-        background-color: #1C2539;
+        @extend .mh-absolute-content;
+        background-color: #1c2539;
         @include transition(all 250ms linear 0ms);
         opacity: 0;
       }
     }
     .showcase-buttons {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        @include transform(translate(0, -50%));
-        z-index: 99;
-        text-align: center;
-        .btn {
-            color: #fff;
-            line-height: 44px;
-            padding: 0 22px;
-            font-size: 15px;
-            min-width: 125px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      @include transform(translate(0, -50%));
+      z-index: 99;
+      text-align: center;
+      .btn {
+        color: #fff;
+        line-height: 44px;
+        padding: 0 22px;
+        font-size: 15px;
+        min-width: 125px;
+      }
+      .showcase-button {
+        opacity: 0;
+        @include transition(all 250ms linear 0ms);
+        &:nth-child(1) {
+          transform: translateY(-20px);
         }
-        .showcase-button {
-            opacity: 0;
-            @include transition(all 250ms linear 0ms);
-            &:nth-child(1) {
-                transform: translateY(-20px);
-            }
-            &:nth-child(2) {
-                transform: translateY(20px);
-            }
-            + .showcase-button {
-                margin-top: 12px;
-            }
-            .btn-secondary {
-                &:hover {
-                }
-            }
+        &:nth-child(2) {
+          transform: translateY(20px);
         }
+        + .showcase-button {
+          margin-top: 12px;
+        }
+        .btn-secondary {
+          &:hover {
+          }
+        }
+      }
     }
     .showcase-title {
-        font-size: 17px;
-        margin-bottom: 0;
-        color: #1C2539;
-        a {
-            color: inherit;
-            font-size: inherit;
-            font-family: inherit;
-            font-weight: inherit;
-        }
+      font-size: 17px;
+      margin-bottom: 0;
+      color: #1c2539;
+      a {
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+      }
     }
-    &:hover, &.item-active {
+    &:hover,
+    &.item-active {
       .showcase-buttons .showcase-button {
         transform: translateY(0px);
         opacity: 1;

@@ -41,7 +41,7 @@
           -webkit-box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
           content: "";
-          [data-tm-layout="dark"] & {
+          [data-mh-layout="dark"] & {
             background-color: #141212;
           }
         }

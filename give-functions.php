@@ -55,7 +55,7 @@ function shadhin_plugins_goal_progress($form_id, $args) {
   ?>
 	<?php if ( ! empty( $show_bar ) ) : ?>
 	<div class="give-goal-progress-bar">
-		<div class="tm-sc-progress-bar" data-percent="<?php echo esc_attr( $progress_bar_value );?>" data-unit-right="%">
+		<div class="mh-sc-progress-bar" data-percent="<?php echo esc_attr( $progress_bar_value );?>" data-unit-right="%">
 			<div class="progress-holder">
 				<div class="progress-content"></div>
 			</div>
@@ -94,7 +94,7 @@ function shadhin_plugins_give_progress_bar($total_earnings, $total_goal) {
 
   ?>
   <div class="give-goal-progress-bar">
-    <div class="tm-sc-progress-bar" data-percent="<?php echo esc_attr( $progress );?>" data-unit-right="%">
+    <div class="mh-sc-progress-bar" data-percent="<?php echo esc_attr( $progress );?>" data-unit-right="%">
       <div class="progress-holder">
         <div class="progress-content"></div>
       </div>

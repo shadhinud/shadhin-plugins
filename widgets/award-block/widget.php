@@ -94,7 +94,7 @@ class MH_Elementor_AwardBlock extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 
 	public function get_style_depends() {

@@ -1,4 +1,4 @@
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn {
   position: relative;
   padding: 10px 10px;
   padding-left: 100px;
@@ -12,45 +12,45 @@
   min-height: 90px;
   margin-bottom: 20px;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:last-child {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 991.98px) {
-  .tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:after, .tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn::before {
+  .mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:after, .mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn::before {
     display: none;
   }
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn .sub-icon {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn .sub-icon {
   margin-left: 10px;
   font-size: 12px;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:hover {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:hover {
   color: #fff;
   background-color: var(--theme-color1);
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:hover .icon {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:hover .icon {
   background-color: var(--theme-color4);
   color: #fff;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:hover:before {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:hover:before {
   background-color: var(--theme-color4);
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn {
   color: #fff;
   background-color: var(--theme-color1);
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn .icon {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn .icon {
   background-color: var(--theme-color4);
   color: #fff;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn:before {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn:before {
   background-color: var(--theme-color4);
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn:after {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn.active-btn:after {
   border-left: 20px solid var(--theme-color4);
   opacity: 1;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:before {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:before {
   position: absolute;
   left: 100%;
   top: 50%;
@@ -61,7 +61,7 @@
   background-color: var(--theme-color1);
   transition: all 300ms ease;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:after {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn:after {
   position: absolute;
   left: 100%;
   top: 50%;
@@ -73,7 +73,7 @@
   opacity: 0;
   transition: all 300ms ease;
 }
-.tm-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn .icon {
+.mh-interactive-tabs.tabs-skin-style1 .tab-buttons .tab-btn .icon {
   position: absolute;
   left: 10px;
   top: 10px;

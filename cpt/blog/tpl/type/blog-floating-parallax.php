@@ -1,7 +1,7 @@
 <?php $settings['post_format'] = get_post_format(get_the_ID()) ? : 'standard'; $settings['settings'] = $settings; ?>
 <?php if ( $the_query->have_posts() ) : ?>
 	<?php wp_enqueue_script( 'jquery-parallax-scroll' ); ?>
-	<div class="tm-sc-blog tm-sc-blog-floating-parallax <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-blog mh-sc-blog-floating-parallax <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<?php include('filter.php'); ?>
 
 		<!-- Isotope Gallery Grid -->
@@ -13,7 +13,7 @@
 				<?php $iter = 1; while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<?php include('filter-term-list-each-post.php'); ?>
 				<div class="isotope-item floating-posts-holder <?php $floating_class = ( $iter++ % 2 == 0 ) ? 'floating-item-even' : 'floating-posts-odd';  echo esc_attr( $floating_class );?> <?php echo esc_attr( $term_slugs_list_string );?>">
-					<div class="isotope-item-inner tm-smooth-parallax-scroll" data-parallax='{"y": -<?php echo esc_attr( rand(50, 160) );?>, "smoothness": 20}'>
+					<div class="isotope-item-inner mh-smooth-parallax-scroll" data-parallax='{"y": -<?php echo esc_attr( rand(50, 160) );?>, "smoothness": 20}'>
 						<?php echo shadhin_plugins_shortcode_get_blog_post_format( get_post_format(), $settings ); ?>
 					</div>
 				</div>

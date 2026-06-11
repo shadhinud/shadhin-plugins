@@ -1,4 +1,4 @@
-.tm-product-category-current-theme4 {
+.mh-product-category-current-theme4 {
   position: relative;
   .content-wrapper {
     .content-inner {
@@ -47,14 +47,14 @@
           @include transition(all 300ms ease);
         }
       }
-      .cat-details{
-        .cat-title{
+      .cat-details {
+        .cat-title {
           font-family: var(--body-font-family);
           font-size: 18px;
           font-weight: 700;
         }
       }
-      &:hover{
+      &:hover {
         .cat-image {
           .icon {
             background-color: #d7a955;

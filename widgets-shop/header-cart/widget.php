@@ -92,7 +92,7 @@ class MH_Elementor_Header_Cart extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'mh-header-cart' ];
+		return [ 'shadhin-core-hellojs', 'mh-header-cart' ];
 	}
 
 	/**

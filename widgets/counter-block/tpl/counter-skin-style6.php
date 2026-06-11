@@ -10,7 +10,7 @@ if(isset($wow_animation_delay) && !empty($wow_animation_delay)) {
 	$animation_delay = $wow_animation_delay . 'ms';
 }
 ?>
-<div class="counter-block-six mascot-counter <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
+<div class="counter-block-six shadhin-counter <?php echo esc_attr($animation);?>" data-wow-delay="<?php echo esc_attr($animation_delay);?>">
 	<div class="inner">
 		<?php if ( $show_icon_image == 'yes' ): ?>
 			<?php shadhin_plugins_get_shortcode_template_part( 'icon-type', $icon_type, 'counter-block/tpl', $settings, false );?>

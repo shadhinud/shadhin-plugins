@@ -1,6 +1,6 @@
-.tm-product-list-default {
+.mh-product-list-default {
   .elementor-widget-organey-products ul.products & {
-    .woocommerce-loop-product__title{
+    .woocommerce-loop-product__title {
       margin-top: 0;
     }
     .star-rating {
@@ -9,42 +9,42 @@
     }
   }
 
-  .product-list{
+  .product-list {
     list-style: none;
     .product {
-      .product-block{
+      .product-block {
         display: flex;
       }
-      .star-rating{
+      .star-rating {
         float: none;
         font-size: 0.7em;
       }
-      .content-left{
+      .content-left {
         padding-right: 15px;
         max-width: 110px;
-        img{
+        img {
           border-radius: 12px;
         }
       }
-      .content-right{
+      .content-right {
         flex: 1;
         padding-right: 15px;
 
-        .product-title{
+        .product-title {
           font-size: 16px;
           margin-top: 0;
           margin-bottom: 5px;
         }
-        .amount{
+        .amount {
           font-size: 15px;
         }
-        .star-rating{
+        .star-rating {
           margin-bottom: 5px;
         }
 
-        .woocommerce-loop-product__title{
+        .woocommerce-loop-product__title {
           margin-top: 5px;
-          + .star-rating{
+          + .star-rating {
             margin-bottom: 5px;
             margin-top: -5px;
             font-size: 12px;

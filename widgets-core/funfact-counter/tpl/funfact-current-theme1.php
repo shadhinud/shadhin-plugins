@@ -1,5 +1,5 @@
 <?php $settings['settings'] = $settings;?>
-<div class="tm-sc-funfact funfact-current-theme-style1">
+<div class="mh-sc-funfact funfact-current-theme-style1">
 	<div class="funfact-inner">
 		<?php if ( $show_icon_image == 'yes' ) : ?>
 			<?php shadhin_plugins_get_widgetcore_template_part( 'icon-type', $icon_type, 'funfact-counter/tpl', $settings, false );?>

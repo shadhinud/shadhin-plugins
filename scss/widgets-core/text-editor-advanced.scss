@@ -1,6 +1,6 @@
 @import "../bootstrap-loader";
 
-.elementor-widget-tm-ele-text-editor-advanced {
+.elementor-widget-mh-ele-text-editor-advanced {
   .elementor-widget-container {
     z-index: 0;
     position: relative;
@@ -15,18 +15,18 @@
       z-index: -1;
       @include transition(all 0.3s ease);
     }
-    .tm-text-editor-advanced {
+    .mh-text-editor-advanced {
       z-index: 1;
     }
   }
 }
 
-.tm-text-editor-advanced .each-item,
-.tm-text-editor-advanced .each-item * {
+.mh-text-editor-advanced .each-item,
+.mh-text-editor-advanced .each-item * {
   @include transition(all 0.3s ease);
 }
 
-.tm-text-editor,
-.tm-text-editor * {
+.mh-text-editor,
+.mh-text-editor * {
   @include transition(all 0.3s ease);
 }

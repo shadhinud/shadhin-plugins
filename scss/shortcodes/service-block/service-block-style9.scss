@@ -11,7 +11,7 @@
     padding: 35px 50px 25px;
     padding-left: 270px;
     background-color: #fff;
-    [data-tm-layout="dark"] & {
+    [data-mh-layout="dark"] & {
       background-color: #141212;
     }
     min-height: 260px;
@@ -37,7 +37,7 @@
       background-position: right bottom;
       content: "";
       @include transition(all 300ms linear);
-      [data-tm-layout="dark"] & {
+      [data-mh-layout="dark"] & {
         background-color: #141212;
       }
     }

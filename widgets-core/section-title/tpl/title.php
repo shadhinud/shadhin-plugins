@@ -15,8 +15,8 @@
 					$title_parts[] = $item['title_other_text'];
 				}
 				?>
-				<span class="tm-typed-text-animation-wrapper">
-					<span id="typed-text-animation-<?php echo esc_attr($holder_id);?>" class="tm-typed-text-animation"
+				<span class="mh-typed-text-animation-wrapper">
+					<span id="typed-text-animation-<?php echo esc_attr($holder_id);?>" class="mh-typed-text-animation"
 						data-typed-strings="<?php echo esc_attr(json_encode($title_parts)); ?>"
 						data-loop="<?php echo esc_attr( !empty($typed_loop) ? 1 : 0 ); ?>"
 						data-cursor="<?php echo esc_attr( !isset($typed_cursor) || !empty($typed_cursor) ? 1 : 0 ); ?>"
@@ -32,7 +32,7 @@
 				$title_part_classes = array();
 				$title_part_classes[] = 'elementor-repeater-item-' . esc_attr( $item['_id'] );
 				if( $item['title_other_slide_animation'] == 'yes' ) {
-					$title_part_classes[] = 'tm-onappear-slide-animation';
+					$title_part_classes[] = 'mh-onappear-slide-animation';
 				}
 				?>
 
@@ -44,7 +44,7 @@
 				$img = '<img src="' . esc_url( $item['cursor_mouseover_image']['url'] ) . '" alt="">';
 
 				?>
-				<a href="<?php if( $item['link_url'] ) { echo esc_url( $item['link_url'] ); } ?>" class="tm-floating-cursor-image-item" data-cursor-image="<?php echo esc_attr( $img );?>">
+				<a href="<?php if( $item['link_url'] ) { echo esc_url( $item['link_url'] ); } ?>" class="mh-floating-cursor-image-item" data-cursor-image="<?php echo esc_attr( $img );?>">
 					<span class="<?php echo esc_attr(implode(' ', $title_part_classes)); ?>"><?php echo esc_html( $item['title_other_text'] );?></span>
 				</a>
 				<?php } else if( $item['link_url'] ) { ?>

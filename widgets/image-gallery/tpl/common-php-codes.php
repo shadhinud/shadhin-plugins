@@ -3,7 +3,7 @@
 	$full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 	$full_image_url = $full_image_url[0];
 
-	$gallery_images = colek_mascot_get_rwmb_group_advanced( 'colek_mascot_' . "gallery_mb_settings",  "gallery_images", null, false, 'all' );
+	$gallery_images = colek_shadhin_get_rwmb_group_advanced( 'colek_shadhin_' . "gallery_mb_settings",  "gallery_images", null, false, 'all' );
 
 	//if has no post thumbnail
 	if( !has_post_thumbnail( get_the_ID() ) ) {
@@ -23,31 +23,31 @@
 	$params['term_names_list_string'] = $term_names_list_string = implode( ', ', $term_names_list );
 
 	if ( $use_masonry_tiles_featured_image_size == 'yes' ) :
-		$params['featured_image_size'] = $meta_featured_image_size = colek_mascot_get_rwmb_group( 'colek_mascot_' . "gallery_mb_settings", 'masonry_tiles_featured_image_size' );
+		$params['featured_image_size'] = $meta_featured_image_size = colek_shadhin_get_rwmb_group( 'colek_shadhin_' . "gallery_mb_settings", 'masonry_tiles_featured_image_size' );
 
-		$masonry_tiles_image_size_class = 'tm-masonry-default';
+		$masonry_tiles_image_size_class = 'mh-masonry-default';
 		switch ( $meta_featured_image_size ) {
-			case 'colek_mascot_height':
+			case 'colek_shadhin_height':
 				# code...
-				$masonry_tiles_image_size_class = 'tm-masonry-large-height';
+				$masonry_tiles_image_size_class = 'mh-masonry-large-height';
 				break;
 
-			case 'colek_mascot_wide':
+			case 'colek_shadhin_wide':
 				# code...
-				$masonry_tiles_image_size_class = 'tm-masonry-large-wide';
+				$masonry_tiles_image_size_class = 'mh-masonry-large-wide';
 				break;
 
-			case 'colek_mascot_width_height':
+			case 'colek_shadhin_width_height':
 				# code...
-				$masonry_tiles_image_size_class = 'tm-masonry-large-width-height';
+				$masonry_tiles_image_size_class = 'mh-masonry-large-width-height';
 				break;
 
 			case 'default':
-				$masonry_tiles_image_size_class = 'tm-masonry-default';
+				$masonry_tiles_image_size_class = 'mh-masonry-default';
 				$params['featured_image_size'] = $featured_image_size;
 				# code...
 				break;
-			
+
 			default:
 				# code...
 				break;

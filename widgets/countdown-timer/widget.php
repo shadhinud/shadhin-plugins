@@ -102,7 +102,7 @@ class MH_Elementor_Countdown_Timer extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'jquery-countdown', 'jquery-final-countdown', 'kinetic', 'mh-countdown-timer-current-style-script' ];
+		return [ 'shadhin-core-hellojs', 'jquery-countdown', 'jquery-final-countdown', 'kinetic', 'mh-countdown-timer-current-style-script' ];
 	}
 
 

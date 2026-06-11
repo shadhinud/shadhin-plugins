@@ -6,7 +6,7 @@
 	$swiper_slide_data_info = shadhin_plugins_swiper_data_params( $settings );
 ?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div id="<?php echo esc_attr( $holder_id ) ?>" class="tm-sc-projects tm-sc-projects-carousel tm-swiper-container <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>" <?php echo html_entity_decode( esc_attr( implode(' ', $swiper_slide_data_info) ) ) ?>>
+	<div id="<?php echo esc_attr( $holder_id ) ?>" class="mh-sc-projects mh-sc-projects-carousel mh-swiper-container <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>" <?php echo html_entity_decode( esc_attr( implode(' ', $swiper_slide_data_info) ) ) ?>>
 		<div class="swiper-container-inner">
 			<div class="swiper-wrapper">
 				<!-- the loop -->
@@ -21,9 +21,9 @@
 
 		<div class="swiper-pagination <?php if( $bullets !== 'yes' ) echo esc_attr( "d-none" ); ?>"></div>
 
-		<div class="tm-swiper-arrow tm-swiper-button-wrap <?php if( $arrow !== 'yes' ) echo esc_attr( "d-none" ); ?>">
-			<div class="tm-swiper-arrow tm-swiper-button-prev"><i class="lnr-icon-arrow-left"></i></div>
-			<div class="tm-swiper-arrow tm-swiper-button-next"><i class="lnr-icon-arrow-right"></i></div>
+		<div class="mh-swiper-arrow mh-swiper-button-wrap <?php if( $arrow !== 'yes' ) echo esc_attr( "d-none" ); ?>">
+			<div class="mh-swiper-arrow mh-swiper-button-prev"><i class="lnr-icon-arrow-left"></i></div>
+			<div class="mh-swiper-arrow mh-swiper-button-next"><i class="lnr-icon-arrow-right"></i></div>
 		</div>
 		<?php wp_reset_postdata(); ?>
 	</div>

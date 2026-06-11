@@ -98,7 +98,7 @@ class MH_Elementor_Vertical_Image_Slider extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'swiper', 'mh-vertical-image-slider' ];
+		return [ 'shadhin-core-hellojs', 'swiper', 'mh-vertical-image-slider' ];
 	}
 
 	/**

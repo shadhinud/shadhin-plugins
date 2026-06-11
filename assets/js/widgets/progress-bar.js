@@ -90,7 +90,7 @@
       $scope = $($scope);
     }
     // Search within the widget scope, not globally
-    var $progress_bar = $scope.find(".tm-sc-progress-bar");
+    var $progress_bar = $scope.find(".mh-sc-progress-bar");
 
     if ($progress_bar.length > 0) {
       $progress_bar.each(function () {
@@ -137,12 +137,12 @@
   //elementor front start
   $(window).on("elementor/frontend/init", function () {
     // Register handler for all design style variants
-    elementorFrontend.hooks.addAction("frontend/element_ready/tm-ele-progress-bar.default", WidgetProgressBarHandler);
-    elementorFrontend.hooks.addAction("frontend/element_ready/tm-ele-progress-bar.floating-percent", WidgetProgressBarHandler);
-    elementorFrontend.hooks.addAction("frontend/element_ready/tm-ele-progress-bar.fixed-right-percent", WidgetProgressBarHandler);
+    elementorFrontend.hooks.addAction("frontend/element_ready/mh-ele-progress-bar.default", WidgetProgressBarHandler);
+    elementorFrontend.hooks.addAction("frontend/element_ready/mh-ele-progress-bar.floating-percent", WidgetProgressBarHandler);
+    elementorFrontend.hooks.addAction("frontend/element_ready/mh-ele-progress-bar.fixed-right-percent", WidgetProgressBarHandler);
     // Also register a generic handler in case Elementor uses a different format
     if (typeof elementorFrontend.elementsHandler !== "undefined") {
-      elementorFrontend.elementsHandler.attachHandler("tm-ele-progress-bar", WidgetProgressBarHandler);
+      elementorFrontend.elementsHandler.attachHandler("mh-ele-progress-bar", WidgetProgressBarHandler);
     }
   });
 })(jQuery);

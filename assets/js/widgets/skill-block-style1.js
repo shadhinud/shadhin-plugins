@@ -17,7 +17,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-skill-block.skin-style1",
+            "frontend/element_ready/mh-ele-skill-block.skin-style1",
             WidgetSkillBlock1Handler
         );
     });

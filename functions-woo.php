@@ -82,7 +82,7 @@ if (!function_exists('shadhin_plugins_product_search')) {
             static $index = 0;
             $index++;
             ?>
-            <div class="tm-widget-search-form">
+            <div class="mh-widget-search-form">
                 <form role="search" method="get" class="search-form-default" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <input type="search" id="woocommerce-product-search-field-<?php echo isset($index) ? absint($index) : 0; ?>" class="form-control search-field" placeholder="<?php echo esc_attr__('Search products&hellip;', 'shadhin-plugins'); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" />
                     <button type="submit" class="search-submit"><i class="lnr lnr-icon-search"></i></button>

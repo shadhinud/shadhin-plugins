@@ -125,7 +125,7 @@ if(!function_exists('shadhin_plugins_locate_template')) {
 	/**
 	 * Retrieve the name of the highest priority template file that exists.
 	 *
-	 * Searches in the MASCOT_STYLESHEET_DIR before MASCOT_TEMPLATE_DIR
+	 * Searches in the SHADHIN_STYLESHEET_DIR before SHADHIN_TEMPLATE_DIR
 	 * so that themes which inherit from a parent theme can just overload one file.
 	 *
 	 * @param string|array $template_names Template file(s) to search for, in order.
@@ -216,71 +216,71 @@ add_action('init', 'shadhin_plugins_admin_menu_actions');
 
 // Admin Bar Menu
 function shadhin_plugins_admin_bar_menu( $wp_admin_bar ) {
-	$icon = '<i class="ab-icon dashicons-admin-generic dashicons-mascot-help"></i>';
+	$icon = '<i class="ab-icon dashicons-admin-generic dashicons-shadhin-help"></i>';
 
 	$wp_admin_bar->add_menu(array(
-		'id'	  => 'mascot-options',
-		'title'   => $icon . 'Mascot Help',
-		'href'	=> admin_url( 'admin.php?page=mascot-about' )
+		'id'	  => 'shadhin-options',
+		'title'   => $icon . 'Shadhin Help',
+		'href'	=> admin_url( 'admin.php?page=shadhin-about' )
 	));
 
 	$wp_admin_bar->add_menu(array(
-		'parent'  => 'mascot-options',
-		'id'	  => 'mascot-options-about',
+		'parent'  => 'shadhin-options',
+		'id'	  => 'shadhin-options-about',
 		'title'   => 'About',
-		'href'	=> admin_url( 'admin.php?page=mascot-about' )
+		'href'	=> admin_url( 'admin.php?page=shadhin-about' )
 	));
 
 	$wp_admin_bar->add_menu(array(
-		'parent'  => 'mascot-options',
-		'id'	  => 'mascot-help',
+		'parent'  => 'shadhin-options',
+		'id'	  => 'shadhin-help',
 		'title'   => 'Support & Help',
-		'href'	=> admin_url( 'admin.php?page=mascot-docs' )
+		'href'	=> admin_url( 'admin.php?page=shadhin-docs' )
 	));
 
 	$wp_admin_bar->add_menu(array(
-		'parent'  => 'mascot-options',
-		'id'	  => 'mascot-faq',
+		'parent'  => 'shadhin-options',
+		'id'	  => 'shadhin-faq',
 		'title'   => 'FAQ',
-		'href'	=> admin_url( 'admin.php?page=mascot-faq' )
+		'href'	=> admin_url( 'admin.php?page=shadhin-faq' )
 	));
 
 	$wp_admin_bar->add_menu(array(
-		'parent'  => 'mascot-options',
-		'id'	  => 'mascot-options-sub',
+		'parent'  => 'shadhin-options',
+		'id'	  => 'shadhin-options-sub',
 		'title'   => 'Theme Options',
 		'href'	=> admin_url( 'admin.php?page=ThemeOptions' )
 	));
 
 	if ( class_exists( 'OCDI_Plugin' ) ) {
 		$wp_admin_bar->add_menu(array(
-			'parent'  => 'mascot-options',
-			'id'	  => 'mascot-demo-content-importer',
+			'parent'  => 'shadhin-options',
+			'id'	  => 'shadhin-demo-content-importer',
 			'title'   => 'One Click Demo Import',
-			'href'	=> admin_url( 'themes.php?page=tm-one-click-demo-import' )
+			'href'	=> admin_url( 'themes.php?page=mh-one-click-demo-import' )
 		));
 	}
 
 	$plugins = shadhin_plugins_tgmpa_get_plugins_need_update();
 	if ( count( $plugins ) ) {
 		$wp_admin_bar->add_menu(array(
-			'parent'  => 'mascot-options',
-			'id'	  => 'mascot-update-plugins',
+			'parent'  => 'shadhin-options',
+			'id'	  => 'shadhin-update-plugins',
 			'title'   => 'Update Required Plugins <span class="update-plugins"><span class="update-count">'.count( $plugins ).'</span></span>',
 			'href'	=> admin_url( 'themes.php?page=tgmpa-install-plugins' )
 		));
 	}
 
 	$wp_admin_bar->add_menu(array(
-		'parent'  => 'mascot-options',
-		'id'	  => 'mascot-system-status',
+		'parent'  => 'shadhin-options',
+		'id'	  => 'shadhin-system-status',
 		'title'   => 'System Status',
-		'href'	=> admin_url( 'admin.php?page=mascot-system-status' )
+		'href'	=> admin_url( 'admin.php?page=shadhin-system-status' )
 	));
 
 	$wp_admin_bar->add_menu(array(
-		'parent'  => 'mascot-options',
-		'id'	  => 'mascot-themes',
+		'parent'  => 'shadhin-options',
+		'id'	  => 'shadhin-themes',
 		'title'   => 'Browse Our Themes',
 		'href'	=> 'http://themeforest.net/user/MhShadhin/portfolio?ref=MhShadhin',
 		'meta'	=> array( 'target' => '_blank' )

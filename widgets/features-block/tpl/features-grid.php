@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $features_items_array ) : ?>
-	<div class="tm-sc-features tm-features-grid">
+	<div class="mh-sc-features mh-features-grid">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="isotope-layout grid-<?php echo esc_attr( $columns ); ?> <?php echo esc_attr( $gutter );?> clearfix">
 			<div class="isotope-layout-inner">

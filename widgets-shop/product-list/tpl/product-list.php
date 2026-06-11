@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="tm-product-list-default woocommerce">
+	<div class="mh-product-list-default woocommerce">
 
 		<!-- Isotope Gallery Grid -->
 		<ul class="product-list">

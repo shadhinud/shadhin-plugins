@@ -1,13 +1,13 @@
-<div <?php post_class( 'tm-project' ); ?>>
+<div <?php post_class( 'mh-project' ); ?>>
 	<div class="projects-current-theme-style1">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class="thumb">
 				<?php echo get_the_post_thumbnail( get_the_ID(), $featured_image_size, array( 'class' => 'img-fullwidth' ) );?>
 			</div>
-			<div class="tm-project-content-wrapper">
-				<div class="tm-project-content">
-					<div class="tm-project-content-inner">
-						<div class="tm-project-content-inner-wrapper">
+			<div class="mh-project-content-wrapper">
+				<div class="mh-project-content">
+					<div class="mh-project-content-inner">
+						<div class="mh-project-content-inner-wrapper">
 							<div class="icons-holder-inner">
 								<div class="styled-icons">
 									<a class="lightproject-trigger styled-icons-item" href="<?php the_permalink();?>"><i class="fa fa-plus"></i></a>

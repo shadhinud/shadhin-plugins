@@ -1,10 +1,10 @@
-.tm-interactive-tabs-content {
+.mh-interactive-tabs-content {
   position: relative;
 }
-.tm-interactive-tabs-content .tab {
+.mh-interactive-tabs-content .tab {
   display: none;
 }
-.tm-interactive-tabs-content .active-tab .content-box {
+.mh-interactive-tabs-content .active-tab .content-box {
   opacity: 1;
   visibility: visible;
   left: 0;

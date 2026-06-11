@@ -3,7 +3,7 @@
 
     $(window).on('elementor/frontend/init', () => {
         // Product tab
-        elementorFrontend.hooks.addAction('frontend/element_ready/tm-ele-product-tabs.default', ($scope) => {
+        elementorFrontend.hooks.addAction('frontend/element_ready/mh-ele-product-tabs.default', ($scope) => {
 
             let $tabs = $scope.find('.elementor-tabs-wrapper');
             let $contents = $scope.find('.elementor-tabs-content-wrapper');

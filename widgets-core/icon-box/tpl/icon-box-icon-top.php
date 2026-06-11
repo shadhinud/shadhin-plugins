@@ -1,5 +1,5 @@
 <?php $settings['settings'] = $settings;?>
-<div class="tm-sc-icon-box icon-box icon-top <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+<div class="mh-sc-icon-box icon-box icon-top <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 	<?php shadhin_plugins_get_widgetcore_template_part( 'bgimg-hover', null, 'icon-box/tpl', $settings, false );?>
 	<div class="icon-box-wrapper">
 		<?php shadhin_plugins_get_widgetcore_template_part( 'icon', null, 'icon-box/tpl', $settings, false );?>

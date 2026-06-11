@@ -148,16 +148,16 @@ abstract class Shadhin_plugins_Widget_Loader extends WP_Widget {
 			case 'media_upload':
 			?>
 				<p>
-				<div class="tm-widget-image-field">
+				<div class="mh-widget-image-field">
 					<label for="<?php echo esc_attr( $this->get_field_id( $eachFormField['id'] ) ); ?>"><?php echo esc_html( $eachFormField['title'] ); ?>
 					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $eachFormField['id'] ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $eachFormField['id'] ) ); ?>" type="text" value="<?php echo esc_attr( ${$eachFormField['id']} ); ?>" />
 
 					</label>
 					<br>
 					<br>
-					<a class="button tm-widget-image-upload" data-target="#<?php echo esc_attr( $this->get_field_id( $eachFormField['id'] ) ); ?>" data-preview=".tm-widget-preview-image" data-frame="select" data-state="wpc_widgets_insert_single" data-fetch="url" data-title="Insert Image" data-button="Insert" data-class="media-frame tm-widget-custom-uploader" title="Add Media"><?php echo esc_html__( 'Add Media', 'shadhin-plugins' ); ?></a>
+					<a class="button mh-widget-image-upload" data-target="#<?php echo esc_attr( $this->get_field_id( $eachFormField['id'] ) ); ?>" data-preview=".mh-widget-preview-image" data-frame="select" data-state="wpc_widgets_insert_single" data-fetch="url" data-title="Insert Image" data-button="Insert" data-class="media-frame mh-widget-custom-uploader" title="Add Media"><?php echo esc_html__( 'Add Media', 'shadhin-plugins' ); ?></a>
 
-					<a class="button tm-widget-delete-image" data-target="#<?php echo esc_attr( $this->get_field_id( $eachFormField['id'] ) ); ?>" data-preview=".tm-widget-preview-image"><?php echo esc_html__( 'Delete', 'shadhin-plugins' ); ?></a>
+					<a class="button mh-widget-delete-image" data-target="#<?php echo esc_attr( $this->get_field_id( $eachFormField['id'] ) ); ?>" data-preview=".mh-widget-preview-image"><?php echo esc_html__( 'Delete', 'shadhin-plugins' ); ?></a>
 
 				</div>
 				</p>

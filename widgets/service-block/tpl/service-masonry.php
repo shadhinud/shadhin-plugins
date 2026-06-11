@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $service_items_array ) : ?>
-	<div class="tm-sc-service tm-service-masonry">
+	<div class="mh-sc-service mh-service-masonry">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="isotope-layout masonry grid-<?php echo esc_attr( $columns ); ?>  <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?> <?php echo esc_attr( $gutter );?> clearfix">
 			<div class="isotope-layout-inner">

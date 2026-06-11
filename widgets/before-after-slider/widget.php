@@ -85,7 +85,7 @@ class MH_Elementor_Before_After_Slider extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 
 	/**

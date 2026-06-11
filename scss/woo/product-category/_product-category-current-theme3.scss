@@ -1,4 +1,4 @@
-.tm-product-category-current-theme3 {
+.mh-product-category-current-theme3 {
   .content-wrapper {
     .content-inner {
       position: relative;
@@ -10,9 +10,9 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto;
-        box-shadow: 0 10px 40px rgba(0,0,0,.10);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         transition: all 300ms ease;
-        &:before{
+        &:before {
           position: absolute;
           left: 0;
           right: 0;
@@ -26,7 +26,7 @@
           z-index: 9;
           transition: all 100ms ease;
         }
-        &:after{
+        &:after {
           position: absolute;
           top: 20px;
           right: 15px;
@@ -51,9 +51,9 @@
           }
         }
       }
-      .cat-details{
+      .cat-details {
         text-align: center;
-        .cat-title{
+        .cat-title {
           font-size: 18px;
           font-weight: 600;
           font-family: var(--sans-serif);
@@ -72,12 +72,12 @@
           color: #797f7d;
           margin-bottom: 0px;
         }
-        .count{
+        .count {
           display: block;
           font-size: 15px;
         }
       }
-      &:hover{
+      &:hover {
         .cat-image {
           img {
             transform: rotateY(180deg);

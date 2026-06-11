@@ -2,7 +2,7 @@
   "use strict";
 
   var WidgetTestimonialThumbCarouselHandler = function ($scope) {
-    var $swiper_container = $('.tm-testimonial-single-carousel');
+    var $swiper_container = $('.mh-testimonial-single-carousel');
     if( $swiper_container.length > 0 ) {
       $swiper_container.each(function () {
         var this_item = $(this);
@@ -12,8 +12,8 @@
           loop: true,
           loopedSlides: 6,
           navigation: {
-            nextEl: this_item.find('.tm-swiper-button-next')[0],
-            prevEl: this_item.find('.tm-swiper-button-prev')[0],
+            nextEl: this_item.find('.mh-swiper-button-next')[0],
+            prevEl: this_item.find('.mh-swiper-button-prev')[0],
           },
           pagination: {
             el: this_item.find('.swiper-pagination')[0],
@@ -39,7 +39,7 @@
 
   //elementor front start
   $(window).on("elementor/frontend/init", function () {
-    elementorFrontend.hooks.addAction("frontend/element_ready/tm-ele-testimonial-block.skin-single", WidgetTestimonialThumbCarouselHandler);
+    elementorFrontend.hooks.addAction("frontend/element_ready/mh-ele-testimonial-block.skin-single", WidgetTestimonialThumbCarouselHandler);
   });
   $(window).on("elementor/editor/before_enqueue_scripts", function () {
     elementorFrontend.hooks.addAction("frontend/element_ready/widget", function ($scope) {

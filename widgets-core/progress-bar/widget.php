@@ -94,7 +94,7 @@ class MH_Elementor_Progress_Bar extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'jquery-countto', 'mh-progress-bar' ];
+		return [ 'shadhin-core-hellojs', 'jquery-countto', 'mh-progress-bar' ];
 	}
 
 	public function get_style_depends() {

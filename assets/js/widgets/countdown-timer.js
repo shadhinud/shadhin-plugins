@@ -16,21 +16,21 @@
           var word_sec = $this.data('word-sec');
           var word_days = $this.data('word-days');
 
-          var str =   '<div class="counter">' +  
-                  '<span class="value">%D</span>' + 
+          var str =   '<div class="counter">' +
+                  '<span class="value">%D</span>' +
                   '<span class="label">' + word_days + '</span>' +
-                '</div>' + 
-                '<div class="counter">' + 
-                  '<span class="value">%H</span>' + 
-                  '<span class="label">' + word_hr + '</span>' + 
-                '</div>' + 
-                '<div class="counter">' + 
-                  '<span class="value">%M</span>' + 
-                  '<span class="label">' + word_min + '</span>' + 
-                '</div>' + 
-                '<div class="counter">' + 
-                  '<span class="value">%S</span>' + 
-                  '<span class="label">' + word_sec + '</span>' + 
+                '</div>' +
+                '<div class="counter">' +
+                  '<span class="value">%H</span>' +
+                  '<span class="label">' + word_hr + '</span>' +
+                '</div>' +
+                '<div class="counter">' +
+                  '<span class="value">%M</span>' +
+                  '<span class="label">' + word_min + '</span>' +
+                '</div>' +
+                '<div class="counter">' +
+                  '<span class="value">%S</span>' +
+                  '<span class="label">' + word_sec + '</span>' +
                 '</div>';
 
           $this.countdown(future_date, function(event) {
@@ -43,27 +43,27 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-countdown-timer-current.default",
+            "frontend/element_ready/mh-ele-countdown-timer-current.default",
             WidgetCountDownTimerHandler
         );
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-countdown-timer-current.skin-style1",
+            "frontend/element_ready/mh-ele-countdown-timer-current.skin-style1",
             WidgetCountDownTimerHandler
         );
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-countdown-timer-current.skin-style2",
+            "frontend/element_ready/mh-ele-countdown-timer-current.skin-style2",
             WidgetCountDownTimerHandler
         );
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-countdown-timer-current.skin-style3",
+            "frontend/element_ready/mh-ele-countdown-timer-current.skin-style3",
             WidgetCountDownTimerHandler
         );
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-countdown-timer-current.skin-style4",
+            "frontend/element_ready/mh-ele-countdown-timer-current.skin-style4",
             WidgetCountDownTimerHandler
         );
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-countdown-timer-current.skin-style5",
+            "frontend/element_ready/mh-ele-countdown-timer-current.skin-style5",
             WidgetCountDownTimerHandler
         );
     });

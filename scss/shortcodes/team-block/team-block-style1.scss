@@ -45,7 +45,7 @@
 
     .team-title {
       margin: 0;
-      [data-tm-layout="dark"] & {
+      [data-mh-layout="dark"] & {
         color: var(--theme-color3);
       }
 
@@ -58,11 +58,7 @@
         &:hover {
           color: var(--theme-color1);
           background-size: 100% 2px;
-          background-image: linear-gradient(
-            180deg,
-            var(--theme-color1) 0%,
-            var(--theme-color1) 100%
-          );
+          background-image: linear-gradient(180deg, var(--theme-color1) 0%, var(--theme-color1) 100%);
         }
       }
     }
@@ -85,7 +81,7 @@
       width: 50px;
       transition: all 300ms ease;
       z-index: 3;
-      [data-tm-layout="dark"] & {
+      [data-mh-layout="dark"] & {
         color: #fff;
       }
 
@@ -186,7 +182,7 @@
 
       .share-icon {
         background-color: var(--theme-color1);
-        [data-tm-layout="dark"] & {
+        [data-mh-layout="dark"] & {
           color: var(--theme-color3);
         }
       }

@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $service_items_array ) : ?>
-	<div class="tm-sc-service service-block3-outer">
+	<div class="mh-sc-service service-block3-outer">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="service-layout clearfix">
 

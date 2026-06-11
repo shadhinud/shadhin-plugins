@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $award_items_array ) : ?>
-	<div class="tm-award-grid">
+	<div class="mh-award-grid">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="award-layout">
 			<!-- the loop -->

@@ -38,7 +38,7 @@
       background-color: var(--theme-color-light);
       border-radius: 12px;
       color: var(--theme-color1);
-      [data-tm-layout="dark"] & {
+      [data-mh-layout="dark"] & {
         color: #fff;
       }
       flex-shrink: 0;

@@ -2,11 +2,11 @@
   "use strict";
 
   var WidgetHeroSliderHandler = function ($scope) {
-    var $swiper_container = $(".tm-horizontal-hero-slider");
+    var $swiper_container = $(".mh-horizontal-hero-slider");
     if ($swiper_container.length > 0) {
       $swiper_container.each(function () {
         var this_item = $(this);
-        var target_thumb_slider = $swiper_container.find(".tm-hero-slider-thumb");
+        var target_thumb_slider = $swiper_container.find(".mh-hero-slider-thumb");
         var thumb_slider = null;
         if (target_thumb_slider.length) {
           thumb_slider = new Swiper(target_thumb_slider[0], {
@@ -23,8 +23,8 @@
             },
 
             navigation: {
-              nextEl: this_item.find(".tm-swiper-button-next")[0],
-              prevEl: this_item.find(".tm-swiper-button-prev")[0],
+              nextEl: this_item.find(".mh-swiper-button-next")[0],
+              prevEl: this_item.find(".mh-swiper-button-prev")[0],
             },
             pagination: {
               el: this_item.find(".swiper-pagination")[0],
@@ -72,8 +72,8 @@
           },
 
           navigation: {
-            nextEl: this_item.find(".tm-swiper-button-next")[0],
-            prevEl: this_item.find(".tm-swiper-button-prev")[0],
+            nextEl: this_item.find(".mh-swiper-button-next")[0],
+            prevEl: this_item.find(".mh-swiper-button-prev")[0],
           },
           pagination: {
             el: this_item.find(".swiper-pagination")[0],
@@ -90,6 +90,6 @@
 
   //elementor front start
   $(window).on("elementor/frontend/init", function () {
-    elementorFrontend.hooks.addAction("frontend/element_ready/tm-ele-hero-slider.default", WidgetHeroSliderHandler);
+    elementorFrontend.hooks.addAction("frontend/element_ready/mh-ele-hero-slider.default", WidgetHeroSliderHandler);
   });
 })(jQuery);

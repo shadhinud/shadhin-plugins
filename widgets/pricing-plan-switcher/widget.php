@@ -91,7 +91,7 @@ class MH_Elementor_Pricing_Plan_Switcher extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'mh-pricing-plan-switcher' ];
+		return [ 'shadhin-core-hellojs', 'mh-pricing-plan-switcher' ];
 	}
 	public function get_style_depends() {
 		return [ 'mh-pricing-plan-switcher' ];

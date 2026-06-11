@@ -9,7 +9,7 @@
             //by default set bg image with the first item
             if (index == 0) {
               let newBackground = current_item.data("bg");
-              current_item.parents(".tm-sc-projects")
+              current_item.parents(".mh-sc-projects")
                 .attr("data-background", newBackground)
                 .css("background-image", "url(" + newBackground + ")");
             }
@@ -17,7 +17,7 @@
             //on mouse over change image
             current_item.on("mouseover", function () {
               let newBackground = current_item.data("bg");
-              current_item.parents(".tm-sc-projects")
+              current_item.parents(".mh-sc-projects")
                 .attr("data-background", newBackground)
                 .css("background-image", "url(" + newBackground + ")");
             });
@@ -27,7 +27,7 @@
 
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
-        elementorFrontend.elementsHandler.attachHandler( 'tm-ele-cpt-projects', WidgetProjectBlock3BgImg, 'skin-style-current-theme3' );
+        elementorFrontend.elementsHandler.attachHandler( 'mh-ele-cpt-projects', WidgetProjectBlock3BgImg, 'skin-style-current-theme3' );
     });
 })(jQuery);
 
@@ -51,7 +51,7 @@
 
   $(window).on('elementor/frontend/init', function() {
     elementorFrontend.hooks.addAction(
-      'frontend/element_ready/tm-ele-cpt-projects.skin-style-current-theme3',
+      'frontend/element_ready/mh-ele-cpt-projects.skin-style-current-theme3',
       WidgetProjectBlock6Handler
     );
   });

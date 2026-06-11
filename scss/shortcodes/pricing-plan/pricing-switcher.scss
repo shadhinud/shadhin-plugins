@@ -1,7 +1,7 @@
 @import "../../bootstrap-loader";
 @import "pricing-common";
 
-.tm-pricing-plan-switcher {
+.mh-pricing-plan-switcher {
   color: var(--heading-color);
   font-size: 19px;
   letter-spacing: -0.2px;
@@ -62,7 +62,7 @@
   }
 }
 
-.tm-pricing-plan-switcher-button {
+.mh-pricing-plan-switcher-button {
   .switch-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +124,7 @@
       }
     }
   }
-  .tm-switch-buttons-round-yes & {
+  .mh-switch-buttons-round-yes & {
     .switch-buttons {
       li {
         &:first-child {

@@ -20,7 +20,7 @@
     //elementor front start
     $(window).on("elementor/frontend/init", function () {
         elementorFrontend.hooks.addAction(
-            "frontend/element_ready/tm-ele-service-block.skin-style6",
+            "frontend/element_ready/mh-ele-service-block.skin-style6",
             WidgetServiceBlock2Handler
         );
     });

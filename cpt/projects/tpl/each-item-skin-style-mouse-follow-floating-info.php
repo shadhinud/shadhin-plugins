@@ -1,5 +1,5 @@
-<div <?php post_class( 'tm-project' ); ?>>
-	<div class="projects-mouse-follow-floating-info tm-floating-info-item">
+<div <?php post_class( 'mh-project' ); ?>>
+	<div class="projects-mouse-follow-floating-info mh-floating-info-item">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class="thumb">
 				<?php echo get_the_post_thumbnail( get_the_ID(), $feature_thumb_image_size, array( 'class' => 'img-fullwidth' ) );?>

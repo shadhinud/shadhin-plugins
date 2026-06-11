@@ -47,7 +47,7 @@ class MH_Elementor_Vertical_Menu extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'TM Vertical Menu', 'shadhin-plugins' );
+		return esc_html__( 'MH Vertical Menu', 'shadhin-plugins' );
 	}
 
 	/**
@@ -93,7 +93,7 @@ class MH_Elementor_Vertical_Menu extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 	public function get_style_depends() {
 		return [ 'mh-vertical-menu' ];
@@ -395,7 +395,7 @@ class MH_Elementor_Vertical_Menu extends Widget_Base {
             'container'         => '',
             'link_before'       => '<span>',
             'link_after'        => '</span>',
-            'walker'            => class_exists( 'Mascot_Theme_Nav_Walker' ) ? new \Mascot_Theme_Nav_Walker : ''
+            'walker'            => class_exists( 'Shadhin_Theme_Nav_Walker' ) ? new \Shadhin_Theme_Nav_Walker : ''
         );
         $menuname= wp_get_nav_menu_object($settings['menu']);
 

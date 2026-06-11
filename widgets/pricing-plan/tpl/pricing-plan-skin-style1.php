@@ -1,6 +1,6 @@
 <!-- Pricing Block Style1-->
 <?php $settings['settings'] = $settings;?>
-<div class="tm-sc-pricing-plan <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?> pricing-plan-skin-style1">
+<div class="mh-sc-pricing-plan <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?> pricing-plan-skin-style1">
 	<div class="pricing-plan-inner-wrapper">
 		<?php if( in_array('has-label', $classes) ) { ?>
 			<span class="pricing-plan-label"><?php echo esc_html( $label_text ); ?></span>

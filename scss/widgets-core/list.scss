@@ -4,7 +4,7 @@
  * Shortcode: list.scss
  * -----------------------------------------------
 */
-.tm-sc-list {
+.mh-sc-list {
   list-style: none;
   @include transition(all 0.3s ease);
   li {
@@ -20,7 +20,7 @@
       @include transition(all 0.3s ease);
     }
   }
-  &.tm-animate-hover {
+  &.mh-animate-hover {
     &.icon-rotate {
       li {
         &:hover {

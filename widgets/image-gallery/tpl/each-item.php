@@ -1,5 +1,5 @@
-<div class="tm-image-gallery tm-gallery-item-default">
-	<div class="tm-gallery-inner">
+<div class="mh-image-gallery mh-gallery-item-default">
+	<div class="mh-gallery-inner">
 		<?php
 			$attachment = wp_get_attachment_image_src( $gallery_item['logo']['id'], $featured_image_size );
 			$attachment_full = wp_get_attachment_image_src( $gallery_item['logo']['id'], 'full' );

@@ -2,7 +2,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.0823529412);
   display: flex;
 }
-[data-tm-layout=dark] .award-block-current-item-style3 .inner-box {
+[data-mh-layout=dark] .award-block-current-item-style3 .inner-box {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 @media (max-width: 575.98px) {

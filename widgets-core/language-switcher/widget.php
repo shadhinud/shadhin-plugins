@@ -45,7 +45,7 @@ class MH_Elementor_Language_Switcher extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'TM - Language Switcher', 'shadhin-plugins' );
+		return esc_html__( 'MH - Language Switcher', 'shadhin-plugins' );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class MH_Elementor_Language_Switcher extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs' ];
+		return [ 'shadhin-core-hellojs' ];
 	}
 
 	public function get_style_depends() {
@@ -120,7 +120,7 @@ class MH_Elementor_Language_Switcher extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'typography',
-                'selector' => '{{WRAPPER}} .mascot-language-switcher span',
+                'selector' => '{{WRAPPER}} .shadhin-language-switcher span',
             ]
         );
 
@@ -195,7 +195,7 @@ class MH_Elementor_Language_Switcher extends Widget_Base {
         $languages = apply_filters('wpml_active_languages', []);
         if (!class_exists('SitePress') || count($languages) <= 0) {
             ?>
-            <div class="mascot-language-switcher">
+            <div class="shadhin-language-switcher">
                 <ul class="menu">
                     <li class="item">
                         <div class="language-switcher-head">
@@ -234,7 +234,7 @@ class MH_Elementor_Language_Switcher extends Widget_Base {
             <?php
         } else {
             ?>
-            <div class="mascot-language-switcher">
+            <div class="shadhin-language-switcher">
                 <ul class="menu">
                     <li class="item">
                         <div class="language-switcher-head">

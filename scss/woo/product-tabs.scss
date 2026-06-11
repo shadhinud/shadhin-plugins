@@ -1,6 +1,6 @@
 @import "../bootstrap-loader";
 
-.elementor-widget-tm-ele-product-tabs {
+.elementor-widget-mh-ele-product-tabs {
   .elementor-tabs .elementor-tabs-wrapper {
     text-align: center;
     display: block;
@@ -381,7 +381,10 @@
           text-decoration: none;
           border-radius: 5px;
           outline: 0;
-          transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
+          transition:
+            color 0.2s ease-out,
+            background-color 0.2s ease-out,
+            border-color 0.2s ease-out;
           padding: 15px 34px;
           cursor: pointer;
           color: var(--theme-color2);

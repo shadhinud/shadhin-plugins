@@ -1,6 +1,6 @@
 <?php $settings['settings'] = $settings; ?>
 <?php if ( $working_block_items_array ) : ?>
-	<div class="tm-sc-working tm-working-basic">
+	<div class="mh-sc-working mh-working-basic">
 		<!-- Isotope Gallery Grid -->
 		<div id="<?php echo esc_attr( $holder_id ) ?>" class="working-layout">
 			<!-- the loop -->

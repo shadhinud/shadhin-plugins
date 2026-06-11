@@ -1,4 +1,4 @@
-.tm-sc-testimonials {
+.mh-sc-testimonials {
   @include star-rating-function();
   .star-rating {
     float: none;
@@ -14,12 +14,12 @@
   .author-text,
   .name,
   .job-position {
-    @include transition(all .3s ease-in-out);
+    @include transition(all 0.3s ease-in-out);
   }
   .star-rating {
     span {
       &:before {
-        @include transition(all .3s ease-in-out);
+        @include transition(all 0.3s ease-in-out);
       }
     }
   }

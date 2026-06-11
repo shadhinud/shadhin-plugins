@@ -11,7 +11,7 @@
 }
 
 /* Individual effect = play-video-button */
-.tm-sc-video-popup {
+.mh-sc-video-popup {
   position: relative;
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@
   .video-button-text {
   }
 
-  &.tm-sc-video-popup-button-over-image {
+  &.mh-sc-video-popup-button-over-image {
     overflow: hidden;
     border-radius: 10px;
     &:before {
@@ -205,7 +205,7 @@
     }
   }
 
-  &.tm-sc-video-popup-button-over-image2 {
+  &.mh-sc-video-popup-button-over-image2 {
     overflow: hidden;
     &:before {
       position: absolute;
@@ -294,7 +294,7 @@
     }
   }
 
-  &.tm-sc-video-popup-css-button {
+  &.mh-sc-video-popup-css-button {
     display: inline-block;
     .animated-css-play-button {
       position: relative;
@@ -369,7 +369,7 @@
     }
   }
 
-  &.tm-sc-video-popup-custom-css-button {
+  &.mh-sc-video-popup-custom-css-button {
     .video-play-button {
       background: var(--theme-color1);
       color: var(--theme-color1-text-color);

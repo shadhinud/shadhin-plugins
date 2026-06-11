@@ -1,10 +1,10 @@
-.tm-interactive-tabs.tabs-default .features-list {
+.mh-interactive-tabs.tabs-default .features-list {
   position: relative;
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-.tm-interactive-tabs.tabs-default .features-list li {
+.mh-interactive-tabs.tabs-default .features-list li {
   position: relative;
   font-size: 34px;
   line-height: 1.2em;
@@ -16,11 +16,11 @@
   transition: all 300ms ease;
 }
 @media (max-width: 991.98px) {
-  .tm-interactive-tabs.tabs-default .features-list li {
+  .mh-interactive-tabs.tabs-default .features-list li {
     font-size: 24px;
   }
 }
-.tm-interactive-tabs.tabs-default .features-list li .icon {
+.mh-interactive-tabs.tabs-default .features-list li .icon {
   position: absolute;
   left: 0;
   top: 0;
@@ -32,14 +32,14 @@
   justify-content: center;
   transition: all 300ms ease;
 }
-.tm-interactive-tabs.tabs-default .features-list li.active-btn {
+.mh-interactive-tabs.tabs-default .features-list li.active-btn {
   border-top: 1px solid rgba(240, 240, 240, 0.5);
   color: var(--theme-color2);
 }
-.tm-interactive-tabs.tabs-default .features-list li.active-btn i {
+.mh-interactive-tabs.tabs-default .features-list li.active-btn i {
   transform: rotate(-180deg) scale(-1);
   color: var(--theme-color1);
 }
-.tm-interactive-tabs.tabs-default .features-list li:first-child {
+.mh-interactive-tabs.tabs-default .features-list li:first-child {
   border-top: 0;
 }

@@ -1,5 +1,5 @@
 <?php $settings['settings'] = $settings;?>
-<div class="tm-sc-info-box tm-info-box-skin7">
+<div class="mh-sc-info-box mh-info-box-skin7">
   <div class="info-box-wrapper">
     <div class="icon-wrapper elementor-icon"><?php \Elementor\Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?></div>
     <div class="info-text">

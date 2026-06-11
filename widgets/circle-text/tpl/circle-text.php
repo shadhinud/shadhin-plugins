@@ -1,5 +1,5 @@
 
-<div class="tm-circle-text animate-2">
+<div class="mh-circle-text animate-2">
 		<div class="icon">
 			<?php
 			// Get the center content type (default to 'icon' for backward compatibility)

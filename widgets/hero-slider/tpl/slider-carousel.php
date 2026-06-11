@@ -4,7 +4,7 @@
 	$swiper_slide_data_info = shadhin_plugins_swiper_data_params( $settings );
 ?>
 <?php if ( $hero_slider_items_array ) : ?>
-	<div id="<?php echo esc_attr( $holder_id ) ?>" class="tm-sc-hero-slider tm-horizontal-hero-slider <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>" <?php echo html_entity_decode( esc_attr( implode(' ', $swiper_slide_data_info) ) ) ?>>
+	<div id="<?php echo esc_attr( $holder_id ) ?>" class="mh-sc-hero-slider mh-horizontal-hero-slider <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>" <?php echo html_entity_decode( esc_attr( implode(' ', $swiper_slide_data_info) ) ) ?>>
 		<div class="swiper-container-inner">
 			<div class="swiper-wrapper">
 				<!-- the loop -->
@@ -29,8 +29,8 @@
 		</div>
 
 
-		<div class="tm-parts-thumbnail">
-			<div class="swiper swiper-item-wrap tm-hero-slider-thumb">
+		<div class="mh-parts-thumbnail">
+			<div class="swiper swiper-item-wrap mh-hero-slider-thumb">
 				<div class="swiper-wrapper">
 					<?php foreach (  $hero_slider_items_array as $hero_slider_item ) { ?>
 					<?php $settings['hero_slider_item'] = $hero_slider_item; ?>
@@ -45,9 +45,9 @@
 
 		<div class="swiper-pagination <?php if( $bullets !== 'yes' ) echo esc_attr( "d-none" ); ?>"></div>
 
-		<div class="tm-swiper-arrow-wrap tm-swiper-button-wrap <?php if( $arrow !== 'yes' ) echo esc_attr( "d-none" ); ?>">
-			<div class="tm-swiper-arrow tm-swiper-button-prev"><i class="lnr-icon-arrow-left"></i></div>
-			<div class="tm-swiper-arrow tm-swiper-button-next"><i class="lnr-icon-arrow-right"></i></div>
+		<div class="mh-swiper-arrow-wrap mh-swiper-button-wrap <?php if( $arrow !== 'yes' ) echo esc_attr( "d-none" ); ?>">
+			<div class="mh-swiper-arrow mh-swiper-button-prev"><i class="lnr-icon-arrow-left"></i></div>
+			<div class="mh-swiper-arrow mh-swiper-button-next"><i class="lnr-icon-arrow-right"></i></div>
 		</div>
 	</div>
 

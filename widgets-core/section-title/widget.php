@@ -92,7 +92,7 @@ class MH_Elementor_Section_Title extends Widget_Base {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'mascot-core-hellojs', 'mh-section-title-split-text' ];
+		return [ 'shadhin-core-hellojs', 'mh-section-title-split-text' ];
 	}
 
 	/**

@@ -37,7 +37,7 @@ if ( ! class_exists( 'ShadhinpluginsScriptsHandler' ) ) {
 
 			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 				// Enqueue theme's main script
-				wp_enqueue_script( 'mascot-core-custom-elementor', SHADHIN_PLUGINS_ASSETS_URI . '/js/custom-elementor.js', $main_js_dependency, false, true );
+				wp_enqueue_script( 'shadhin-core-custom-elementor', SHADHIN_PLUGINS_ASSETS_URI . '/js/custom-elementor.js', $main_js_dependency, false, true );
 			}
 
 			// Hook to include additional scripts after theme's main script

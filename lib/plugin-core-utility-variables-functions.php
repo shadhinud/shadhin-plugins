@@ -49,13 +49,13 @@ if(!function_exists('shadhin_plugins_animate_css_animation_list')) {
 	function shadhin_plugins_animate_css_animation_list() {
 		$animate_css_animation_list = array(
 			'' => '',
-			'tm-split-text split-in-fade' => 'Slip Text In Fade',
-			'tm-split-text split-in-right' => 'Slip Text In Right',
-			'tm-split-text split-in-left'  => 'Slip Text In Left',
-			'tm-split-text split-in-up'    => 'Slip Text In Up',
-			'tm-split-text split-in-down'  => 'Slip Text In Down',
-			'tm-split-text split-in-rotate'  => 'Slip Text In Rotate',
-			'tm-split-text split-in-scale'  => 'Slip Text In Scale',
+			'mh-split-text split-in-fade' => 'Slip Text In Fade',
+			'mh-split-text split-in-right' => 'Slip Text In Right',
+			'mh-split-text split-in-left'  => 'Slip Text In Left',
+			'mh-split-text split-in-up'    => 'Slip Text In Up',
+			'mh-split-text split-in-down'  => 'Slip Text In Down',
+			'mh-split-text split-in-rotate'  => 'Slip Text In Rotate',
+			'mh-split-text split-in-scale'  => 'Slip Text In Scale',
 			'wow fadeIn' => 'fadeIn',
 			'wow fadeInDown' => 'fadeInDown',
 			'wow fadeInDownBig' => 'fadeInDownBig',
@@ -304,7 +304,7 @@ if ( ! function_exists( 'shadhin_plugins_metabox_get_list_of_predefined_theme_co
 	function shadhin_plugins_metabox_get_list_of_predefined_theme_color_css_files() {
 		$predefined_theme_colors = array();
 
-		if( $handle = opendir( MASCOT_TEMPLATE_DIR . '/assets/css/colors/' ) ) {
+		if( $handle = opendir( SHADHIN_TEMPLATE_DIR . '/assets/css/colors/' ) ) {
 			while( false !== ($entry = readdir($handle)) ) {
 				if( $entry != "." && $entry != ".." ) {
 					$predefined_theme_colors[$entry] = $entry;
@@ -454,7 +454,7 @@ if(!function_exists('shadhin_plugins_set_admin_ajax_url')){
 	 *
 	 */
 	function shadhin_plugins_set_admin_ajax_url() {
-		echo '<script type="application/javascript">var MascotCoreAjaxUrl = "'.admin_url('admin-ajax.php').'"</script>';
+		echo '<script type="application/javascript">var ShadhinCoreAjaxUrl = "'.admin_url('admin-ajax.php').'"</script>';
 	}
 	add_action('wp_enqueue_scripts', 'shadhin_plugins_set_admin_ajax_url');
 }
@@ -512,15 +512,15 @@ if(!function_exists('shadhin_plugins_get_animation_type')) {
 		$array = array(
 			esc_html__( 'None', 'shadhin-plugins' )	=>	'',
 
-			esc_html__( 'Floating Animation', 'shadhin-plugins' )	=>	'tm-animation-floating',
-			esc_html__( 'Horizontal Slide Animation', 'shadhin-plugins' )	=>	'tm-animation-slide-horizontal',
+			esc_html__( 'Floating Animation', 'shadhin-plugins' )	=>	'mh-animation-floating',
+			esc_html__( 'Horizontal Slide Animation', 'shadhin-plugins' )	=>	'mh-animation-slide-horizontal',
 
-			esc_html__( 'Flicker Animation', 'shadhin-plugins' )	=>	'tm-animation-flicker',
-			esc_html__( 'Spin Animation', 'shadhin-plugins' )	=>	'tm-animation-spin',
+			esc_html__( 'Flicker Animation', 'shadhin-plugins' )	=>	'mh-animation-flicker',
+			esc_html__( 'Spin Animation', 'shadhin-plugins' )	=>	'mh-animation-spin',
 
 
-			esc_html__( 'Random Animation 1', 'shadhin-plugins' )	=>	'tm-animation-random-animation1',
-			esc_html__( 'Random Animation 2', 'shadhin-plugins' )	=>	'tm-animation-random-animation2',
+			esc_html__( 'Random Animation 1', 'shadhin-plugins' )	=>	'mh-animation-random-animation1',
+			esc_html__( 'Random Animation 2', 'shadhin-plugins' )	=>	'mh-animation-random-animation2',
 		);
 		return $array;
 	}
@@ -536,10 +536,10 @@ if(!function_exists('shadhin_plugins_masonry_image_sizes')) {
 	 */
 	function shadhin_plugins_masonry_image_sizes() {
 		$masonry_image_sizes = array(
-			'mascot_core_square'			=> esc_html__( 'Default', 'shadhin-plugins' ),
-			'mascot_core_wide'			=> esc_html__( 'Width', 'shadhin-plugins' ),
-			'mascot_core_height'			=> esc_html__( 'Height', 'shadhin-plugins' ),
-			'mascot_core_width_height'	=> esc_html__( 'Both Width & Height', 'shadhin-plugins' ),
+			'shadhin_core_square'			=> esc_html__( 'Default', 'shadhin-plugins' ),
+			'shadhin_core_wide'			=> esc_html__( 'Width', 'shadhin-plugins' ),
+			'shadhin_core_height'			=> esc_html__( 'Height', 'shadhin-plugins' ),
+			'shadhin_core_width_height'	=> esc_html__( 'Both Width & Height', 'shadhin-plugins' ),
 		);
 		return $masonry_image_sizes;
 	}
@@ -604,7 +604,7 @@ if(!function_exists('shadhin_plugins_wp_admin_dashicons_list')) {
 	function shadhin_plugins_wp_admin_dashicons_list() {
 		$animate_css_animation_list = array(
 			'' => '',
-			'dashicons-mascot' => 'dashicons-mascot',
+			'dashicons-shadhin' => 'dashicons-shadhin',
 			'dashicons-admin-appearance' => 'dashicons-admin-appearance',
 			'dashicons-admin-collapse' => 'dashicons-admin-collapse',
 			'dashicons-admin-comments' => 'dashicons-admin-comments',
@@ -1512,7 +1512,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				],
 				'default' => 'flex',
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap' => 'display: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap' => 'display: {{VALUE}};'
 				],
 			]
 		);
@@ -1539,7 +1539,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'label' => esc_html__( "Arrow BG Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow' => 'background-color: {{VALUE}};'
 				],
 			]
 		);
@@ -1551,7 +1551,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1570,7 +1570,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'label' => esc_html__( "Arrow Text Color", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow i' => 'color: {{VALUE}};'
 				],
 			]
 		);
@@ -1581,7 +1581,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1609,7 +1609,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1621,7 +1621,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'type' => \Elementor\Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
 				]
 			]
 		);
@@ -1638,7 +1638,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 			[
 				'name' => 'swiper_arrow_border',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow',
+				'selector' => '{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow',
 			]
 		);
 
@@ -1648,7 +1648,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'name' => 'swiper_arrow_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'shadhin-plugins' ),
 				'separator' => 'before',
-				'selector' => '{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow',
+				'selector' => '{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow',
 			]
 		);
 
@@ -1657,7 +1657,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 			[
 				'name' => 'swiper_arrow_typography',
 				'label' => esc_html__( 'Typography', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow i',
+				'selector' => '{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow i',
 			]
 		);
 
@@ -1683,7 +1683,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow' => 'opacity: {{SIZE}};'
 				]
 			]
 		);
@@ -1701,7 +1701,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'label' => esc_html__( "Arrow BG Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow:hover' => 'background-color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow:hover' => 'background-color: {{VALUE}};'
 				],
 			]
 		);
@@ -1713,7 +1713,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow:hover' => 'background-color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow:hover' => 'background-color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1723,7 +1723,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'label' => esc_html__( "Arrow Text Color (Hover)", 'shadhin-plugins' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow:hover i' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow:hover i' => 'color: {{VALUE}};'
 				],
 			]
 		);
@@ -1734,7 +1734,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'options' => shadhin_plugins_theme_color_list(),
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow:hover i' => 'color: var(--theme-color{{VALUE}});'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow:hover i' => 'color: var(--theme-color{{VALUE}});'
 				],
 			]
 		);
@@ -1751,7 +1751,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 			[
 				'name' => 'swiper_arrow_border_hover',
 				'label' => esc_html__( 'Border', 'shadhin-plugins' ),
-				'selector' => '{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow:hover',
+				'selector' => '{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow:hover',
 			]
 		);
 		$control_object->add_responsive_control(
@@ -1767,7 +1767,7 @@ if(!function_exists('shadhin_plugins_get_swiper_slider_nav_arraylist')) {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .tm-swiper-button-wrap .tm-swiper-arrow:hover' => 'opacity: {{SIZE}};'
+					'{{WRAPPER}} .mh-swiper-button-wrap .mh-swiper-arrow:hover' => 'opacity: {{SIZE}};'
 				]
 			]
 		);
@@ -2206,7 +2206,7 @@ if(!function_exists('shadhin_plugins_gsap_animation_json_data')) {
 
 		wp_enqueue_script( 'gsap' );
 		wp_enqueue_script( 'gsap-scrolltrigger' );
-		wp_enqueue_script( 'tm-gsap-parallax' );
+		wp_enqueue_script( 'mh-gsap-parallax' );
 		$parallax_params = [
 				'x' => $item['gsap_motion_x'],
 				'y' => $item['gsap_motion_y'],

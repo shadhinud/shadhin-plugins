@@ -1,5 +1,5 @@
-<div class="tm-interactive-tabs-content">
-  <?php foreach ($list_items as $index => $item) : 
+<div class="mh-interactive-tabs-content">
+  <?php foreach ($list_items as $index => $item) :
         $tab_count = $index + 1;
 ?>
         <div class="tab interactive-tabs-item-<?php echo esc_attr( $tab_count) ?>">

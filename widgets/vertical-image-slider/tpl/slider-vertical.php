@@ -34,10 +34,10 @@
 	$image_hover_effect = isset($image_hover_effect) ? $image_hover_effect : 'zoom';
 ?>
 <?php if ( isset($slider_images_array) && $slider_images_array ) : ?>
-	<div id="<?php echo esc_attr( isset($holder_id) ? $holder_id : 'tm-vertical-slider' ) ?>" class="tm-sc-vertical-image-slider tm-vertical-image-slider slider-direction-<?php echo esc_attr($slider_direction); ?> hover-effect-<?php echo esc_attr($image_hover_effect); ?>" <?php echo implode(' ', $swiper_data) ?>>
-		<div class="tm-vertical-image-slider-wrapper">
+	<div id="<?php echo esc_attr( isset($holder_id) ? $holder_id : 'mh-vertical-slider' ) ?>" class="mh-sc-vertical-image-slider mh-vertical-image-slider slider-direction-<?php echo esc_attr($slider_direction); ?> hover-effect-<?php echo esc_attr($image_hover_effect); ?>" <?php echo implode(' ', $swiper_data) ?>>
+		<div class="mh-vertical-image-slider-wrapper">
 			<?php if ( isset($gradient_overlays_array) && !empty($gradient_overlays_array) ) : ?>
-				<div class="tm-gradient-overlays">
+				<div class="mh-gradient-overlays">
 					<?php foreach ( $gradient_overlays_array as $index => $gradient_overlay ) : ?>
 						<?php
 							$side = isset($gradient_overlay['gradient_side']) ? $gradient_overlay['gradient_side'] : 'left';
@@ -75,7 +75,7 @@
 								$gradient_style .= " backdrop-filter: blur({$blur}px); -webkit-backdrop-filter: blur({$blur}px);";
 							}
 						?>
-						<div class="tm-gradient-overlay tm-gradient-overlay-<?php echo esc_attr($side); ?> elementor-repeater-item-<?php echo esc_attr($gradient_overlay['_id']); ?>"
+						<div class="mh-gradient-overlay mh-gradient-overlay-<?php echo esc_attr($side); ?> elementor-repeater-item-<?php echo esc_attr($gradient_overlay['_id']); ?>"
 							 style="<?php echo esc_attr($gradient_style); ?>"></div>
 					<?php endforeach; ?>
 				</div>

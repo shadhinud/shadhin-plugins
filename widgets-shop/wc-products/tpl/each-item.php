@@ -1,7 +1,7 @@
 <?php
 // Extra classes
 $extra_classes = array();
-$extra_classes[] = 'tm-woo-product-item';
+$extra_classes[] = 'mh-woo-product-item';
 $extra_classes[] = 'shop-catalog-layout-' . shadhin_plugins_get_redux_option( 'shop-layout-settings-select-shop-catalog-layout', 'default' );
 ?>
 <div <?php wc_product_class( $extra_classes ); ?>>

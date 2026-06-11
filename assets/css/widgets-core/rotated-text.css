@@ -2,25 +2,25 @@
  * Shortcode: rotated-text.scss
  * -----------------------------------------------
 */
-.elementor-editor-active .elementor-widget-tm-ele-rotated-text {
+.elementor-editor-active .elementor-widget-mh-ele-rotated-text {
   min-height: 30px;
   background-color: #cb9494;
 }
 
-.tm-sc-rotated-text {
+.mh-sc-rotated-text {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: top;
   transition: all 0.3s ease;
 }
-.tm-sc-rotated-text .text-wrapper {
+.mh-sc-rotated-text .text-wrapper {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: top;
 }
-.tm-sc-rotated-text .text-wrapper .text-holder {
+.mh-sc-rotated-text .text-wrapper .text-holder {
   font-size: 12rem;
   font-weight: 700;
   font-family: var(--heading-font-family);
@@ -30,10 +30,10 @@
   -webkit-text-stroke: 2px #c2c0bd;
   transition: all 0.3s ease;
 }
-.tm-sc-rotated-text .text-wrapper .text-holder .text {
+.mh-sc-rotated-text .text-wrapper .text-holder .text {
   transition: all 0.3s ease;
 }
-.tm-sc-rotated-text .text-wrapper .text-holder {
+.mh-sc-rotated-text .text-wrapper .text-holder {
   position: absolute;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -43,6 +43,6 @@
   transform-origin: bottom left;
   white-space: nowrap;
 }
-.tm-sc-rotated-text.writing-mode-vertical {
+.mh-sc-rotated-text.writing-mode-vertical {
   writing-mode: vertical-rl;
 }

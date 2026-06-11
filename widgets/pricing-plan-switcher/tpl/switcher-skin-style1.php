@@ -1,4 +1,4 @@
-<div class="tm-pricing-plan-switcher">
+<div class="mh-pricing-plan-switcher">
   <span class="title-normal"><?php echo esc_html($variant_text_default); ?></span>
   <div class="price-switcher">
     <div class="pricing-switcher-btn">

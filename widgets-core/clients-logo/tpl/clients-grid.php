@@ -1,5 +1,5 @@
 <?php if ( $clients_logo_array ) : ?>
-	<div class="tm-sc-clients-logo clients-grid <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
+	<div class="mh-sc-clients-logo clients-grid <?php if( !empty($classes) ) echo esc_attr(implode(' ', $classes)); ?>">
 		<!-- the loop -->
 		<?php foreach (  $clients_logo_array as $clients_logo ) { ?>
 		<?php include( 'common.php' ); ?>

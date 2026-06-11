@@ -44,7 +44,7 @@
         //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
         'admin_bar'            => true,
         // Show the panel pages on the admin bar
-        'admin_bar_icon'       => 'dashicons-admin-settings dashicons-mascot-theme-options',
+        'admin_bar_icon'       => 'dashicons-admin-settings dashicons-shadhin-theme-options',
         // Choose an icon for the admin bar menu
         'admin_bar_priority'   => 50,
         // Choose an priority for the admin bar menu
@@ -435,7 +435,7 @@
                     //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                     'desc'     => esc_html__( 'Basic media uploader with disabled URL input field.', 'shadhin-plugins' ),
                     'subtitle' => esc_html__( 'Upload a 32px x 32px png/gif image that will represent your website favicon.', 'shadhin-plugins' ),
-                    //'default'  => array( 'url' => MASCOT_ASSETS_URI . '/images/logo/logo-wide.png' ),
+                    //'default'  => array( 'url' => SHADHIN_ASSETS_URI . '/images/logo/logo-wide.png' ),
                     'required' => array(
                         array( 'maintenance-mode-settings-logo-status', '=', '1' )
                     )

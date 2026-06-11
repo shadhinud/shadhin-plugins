@@ -5,7 +5,7 @@
 	 * Initialize Vertical Image Slider
 	 */
 	function initVerticalImageSlider($scope, $) {
-		var $slider = $scope.find('.tm-sc-vertical-image-slider');
+		var $slider = $scope.find('.mh-sc-vertical-image-slider');
 
 		if ($slider.length === 0) {
 			return;
@@ -149,14 +149,14 @@
 	// Initialize on Elementor Frontend
 	$(window).on('elementor/frontend/init', function() {
 		if (typeof elementorFrontend !== 'undefined') {
-			elementorFrontend.hooks.addAction('frontend/element_ready/tm-ele-vertical-image-slider.default', initVerticalImageSlider);
+			elementorFrontend.hooks.addAction('frontend/element_ready/mh-ele-vertical-image-slider.default', initVerticalImageSlider);
 		}
 	});
 
 	// Initialize on Document Ready (for non-Elementor pages)
 	$(document).ready(function() {
-		if ($('.tm-sc-vertical-image-slider').length > 0) {
-			$('.tm-sc-vertical-image-slider').each(function() {
+		if ($('.mh-sc-vertical-image-slider').length > 0) {
+			$('.mh-sc-vertical-image-slider').each(function() {
 				initVerticalImageSlider($(this), $);
 			});
 		}

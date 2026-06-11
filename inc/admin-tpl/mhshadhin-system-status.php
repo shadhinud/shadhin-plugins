@@ -193,7 +193,7 @@ $theme    = $system_status->get_theme_info();
 ?>
 
 
-	<table class="mascot-status-table widefat" cellspacing="0">
+	<table class="shadhin-status-table widefat" cellspacing="0">
 		<thead>
 			<tr>
 				<th colspan="2" data-export-label="Theme"><?php esc_html_e( 'Theme', 'shadhin-plugins' ); ?></th>
@@ -251,7 +251,7 @@ $theme    = $system_status->get_theme_info();
 		</tbody>
 	</table>
 
-	<table class="mascot-status-table widefat" cellspacing="0" id="status">
+	<table class="shadhin-status-table widefat" cellspacing="0" id="status">
 		<thead>
 			<tr>
 				<th colspan="2" data-export-label="WordPress Environment"><?php esc_html_e( 'WordPress environment', 'shadhin-plugins' ); ?></th>
@@ -311,7 +311,7 @@ $theme    = $system_status->get_theme_info();
 		</tbody>
 	</table>
 
-	<table class="mascot-status-table widefat" cellspacing="0">
+	<table class="shadhin-status-table widefat" cellspacing="0">
 		<thead>
 			<tr>
 				<th colspan="2" data-export-label="Server Environment"><?php esc_html_e( 'Server environment', 'shadhin-plugins' ); ?></th>
@@ -421,7 +421,7 @@ $theme    = $system_status->get_theme_info();
 		</tbody>
 	</table>
 
-	<table class="mascot-status-table widefat" cellspacing="0">
+	<table class="shadhin-status-table widefat" cellspacing="0">
 		<thead>
 			<tr>
 				<th colspan="2" data-export-label="Active Plugins (<?php echo count( $active_plugins ) ?>)"><?php esc_html_e( 'Active plugins', 'shadhin-plugins' ); ?> (<?php echo count( $active_plugins ) ?>)</th>
